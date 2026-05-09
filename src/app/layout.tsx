@@ -1,20 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "Hims | Men's Telehealth for Hair, ED, Weight Loss & Mental Health | Hims",
+  description: "Men's healthcare, built for real life. Get access to expert-backed weight loss care, ED treatment options, in-depth lab testing, testosterone support, and more—all 100% online.",
+  icons: {
+    apple: "https://www.hims.com/forhims/image/upload/q_auto,f_auto,fl_lossy,c_limit/Hims/apple-touch-icon-hims",
+  },
 };
 
 export default function RootLayout({
@@ -23,11 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className="h-full">
+      <body className="min-h-full flex flex-col antialiased">{children}</body>
     </html>
   );
 }
