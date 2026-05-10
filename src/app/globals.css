@@ -4,21 +4,22 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Sofia Pro font from hims.com CDN */
-@font-face {
-  font-family: "sofia-pro";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("https://www.hims.com/css/fonts/SofiaProRegular-english.woff2") format("woff2");
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "sofia-pro", "SofiaProWeb", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: var(--font-plus-jakarta-sans), "Helvetica Neue", sans-serif;
   --font-mono: ui-monospace, monospace;
-  --font-heading: var(--font-sans);
+
+  /* Ramp brand colors */
+  --color-ramp-orange: #FF6500;
+  --color-ramp-orange-light: #FF8533;
+  --color-ramp-dark: #0A0F1E;
+  --color-ramp-text: #0F0F0F;
+  --color-ramp-muted: #595959;
+  --color-ramp-subtle: #8A8A8A;
+  --color-ramp-bg: #F7F7F4;
+  --color-ramp-border: #E4E1DB;
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -50,18 +51,6 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-
-  /* Hims brand colors */
-  --color-hims-amber: #FFC671;
-  --color-hims-amber-dark: #9A6D2A;
-  --color-hims-brown: #392E25;
-  --color-hims-cream: #FBF8F5;
-  --color-hims-navy: #0A2633;
-  --color-hims-peach: #BF8E5E;
-  --color-hims-olive: #EDE1AC;
-  --color-hims-sex-blue: #4E799E;
-  --color-hims-hair-red: #8A3A34;
-  --color-hims-testo-teal: #6D8D9E;
 }
 
 :root {
@@ -92,15 +81,6 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-
-  /* Hims brand custom vars */
-  --hims-amber: rgb(255, 198, 113);
-  --hims-amber-dark: rgb(154, 109, 42);
-  --hims-brown: rgb(57, 46, 37);
-  --hims-cream: rgb(251, 248, 245);
-  --hims-navy: rgb(10, 38, 51);
-  --hims-peach: rgb(191, 142, 94);
-  --hims-olive: rgb(237, 225, 172);
 }
 
 @layer base {
@@ -109,43 +89,17 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "sofia-pro", "SofiaProWeb", Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans);
+    color: #0F0F0F;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   html {
-    font-family: "sofia-pro", "SofiaProWeb", Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans);
   }
 }
 
-/* Hims utility classes */
 @layer utilities {
-  .hims-text-gold {
-    color: rgb(255, 198, 113);
-  }
-  .hims-bg-brown {
-    background-color: rgb(57, 46, 37);
-  }
-  .hims-bg-cream {
-    background-color: rgb(251, 248, 245);
-  }
-  .hims-bg-navy {
-    background-color: rgb(10, 38, 51);
-  }
-  .btn-pill {
-    border-radius: 100px;
-    padding: 12px 28px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.2s ease;
-  }
-  .btn-pill:hover {
-    opacity: 0.85;
-  }
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;

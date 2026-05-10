@@ -1,32 +1,29 @@
-import { AnnouncementBar } from "@/components/AnnouncementBar";
-import { GlobalNav } from "@/components/GlobalNav";
-import { HeroATF } from "@/components/HeroATF";
-import { WeightLossSection } from "@/components/WeightLossSection";
-import { TestosteroneSection } from "@/components/TestosteroneSection";
-import { LabsSection } from "@/components/LabsSection";
-import { TrustSection } from "@/components/TrustSection";
-import { LeadCaptureSection } from "@/components/LeadCaptureSection";
-import { Footer } from "@/components/Footer";
+import { RampNav } from "@/components/ramp/RampNav";
+import { RampHero } from "@/components/ramp/RampHero";
+import { CustomerLogos } from "@/components/ramp/CustomerLogos";
+import { SpendVisibilitySection } from "@/components/ramp/SpendVisibilitySection";
+import { ControlSpendSection } from "@/components/ramp/ControlSpendSection";
+import { CompetitiveLimitsSection } from "@/components/ramp/CompetitiveLimitsSection";
+import { ReceiptCaptureSection } from "@/components/ramp/ReceiptCaptureSection";
+import { DemoCTA } from "@/components/ramp/DemoCTA";
+import { NewsletterSection } from "@/components/ramp/NewsletterSection";
+import { RampFooter } from "@/components/ramp/RampFooter";
 
 export default function Home() {
   return (
     <>
-      {/* Announcement bar scrolls normally */}
-      <AnnouncementBar />
-      {/* Nav is fixed at top-0, transparent until scrollY > 44 */}
-      <GlobalNav />
-
+      <RampNav />
       <main>
-        {/* HeroATF has its own pt-[280px] to clear the fixed nav + give visual space */}
-        <HeroATF />
-        <WeightLossSection />
-        <TestosteroneSection />
-        <LabsSection />
-        <TrustSection />
-        <LeadCaptureSection />
+        <RampHero />
+        <CustomerLogos />
+        <SpendVisibilitySection />
+        <ControlSpendSection />
+        <CompetitiveLimitsSection />
+        <ReceiptCaptureSection />
+        <DemoCTA />
+        <NewsletterSection />
       </main>
-
-      <Footer />
+      <RampFooter />
     </>
   );
 }
