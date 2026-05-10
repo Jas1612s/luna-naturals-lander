@@ -24,12 +24,18 @@ export function GlobalNav() {
         <a href="/" aria-label="Hims home">
           <HimsLogo className="h-6 w-auto" />
         </a>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <a
             href="/login"
             className="hidden text-base text-[rgba(0,0,0,0.88)] sm:block"
           >
             Log in
+          </a>
+          <a
+            href="/#wm-quiz"
+            className="hidden sm:inline-flex items-center justify-center rounded-full bg-hims-navy px-5 py-2 text-sm font-medium text-white transition-opacity hover:opacity-85"
+          >
+            Get started
           </a>
           <button
             className="flex cursor-pointer p-1"

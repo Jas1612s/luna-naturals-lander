@@ -102,7 +102,7 @@ export function Footer() {
     <>
       <footer
         className="relative text-white"
-        style={{ backgroundColor: "rgb(10, 38, 51)", paddingTop: "64px", paddingBottom: "32px" }}
+        style={{ backgroundColor: "rgb(0, 0, 0)", paddingTop: "64px", paddingBottom: "32px" }}
       >
         <div
           className="mx-auto px-6"

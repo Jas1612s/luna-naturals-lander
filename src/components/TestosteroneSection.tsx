@@ -3,7 +3,7 @@ export function TestosteroneSection() {
     <section
       className="px-6 py-20"
       style={{
-        background: "linear-gradient(to bottom, rgb(219,230,205) 0%, rgb(237,225,172) 100%)",
+        background: "linear-gradient(rgb(215, 227, 235) 0%, rgb(250, 234, 171) 100%)",
       }}
     >
       <div className="mx-auto max-w-[1200px]">
@@ -36,7 +36,8 @@ export function TestosteroneSection() {
         {/* Cards */}
         <div className="flex flex-col gap-6 md:flex-row">
           {/* Card 1: Enclomiphene */}
-          <div className="flex flex-1 flex-col overflow-hidden rounded-3xl bg-[#FFFDE8] p-8">
+          <div className="flex flex-1 flex-col overflow-hidden rounded-3xl p-8"
+            style={{ background: "linear-gradient(127deg, rgb(255,245,212) 2.43%, rgb(255,250,232) 96.81%)" }}>
             <h3
               className="mb-2 text-[rgba(0,0,0,0.88)]"
               style={{ fontSize: "28px", fontWeight: 400, lineHeight: 1.2 }}
@@ -61,7 +62,8 @@ export function TestosteroneSection() {
           </div>
 
           {/* Card 2: At-home labs */}
-          <div className="flex flex-1 flex-col overflow-hidden rounded-3xl bg-[#FFFDE8] p-8">
+          <div className="flex flex-1 flex-col overflow-hidden rounded-3xl p-8"
+            style={{ background: "linear-gradient(127deg, rgb(255,245,212) 2.43%, rgb(255,250,232) 96.81%)" }}>
             <h3
               className="mb-6 text-[rgba(0,0,0,0.88)]"
               style={{ fontSize: "28px", fontWeight: 400, lineHeight: 1.2 }}

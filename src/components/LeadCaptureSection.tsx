@@ -18,8 +18,11 @@ export function LeadCaptureSection() {
         >
           Unlock the free Guide to Protein for Weight Loss
         </h2>
-        <p className="mb-8 text-base text-[rgba(255,255,255,0.8)]">
+        <p className="mb-6 text-base text-[rgba(255,255,255,0.8)]">
           Written by board-certified doctors to support your journey.
+        </p>
+        <p className="mb-6 text-sm text-[rgba(255,255,255,0.65)]">
+          ★★★★★ — Trusted by 500,000+ men
         </p>
         <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-3">
           <input

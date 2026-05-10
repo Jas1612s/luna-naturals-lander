@@ -66,7 +66,7 @@ export function TrustSection() {
             {/* Card top */}
             <div
               className="mb-4 flex items-center rounded-2xl p-5"
-              style={{ backgroundColor: "rgb(229,199,179)" }}
+              style={{ backgroundColor: "rgb(245, 240, 232)" }}
             >
               {/* Avatar placeholder */}
               <div

@@ -37,7 +37,7 @@ const catTiles = [
     label: "Get a",
     accent: "health check",
     accentColor: "rgb(191,142,94)",
-    img: null,
+    img: `${CDN}/Hims/bh/hp/Hims_Homepage_Labs_Default_480.png`,
   },
 ];
 
@@ -59,6 +59,9 @@ export function HeroATF() {
           <br />
           always deserved
         </h1>
+        <p className="mb-6 text-base text-[rgba(0,0,0,0.55)]">
+          Licensed providers. Real prescriptions. Delivered to your door.
+        </p>
 
         {/* Featured cards row */}
         <div className="mb-3 flex gap-4">
@@ -91,24 +94,27 @@ export function HeroATF() {
             </div>
           </a>
 
-          {/* Card 2 — Weight loss graph */}
+          {/* Card 2 — Person default, graph on hover */}
           <a
             href="/#wm-quiz"
             className="group relative h-[199px] flex-1 cursor-pointer overflow-hidden rounded-3xl bg-[#9A6D2A]"
           >
+            {/* Base gradient — always visible */}
             <img
               src={card2Default}
               alt=""
-              className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+              className="absolute inset-0 h-full w-full object-cover"
             />
+            {/* Person — visible by default, fades on hover */}
             <img
               src={card2Person}
-              alt=""
-              className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              alt="Happy man who lost weight"
+              className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
             />
+            {/* Graph — hidden by default, shows on hover */}
             <img
               src={card2Graph}
-              alt=""
+              alt="Weight loss graph"
               className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             />
             <div className="absolute bottom-4 left-5 z-10">

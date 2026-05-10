@@ -110,7 +110,7 @@ export function LabsSection() {
             className="mb-6 text-white"
             style={{ fontSize: "clamp(28px,3vw,44px)", fontWeight: 400, lineHeight: 1.1 }}
           >
-            Test 130+
+            Test 150+
             <br />
             biomarkers
           </h3>

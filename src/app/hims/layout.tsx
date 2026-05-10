@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Hims — The care you've always deserved",
@@ -7,16 +6,10 @@ export const metadata: Metadata = {
     "Hims offers treatments for sexual health, hair, skin, mental health, weight loss, and more. Get care from licensed providers online.",
 };
 
-export default function RootLayout({
+export default function HimsLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className="h-full">
-      <body className="min-h-full flex flex-col antialiased">
-        {children}
-      </body>
-    </html>
-  );
+}) {
+  return <>{children}</>;
 }

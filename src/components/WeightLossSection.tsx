@@ -1,33 +1,47 @@
+const CDN = "https://www.hims.com/forhims/image/upload/q_auto,f_auto,fl_lossy,c_limit";
+const FDA_BADGE = "https://cloudinary.forhims.com/image/upload/v1773990110/Novo%20Nordisk%20Launch/Carousel/FDA_Approved_Badge_Vector.png";
+
 const glp1Products = [
   {
     name: "Wegovy® Pill",
     price: "From $149/mo†",
     type: "Semaglutide",
     bg: "rgb(185, 140, 110)",
+    img: `${CDN}/Hers/homepage/2026/product_wegovy-pill.png`,
+    isNew: true,
   },
   {
     name: "Zepbound® KwikPen®",
     price: "$299/mo†",
     type: "Tirzepatide",
     bg: "rgb(170, 120, 90)",
+    img: `${CDN}/Hers/homepage/2026/product_zepbound-kwikpen.png`,
+    isNew: true,
   },
   {
     name: "Foundayo®",
     price: "From $149/mo†",
     type: "Orforglipron",
     bg: "rgb(160, 115, 85)",
+    img: `${CDN}/Hers/homepage/2026/product_foundayo.png`,
+    isNew: true,
   },
   {
     name: "Wegovy® Pen",
     price: "From $199/mo†",
     type: "Semaglutide",
     bg: "rgb(175, 130, 100)",
+    img: `${CDN}/Hers/homepage/2026/product_wegovy-pen.png`,
+    isNew: true,
+    badge: "High dose option",
   },
   {
     name: "Zepbound® Vial",
     price: "From $349/mo†",
     type: "Tirzepatide",
     bg: "rgb(155, 110, 80)",
+    img: `${CDN}/Hers/homepage/2026/product_zepbound_vial.png`,
+    isNew: true,
   },
 ];
 
@@ -84,11 +98,32 @@ export function WeightLossSection() {
           {glp1Products.map((product) => (
             <div
               key={product.name}
-              className="flex-shrink-0 rounded-2xl p-5"
+              className="relative flex-shrink-0 overflow-hidden rounded-2xl p-5"
               style={{ backgroundColor: product.bg, minWidth: "240px" }}
             >
-              <div className="mb-4 h-32 rounded-xl bg-[rgba(255,255,255,0.15)]" />
-              <p className="text-lg font-medium text-white">{product.name}</p>
+              {/* Badges row */}
+              <div className="mb-3 flex items-center justify-between">
+                {product.isNew && (
+                  <span className="rounded-full bg-[rgba(255,255,255,0.25)] px-2.5 py-1 text-xs text-white">
+                    New
+                  </span>
+                )}
+                {product.badge && (
+                  <span className="rounded-full bg-[rgba(255,255,255,0.25)] px-2.5 py-1 text-xs text-white ml-2">
+                    {product.badge}
+                  </span>
+                )}
+                <img src={FDA_BADGE} alt="FDA Approved" className="ml-auto h-10 w-10 object-contain" />
+              </div>
+              {/* Product image */}
+              <div className="mb-4 flex h-36 items-center justify-center">
+                <img
+                  src={product.img}
+                  alt={product.name}
+                  className="h-full w-auto object-contain drop-shadow-lg"
+                />
+              </div>
+              <p className="text-base font-medium text-white">{product.name}</p>
               <p className="mt-1 text-sm text-[rgba(255,255,255,0.8)]">{product.price}</p>
               <p className="text-sm text-[rgba(255,255,255,0.6)]">{product.type}</p>
             </div>
@@ -145,7 +180,7 @@ export function WeightLossSection() {
           </video>
           <a
             href="/#wegovy-pen"
-            className="inline-flex cursor-pointer items-center justify-center rounded-full bg-hims-amber px-7 py-3 text-base font-medium text-[rgba(0,0,0,0.88)] transition-opacity hover:opacity-85"
+            className="inline-flex cursor-pointer items-center justify-center rounded-full border border-[rgba(255,255,255,0.35)] bg-[rgba(255,255,255,0.1)] px-7 py-3 text-base text-white transition-opacity hover:opacity-85"
           >
             Explore Wegovy® Pen
           </a>

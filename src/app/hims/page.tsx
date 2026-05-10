@@ -8,7 +8,7 @@ import { TrustSection } from "@/components/TrustSection";
 import { LeadCaptureSection } from "@/components/LeadCaptureSection";
 import { Footer } from "@/components/Footer";
 
-export default function Home() {
+export default function HimsHome() {
   return (
     <>
       <AnnouncementBar />
