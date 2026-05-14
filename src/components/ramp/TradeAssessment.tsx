@@ -42,7 +42,7 @@ function ProgressDots({ step }: { step: number }) {
             width: s <= step ? "24px" : "8px",
             height: "8px",
             borderRadius: "9999px",
-            backgroundColor: s <= step ? "#FF6500" : "#E4E1DB",
+            backgroundColor: s <= step ? "#00B248" : "#E4E1DB",
             transition: "all 0.3s ease",
           }}
         />
@@ -54,8 +54,8 @@ function ProgressDots({ step }: { step: number }) {
 function CheckIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-      <circle cx="10" cy="10" r="10" fill="rgba(255,101,0,0.1)" />
-      <path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#FF6500" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="10" cy="10" r="10" fill="rgba(0,178,72,0.1)" />
+      <path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#00B248" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -108,8 +108,8 @@ export function TradeAssessment() {
           <span
             style={{
               display: "inline-block",
-              backgroundColor: "rgba(255,101,0,0.08)",
-              color: "#FF6500",
+              backgroundColor: "rgba(0,178,72,0.08)",
+              color: "#00B248",
               fontSize: "11px",
               fontWeight: 700,
               textTransform: "uppercase",
@@ -199,7 +199,7 @@ export function TradeAssessment() {
                     boxSizing: "border-box",
                     fontFamily: "var(--font-plus-jakarta-sans), sans-serif",
                   }}
-                  onFocus={(e) => { e.currentTarget.style.borderColor = "#FF6500"; }}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = "#00B248"; }}
                   onBlur={(e) => { e.currentTarget.style.borderColor = "#E4E1DB"; }}
                   onKeyDown={(e) => { if (e.key === "Enter" && answers.turnover) handleNext(); }}
                 />
@@ -214,7 +214,7 @@ export function TradeAssessment() {
                 disabled={!answers.turnover}
                 style={{
                   width: "100%",
-                  backgroundColor: answers.turnover ? "#FF6500" : "#E4E1DB",
+                  backgroundColor: answers.turnover ? "#00B248" : "#E4E1DB",
                   color: answers.turnover ? "white" : "#B0B0B0",
                   borderRadius: "12px",
                   padding: "16px",
@@ -253,12 +253,12 @@ export function TradeAssessment() {
                     style={{
                       padding: "20px",
                       borderRadius: "14px",
-                      border: `2px solid ${answers.tradingHistory === val ? "#FF6500" : "#E4E1DB"}`,
-                      backgroundColor: answers.tradingHistory === val ? "rgba(255,101,0,0.04)" : "white",
+                      border: `2px solid ${answers.tradingHistory === val ? "#00B248" : "#E4E1DB"}`,
+                      backgroundColor: answers.tradingHistory === val ? "rgba(0,178,72,0.04)" : "white",
                       cursor: "pointer",
                       fontSize: "18px",
                       fontWeight: 700,
-                      color: answers.tradingHistory === val ? "#FF6500" : "#3D3D3D",
+                      color: answers.tradingHistory === val ? "#00B248" : "#3D3D3D",
                       textTransform: "capitalize",
                       transition: "all 0.15s",
                       display: "flex",
@@ -292,7 +292,7 @@ export function TradeAssessment() {
                   onClick={handleNext}
                   disabled={!answers.tradingHistory}
                   style={{
-                    backgroundColor: answers.tradingHistory ? "#FF6500" : "#E4E1DB",
+                    backgroundColor: answers.tradingHistory ? "#00B248" : "#E4E1DB",
                     color: answers.tradingHistory ? "white" : "#B0B0B0",
                     borderRadius: "12px",
                     padding: "14px",
@@ -360,7 +360,7 @@ export function TradeAssessment() {
                     boxSizing: "border-box",
                     fontFamily: "var(--font-plus-jakarta-sans), sans-serif",
                   }}
-                  onFocus={(e) => { e.currentTarget.style.borderColor = "#FF6500"; }}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = "#00B248"; }}
                   onBlur={(e) => { e.currentTarget.style.borderColor = "#E4E1DB"; }}
                   onKeyDown={(e) => { if (e.key === "Enter" && answers.creditLimit) handleNext(); }}
                 />
@@ -390,7 +390,7 @@ export function TradeAssessment() {
                   onClick={handleNext}
                   disabled={!answers.creditLimit}
                   style={{
-                    backgroundColor: answers.creditLimit ? "#FF6500" : "#E4E1DB",
+                    backgroundColor: answers.creditLimit ? "#00B248" : "#E4E1DB",
                     color: answers.creditLimit ? "white" : "#B0B0B0",
                     borderRadius: "12px",
                     padding: "14px",
@@ -428,8 +428,8 @@ export function TradeAssessment() {
                     style={{
                       padding: "20px 16px",
                       borderRadius: "14px",
-                      border: `2px solid ${answers.tenor === days ? "#FF6500" : "#E4E1DB"}`,
-                      backgroundColor: answers.tenor === days ? "rgba(255,101,0,0.04)" : "white",
+                      border: `2px solid ${answers.tenor === days ? "#00B248" : "#E4E1DB"}`,
+                      backgroundColor: answers.tenor === days ? "rgba(0,178,72,0.04)" : "white",
                       cursor: "pointer",
                       transition: "all 0.15s",
                       textAlign: "center",
@@ -439,7 +439,7 @@ export function TradeAssessment() {
                       style={{
                         fontSize: "22px",
                         fontWeight: 800,
-                        color: answers.tenor === days ? "#FF6500" : "#0F0F0F",
+                        color: answers.tenor === days ? "#00B248" : "#0F0F0F",
                         lineHeight: 1,
                         marginBottom: "4px",
                         letterSpacing: "-0.02em",
@@ -447,7 +447,7 @@ export function TradeAssessment() {
                     >
                       {days}
                     </div>
-                    <div style={{ fontSize: "12px", color: answers.tenor === days ? "#FF6500" : "#8A8A8A", fontWeight: 600 }}>
+                    <div style={{ fontSize: "12px", color: answers.tenor === days ? "#00B248" : "#8A8A8A", fontWeight: 600 }}>
                       days
                     </div>
                   </button>
@@ -473,7 +473,7 @@ export function TradeAssessment() {
                   onClick={handleNext}
                   disabled={!answers.tenor}
                   style={{
-                    backgroundColor: answers.tenor ? "#FF6500" : "#E4E1DB",
+                    backgroundColor: answers.tenor ? "#00B248" : "#E4E1DB",
                     color: answers.tenor ? "white" : "#B0B0B0",
                     borderRadius: "12px",
                     padding: "14px",
@@ -499,7 +499,7 @@ export function TradeAssessment() {
                   width: "64px",
                   height: "64px",
                   borderRadius: "50%",
-                  backgroundColor: "rgba(255,101,0,0.08)",
+                  backgroundColor: "rgba(0,178,72,0.08)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -507,11 +507,11 @@ export function TradeAssessment() {
                 }}
               >
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <path d="M8 17l5 5 11-11" stroke="#FF6500" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M8 17l5 5 11-11" stroke="#00B248" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
 
-              <p style={{ fontSize: "12px", fontWeight: 700, color: "#FF6500", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "10px" }}>
+              <p style={{ fontSize: "12px", fontWeight: 700, color: "#00B248", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "10px" }}>
                 Estimated eligibility
               </p>
               <h3
@@ -575,7 +575,7 @@ export function TradeAssessment() {
                 style={{
                   display: "block",
                   width: "100%",
-                  backgroundColor: "#FF6500",
+                  backgroundColor: "#00B248",
                   color: "white",
                   borderRadius: "14px",
                   padding: "18px",

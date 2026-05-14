@@ -1,65 +1,69 @@
-# hims.com Design Tokens
+# MEDVi (home.medvi.org) Design Tokens
 
 ## Typography
 
-### Font Family
-- **Primary**: `sofia-pro, SofiaProWeb, Helvetica, Arial, sans-serif`
-- Self-hosted at: `https://www.hims.com/css/fonts/SofiaProRegular-english.woff2`
-- Weight 400 = Regular, Weight 500 = Medium, Weight 600 = SemiBold
+### Font Families
+- **Primary**: `Red Hat Text` (Google Fonts) — headings and UI
+- **Body**: `Onest` (Google Fonts) — body copy
+- **Watermark**: `Montserrat` — large decorative text
 
 ### Font Sizes
-| Element | Size | Weight | Line Height | Letter Spacing |
-|---------|------|--------|-------------|----------------|
-| H1 (hero) | 57px | 400 | 57px | -3.5625px |
-| H2 section | ~48-64px | 400 | ~1 | -2px |
-| Large card title | 20px | 500 | auto | normal |
-| Body text | 16px | 400 | auto | normal |
-| Small label | 14px | 400 | auto | normal |
-| Caption | 12px | 400 | auto | normal |
+| Element | Size | Weight | Letter Spacing |
+|---------|------|--------|----------------|
+| H1 (hero) | clamp(42px, 6vw, 80px) | 700 | -0.03em |
+| H2 (section) | clamp(28px, 3.5vw, 50px) | 600 | -0.025em |
+| H3 (card title) | clamp(18px, 1.5vw, 22px) | 600 | -0.02em |
+| Body | 15–17px | 400 | normal |
+| Badge/Eyebrow | 11–12px | 600 | 0.08–0.1em uppercase |
+| Caption | 11–12px | 400 | normal |
 
 ## Colors
 
 ### Brand Palette
 ```
---hims-amber:        rgb(255, 198, 113)   /* #FFC671 - accent gold, announcement bar bg */
---hims-amber-dark:   rgb(154, 109, 42)    /* #9A6D2A - hero card 2 bg, darker gold */
---hims-brown-dark:   rgb(57, 46, 37)      /* #392E25 - weight loss section bg */
---hims-cream:        rgb(251, 248, 245)   /* #FBF8F5 - off-white, category tile bg */
---hims-navy:         rgb(10, 38, 51)      /* #0A2633 - footer bg */
---hims-peach:        rgb(191, 142, 94)    /* #BF8E5E - labs section elements */
---hims-olive:        rgb(237, 225, 172)   /* #EDE1AC - testosterone section light */
-
---hims-sex-blue:     rgb(78, 121, 158)    /* #4E799E - sex tile accent */
---hims-hair-red:     rgb(138, 58, 52)     /* #8A3A34 - hair tile accent */
---hims-testo-teal:   rgb(109, 141, 158)   /* #6D8D9E - testosterone tile accent */
+--medvi-accent:       #2E936F   rgb(46,147,111)    /* primary CTA green */
+--medvi-accent-soft:  #84C390   rgb(132,195,144)   /* soft accent, hero highlights */
+--medvi-accent-dark:  #1B6549   rgb(27,101,73)     /* hero gradient start */
+--medvi-hero-end:     #112111   rgb(17,33,17)      /* hero gradient end, footer bg */
 ```
 
-### Semantic Colors
+### Text Colors
 ```
---background: rgb(255, 255, 255)          /* white */
---foreground: rgba(0, 0, 0, 0.88)         /* body text */
---muted-foreground: rgba(0, 0, 0, 0.44)   /* secondary text */
---text-white: rgb(255, 255, 255)
---text-gold: rgb(255, 198, 113)           /* accent in dark sections */
+--medvi-text:         #242220   rgb(36,34,32)      /* primary text */
+--medvi-text-muted:   #38312C   rgb(56,49,44)      /* secondary / body text */
+```
+
+### Section Backgrounds
+```
+--bg-white:     rgb(250,250,250)   /* Support section */
+--bg-sage:      rgb(241,245,233)   /* Weight Loss, Peptides, Testimonials */
+--bg-warm:      rgb(250,249,247)   /* Meals, Skincare */
+--bg-blue:      rgb(228,236,242)   /* Supplements */
+--bg-pink:      rgb(242,230,236)   /* Women's Health, Hair */
+--bg-beige:     rgb(232,224,220)   /* Men's Health */
+```
+
+### Hero Gradient
+```
+background: linear-gradient(166deg, rgb(27,101,73) 0%, rgb(17,33,17) 100%)
 ```
 
 ## Spacing & Layout
-- **Grid**: 13 columns, 1.5rem (24px) gutter
-- **Max content width**: ~1360px
-- **Border radius**: 24px (cards), 100px (pill buttons), 8px (small elements)
-- **Nav height**: 48px (3rem via `--global-nav-header-row-height`)
+- **Max content width**: 1280px
+- **Section padding**: 80–112px vertical
+- **Container padding**: 24px horizontal
+- **Border radius (cards)**: 24–32px
+- **Border radius (badges)**: 100px (pill)
+- **Border radius (buttons)**: 100px (pill)
+- **Card gap**: 16–24px
 
 ## Buttons
-### Pill shape (primary)
-- Border-radius: 100px (full pill)
-- Padding: ~12px 24px
-- Background: `rgb(255, 198, 113)` amber / dark options
+- **Primary**: `#2E936F` bg, white text, rounded-full, px-6 py-3, font-semibold
+- **Coming Soon**: Muted grey bg, grey text, cursor-default, disabled state
+- **Ghost/Outline**: Transparent, green border, green text
 
-### Dark rounded (secondary)
-- Border-radius: ~40px
-- Background: dark navy/brown
-- Color: white
-
-## Shadows / Effects
-- Section transitions: dark-to-light theme changes between sections
-- No global box shadows on nav at scroll 0; shadow appears after scroll
+## Blob Decorations
+- Radial gradient circles positioned absolutely in section corners
+- Opacity: 10–20% of section accent color
+- Size: 400–700px diameter
+- Blur effect via radial gradient falloff

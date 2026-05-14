@@ -20,7 +20,7 @@ export function DemoCTA() {
         <p
           style={{
             fontSize: "11px",
-            color: "#FF6500",
+            color: "#00B248",
             textTransform: "uppercase",
             letterSpacing: "0.12em",
             fontWeight: 600,
@@ -80,14 +80,14 @@ export function DemoCTA() {
               outline: "none",
               transition: "border-color 0.15s",
             }}
-            onFocus={(e) => { e.currentTarget.style.borderColor = "#FF6500"; }}
+            onFocus={(e) => { e.currentTarget.style.borderColor = "#00B248"; }}
             onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; }}
             className="placeholder:text-[rgba(255,255,255,0.4)]"
           />
           <button
             type="submit"
             style={{
-              backgroundColor: "#FF6500",
+              backgroundColor: "#00B248",
               color: "white",
               borderRadius: "9999px",
               padding: "14px 24px",

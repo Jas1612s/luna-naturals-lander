@@ -33,7 +33,7 @@ export function ReceiptCaptureSection() {
             style={{
               fontSize: "11px",
               fontWeight: 700,
-              color: "#FF6500",
+              color: "#00B248",
               textTransform: "uppercase",
               letterSpacing: "0.1em",
               marginBottom: "12px",
@@ -123,7 +123,7 @@ export function ReceiptCaptureSection() {
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
-              backgroundColor: "#FF6500",
+              backgroundColor: "#00B248",
               color: "white",
               borderRadius: "9999px",
               padding: "13px 28px",

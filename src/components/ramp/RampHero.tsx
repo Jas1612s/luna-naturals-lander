@@ -7,7 +7,7 @@ function StarRow() {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "2px" }}>
       {[1, 2, 3, 4, 5].map((i) => (
-        <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#FF6500" xmlns="http://www.w3.org/2000/svg">
+        <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#00B248" xmlns="http://www.w3.org/2000/svg">
           <path d="M7 1l1.545 3.09L12 4.635l-2.5 2.41.59 3.41L7 8.79l-3.09 1.665L4.5 7.045 2 4.635l3.455-.545L7 1z" />
         </svg>
       ))}
@@ -79,7 +79,7 @@ export function RampHero() {
               }}
             >
               Finance that works{" "}
-              <span style={{ color: "#FF6500" }}>as hard as you do.</span>
+              <span style={{ color: "#00B248" }}>as hard as you do.</span>
             </h1>
 
             {/* Subheadline */}
@@ -122,13 +122,13 @@ export function RampHero() {
                     outline: "none",
                     transition: "border-color 0.15s",
                   }}
-                  onFocus={(e) => { e.currentTarget.style.borderColor = "#FF6500"; }}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = "#00B248"; }}
                   onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; }}
                 />
                 <button
                   type="submit"
                   style={{
-                    backgroundColor: "#FF6500",
+                    backgroundColor: "#00B248",
                     color: "white",
                     borderRadius: "9999px",
                     padding: "14px 28px",
@@ -220,7 +220,7 @@ export function RampHero() {
               style={{
                 position: "absolute",
                 inset: "-40px",
-                background: "radial-gradient(ellipse at 50% 50%, rgba(255,101,0,0.15) 0%, transparent 70%)",
+                background: "radial-gradient(ellipse at 50% 50%, rgba(0,178,72,0.15) 0%, transparent 70%)",
                 zIndex: 0,
               }}
             />

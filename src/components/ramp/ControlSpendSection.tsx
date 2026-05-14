@@ -79,7 +79,7 @@ export function ControlSpendSection() {
             style={{
               fontSize: "11px",
               fontWeight: 700,
-              color: "#FF6500",
+              color: "#00B248",
               textTransform: "uppercase",
               letterSpacing: "0.1em",
               marginBottom: "12px",
@@ -122,9 +122,9 @@ export function ControlSpendSection() {
                 border: "none",
                 cursor: "pointer",
                 transition: "all 0.15s",
-                backgroundColor: activeTab === t.id ? "#FF6500" : "#ffffff",
+                backgroundColor: activeTab === t.id ? "#00B248" : "#ffffff",
                 color: activeTab === t.id ? "white" : "#3D3D3D",
-                boxShadow: activeTab === t.id ? "0 2px 8px rgba(255,101,0,0.3)" : "none",
+                boxShadow: activeTab === t.id ? "0 2px 8px rgba(0,178,72,0.3)" : "none",
               }}
             >
               {t.label}
@@ -142,8 +142,8 @@ export function ControlSpendSection() {
             <span
               style={{
                 display: "inline-block",
-                backgroundColor: "rgba(255,101,0,0.08)",
-                color: "#FF6500",
+                backgroundColor: "rgba(0,178,72,0.08)",
+                color: "#00B248",
                 fontSize: "11px",
                 fontWeight: 700,
                 textTransform: "uppercase",
@@ -189,12 +189,12 @@ export function ControlSpendSection() {
                       width: "18px",
                       height: "18px",
                       borderRadius: "50%",
-                      background: "rgba(255,101,0,0.1)",
+                      background: "rgba(0,178,72,0.1)",
                       flexShrink: 0,
                     }}
                   >
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                      <path d="M2 5l2.5 2.5L8 2.5" stroke="#FF6500" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M2 5l2.5 2.5L8 2.5" stroke="#00B248" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
                   <span style={{ fontSize: "14px", color: "#3D3D3D" }}>{b}</span>
@@ -207,7 +207,7 @@ export function ControlSpendSection() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "8px",
-                backgroundColor: "#FF6500",
+                backgroundColor: "#00B248",
                 color: "white",
                 borderRadius: "9999px",
                 padding: "12px 24px",

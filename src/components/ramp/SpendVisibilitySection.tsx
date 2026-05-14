@@ -31,7 +31,7 @@ export function SpendVisibilitySection() {
             style={{
               fontSize: "11px",
               fontWeight: 700,
-              color: "#FF6500",
+              color: "#00B248",
               textTransform: "uppercase",
               letterSpacing: "0.1em",
               marginBottom: "12px",
@@ -84,7 +84,7 @@ export function SpendVisibilitySection() {
                 style={{
                   fontSize: "14px",
                   fontWeight: 700,
-                  color: "#FF6500",
+                  color: "#00B248",
                   marginBottom: "8px",
                 }}
               >

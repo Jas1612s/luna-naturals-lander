@@ -27,7 +27,7 @@ export function NewsletterSection() {
         <p
           style={{
             fontSize: "11px",
-            color: "#FF6500",
+            color: "#00B248",
             textTransform: "uppercase",
             letterSpacing: "0.12em",
             fontWeight: 600,
@@ -123,7 +123,7 @@ export function NewsletterSection() {
             <button
               type="submit"
               style={{
-                backgroundColor: "#FF6500",
+                backgroundColor: "#00B248",
                 color: "white",
                 borderRadius: "9999px",
                 padding: "12px 24px",

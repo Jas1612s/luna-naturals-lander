@@ -34,7 +34,7 @@ export function CompetitiveLimitsSection() {
             style={{
               fontSize: "11px",
               fontWeight: 700,
-              color: "#FF6500",
+              color: "#00B248",
               textTransform: "uppercase",
               letterSpacing: "0.1em",
               marginBottom: "12px",
@@ -75,7 +75,7 @@ export function CompetitiveLimitsSection() {
               {/* Stars */}
               <div style={{ display: "flex", gap: "3px", marginBottom: "20px" }}>
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#FF6500">
+                  <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#00B248">
                     <path d="M7 1l1.545 3.09L12 4.635l-2.5 2.41.59 3.41L7 8.79l-3.09 1.665L4.5 7.045 2 4.635l3.455-.545L7 1z" />
                   </svg>
                 ))}
@@ -102,8 +102,8 @@ export function CompetitiveLimitsSection() {
                 </div>
                 <span
                   style={{
-                    backgroundColor: "rgba(255,101,0,0.08)",
-                    color: "#FF6500",
+                    backgroundColor: "rgba(0,178,72,0.08)",
+                    color: "#00B248",
                     fontSize: "12px",
                     fontWeight: 700,
                     padding: "4px 10px",
@@ -128,7 +128,7 @@ export function CompetitiveLimitsSection() {
               gap: "8px",
               fontSize: "14px",
               fontWeight: 600,
-              color: "#FF6500",
+              color: "#00B248",
               textDecoration: "none",
               transition: "opacity 0.15s",
             }}

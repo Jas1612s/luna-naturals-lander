@@ -14,7 +14,7 @@ const legalLinks = [
 function RampLogoIcon() {
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect width="28" height="28" rx="6" fill="#FF6500" />
+      <rect width="28" height="28" rx="6" fill="#00B248" />
       <path d="M8 20V8h7.2c1.4 0 2.5.4 3.3 1.1.8.7 1.2 1.7 1.2 2.9 0 .9-.2 1.7-.7 2.3-.4.6-1 1.1-1.8 1.4l3 4.3h-3.1L14.5 16H10.8v4H8zm2.8-6.5h4.1c.7 0 1.2-.2 1.6-.5.4-.3.6-.8.6-1.4 0-.6-.2-1.1-.6-1.4-.4-.3-.9-.5-1.6-.5h-4.1v3.8z" fill="white" />
     </svg>
   );
