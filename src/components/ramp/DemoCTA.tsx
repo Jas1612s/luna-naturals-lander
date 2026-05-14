@@ -8,7 +8,7 @@ export function DemoCTA() {
   return (
     <section
       style={{
-        background: "linear-gradient(135deg, #0A0F1E 0%, #1a1f35 100%)",
+        background: "linear-gradient(135deg, #0A0F1E 0%, #131928 100%)",
       }}
       className="py-20 lg:py-28"
     >
@@ -35,14 +35,13 @@ export function DemoCTA() {
           style={{
             fontSize: "clamp(32px, 4vw, 60px)",
             fontWeight: 800,
-            letterSpacing: "-0.035em",
+            letterSpacing: "-0.04em",
             lineHeight: 1.05,
             color: "white",
             marginBottom: "20px",
-            fontFamily: "var(--font-plus-jakarta-sans)",
           }}
         >
-          Get started today.
+          Get started for free today.
         </h2>
 
         {/* Paragraph */}
@@ -55,15 +54,15 @@ export function DemoCTA() {
             lineHeight: 1.6,
           }}
         >
-          Join 25,000+ businesses that use Ramp to save time and money. No personal credit check. No
-          hidden fees.
+          Join 50,000+ businesses that use Ramp to save time and money. No personal credit check.
+          No hidden fees. Free to start.
         </p>
 
         {/* Email form */}
         <form
           onSubmit={(e) => e.preventDefault()}
           className="flex flex-col sm:flex-row gap-3 mx-auto mb-8"
-          style={{ maxWidth: "420px" }}
+          style={{ maxWidth: "440px" }}
         >
           <input
             type="email"
@@ -79,7 +78,10 @@ export function DemoCTA() {
               fontSize: "14px",
               color: "white",
               outline: "none",
+              transition: "border-color 0.15s",
             }}
+            onFocus={(e) => { e.currentTarget.style.borderColor = "#FF6500"; }}
+            onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; }}
             className="placeholder:text-[rgba(255,255,255,0.4)]"
           />
           <button
@@ -90,12 +92,14 @@ export function DemoCTA() {
               borderRadius: "9999px",
               padding: "14px 24px",
               fontSize: "14px",
-              fontWeight: 600,
+              fontWeight: 700,
               border: "none",
               cursor: "pointer",
               whiteSpace: "nowrap",
+              transition: "opacity 0.15s",
             }}
-            className="transition-opacity hover:opacity-90"
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.88"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
           >
             Get started for free
           </button>
@@ -114,29 +118,20 @@ export function DemoCTA() {
               gap: "8px",
               color: "rgba(255,255,255,0.45)",
               fontSize: "14px",
+              transition: "color 0.15s",
             }}
-            className="transition-opacity hover:opacity-70"
+            onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.7)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.45)"; }}
           >
-            {/* Play button circle icon */}
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 28 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <circle cx="14" cy="14" r="13.5" stroke="rgba(255,255,255,0.2)" />
-              <path
-                d="M11.5 10.5L19 14L11.5 17.5V10.5Z"
-                fill="rgba(255,255,255,0.45)"
-              />
+              <path d="M11.5 10.5L19 14L11.5 17.5V10.5Z" fill="rgba(255,255,255,0.45)" />
             </svg>
             Watch demo · See Ramp in action
           </button>
         </div>
 
-        {/* 2-minute tour pill */}
+        {/* Book a demo pill */}
         <div className="flex justify-center">
           <a
             href="#"
@@ -147,10 +142,12 @@ export function DemoCTA() {
               padding: "10px 20px",
               fontSize: "14px",
               textDecoration: "none",
+              transition: "opacity 0.15s",
             }}
-            className="transition-opacity hover:opacity-70"
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.7"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
           >
-            Take the 2-minute tour
+            Book a personalized demo
           </a>
         </div>
       </div>

@@ -1,22 +1,7 @@
 const companies = [
-  "Stripe",
-  "Notion",
-  "Discord",
-  "Shopify",
-  "Visa",
-  "Eventbrite",
-  "Webflow",
-  "Quora",
-  "Virgin Voyages",
-  "CBRE",
-  "Poshmark",
-  "Sierra Nevada",
-  "GoodRx",
-  "Barry's",
-  "Opendoor",
-  "Zola",
-  "Kumon",
-  "Anduril",
+  "Shopify", "Notion", "Webflow", "Eventbrite", "Poshmark",
+  "Quora", "CBRE", "Anduril", "GoodRx", "Opendoor",
+  "Virgin Voyages", "Sierra Nevada", "Zola", "Discord", "Barry's",
 ];
 
 export function CustomerLogos() {
@@ -26,34 +11,41 @@ export function CustomerLogos() {
         backgroundColor: "#F7F7F4",
         borderTop: "1px solid #E4E1DB",
         borderBottom: "1px solid #E4E1DB",
+        overflow: "hidden",
       }}
       className="py-10"
     >
-      <div
-        className="mx-auto px-6"
-        style={{ maxWidth: "1280px" }}
-      >
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
         <p
-          className="text-center mb-8"
           style={{
+            textAlign: "center",
+            marginBottom: "28px",
             fontSize: "11px",
-            fontWeight: 600,
+            fontWeight: 700,
             color: "#8A8A8A",
             textTransform: "uppercase",
-            letterSpacing: "0.08em",
+            letterSpacing: "0.1em",
           }}
         >
-          Trusted by 25,000+ businesses
+          Trusted by 50,000+ businesses
         </p>
-        <div className="flex flex-wrap justify-center gap-x-10 gap-y-5">
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "8px 32px",
+          }}
+        >
           {companies.map((company) => (
             <span
               key={company}
               style={{
                 fontSize: "15px",
-                fontWeight: 600,
-                color: "#C0BCBC",
+                fontWeight: 700,
+                color: "#C8C4C4",
                 letterSpacing: "-0.02em",
+                userSelect: "none",
               }}
             >
               {company}

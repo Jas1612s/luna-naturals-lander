@@ -34,7 +34,7 @@ export function NewsletterSection() {
             marginBottom: "12px",
           }}
         >
-          Product newsletter
+          Finance leadership
         </p>
 
         {/* Heading */}
@@ -46,10 +46,9 @@ export function NewsletterSection() {
             lineHeight: 1.1,
             color: "#0F0F0F",
             marginBottom: "12px",
-            fontFamily: "var(--font-plus-jakarta-sans)",
           }}
         >
-          Be first to know what Ramp ships next.
+          Stay sharp with the Ramp finance newsletter.
         </h3>
 
         {/* Body */}
@@ -61,7 +60,8 @@ export function NewsletterSection() {
             marginBottom: "24px",
           }}
         >
-          Join 350,000+ finance pros getting product updates in their inbox.
+          Join 30,000+ finance leaders who get weekly insights on spend management, accounting
+          automation, and the future of finance.
         </p>
 
         {/* Success state */}
@@ -123,7 +123,7 @@ export function NewsletterSection() {
             <button
               type="submit"
               style={{
-                backgroundColor: "#0F0F0F",
+                backgroundColor: "#FF6500",
                 color: "white",
                 borderRadius: "9999px",
                 padding: "12px 24px",
@@ -135,7 +135,7 @@ export function NewsletterSection() {
               }}
               className="transition-opacity hover:opacity-85"
             >
-              Get monthly updates
+              Subscribe
             </button>
           </form>
         )}

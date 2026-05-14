@@ -1,216 +1,145 @@
-import Image from "next/image";
+"use client";
 
-const bullets = [
-  "No personal credit check required",
-  "Limits based on your actual business financials",
-  "No personal guarantee or liability",
-  "Available for businesses of all sizes",
+const testimonials = [
+  {
+    quote: "Ramp has saved us 10 hours a week in expense management. The automation is incredible — receipts match automatically and reports close themselves.",
+    author: "Sarah Chen",
+    title: "VP Finance",
+    company: "Notion",
+    metric: "10 hrs/week saved",
+  },
+  {
+    quote: "We replaced three separate tools with Ramp. Implementation took two weeks. The savings and visibility we get are something we couldn't achieve before.",
+    author: "Marcus Rivera",
+    title: "CFO",
+    company: "Webflow",
+    metric: "3 tools replaced",
+  },
+  {
+    quote: "The spend controls are unmatched. We can set merchant-level restrictions in real time. It's the only corporate card platform that actively helps us save money.",
+    author: "Jennifer Walsh",
+    title: "Head of Finance",
+    company: "Shopify",
+    metric: "$2.4M saved",
+  },
 ];
-
-function OrangeCheck() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 18 18"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      style={{ flexShrink: 0 }}
-    >
-      <circle cx="9" cy="9" r="9" fill="rgba(255,101,0,0.1)" />
-      <path
-        d="M5.5 9.5L7.5 11.5L12.5 6.5"
-        stroke="#FF6500"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 export function CompetitiveLimitsSection() {
   return (
     <section style={{ backgroundColor: "#ffffff" }} className="py-20 lg:py-28">
-      <div className="mx-auto px-6" style={{ maxWidth: "1280px" }}>
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          {/* Left column: text */}
-          <div>
-            {/* Badge */}
-            <div className="mb-5 inline-block">
-              <span
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
+        {/* Header */}
+        <div style={{ marginBottom: "56px", textAlign: "center" }}>
+          <p
+            style={{
+              fontSize: "11px",
+              fontWeight: 700,
+              color: "#FF6500",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              marginBottom: "12px",
+            }}
+          >
+            Customer stories
+          </p>
+          <h2
+            style={{
+              fontSize: "clamp(28px, 3.5vw, 52px)",
+              fontWeight: 800,
+              lineHeight: 1.06,
+              letterSpacing: "-0.04em",
+              color: "#0F0F0F",
+            }}
+          >
+            Loved by finance teams everywhere.
+          </h2>
+        </div>
+
+        {/* Testimonial cards */}
+        <div
+          className="grid grid-cols-1 lg:grid-cols-3"
+          style={{ gap: "24px" }}
+        >
+          {testimonials.map((t) => (
+            <div
+              key={t.company}
+              style={{
+                background: "#F7F7F4",
+                border: "1px solid #E4E1DB",
+                borderRadius: "20px",
+                padding: "32px",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              {/* Stars */}
+              <div style={{ display: "flex", gap: "3px", marginBottom: "20px" }}>
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#FF6500">
+                    <path d="M7 1l1.545 3.09L12 4.635l-2.5 2.41.59 3.41L7 8.79l-3.09 1.665L4.5 7.045 2 4.635l3.455-.545L7 1z" />
+                  </svg>
+                ))}
+              </div>
+
+              {/* Quote */}
+              <p
                 style={{
-                  backgroundColor: "rgba(255,101,0,0.08)",
-                  color: "#FF6500",
-                  fontSize: "11px",
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.08em",
-                  padding: "4px 12px",
-                  borderRadius: "9999px",
+                  fontSize: "15px",
+                  lineHeight: 1.65,
+                  color: "#3D3D3D",
+                  flex: 1,
+                  marginBottom: "24px",
                 }}
               >
-                Credit Limits
-              </span>
-            </div>
+                &ldquo;{t.quote}&rdquo;
+              </p>
 
-            {/* Heading */}
-            <h2
-              style={{
-                fontSize: "clamp(28px, 3vw, 48px)",
-                fontWeight: 800,
-                lineHeight: 1.08,
-                letterSpacing: "-0.03em",
-                color: "#0F0F0F",
-                marginBottom: "20px",
-              }}
-            >
-              Unlock competitive limits
-            </h2>
-
-            {/* Paragraph */}
-            <p
-              style={{
-                fontSize: "clamp(16px, 1.2vw, 18px)",
-                lineHeight: 1.6,
-                color: "#595959",
-                maxWidth: "480px",
-                marginBottom: "28px",
-              }}
-            >
-              Get competitive credit limits based on real-time business financials and no personal
-              guarantees. Stop being held back by limits designed for someone else&apos;s business.
-            </p>
-
-            {/* Bullet list */}
-            <ul className="mb-8 flex flex-col gap-3" style={{ listStyle: "none", padding: 0, margin: "0 0 32px" }}>
-              {bullets.map((item) => (
-                <li key={item} className="flex items-center gap-3">
-                  <OrangeCheck />
-                  <span style={{ fontSize: "15px", color: "#595959", lineHeight: 1.5 }}>
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            {/* CTA */}
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 transition-opacity hover:opacity-85"
-              style={{
-                backgroundColor: "#FF6500",
-                color: "white",
-                borderRadius: "9999px",
-                padding: "12px 24px",
-                fontSize: "14px",
-                fontWeight: 600,
-                textDecoration: "none",
-              }}
-            >
-              Get started for free
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-
-          {/* Right column: image with floating pill */}
-          <div className="relative pb-8">
-            <div className="overflow-hidden rounded-2xl shadow-2xl">
-              <Image
-                src="/images/ramp/higher-limits.webp"
-                alt="Ramp higher credit limits dashboard"
-                width={1376}
-                height={768}
-                className="w-full rounded-2xl"
-              />
-            </div>
-
-            {/* Floating dark pill overlay */}
-            <div
-              style={{
-                position: "absolute",
-                bottom: "-16px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                background: "#0A0F1E",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: "16px",
-                padding: "16px 20px",
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "24px",
-                whiteSpace: "nowrap",
-              }}
-            >
-              {/* Left: Traditional banks */}
-              <div>
-                <p
+              {/* Author */}
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div>
+                  <div style={{ fontSize: "14px", fontWeight: 700, color: "#0F0F0F" }}>{t.author}</div>
+                  <div style={{ fontSize: "12px", color: "#8A8A8A" }}>{t.title}, {t.company}</div>
+                </div>
+                <span
                   style={{
-                    fontSize: "9px",
-                    color: "rgba(255,255,255,0.3)",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                    margin: "0 0 4px",
-                    fontWeight: 600,
-                  }}
-                >
-                  Traditional banks
-                </p>
-                <p
-                  style={{
-                    fontSize: "22px",
-                    fontWeight: 800,
-                    color: "rgba(255,255,255,0.25)",
-                    margin: 0,
-                    lineHeight: 1,
-                  }}
-                >
-                  $25K
-                </p>
-              </div>
-
-              {/* Right: With Ramp */}
-              <div>
-                <p
-                  style={{
-                    fontSize: "9px",
-                    color: "rgba(255,255,255,0.5)",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                    margin: "0 0 4px",
-                    fontWeight: 600,
-                  }}
-                >
-                  With Ramp
-                </p>
-                <p
-                  style={{
-                    fontSize: "22px",
-                    fontWeight: 800,
+                    backgroundColor: "rgba(255,101,0,0.08)",
                     color: "#FF6500",
-                    margin: 0,
-                    lineHeight: 1,
+                    fontSize: "12px",
+                    fontWeight: 700,
+                    padding: "4px 10px",
+                    borderRadius: "9999px",
+                    whiteSpace: "nowrap",
                   }}
                 >
-                  $500K
-                </p>
+                  {t.metric}
+                </span>
               </div>
             </div>
-          </div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div style={{ textAlign: "center", marginTop: "48px" }}>
+          <a
+            href="#"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              fontSize: "14px",
+              fontWeight: 600,
+              color: "#FF6500",
+              textDecoration: "none",
+              transition: "opacity 0.15s",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.7"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
+          >
+            Read all customer stories
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
