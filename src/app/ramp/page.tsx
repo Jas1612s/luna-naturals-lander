@@ -1,5 +1,6 @@
 import { RampNav } from "@/components/ramp/RampNav";
 import { RampHero } from "@/components/ramp/RampHero";
+import { TradeAssessment } from "@/components/ramp/TradeAssessment";
 import { CustomerLogos } from "@/components/ramp/CustomerLogos";
 import { SpendVisibilitySection } from "@/components/ramp/SpendVisibilitySection";
 import { ControlSpendSection } from "@/components/ramp/ControlSpendSection";
@@ -15,6 +16,7 @@ export default function RampHomePage() {
       <RampNav />
       <main>
         <RampHero />
+        <TradeAssessment />
         <CustomerLogos />
         <SpendVisibilitySection />
         <ControlSpendSection />
