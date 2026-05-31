@@ -125,3 +125,325 @@
     display: none;
   }
 }
+
+/* ─────────────────────────────────────────────────────────
+   LUNA NATURALS clone — scoped design tokens
+   ───────────────────────────────────────────────────────── */
+.luna-root {
+  --ln-orange: #f26a3e;
+  --ln-dark: #1d1d1d;
+  --ln-olive: #2a2e16;
+  --ln-cream: #ffecdc;
+  --ln-gray: #f2f2f2;
+  --ln-white: #ffffff;
+  --ln-border: #d1d1d1;
+  font-family: "Jost", system-ui, sans-serif;
+  color: var(--ln-dark);
+}
+
+.luna-root .ln-heading {
+  font-family: "Josefin Sans", system-ui, sans-serif;
+}
+
+/* ─────────────────────────────────────────────────────────
+   NATPAT clone — scoped design tokens + custom font
+   ───────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Urbane";
+  src: url("/fonts/natpat/urbane-bold.woff2") format("woff2"),
+       url("/fonts/natpat/urbane-bold.woff") format("woff");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.natpat-root {
+  --np-primary: #1F4FC9;
+  --np-midnight: #1F1F5B;
+  --np-pink: #FF209E;
+  --np-green: #19714B;
+  --np-purple: #9D38F4;
+  --np-bg: #F0F0F4;
+  --np-blue-light: #93C3E9;
+  --np-hover-blue: #1DA7F8;
+  --font-barlow: var(--font-barlow), "Barlow", system-ui, sans-serif;
+  font-family: "Barlow", system-ui, sans-serif;
+  color: var(--np-midnight);
+}
+
+.natpat-root .np-heading {
+  font-family: "Urbane", "Barlow", system-ui, sans-serif;
+}
+
+@keyframes np-wave {
+  0%   { transform: translate(-10px); }
+  30%  { transform: translate(-30px); }
+  50%  { transform: rotate(-5deg) translate(-50px); }
+  60%  { transform: rotate(0deg) translate(-50px); }
+  70%  { transform: rotate(-5deg) translate(-50px); }
+  80%  { transform: rotate(0deg) translate(-50px); }
+  100% { transform: translate(-10px); }
+}
+
+@keyframes np-bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40%  { transform: translateY(-15px); }
+  60%  { transform: translateY(-7px); }
+}
+
+/* ─────────────────────────────────────────────────────────
+   HiStrips — Brown Nasal Strips product page
+   ───────────────────────────────────────────────────────── */
+.histrips-root {
+  --hs-dark: #0f1115;
+  --hs-cream: #f5f3ef;
+  --hs-white: #ffffff;
+  --hs-text: #1c1c1c;
+  --hs-text-dark: #090909;
+  --hs-navy: #0F2147;
+  --hs-green: #2BB673;
+  --hs-border: #E4E3E1;
+  --hs-border-light: #ededed;
+  --hs-grad-pink: linear-gradient(90deg, #FF3492 0%, #DD33ED 100%);
+  --hs-grad-text: linear-gradient(93deg, #1D1D1D 22.39%, rgba(138, 138, 138, 0.80) 79.95%);
+
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
+  color: var(--hs-text);
+  background-color: var(--hs-white);
+}
+
+/* Gradient text utility */
+.histrips-root .hs-gradient-text {
+  background: var(--hs-grad-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Announcement bar marquee */
+@keyframes hs-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.hs-marquee-track {
+  display: flex;
+  animation: hs-marquee 20s linear infinite;
+}
+
+.hs-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Influencer marquee (faster) */
+@keyframes hs-marquee-slow {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.hs-influencer-track {
+  display: flex;
+  animation: hs-marquee-slow 30s linear infinite;
+}
+
+/* Fade-in on scroll */
+@keyframes hs-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hs-fade-up {
+  animation: hs-fade-up 0.6s ease forwards;
+}
+
+/* ─────────────────────────────────────────────
+   LUNA NATURALS
+   ───────────────────────────────────────────── */
+.luna-root {
+  --luna-dark: #2a2e16;
+  --luna-orange: #f26a3e;
+  --luna-cream: #ffecdc;
+  --luna-offwhite: #f4f4f4;
+  --luna-white: #ffffff;
+  --luna-text: #1D1D1D;
+  --luna-muted: #666666;
+  --luna-border: #e5e5e5;
+  --luna-grad: linear-gradient(135deg, #f26a3e 0%, #e05030 100%);
+
+  font-family: var(--font-jost), "Jost", system-ui, sans-serif;
+  color: var(--luna-text);
+  background-color: var(--luna-white);
+}
+
+@keyframes luna-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.luna-marquee-track {
+  display: flex;
+  animation: luna-marquee 30s linear infinite;
+}
+
+.luna-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ─────────────────────────────────────────────────────────
+   EVERYDAY DOSE — mushroom coffee homepage clone
+   ───────────────────────────────────────────────────────── */
+.everydaydose-root {
+  --ed-dark: #231f20;
+  --ed-purple: #4C19D8;
+  --ed-purple-light: #6B3CE6;
+  --ed-blue: #05C2F7;
+  --ed-pink: #E749FF;
+  --ed-white: #ffffff;
+  --ed-gray: #f3f4f6;
+  --ed-gray-border: #d5d5d5;
+  --ed-text: #231f20;
+  --ed-text-muted: #666666;
+  --ed-gradient: linear-gradient(90deg, rgba(5, 194, 247, 0.8) 0.9%, rgba(231, 73, 255, 0.71) 100%);
+  --ed-gradient-cta: linear-gradient(90deg, #05C2F7, #E749FF);
+
+  font-family: "Avenir", var(--font-montserrat), system-ui, sans-serif;
+  color: var(--ed-text);
+  background-color: var(--ed-white);
+}
+
+.everydaydose-root .ed-heading {
+  font-family: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
+  font-weight: 700;
+}
+
+@keyframes ed-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ed-marquee-track {
+  display: flex;
+  animation: ed-marquee 20s linear infinite;
+}
+
+.ed-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes ed-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ed-fade-up {
+  animation: ed-fade-up 0.6s ease forwards;
+}
+
+/* ─────────────────────────────────────────────────────────
+   SMOOCHE — Extreme Lip Plumper PDP clone
+   ───────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Sohne";
+  src: url("/fonts/smooche/sohne-300.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sohne";
+  src: url("/fonts/smooche/sohne-400.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sohne";
+  src: url("/fonts/smooche/sohne-500.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sohne";
+  src: url("/fonts/smooche/sohne-600.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sohne";
+  src: url("/fonts/smooche/sohne-700.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sohne";
+  src: url("/fonts/smooche/sohne-800.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+.smooche-root {
+  /* Primary / deep burgundy */
+  --sm-burgundy: #5A1726;
+  --sm-burgundy-light: #6B1F30;
+  /* Soft blush */
+  --sm-blush: #E8C4B8;
+  --sm-blush-light: #EBD3C7;
+  --sm-blush-bg: #F5EAE4;
+  /* Gold accent */
+  --sm-gold: #C8A45C;
+  --sm-gold-dark: #B8924A;
+  /* Cherry red (secondary pop) */
+  --sm-cherry: #B01E3C;
+  --sm-cherry-light: #C42847;
+  /* Text */
+  --sm-text: #3D1018;
+  --sm-text-light: #5A2D35;
+  --sm-text-muted: #8B6B6B;
+  --sm-text-on-dark: #F5EDE6;
+  /* Backgrounds */
+  --sm-bg: #ffffff;
+  --sm-bg-light: #F5EAE4;
+  --sm-bg-blush: #EBD3C7;
+  /* Utilities */
+  --sm-border: #D4B5AB;
+  --sm-radius: 10px;
+
+  font-family: "Sohne", system-ui, sans-serif;
+  color: var(--sm-text);
+  background-color: var(--sm-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes sm-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.sm-marquee-track {
+  display: flex;
+  animation: sm-marquee 15s linear infinite;
+}
+
+@keyframes sm-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sm-fade-up {
+  animation: sm-fade-up 0.6s ease forwards;
+}
+
+.sm-footer-link {
+  color: rgba(245, 237, 230, 0.7);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.sm-footer-link:hover {
+  color: #C8A45C;
+}
