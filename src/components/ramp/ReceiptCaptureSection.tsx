@@ -1,31 +1,62 @@
 "use client";
 
+import Image from "next/image";
+
+function AnomalyIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00B248" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35M11 8v3M11 14h.01" />
+    </svg>
+  );
+}
+function SavingsIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00B248" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
+    </svg>
+  );
+}
+function InsightsIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00B248" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M18 20V10M12 20V4M6 20v-6" />
+    </svg>
+  );
+}
+function AccelerationIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00B248" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+    </svg>
+  );
+}
+
 const aiFeatures = [
   {
-    icon: "🔍",
-    title: "Anomaly detection",
-    desc: "Automatically flags duplicate charges, out-of-policy spend, and unusual patterns before they become problems.",
+    Icon: AnomalyIcon,
+    title: "Invoice verification in seconds",
+    desc: "Our AI reads and validates your invoices instantly — checking for eligibility, duplicate submissions, and fraud signals before you ever talk to a human.",
   },
   {
-    icon: "💡",
-    title: "Proactive savings",
-    desc: "Identifies negotiation opportunities, underutilized subscriptions, and vendor consolidation across your entire spend.",
+    Icon: SavingsIcon,
+    title: "Dynamic credit sizing",
+    desc: "Your facility limit grows automatically as your revenue scales. Ramp monitors your Shopify, Amazon, and bank data to increase your line without you asking.",
   },
   {
-    icon: "📊",
-    title: "Instant insights",
-    desc: "Real-time dashboards show exactly where every dollar goes — by employee, team, vendor, or category.",
+    Icon: InsightsIcon,
+    title: "Real-time cash flow forecasting",
+    desc: "See exactly when invoices will pay out, what's available to draw, and how your working capital position looks over the next 30, 60, and 90 days.",
   },
   {
-    icon: "⚡",
-    title: "Month-end acceleration",
-    desc: "Automatic GL coding, ERP sync, and statement reconciliation cuts close time by 75% on average.",
+    Icon: AccelerationIcon,
+    title: "One-click draw-down",
+    desc: "Once approved, drawing funds takes seconds — not days. No forms, no calls, no waiting. Cash hits your account within one business day.",
   },
 ];
 
 export function ReceiptCaptureSection() {
   return (
-    <section style={{ backgroundColor: "#F7F7F4" }} className="py-20 lg:py-28">
+    <section style={{ backgroundColor: "#07090F" }} className="py-20 lg:py-28">
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
         {/* Header */}
         <div style={{ marginBottom: "56px" }}>
@@ -44,27 +75,47 @@ export function ReceiptCaptureSection() {
           <h2
             style={{
               fontSize: "clamp(28px, 3.5vw, 52px)",
-              fontWeight: 800,
+              fontWeight: 900,
               lineHeight: 1.06,
-              letterSpacing: "-0.04em",
-              color: "#0F0F0F",
+              letterSpacing: "-0.05em",
+              color: "#ffffff",
               maxWidth: "560px",
             }}
           >
-            AI that actively saves your company money.
+            AI-powered underwriting. Human-speed decisions.
           </h2>
           <p
             style={{
               fontSize: "clamp(15px, 1.1vw, 17px)",
               lineHeight: 1.65,
-              color: "#595959",
+              color: "rgba(255,255,255,0.55)",
               maxWidth: "520px",
               marginTop: "16px",
             }}
           >
-            Ramp&apos;s AI engine analyzes every transaction in real time — surfacing savings opportunities,
-            flagging anomalies, and automating the financial ops your team used to do manually.
+            Traditional lenders take weeks to assess your business. Ramp&apos;s AI reads your invoices,
+            sales data, and payment history in real time — so you get a decision in hours, not months.
           </p>
+        </div>
+
+        {/* AI image */}
+        <div
+          style={{
+            borderRadius: "20px",
+            overflow: "hidden",
+            border: "1px solid rgba(255,255,255,0.08)",
+            marginBottom: "40px",
+            boxShadow: "0 24px 64px rgba(0,0,0,0.4)",
+          }}
+        >
+          <Image
+            src="/images/ramp/ai-underwriting.webp"
+            alt="AI-powered invoice underwriting dashboard"
+            width={2752}
+            height={1536}
+            className="w-full"
+            style={{ display: "block" }}
+          />
         </div>
 
         {/* Feature cards grid */}
@@ -76,26 +127,31 @@ export function ReceiptCaptureSection() {
             <div
               key={f.title}
               style={{
-                background: "white",
-                border: "1px solid #E4E1DB",
+                background: "#111111",
+                border: "1px solid rgba(255,255,255,0.08)",
                 borderRadius: "20px",
                 padding: "28px 24px",
               }}
             >
               <div
                 style={{
-                  fontSize: "28px",
+                  width: "44px",
+                  height: "44px",
+                  borderRadius: "12px",
+                  backgroundColor: "rgba(0,178,72,0.1)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                   marginBottom: "16px",
-                  lineHeight: 1,
                 }}
               >
-                {f.icon}
+                <f.Icon />
               </div>
               <h3
                 style={{
                   fontSize: "16px",
                   fontWeight: 700,
-                  color: "#0F0F0F",
+                  color: "#ffffff",
                   marginBottom: "8px",
                   letterSpacing: "-0.01em",
                 }}
@@ -105,7 +161,7 @@ export function ReceiptCaptureSection() {
               <p
                 style={{
                   fontSize: "14px",
-                  color: "#595959",
+                  color: "rgba(255,255,255,0.55)",
                   lineHeight: 1.6,
                 }}
               >

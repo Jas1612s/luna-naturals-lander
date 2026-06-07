@@ -1,0 +1,79 @@
+{% comment %}
+  HiStrips — FAQ section
+  Clone of: histrips.com/products/nasal-histrips
+{% endcomment %}
+
+<div class="hs-pdp-page">
+  <div class="hs-faq-wrap" x-data="{ open: null }">
+    <div class="hs-faq-inner">
+      <h2 class="hs-faq-heading">{{ section.settings.heading | default: 'Frequently Asked Questions' }}</h2>
+
+      {%- for block in section.blocks -%}
+        <div class="hs-faq-item" :class="{ open: open === {{ forloop.index }} }" {{ block.shopify_attributes }}>
+          <button class="hs-faq-q" @click="open = open === {{ forloop.index }} ? null : {{ forloop.index }}">
+            <span>{{ block.settings.question }}</span>
+            <span class="hs-faq-icon">+</span>
+          </button>
+          <div class="hs-faq-a">{{ block.settings.answer }}</div>
+        </div>
+      {%- endfor -%}
+
+      {%- comment -%} Default FAQs if none added {%- endcomment -%}
+      {%- if section.blocks.size == 0 -%}
+        {%- assign default_faqs = "Will they stay on during intense workouts?|Yes! HiStrips uses a strong yet gentle adhesive that keeps them in place, even during intense workouts or active movement.;What makes HiStrips different from other nasal strips?|1. Premium adhesive that stays on even during sweat and sleep (72h). 2. Bold design — finally something that looks good. 3. Sleek resealable pouch with 30 strips per pack. 4. Trusted by 150,000+ athletes worldwide. 5. Developed for performance, recovery, and aesthetics.;How many strips are in a pack?|Each pack contains 30 strips, giving you a full month of nightly or daily use.;Is it safe for sensitive skin?|Yes — HiStrips are made with hypoallergenic, FDA-registered materials gentle enough for daily wear.;Do they work for snoring?|Many users report a significant reduction in snoring due to improved nasal airflow." | split: ";" -%}
+        {%- assign faq_i = 0 -%}
+        {%- for faq_pair in default_faqs -%}
+          {%- assign faq_parts = faq_pair | split: "|" -%}
+          {%- assign faq_i = forloop.index -%}
+          <div class="hs-faq-item" :class="{ open: open === {{ faq_i }} }">
+            <button class="hs-faq-q" @click="open = open === {{ faq_i }} ? null : {{ faq_i }}">
+              <span>{{ faq_parts[0] }}</span>
+              <span class="hs-faq-icon">+</span>
+            </button>
+            <div class="hs-faq-a">{{ faq_parts[1] }}</div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "HiStrips FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Will they stay on during workouts?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Yes! HiStrips uses a strong yet gentle adhesive."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HiStrips FAQ"
+    }
+  ]
+}
+{% endschema %}

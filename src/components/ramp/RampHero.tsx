@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 function StarRow() {
@@ -63,7 +64,7 @@ export function RampHero() {
                   color: "rgba(255,255,255,0.55)",
                 }}
               >
-                2,000+ 5-star reviews · #1 on G2
+                2,000+ e-commerce founders funded · #1 rated
               </span>
             </div>
 
@@ -71,15 +72,15 @@ export function RampHero() {
             <h1
               style={{
                 fontSize: "clamp(38px, 5vw, 72px)",
-                fontWeight: 800,
+                fontWeight: 900,
                 lineHeight: 1.03,
-                letterSpacing: "-0.04em",
+                letterSpacing: "-0.05em",
                 color: "#ffffff",
                 marginBottom: "24px",
               }}
             >
-              Finance that works{" "}
-              <span style={{ color: "#00B248" }}>as hard as you do.</span>
+              Stop waiting net-60.{" "}
+              <span style={{ color: "#00B248" }}>Fund your next order today.</span>
             </h1>
 
             {/* Subheadline */}
@@ -92,9 +93,9 @@ export function RampHero() {
                 marginBottom: "36px",
               }}
             >
-              Ramp brings together corporate cards, expense management, accounts
-              payable, travel, procurement, and accounting automation — helping
-              companies save 3.3% on average.
+              Ramp advances up to 90% of your outstanding invoices and purchase
+              orders so you can restock inventory, scale ad spend, and grow —
+              without giving up equity or waiting 60 days to get paid.
             </p>
 
             {/* CTA form */}
@@ -142,32 +143,56 @@ export function RampHero() {
                   onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.88"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
                 >
-                  Get started for free
+                  Check my eligibility
                 </button>
               </div>
             </form>
 
-            {/* Book demo */}
-            <button
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-                background: "none",
-                border: "none",
-                padding: "0",
-                cursor: "pointer",
-                color: "rgba(255,255,255,0.45)",
-                fontSize: "14px",
-                marginBottom: "48px",
-                transition: "color 0.15s",
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.7)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.45)"; }}
-            >
-              <PlayIcon />
-              Watch a product demo
-            </button>
+            {/* Secondary CTAs row */}
+            <div style={{ display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", marginBottom: "48px" }}>
+              <button
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  background: "none",
+                  border: "none",
+                  padding: "0",
+                  cursor: "pointer",
+                  color: "rgba(255,255,255,0.45)",
+                  fontSize: "14px",
+                  transition: "color 0.15s",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.7)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.45)"; }}
+              >
+                <PlayIcon />
+                See how it works
+              </button>
+
+              <span style={{ width: "1px", height: "18px", backgroundColor: "rgba(255,255,255,0.12)" }} />
+
+              <Link
+                href="/ramp/pre-qualification"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  fontSize: "14px",
+                  color: "#4ade80",
+                  textDecoration: "none",
+                  fontWeight: 500,
+                  transition: "opacity 0.15s",
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.75"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
+              >
+                Check my eligibility
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
 
             {/* Trust stat pills */}
             <div
@@ -175,9 +200,9 @@ export function RampHero() {
               style={{ gap: "12px" }}
             >
               {[
-                { value: "50,000+", label: "businesses" },
-                { value: "27.5M+", label: "hours saved" },
-                { value: "3.3%", label: "avg savings" },
+                { value: "$500M+", label: "advanced to brands" },
+                { value: "90%", label: "avg advance rate" },
+                { value: "24hrs", label: "avg time to fund" },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -235,8 +260,8 @@ export function RampHero() {
               }}
             >
               <Image
-                src="/images/ramp/hero.webp"
-                alt="Ramp spend management dashboard"
+                src="/images/ramp/hero-invoice.webp"
+                alt="Ramp invoice financing dashboard"
                 width={1200}
                 height={800}
                 className="w-full"

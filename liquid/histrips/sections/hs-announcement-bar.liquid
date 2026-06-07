@@ -1,0 +1,16 @@
+{% assign messages = "Free Shipping On Orders $50+,The #1 Nasal Strip For Athletes,Doctor Approved & Clinically Tested,30-Day Money-Back Guarantee,Free Shipping On Orders $50+,The #1 Nasal Strip For Athletes,Doctor Approved & Clinically Tested,30-Day Money-Back Guarantee" | split: "," %}
+
+<div class="hs-ann-bar">
+  <div class="hs-ann-track">
+    {% for msg in messages %}
+      <div class="hs-ann-item">{{ msg }}</div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "HiStrips Announcement Bar",
+  "settings": []
+}
+{% endschema %}

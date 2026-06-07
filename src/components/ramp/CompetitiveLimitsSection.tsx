@@ -2,31 +2,31 @@
 
 const testimonials = [
   {
-    quote: "Ramp has saved us 10 hours a week in expense management. The automation is incredible — receipts match automatically and reports close themselves.",
-    author: "Sarah Chen",
-    title: "VP Finance",
-    company: "Notion",
-    metric: "10 hrs/week saved",
+    quote: "We had a $400K purchase order from a major retailer and couldn't fill it. Ramp approved us in 6 hours and wired the supplier payment the next morning. That one order 3x'd our Q4.",
+    author: "James Okafor",
+    title: "Founder & CEO",
+    company: "Kova Goods",
+    metric: "3× Q4 revenue",
   },
   {
-    quote: "We replaced three separate tools with Ramp. Implementation took two weeks. The savings and visibility we get are something we couldn't achieve before.",
-    author: "Marcus Rivera",
-    title: "CFO",
-    company: "Webflow",
-    metric: "3 tools replaced",
+    quote: "Our bank wanted 3 months of financials, a business plan, and a personal guarantee. Ramp connected to our Shopify, looked at our invoices, and gave us a decision the same day. No comparison.",
+    author: "Priya Nair",
+    title: "Co-founder",
+    company: "Bloom DTC",
+    metric: "$1.2M facility",
   },
   {
-    quote: "The spend controls are unmatched. We can set merchant-level restrictions in real time. It's the only corporate card platform that actively helps us save money.",
-    author: "Jennifer Walsh",
-    title: "Head of Finance",
-    company: "Shopify",
-    metric: "$2.4M saved",
+    quote: "Net-60 terms from our distributors were killing our cash flow. With Ramp we get 90% of every invoice upfront and the rest when they pay. We finally stopped worrying about payroll timing.",
+    author: "Tom Reyes",
+    title: "CEO",
+    company: "Stackd Supplements",
+    metric: "Cash flow solved",
   },
 ];
 
 export function CompetitiveLimitsSection() {
   return (
-    <section style={{ backgroundColor: "#ffffff" }} className="py-20 lg:py-28">
+    <section style={{ backgroundColor: "#0A0A0A" }} className="py-20 lg:py-28">
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
         {/* Header */}
         <div style={{ marginBottom: "56px", textAlign: "center" }}>
@@ -40,18 +40,18 @@ export function CompetitiveLimitsSection() {
               marginBottom: "12px",
             }}
           >
-            Customer stories
+            Founder stories
           </p>
           <h2
             style={{
               fontSize: "clamp(28px, 3.5vw, 52px)",
-              fontWeight: 800,
+              fontWeight: 900,
               lineHeight: 1.06,
-              letterSpacing: "-0.04em",
-              color: "#0F0F0F",
+              letterSpacing: "-0.05em",
+              color: "#ffffff",
             }}
           >
-            Loved by finance teams everywhere.
+            E-commerce founders who stopped waiting.
           </h2>
         </div>
 
@@ -64,8 +64,8 @@ export function CompetitiveLimitsSection() {
             <div
               key={t.company}
               style={{
-                background: "#F7F7F4",
-                border: "1px solid #E4E1DB",
+                background: "#111111",
+                border: "1px solid rgba(255,255,255,0.08)",
                 borderRadius: "20px",
                 padding: "32px",
                 display: "flex",
@@ -86,7 +86,7 @@ export function CompetitiveLimitsSection() {
                 style={{
                   fontSize: "15px",
                   lineHeight: 1.65,
-                  color: "#3D3D3D",
+                  color: "rgba(255,255,255,0.75)",
                   flex: 1,
                   marginBottom: "24px",
                 }}
@@ -97,8 +97,8 @@ export function CompetitiveLimitsSection() {
               {/* Author */}
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div>
-                  <div style={{ fontSize: "14px", fontWeight: 700, color: "#0F0F0F" }}>{t.author}</div>
-                  <div style={{ fontSize: "12px", color: "#8A8A8A" }}>{t.title}, {t.company}</div>
+                  <div style={{ fontSize: "14px", fontWeight: 700, color: "#ffffff" }}>{t.author}</div>
+                  <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)" }}>{t.title}, {t.company}</div>
                 </div>
                 <span
                   style={{
@@ -135,7 +135,7 @@ export function CompetitiveLimitsSection() {
             onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.7"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
           >
-            Read all customer stories
+            Read all founder stories
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>

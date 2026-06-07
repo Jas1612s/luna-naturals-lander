@@ -8,21 +8,21 @@ interface Step {
 
 const STEPS: Step[] = [
   {
-    image: "/images/smooche/how-it-works-1.png",
+    image: "/images/smooche/how-it-works-1.webp",
     imageExt: "png",
     stepLabel: "Step 1",
     title: "Apply it to your lips",
     description: "Click the plumper a few times before using",
   },
   {
-    image: "/images/smooche/how-it-works-2.jpg",
+    image: "/images/smooche/how-it-works-2.webp",
     imageExt: "jpg",
     stepLabel: "Step 2",
     title: "Wait for 5-10 minutes",
     description: "Let smooche do its magic",
   },
   {
-    image: "/images/smooche/how-it-works-3.jpg",
+    image: "/images/smooche/how-it-works-3.webp",
     imageExt: "jpg",
     stepLabel: "Step 3",
     title: "See the magic happen",

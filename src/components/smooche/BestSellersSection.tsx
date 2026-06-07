@@ -10,28 +10,28 @@ interface Product {
 
 const PRODUCTS: Product[] = [
   {
-    image: "/images/smooche/bestseller-foundation.png",
+    image: "/images/smooche/bestseller-foundation.webp",
     subtitle: "Adapts to your skin tone",
     title: "Color Changing Foundation",
     salePrice: "$39 USD",
     comparePrice: "$59 USD",
   },
   {
-    image: "/images/smooche/bestseller-stain.png",
+    image: "/images/smooche/bestseller-stain.webp",
     subtitle: "For long lasting color",
     title: "Peel-off Lip Stain",
     salePrice: "$19 USD",
     comparePrice: "$29 USD",
   },
   {
-    image: "/images/smooche/bestseller-plumper.png",
+    image: "/images/smooche/bestseller-plumper.webp",
     subtitle: "For extreme results",
     title: "Extreme Lip Plumper",
     salePrice: "$39 USD",
     comparePrice: "$49 USD",
   },
   {
-    image: "/images/smooche/bestseller-mascara.png",
+    image: "/images/smooche/bestseller-mascara.webp",
     subtitle: "For longer lashes",
     title: "Long Lash Mascara",
     salePrice: "$19 USD",

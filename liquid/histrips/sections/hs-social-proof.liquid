@@ -1,0 +1,34 @@
+{% assign athletes = "taysom-hill,christian-mccaffrey,dak-prescott,deandre-hopkins,travis-kelce" | split: "," %}
+{% assign handles = "@taysomhill,@christianmccaffrey,@dak,@deandrehopkins,@tkelce" | split: "," %}
+
+<section class="hs-social-proof">
+  <div class="hs-sp-head">
+    <div class="hs-sp-label">TRUSTED BY THE PROS</div>
+    <div class="hs-sp-sub">Elite athletes who breathe better</div>
+  </div>
+
+  <div class="hs-sp-grid">
+    {% for athlete in athletes %}
+      <div class="hs-sp-card">
+        <img
+          src="{{ athlete | prepend: 'histrips-athlete-' | append: '.jpg' | asset_url }}"
+          alt="{{ handles[forloop.index0] }}"
+          loading="lazy"
+        >
+        <div class="hs-sp-handle">{{ handles[forloop.index0] }}</div>
+        <div class="hs-play-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5,3 19,12 5,21" />
+          </svg>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "HiStrips Social Proof",
+  "settings": []
+}
+{% endschema %}

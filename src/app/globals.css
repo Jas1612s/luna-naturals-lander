@@ -1,4 +1,8 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
@@ -195,19 +199,19 @@
    HiStrips — Brown Nasal Strips product page
    ───────────────────────────────────────────────────────── */
 .histrips-root {
-  --hs-dark: #0f1115;
-  --hs-cream: #f5f3ef;
+  --hs-dark: #2A2E16;
+  --hs-cream: #FADCC5;
   --hs-white: #ffffff;
-  --hs-text: #1c1c1c;
-  --hs-text-dark: #090909;
-  --hs-navy: #0F2147;
-  --hs-green: #2BB673;
-  --hs-border: #E4E3E1;
-  --hs-border-light: #ededed;
-  --hs-grad-pink: linear-gradient(90deg, #FF3492 0%, #DD33ED 100%);
-  --hs-grad-text: linear-gradient(93deg, #1D1D1D 22.39%, rgba(138, 138, 138, 0.80) 79.95%);
+  --hs-text: #2A2E16;
+  --hs-text-dark: #1E2110;
+  --hs-navy: #2A2E16;
+  --hs-green: #E8603C;
+  --hs-border: #D4D1C4;
+  --hs-border-light: #EDE6D8;
+  --hs-grad-pink: linear-gradient(90deg, #E8603C 0%, #C49B3D 100%);
+  --hs-grad-text: linear-gradient(93deg, #2A2E16 22.39%, rgba(139, 144, 119, 0.80) 79.95%);
 
-  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
+  font-family: var(--font-inter), "Urbanist", system-ui, sans-serif;
   color: var(--hs-text);
   background-color: var(--hs-white);
 }
@@ -446,4 +450,420 @@
 
 .sm-footer-link:hover {
   color: #C8A45C;
+}
+
+/* ─────────────────────────────────────────────────────────
+   EVERY MOOD — self-care essentials homepage clone
+   ───────────────────────────────────────────────────────── */
+.everymood-root {
+  --em-indigo: #2B3318;
+  --em-indigo-dark: #222A12;
+  --em-lime: #E4FF71;
+  --em-black: #2B3318;
+  --em-white: #ffffff;
+  --em-lavender: #D4D9C8;
+  --em-lavender-light: #EEF0E8;
+  --em-pink-tint: #F5F3F0;
+  --em-grey-bg: #F5F5F3;
+  --em-red: #C73C3C;
+  --em-text-muted: #6B7055;
+  --em-border: #D4D9C8;
+
+  font-family: var(--font-bricolage), "Bricolage Grotesque", system-ui, sans-serif;
+  color: var(--em-black);
+  background-color: var(--em-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+@keyframes em-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.em-marquee-track {
+  display: flex;
+  animation: em-marquee 25s linear infinite;
+}
+
+.em-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.em-as-seen-in-track {
+  animation: em-marquee 30s linear infinite;
+}
+
+@keyframes em-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.em-fade-up {
+  animation: em-fade-up 0.6s ease forwards;
+}
+
+/* ─────────────────────────────────────────────────────────
+   REST® — cooling bedding homepage clone
+   ───────────────────────────────────────────────────────── */
+.rest-root {
+  --rest-primary: #2A2E16;
+  --rest-secondary: #ffffff;
+  --rest-accent: #E8603C;
+  --rest-dark: #1E2110;
+  --rest-star: #C49B3D;
+  --rest-text: #2A2E16;
+  --rest-text-light: rgba(42, 46, 22, 0.56);
+  --rest-bg: #ffffff;
+  --rest-bg-alt: #F5EDE2;
+  --rest-border: #D4D1C4;
+  --rest-sf-content: #4A4D3A;
+  --rest-sf-content-muted: #8B9077;
+  --rest-container: 1280px;
+  --rest-section-padding: 80px;
+  --rest-grid-gap: 24px;
+  --rest-radius: 8px;
+  --rest-radius-desktop: 16px;
+  --rest-radius-mobile: 12px;
+  --rest-announcement-bar-height: 44px;
+  --rest-announcement-bar-height-mobile: 36px;
+  --rest-accent-teal: #C49B3D;
+  --rest-accent-red: #E8603C;
+  --rest-accent-success: #4A6B2A;
+  --rest-footer-bg: #1E2110;
+  --rest-cream: #FADCC5;
+  --rest-sage: #8B9077;
+  --rest-gold: #C49B3D;
+
+  font-family: var(--font-rest), "Urbanist", sans-serif;
+  color: var(--rest-text);
+  background-color: var(--rest-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes rest-hero-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+@keyframes rest-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes rest-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rest-fade-up {
+  animation: rest-fade-up 0.6s ease forwards;
+}
+
+@keyframes rest-press-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.rest-press-track {
+  display: flex;
+  animation: rest-press-scroll 30s linear infinite;
+}
+
+.rest-press-track:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 767px) {
+  .rest-root {
+    --rest-section-padding: 48px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   GRÜNS — superfood gummies homepage clone
+   ───────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Retail Display";
+  src: url("/fonts/gruns/retail-display.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.gruns-root {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gruns-root {
+    scroll-behavior: auto;
+  }
+}
+
+.gruns-root .scrollbar-hide {
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gruns-root {
+  --gr-green: #3A4428;
+  --gr-green-dark: #232B16;
+  --gr-green-deep: rgba(35, 43, 22, 0.97);
+  --gr-green-mid: #4E5C36;
+  --gr-yellow: #E85A2D;
+  --gr-cream: #F3EBDF;
+  --gr-cream-light: #F9F4EC;
+  --gr-cream-warm: #E8DECE;
+  --gr-white: #FDFAF6;
+  --gr-dark: #1C1B10;
+  --gr-sage: #6D7358;
+  --gr-accent: #D95B2F;
+  --gr-accent-light: #FDF0E8;
+  --gr-gold: #D4A637;
+  --gr-text-white: rgba(240, 223, 200, 0.97);
+  --gr-text-dark: rgba(28, 27, 16, 0.95);
+
+  font-family: var(--font-gruns-body), "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--gr-dark);
+  background-color: var(--gr-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gruns-root .gr-display {
+  font-family: "Retail Display", var(--font-gruns-body), sans-serif;
+}
+
+/* Subtle linen texture on cream backgrounds */
+.gruns-root {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.018'/%3E%3C/svg%3E");
+}
+
+/* Dark sections get a woodgrain-like subtle texture */
+.gruns-root [style*="--gr-green-dark"],
+.gruns-root .bg-\[var\(--gr-green-dark\)\] {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+@keyframes gr-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.gr-marquee-track {
+  display: flex;
+  animation: gr-marquee 25s linear infinite;
+}
+
+.gr-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes gr-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.gr-fade-up {
+  animation: gr-fade-up 0.6s ease forwards;
+}
+
+/* EveryMood Nav responsive */
+@media (max-width: 767px) {
+  .em-desktop-nav {
+    display: none !important;
+  }
+  .em-mobile-menu-btn {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .em-mobile-menu {
+    display: none !important;
+  }
+}
+
+/* EveryMood Mobile Responsive */
+@media (max-width: 767px) {
+  /* Nav */
+  .everymood-root header {
+    padding: 12px 16px !important;
+    height: auto !important;
+  }
+  .everymood-root header img {
+    height: 60px !important;
+  }
+
+  /* Hero */
+  .em-hero-grid {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+  .em-hero-grid > div:first-child {
+    min-height: 60vh;
+  }
+  .em-hero-grid > div:last-child {
+    min-height: 50vh;
+  }
+  .em-hero-overlay {
+    bottom: 32px !important;
+    left: 16px !important;
+    right: 16px !important;
+  }
+  .em-hero-overlay p {
+    font-size: 22px !important;
+    line-height: 30px !important;
+  }
+  .em-hero-overlay a {
+    font-size: 14px !important;
+    padding: 10px 24px !important;
+  }
+
+  /* General section padding */
+  .everymood-root section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Scrolling promo bar */
+  .everymood-root .em-marquee-track {
+    animation-duration: 15s;
+  }
+
+  /* As Seen In */
+  .everymood-root .em-as-seen-in-track {
+    gap: 40px !important;
+  }
+
+  /* Bestsellers title */
+  .em-bestsellers-title {
+    font-size: 26px !important;
+  }
+
+  /* Bestsellers grid */
+  .em-bestsellers-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .em-bestsellers-grid h3 {
+    font-size: 13px !important;
+  }
+  .em-bestsellers-grid p {
+    font-size: 11px !important;
+  }
+
+  /* Bug Off Bundle */
+  .em-bundle-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .em-bundle-info {
+    padding: 28px 20px !important;
+  }
+  .em-bundle-info h2 {
+    font-size: 24px !important;
+  }
+  .em-bundle-info p {
+    font-size: 14px !important;
+  }
+
+  /* Customer Testimonials */
+  .em-testimonials-inner {
+    padding: 40px 20px !important;
+  }
+  .em-testimonials-inner h2 {
+    font-size: 22px !important;
+    margin-bottom: 32px !important;
+  }
+  .em-testimonials-quote {
+    font-size: 17px !important;
+  }
+
+  /* Why Luna / Pillars */
+  .em-pillars-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .em-pillars-title {
+    font-size: 26px !important;
+  }
+
+  /* Product Tabs / Current Obsessions */
+  .em-product-tabs-title {
+    font-size: 18px !important;
+  }
+
+  /* Mosquito Problem */
+  .em-problem-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+  .em-problem-title {
+    font-size: 26px !important;
+  }
+  .em-problem-grid h3 {
+    font-size: 15px !important;
+  }
+
+  /* This Moment section */
+  .em-moment-section {
+    flex-direction: column !important;
+  }
+  .em-moment-section > div:first-child {
+    min-height: 300px !important;
+    width: 100% !important;
+  }
+  .em-moment-section > div:last-child {
+    padding: 32px 20px !important;
+  }
+
+  /* Quiz CTA */
+  .em-quiz-title {
+    font-size: 24px !important;
+  }
+
+  /* Scent Text */
+  .em-scent-text {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Mood Science */
+  .em-science-section {
+    flex-direction: column !important;
+  }
+
+  /* Kits Bundle */
+  .em-kits-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hair Body Mists */
+  .em-mists-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .em-mists-products-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* FAQ */
+  .em-faq-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer */
+  .em-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Story panel */
+  .em-story-panel {
+    max-width: 100% !important;
+    border-radius: 12px !important;
+  }
 }

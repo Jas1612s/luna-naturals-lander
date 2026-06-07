@@ -22,15 +22,24 @@ function ChevronDown({ size = 12 }: { size?: number }) {
   );
 }
 
+function NavSvgIcon({ path, path2 }: { path: string; path2?: string }) {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d={path} />
+      {path2 && <path d={path2} />}
+    </svg>
+  );
+}
+
 const productsMenu = [
-  { label: "Corporate Cards", desc: "Smart cards with real-time controls", icon: "💳" },
-  { label: "Expense Management", desc: "Receipt capture & reimbursements", icon: "📋" },
-  { label: "Accounts Payable", desc: "Automated bill pay & approval", icon: "📑" },
-  { label: "Travel", desc: "Policy-compliant booking", icon: "✈️" },
-  { label: "Procurement", desc: "Intake to purchase order", icon: "🛒" },
-  { label: "Intelligence", desc: "AI-powered savings insights", icon: "✨" },
-  { label: "Accounting", desc: "ERP sync & close automation", icon: "📊" },
-  { label: "Treasury", desc: "FDIC-insured business banking", icon: "🏦" },
+  { label: "Corporate Cards", desc: "Smart cards with real-time controls", iconPath: "M2 7a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V7z", iconPath2: "M2 11h20" },
+  { label: "Expense Management", desc: "Receipt capture & reimbursements", iconPath: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" },
+  { label: "Accounts Payable", desc: "Automated bill pay & approval", iconPath: "M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z", iconPath2: "M14 2v6h6M9 13h6M9 17h4" },
+  { label: "Travel", desc: "Policy-compliant booking", iconPath: "M22 16.5a4 4 0 01-4 4H6a4 4 0 01-4-4V9a4 4 0 014-4l4 3h4l3-3a4 4 0 014 4v7.5z" },
+  { label: "Procurement", desc: "Intake to purchase order", iconPath: "M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z", iconPath2: "M3 6h18M16 10a4 4 0 01-8 0" },
+  { label: "Intelligence", desc: "AI-powered savings insights", iconPath: "M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" },
+  { label: "Accounting", desc: "ERP sync & close automation", iconPath: "M18 20V10M12 20V4M6 20v-6" },
+  { label: "Treasury", desc: "FDIC-insured business banking", iconPath: "M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z", iconPath2: "M9 22V12h6v10" },
 ];
 
 const solutionsMenu = [
@@ -43,7 +52,6 @@ const solutionsMenu = [
 export function RampNav() {
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
-  const [email, setEmail] = useState("");
   const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -71,9 +79,9 @@ export function RampNav() {
         left: 0,
         right: 0,
         zIndex: 100,
-        backgroundColor: "#ffffff",
-        borderBottom: "1px solid #E4E1DB",
-        boxShadow: scrolled ? "0 2px 16px rgba(0,0,0,0.06)" : "none",
+        backgroundColor: "#07090F",
+        borderBottom: "1px solid rgba(255,255,255,0.08)",
+        boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.4)" : "none",
         transition: "box-shadow 0.25s ease",
       }}
     >
@@ -99,9 +107,9 @@ export function RampNav() {
             style={{
               fontWeight: 700,
               fontSize: "18px",
-              color: "#0F0F0F",
+              color: "#ffffff",
               letterSpacing: "-0.03em",
-              fontFamily: "var(--font-plus-jakarta-sans), sans-serif",
+              fontFamily: "var(--font-ramp), Inter, sans-serif",
             }}
           >
             ramp
@@ -126,12 +134,12 @@ export function RampNav() {
                 padding: "8px 12px",
                 fontSize: "14px",
                 fontWeight: 500,
-                color: openMenu === "products" ? "#0F0F0F" : "#3D3D3D",
+                color: openMenu === "products" ? "#ffffff" : "rgba(255,255,255,0.7)",
                 background: "none",
                 border: "none",
                 borderRadius: "8px",
                 cursor: "pointer",
-                backgroundColor: openMenu === "products" ? "#F7F7F4" : "transparent",
+                backgroundColor: openMenu === "products" ? "rgba(255,255,255,0.08)" : "transparent",
                 transition: "background-color 0.15s",
               }}
             >
@@ -145,10 +153,10 @@ export function RampNav() {
                   position: "absolute",
                   top: "calc(100% + 8px)",
                   left: 0,
-                  backgroundColor: "#fff",
-                  border: "1px solid #E4E1DB",
+                  backgroundColor: "#111111",
+                  border: "1px solid rgba(255,255,255,0.1)",
                   borderRadius: "16px",
-                  boxShadow: "0 8px 40px rgba(0,0,0,0.12)",
+                  boxShadow: "0 8px 40px rgba(0,0,0,0.5)",
                   padding: "12px",
                   minWidth: "260px",
                   display: "grid",
@@ -170,13 +178,15 @@ export function RampNav() {
                       textDecoration: "none",
                       transition: "background-color 0.15s",
                     }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#F7F7F4"; }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(255,255,255,0.06)"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
                   >
-                    <span style={{ fontSize: "18px", lineHeight: 1 }}>{item.icon}</span>
+                    <span style={{ color: "#00B248", flexShrink: 0, marginTop: "1px" }}>
+                      <NavSvgIcon path={item.iconPath} path2={item.iconPath2} />
+                    </span>
                     <div>
-                      <div style={{ fontSize: "13px", fontWeight: 600, color: "#0F0F0F", marginBottom: "2px" }}>{item.label}</div>
-                      <div style={{ fontSize: "12px", color: "#8A8A8A", lineHeight: 1.3 }}>{item.desc}</div>
+                      <div style={{ fontSize: "13px", fontWeight: 600, color: "#ffffff", marginBottom: "2px" }}>{item.label}</div>
+                      <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)", lineHeight: 1.3 }}>{item.desc}</div>
                     </div>
                   </a>
                 ))}
@@ -197,12 +207,12 @@ export function RampNav() {
                 padding: "8px 12px",
                 fontSize: "14px",
                 fontWeight: 500,
-                color: openMenu === "solutions" ? "#0F0F0F" : "#3D3D3D",
+                color: openMenu === "solutions" ? "#ffffff" : "rgba(255,255,255,0.7)",
                 background: "none",
                 border: "none",
                 borderRadius: "8px",
                 cursor: "pointer",
-                backgroundColor: openMenu === "solutions" ? "#F7F7F4" : "transparent",
+                backgroundColor: openMenu === "solutions" ? "rgba(255,255,255,0.08)" : "transparent",
                 transition: "background-color 0.15s",
               }}
             >
@@ -216,10 +226,10 @@ export function RampNav() {
                   position: "absolute",
                   top: "calc(100% + 8px)",
                   left: 0,
-                  backgroundColor: "#fff",
-                  border: "1px solid #E4E1DB",
+                  backgroundColor: "#111111",
+                  border: "1px solid rgba(255,255,255,0.1)",
                   borderRadius: "16px",
-                  boxShadow: "0 8px 40px rgba(0,0,0,0.12)",
+                  boxShadow: "0 8px 40px rgba(0,0,0,0.5)",
                   padding: "8px",
                   minWidth: "220px",
                   zIndex: 200,
@@ -236,11 +246,11 @@ export function RampNav() {
                       textDecoration: "none",
                       transition: "background-color 0.15s",
                     }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#F7F7F4"; }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(255,255,255,0.06)"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
                   >
-                    <div style={{ fontSize: "13px", fontWeight: 600, color: "#0F0F0F", marginBottom: "2px" }}>{item.label}</div>
-                    <div style={{ fontSize: "12px", color: "#8A8A8A" }}>{item.desc}</div>
+                    <div style={{ fontSize: "13px", fontWeight: 600, color: "#ffffff", marginBottom: "2px" }}>{item.label}</div>
+                    <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)" }}>{item.desc}</div>
                   </a>
                 ))}
               </div>
@@ -255,18 +265,18 @@ export function RampNav() {
                 padding: "8px 12px",
                 fontSize: "14px",
                 fontWeight: 500,
-                color: "#3D3D3D",
+                color: "rgba(255,255,255,0.7)",
                 textDecoration: "none",
                 borderRadius: "8px",
                 transition: "background-color 0.15s, color 0.15s",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#F7F7F4";
-                (e.currentTarget as HTMLAnchorElement).style.color = "#0F0F0F";
+                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(255,255,255,0.08)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "#ffffff";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent";
-                (e.currentTarget as HTMLAnchorElement).style.color = "#3D3D3D";
+                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.7)";
               }}
             >
               {link}
@@ -283,63 +293,38 @@ export function RampNav() {
               padding: "8px 14px",
               fontSize: "14px",
               fontWeight: 500,
-              color: "#3D3D3D",
+              color: "rgba(255,255,255,0.7)",
               textDecoration: "none",
               borderRadius: "9999px",
               transition: "background-color 0.15s",
             }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#F7F7F4"; }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgba(255,255,255,0.08)"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
           >
             Log in
           </a>
-          <form
-            className="hidden lg:flex"
-            style={{ alignItems: "center", gap: "8px" }}
-            onSubmit={(e) => e.preventDefault()}
+          <a
+            href="/ramp/pre-qualification"
+            className="hidden lg:inline-flex"
+            style={{
+              background: "#00B248",
+              color: "white",
+              borderRadius: "9999px",
+              padding: "9px 20px",
+              fontSize: "14px",
+              fontWeight: 600,
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+              transition: "opacity 0.15s",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.88"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
           >
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your work email"
-              style={{
-                border: "1px solid #E4E1DB",
-                background: "#F7F7F4",
-                borderRadius: "9999px",
-                padding: "9px 18px",
-                fontSize: "13px",
-                width: "200px",
-                color: "#0F0F0F",
-                outline: "none",
-                transition: "border-color 0.15s",
-              }}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "#00B248"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#E4E1DB"; }}
-            />
-            <button
-              type="submit"
-              style={{
-                background: "#00B248",
-                color: "white",
-                borderRadius: "9999px",
-                padding: "9px 20px",
-                fontSize: "14px",
-                fontWeight: 600,
-                border: "none",
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-                transition: "opacity 0.15s",
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.88"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
-            >
-              Get started
-            </button>
-          </form>
+            Check my eligibility
+          </a>
           {/* Mobile CTA */}
           <a
-            href="#"
+            href="/ramp/pre-qualification"
             className="lg:hidden"
             style={{
               background: "#00B248",
@@ -352,7 +337,7 @@ export function RampNav() {
               whiteSpace: "nowrap",
             }}
           >
-            Get started
+            Check my eligibility
           </a>
         </div>
       </div>

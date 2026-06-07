@@ -200,7 +200,7 @@ export function IngredientsSection() {
             }}
           >
             <Image
-              src="/images/smooche/ingredients-bg.png"
+              src="/images/smooche/ingredients-bg.webp"
               alt="Key ingredients product visual"
               width={400}
               height={500}

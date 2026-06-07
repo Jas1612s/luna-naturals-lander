@@ -122,7 +122,7 @@ export function GrunsFooter() {
         {/* Logo + Social Row */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-12 pt-8 border-t border-white/10">
           <img
-            src="/images/gruns/luna-naturals-logo-cropped.png"
+            src="/images/gruns/luna-naturals-logo-cropped.webp"
             alt="Luna Naturals"
             className="h-12"
           />

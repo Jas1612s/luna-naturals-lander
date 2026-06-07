@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
+const inter = Inter({
+  variable: "--font-ramp",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -21,8 +21,8 @@ export default function RampLayout({
 }) {
   return (
     <div
-      className={`${plusJakartaSans.variable} min-h-full flex flex-col antialiased`}
-      style={{ fontFamily: "var(--font-plus-jakarta-sans), sans-serif" }}
+      className={`${inter.variable} min-h-full flex flex-col antialiased`}
+      style={{ fontFamily: "var(--font-ramp), Inter, sans-serif" }}
     >
       {children}
     </div>

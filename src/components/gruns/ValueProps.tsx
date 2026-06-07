@@ -6,19 +6,19 @@ interface ValuePropCard {
 
 const cards: ValuePropCard[] = [
   {
-    image: "/images/gruns/valueprop-cardimg1.webp",
+    image: "/images/gruns/valueprop-no-mess.webp",
     title: "No Mess",
     description:
       "No spray. No lotion. No sticky hands. Peel one off, stick it on, walk outside. Done.",
   },
   {
-    image: "/images/gruns/valueprop-image1.webp",
+    image: "/images/gruns/kid-running-patch.jpg",
     title: "Plant-Powered",
     description:
       "Citronella and eucalyptus oils do the work. No DEET, no parabens, no ingredients you can't pronounce.",
   },
   {
-    image: "/images/gruns/valueprop-cardimg3.webp",
+    image: "/images/gruns/valueprop-built-for-real-life.webp",
     title: "Built for Real Life",
     description:
       "Stays on during hikes, soccer practice, and playground chaos. Compact pack fits in a purse, diaper bag, or backpack.",
@@ -42,8 +42,12 @@ export function ValueProps() {
               key={card.title}
               className="w-[320px] md:w-[400px] shrink-0 bg-white rounded-3xl overflow-hidden"
             >
-              <div className="aspect-square w-full bg-[var(--gr-sage)]/20 flex items-center justify-center">
-                <span className="text-[var(--gr-sage)] text-sm">Image coming soon</span>
+              <div className="aspect-square w-full bg-[var(--gr-sage)]/20 overflow-hidden">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="p-6 md:p-8">
                 <h3 className="font-bold text-xl md:text-2xl text-center text-[var(--gr-dark)]">

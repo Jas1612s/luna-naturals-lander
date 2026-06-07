@@ -1,0 +1,352 @@
+[
+  {
+    "index": 0,
+    "tag": "div",
+    "id": "shopify-section-theme-announcement-static",
+    "classes": "shopify-section",
+    "text": "",
+    "top": 0,
+    "height": 0,
+    "childCount": 0
+  },
+  {
+    "index": 1,
+    "tag": "div",
+    "id": "shopify-section-theme-announcement-new",
+    "classes": "shopify-section",
+    "text": "#announcementNew {\n            padding: 10px;\n            color: ;\n            text-align: center;\n            display: flex;\n            justify-content: center;\n            font-weight: bold;\n            position: relative;\n            font-size: 18px;\n            align-items: center;\n        }\n\n        #announcementNew.bg {\n            background: ;\n        }\n\n        #announcementNew.bgImage {\n            background: url(\"//www.everydaydose.com/cdn/shop/files/Frame_48224.webp?",
+    "top": 0,
+    "height": 45,
+    "childCount": 3
+  },
+  {
+    "index": 2,
+    "tag": "div",
+    "id": "shopify-section-theme-header-v2",
+    "classes": "shopify-section",
+    "text": "Close\n        \n\n        \n            \n                \n                \n                \n            \n        \n\n        Shop\n\n\n        \n            \n        \n\n        \n            \n            Sign In",
+    "top": 45,
+    "height": 64,
+    "childCount": 2
+  },
+  {
+    "index": 3,
+    "tag": "header",
+    "id": "headerV2",
+    "classes": "",
+    "text": "Close\n        \n\n        \n            \n                \n                \n                \n            \n        \n\n        Shop\n\n\n        \n            \n        \n\n        \n            \n            Sign In",
+    "top": 45,
+    "height": 64,
+    "childCount": 3
+  },
+  {
+    "index": 4,
+    "tag": "div",
+    "id": "shopify-section-theme-mini-cart",
+    "classes": "shopify-section",
+    "text": "Your cart is empty\n        \n\n        \n        \n            Your Cart\n            \n            CONGRATS YOU’VE UNLOCKED FREE SHIPPING!\n        \n\n        \n        \n\n        \n        \n            \n                \n                \n                ⚡ Lightning Deal! ⚡\n                \n                    \n                    \n                        90 Servings of Coffee + FREE Starter Kit",
+    "top": 108,
+    "height": 0,
+    "childCount": 1
+  },
+  {
+    "index": 5,
+    "tag": "main",
+    "id": "",
+    "classes": "",
+    "text": "[id=\"template--18069017755713__section_hero_jVwYNk\"].hero {\n        padding: 0px 0 0px;\n    }\n\n    [id=\"template--18069017755713__section_hero_jVwYNk\"] .heroImage {\n        aspect-ratio: 2.3923444976076556;\n    }\n\n    .heroLink {\n        display: block;\n    }\n\n    @media (max-width: 800px) {\n        [id=\"template--18069017755713__section_hero_jVwYNk\"].hero {\n            padding: 0px 0 0px;\n        }\n\n        [id=\"template--18069017755713__section_hero_jVwYNk\"] .heroImage {",
+    "top": 108,
+    "height": 10043,
+    "childCount": 11
+  },
+  {
+    "index": 6,
+    "tag": "div",
+    "id": "shopify-section-template--18069017755713__section_hero_jVwYNk",
+    "classes": "shopify-section",
+    "text": "[id=\"template--18069017755713__section_hero_jVwYNk\"].hero {\n        padding: 0px 0 0px;\n    }\n\n    [id=\"template--18069017755713__section_hero_jVwYNk\"] .heroImage {\n        aspect-ratio: 2.3923444976076556;\n    }\n\n    .heroLink {\n        display: block;\n    }\n\n    @media (max-width: 800px) {\n        [id=\"template--18069017755713__section_hero_jVwYNk\"].hero {\n            padding: 0px 0 0px;\n        }\n\n        [id=\"template--18069017755713__section_hero_jVwYNk\"] .heroImage {\n            aspec",
+    "top": 108,
+    "height": 602,
+    "childCount": 2
+  },
+  {
+    "index": 7,
+    "tag": "section",
+    "id": "template--18069017755713__section_hero_jVwYNk",
+    "classes": "hero",
+    "text": "",
+    "top": 108,
+    "height": 602,
+    "childCount": 1
+  },
+  {
+    "index": 8,
+    "tag": "div",
+    "id": "shopify-section-template--18069017755713__section_icon_text_bar_v2_HynKYH",
+    "classes": "shopify-section",
+    "text": "[id=\"template--18069017755713__section_icon_text_bar_v2_HynKYH\"] {\n        margin: 0 auto;\n        background: linear-gradient(90deg, rgba(5, 194, 247, 0.8) 0.9%, rgba(231, 73, 255, 0.71) 100%);\n        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);\n    }\n\n    \n    [id=\"template--18069017755713__section_icon_text_bar_v2_HynKYH\"] {\n        margin: 0 auto 40px auto;\n    }\n\n    \n\n    [id=\"template--18069017755713__section_icon_text_bar_v2_HynKYH\"] .iconTextBarV2Slider {\n        /*max-width: 1413p",
+    "top": 710,
+    "height": 60,
+    "childCount": 3
+  },
+  {
+    "index": 9,
+    "tag": "section",
+    "id": "template--18069017755713__section_icon_text_bar_v2_HynKYH",
+    "classes": "iconTextBarV2  ",
+    "text": "Boosts Energy\n                        \n                    \n                \n                    \n\n                        \n                            \n                        \n\n                        \n                            ELEVATES MOOD",
+    "top": 710,
+    "height": 60,
+    "childCount": 1
+  },
+  {
+    "index": 10,
+    "tag": "div",
+    "id": "shopify-section-template--18069017755713__section_product_redefined_v3_FRiiXx",
+    "classes": "shopify-section",
+    "text": "[id=\"template--18069017755713__section_product_redefined_v3_FRiiXx\"].redefinedV3 {\n        padding: 40px 20px 40px;\n        display: grid;\n        grid-template-columns: 607fr 544fr;\n        column-gap: 57px;\n        max-width: 1280px;\n        margin: 0 auto;\n    }\n\n    .redefinedV3ImageDesktop {\n        border-radius: 18px;\n        border: 5px solid #EAE3FC;\n    }\n\n    .redefinedV3Content {\n        padding-top: 20px;\n    }\n\n    .redefinedV3ContentTitle {\n        margin: 0 0 15px;\n        c",
+    "top": 810,
+    "height": 705,
+    "childCount": 3
+  },
+  {
+    "index": 11,
+    "tag": "section",
+    "id": "template--18069017755713__section_product_redefined_v3_FRiiXx",
+    "classes": "redefinedV3 ",
+    "text": "coffee plus \nbenefits\n        The all-in-one coffee that makes you feel as good as it tastes.\n        \n        \n            \n                taste\n                Balanced, full-bodied coffee you know and love. Notes of smooth chocolate.\n            \n            \n                feeling\n                Calm, cool and caffeinated. The way coffee is supposed to be, and without the gut issues. No crash, no problems.\n            \n        \n        \n            Read The Label",
+    "top": 810,
+    "height": 705,
+    "childCount": 2
+  },
+  {
+    "index": 12,
+    "tag": "div",
+    "id": "shopify-section-template--18069017755713__a3c8cd24-bb2f-4eb7-9fed-2084582fa002",
+    "classes": "shopify-section",
+    "text": "[id=\"template--18069017755713__a3c8cd24-bb2f-4eb7-9fed-2084582fa002\"].reviews {\n        padding: 40px 20px 90px;\n    }\n\n    .reviewsSubtitle {\n        color: #3610A2;\n        text-align: center;\n        font-size: 25px;\n        font-weight: 700;\n    }\n\n    .reviewsTitle.enlarge {\n        font-size: 45px;\n        margin-bottom: 30px;\n    }\n\n    .reviewsTitle {\n        color: #000;\n        text-align: center;\n        font-family: \"Integral\";\n        font-size: 40px;\n        font-weight: 700;",
+    "top": 1515,
+    "height": 1051,
+    "childCount": 3
+  },
+  {
+    "index": 13,
+    "tag": "section",
+    "id": "template--18069017755713__a3c8cd24-bb2f-4eb7-9fed-2084582fa002",
+    "classes": "reviews",
+    "text": "+100,000 + FIVE STAR REVIEWS\n    JOIN THE DOSE FAM\n    Don’t just take our word for it. Hear from real people upgrading their coffee and getting more out of every day.\n    \n        \n            \n                \n                \n                \n                \n                \n            \n            101,172 Reviews",
+    "top": 1515,
+    "height": 1051,
+    "childCount": 7
+  },
+  {
+    "index": 14,
+    "tag": "div",
+    "id": "shopify-section-template--18069017755713__section_new_banner_mTKpMT",
+    "classes": "shopify-section",
+    "text": "[id=\"template--18069017755713__section_new_banner_mTKpMT\"].newBanner {\n        border-radius: 12px;\n        padding: 20px 20px 20px;\n        background-color: #f0f2ff;\n    }\n\n    [id=\"template--18069017755713__section_new_banner_mTKpMT\"].newBanner.border {\n        border: 3px solid#e3e0fd;\n    }\n\n    .newBannerInner {\n        max-width: 1200px;\n        margin: 0 auto;\n    }\n\n    .newBannerSwiper .swiper-wrapper {\n        align-items: center;\n    }\n\n    .newBannerSwiper .swiper-slide {",
+    "top": 2566,
+    "height": 293,
+    "childCount": 3
+  },
+  {
+    "index": 15,
+    "tag": "section",
+    "id": "template--18069017755713__section_new_banner_mTKpMT",
+    "classes": "newBanner border ",
+    "text": "[id=\"featured_item_JKjAEC\"] .newBannerSwiperItemText {\n                                font-size: 16px;\n                            }\n                        \n                        \n                            \n                                \n                                    \"The ultimate answer to midday burnout. The boost in clarity is amazing, and best of all, there are",
+    "top": 2566,
+    "height": 293,
+    "childCount": 1
+  },
+  {
+    "index": 16,
+    "tag": "div",
+    "id": "shopify-section-template--18069017755713__section_card_slider_v2_ffPwz8",
+    "classes": "shopify-section",
+    "text": "[id=\"template--18069017755713__section_card_slider_v2_ffPwz8\"].ingredients {\n        padding: 40px 20px 80px;\n        margin: 0 auto;\n        max-width: 1324px;\n    }\n\n\n    .ingredientsSubtitle {\n        color: #3610A2;\n        text-align: center;\n        font-size: 25px;\n        font-weight: 700;\n    }\n\n    .ingredientsTitle {\n        color: #000;\n        text-align: center;\n        font-family: \"Integral\";\n        font-size: 40px;\n        font-weight: 700;\n        line-height: 120%; /* 4",
+    "top": 2859,
+    "height": 962,
+    "childCount": 3
+  },
+  {
+    "index": 17,
+    "tag": "section",
+    "id": "template--18069017755713__section_card_slider_v2_ffPwz8",
+    "classes": "ingredients",
+    "text": "Science-Backed Ingredients\n    It’s What’s Inside That Counts\n    We’re obsessed with quality. Each functional ingredient in our blend is researched and tested to create a coffee that tastes amazing and helps you feel your best every day.\n\n    \n        \n            \n                \n                    \n                        100% ARABICA COFFEE\n                        Coffee forward taste, without the crash.",
+    "top": 2859,
+    "height": 962,
+    "childCount": 7
+  },
+  {
+    "index": 18,
+    "tag": "div",
+    "id": "shopify-section-template--18069017755713__section_quiz_image_cta_list_8nYqLL",
+    "classes": "shopify-section",
+    "text": "[id=\"template--18069017755713__section_quiz_image_cta_list_8nYqLL\"].how {\n        padding: 40px 20px 80px;\n    }\n\n    .howGrid {\n        max-width: 1000px;\n        margin: 0 auto;\n        display: grid;\n        align-items: center;\n        grid-template-columns: repeat(2, 1fr);\n        gap: 40px;\n    }\n\n    .howGridDesktopImage,\n    .howGridDesktopVideo {\n        max-width: 493px;\n        border-radius: 11px;\n    }\n\n    .how.reverse .howGridDesktopImage {\n        order: 2;\n    }\n\n    .how.r",
+    "top": 3821,
+    "height": 600,
+    "childCount": 3
+  },
+  {
+    "index": 19,
+    "tag": "section",
+    "id": "template--18069017755713__section_quiz_image_cta_list_8nYqLL",
+    "classes": "how ",
+    "text": ".videoPause,\n    .videoPlay {\n        background: none;\n        border: none;\n        position: absolute;\n        right: 20px;\n        bottom: 20px;\n        max-width: 25px;\n        max-height: 25px;\n        cursor: pointer;",
+    "top": 3821,
+    "height": 600,
+    "childCount": 1
+  },
+  {
+    "index": 20,
+    "tag": "div",
+    "id": "shopify-section-template--18069017755713__0280794f-fea6-4912-8fe4-7630d4920d02",
+    "classes": "shopify-section",
+    "text": "[id=\"template--18069017755713__0280794f-fea6-4912-8fe4-7630d4920d02\"].textImageV2 {\n        padding: 40px 20px 70px;\n    }\n\n    .textImageV2Subtitle {\n        color: #3610A2;\n        text-align: center;\n        font-size: 25px;\n        font-weight: 700;\n    }\n\n    .textImageV2Title {\n        color: #000;\n        text-align: center;\n        font-family: \"Integral\";\n        font-size: 40px;\n        font-weight: 700;\n        line-height: 120%; /* 48px */\n        margin: 0 0 10px;\n    }\n\n    .t",
+    "top": 4421,
+    "height": 682,
+    "childCount": 3
+  },
+  {
+    "index": 21,
+    "tag": "section",
+    "id": "template--18069017755713__0280794f-fea6-4912-8fe4-7630d4920d02",
+    "classes": "textImageV2",
+    "text": "WHO WE ARE\n    \n    \n        Built For Better Days\n    \n    \n        We’re here to help you upgrade your mind, body, and beyond through daily habits and a community designed to help you feel and become your best.\n    \n\n    \n        \n        \n            BEHIND THE BLEND\n            What started as Jack’s personal need to focus without overstimulation or excess caffeine has become a community to help people feel better without sacrificing the ritual they love.\n\nHere’s what drives u",
+    "top": 4421,
+    "height": 682,
+    "childCount": 4
+  },
+  {
+    "index": 22,
+    "tag": "div",
+    "id": "shopify-section-template--18069017755713__4ebe51e8-3f58-4b7a-a630-523c2cb504db",
+    "classes": "shopify-section",
+    "text": "[id=\"template--18069017755713__4ebe51e8-3f58-4b7a-a630-523c2cb504db\"].textImageV2 {\n        padding: 10px 20px 70px;\n    }\n\n    .textImageV2Subtitle {\n        color: #3610A2;\n        text-align: center;\n        font-size: 25px;\n        font-weight: 700;\n    }\n\n    .textImageV2Title {\n        color: #000;\n        text-align: center;\n        font-family: \"Integral\";\n        font-size: 40px;\n        font-weight: 700;\n        line-height: 120%; /* 48px */\n        margin: 0 0 10px;\n    }\n\n    .t",
+    "top": 5102,
+    "height": 418,
+    "childCount": 3
+  },
+  {
+    "index": 23,
+    "tag": "section",
+    "id": "template--18069017755713__4ebe51e8-3f58-4b7a-a630-523c2cb504db",
+    "classes": "textImageV2",
+    "text": "Othership\n            Othership helps you regulate your emotions and nervous system through guided breathwork and vibey music. Normally priced at $18.99 per month, now FREE for all Everyday Dose subscribers.\n            Get Started",
+    "top": 5102,
+    "height": 418,
+    "childCount": 1
+  },
+  {
+    "index": 24,
+    "tag": "div",
+    "id": "shopify-section-template--18069017755713__section_faq_accordion_v2_mGgMAU",
+    "classes": "shopify-section",
+    "text": "[id=\"template--18069017755713__section_faq_accordion_v2_mGgMAU\"].faqAccordionV2 {\n        max-width: 1000px;\n        margin: 0 auto;\n        padding: 20px 20px 80px;\n    }\n\n    .faqAccordionV2Subtitle {\n        text-align: center;\n        font-size: 25px;\n        font-weight: 700;\n    }\n\n    [id=\"template--18069017755713__section_faq_accordion_v2_mGgMAU\"] .faqAccordionV2Subtitle {\n        color: #3610a2;\n    }\n\n    .faqAccordionV2Title {\n        color: #000;\n        text-align: center;",
+    "top": 5520,
+    "height": 859,
+    "childCount": 3
+  },
+  {
+    "index": 25,
+    "tag": "div",
+    "id": "shopify-section-template--18069017755713__section_custom_liquid_VwWe6k",
+    "classes": "shopify-section",
+    "text": "HEAR FROM THE DOSE FAM4.8Based on 101172 reviewsWrite A ReviewCustomers sayAI-generated from customer reviews.Customers appreciate the high quality of the product, especially the tumbler and frother. The drink is praised for its amazing taste and ability to prevent post-lunch slumps. Users also noted a noticeable difference in energy levels and well-being after using the product.Read summary by topicsReviews with mediaPrevious review media slideNext review media slideSlide 8 of 23.\nImage of cust",
+    "top": 6379,
+    "height": 3772,
+    "childCount": 1
+  },
+  {
+    "index": 26,
+    "tag": "section",
+    "id": "",
+    "classes": "yotpo-widget-clear",
+    "text": "HEAR FROM THE DOSE FAM4.8Based on 101172 reviewsWrite A ReviewCustomers sayAI-generated from customer reviews.Customers appreciate the high quality of the product, especially the tumbler and frother. The drink is praised for its amazing taste and ability to prevent post-lunch slumps. Users also noted a noticeable difference in energy levels and well-being after using the product.Read summary by topicsReviews with mediaPrevious review media slideNext review media slideSlide 8 of 23.\nImage of cust",
+    "top": 6379,
+    "height": 3772,
+    "childCount": 1
+  },
+  {
+    "index": 27,
+    "tag": "div",
+    "id": "",
+    "classes": "yotpo-summary-section",
+    "text": "4.8Based on 101172 reviews",
+    "top": 6546,
+    "height": 68,
+    "childCount": 1
+  },
+  {
+    "index": 28,
+    "tag": "section",
+    "id": "",
+    "classes": "carousel",
+    "text": "Previous review media slideNext review media slideSlide 8 of 23.\nImage of customer.",
+    "top": 6911,
+    "height": 161,
+    "childCount": 3
+  },
+  {
+    "index": 29,
+    "tag": "nav",
+    "id": "",
+    "classes": "yotpo-reviews-pagination-container",
+    "text": "12345",
+    "top": 10039,
+    "height": 42,
+    "childCount": 1
+  },
+  {
+    "index": 30,
+    "tag": "div",
+    "id": "shopify-section-section-icon-text-column-v2",
+    "classes": "shopify-section",
+    "text": "[id=\"section-icon-text-column-v2\"].iconTextColumnV2 {\n        padding: 50px 20px 50px;\n        background-color: #f0f2ff;\n    }\n\n    .iconTextColumnV2Container {\n        display: flex;\n        gap: 56px;\n        justify-content: center;\n        flex-wrap: wrap;\n        max-width: 1100px;\n        margin: 0 auto;\n    }\n\n    .iconTextColumnV2ContainerItem {\n        display: grid;\n        grid-template-rows: minmax(70px, 0.5fr) 1fr;\n        flex-direction: column;\n        justify-items: center;",
+    "top": 10151,
+    "height": 261,
+    "childCount": 2
+  },
+  {
+    "index": 31,
+    "tag": "section",
+    "id": "section-icon-text-column-v2",
+    "classes": "iconTextColumnV2",
+    "text": "100% RISK-FREE\n                    Free Shipping on\nevery order.\n                \n            \n        \n            \n                \n                    \n                \n                \n                    happiness guaranteed\n                    We stand behind our product with a promise of transparency and reliability, supported by scientific evidence.",
+    "top": 10151,
+    "height": 261,
+    "childCount": 1
+  },
+  {
+    "index": 32,
+    "tag": "div",
+    "id": "shopify-section-theme-footer",
+    "classes": "shopify-section",
+    "text": "On a mission to make everyday\n                products healthier.\n            \n            \n                \n                    Opens Instagram in a new tab\n                    \n                        \n                        \n                    \n                \n                \n                    Opens Facebook in a new tab",
+    "top": 10412,
+    "height": 575,
+    "childCount": 1
+  },
+  {
+    "index": 33,
+    "tag": "footer",
+    "id": "footer",
+    "classes": "",
+    "text": "On a mission to make everyday\n                products healthier.\n            \n            \n                \n                    Opens Instagram in a new tab\n                    \n                        \n                        \n                    \n                \n                \n                    Opens Facebook in a new tab",
+    "top": 10412,
+    "height": 575,
+    "childCount": 1
+  },
+  {
+    "index": 34,
+    "tag": "nav",
+    "id": "footerNav",
+    "classes": "",
+    "text": "Products\n                            \n                        \n                        \n                            \n                                \n                                    Coffee+ Medium Roast",
+    "top": 10482,
+    "height": 405,
+    "childCount": 4
+  }
+]

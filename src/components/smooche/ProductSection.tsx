@@ -42,24 +42,24 @@ type Variant = "transparent" | "raspberry";
 
 const VARIANT_IMAGES: Record<Variant, string[]> = {
   transparent: [
-    "/images/smooche/lick-pouch.png",
-    "/images/smooche/lick-lifestyle-2.png",
-    "/images/smooche/elpc-3.png",
-    "/images/smooche/elpc-4.png",
-    "/images/smooche/elpc-5.png",
-    "/images/smooche/elpc-6.png",
-    "/images/smooche/elpc-7.png",
-    "/images/smooche/elpc-8.png",
+    "/images/smooche/lick-pouch.webp",
+    "/images/smooche/lick-lifestyle-2.webp",
+    "/images/smooche/elpc-3.webp",
+    "/images/smooche/elpc-4.webp",
+    "/images/smooche/elpc-5.webp",
+    "/images/smooche/elpc-6.webp",
+    "/images/smooche/elpc-7.webp",
+    "/images/smooche/elpc-8.webp",
   ],
   raspberry: [
-    "/images/smooche/elpr-1.png",
-    "/images/smooche/elpr-2.png",
-    "/images/smooche/elpr-3.png",
-    "/images/smooche/elpr-4.png",
-    "/images/smooche/elpr-5.png",
-    "/images/smooche/elpr-6.png",
-    "/images/smooche/elpr-7.png",
-    "/images/smooche/elpr-7b.png",
+    "/images/smooche/elpr-1.webp",
+    "/images/smooche/elpr-2.webp",
+    "/images/smooche/elpr-3.webp",
+    "/images/smooche/elpr-4.webp",
+    "/images/smooche/elpr-5.webp",
+    "/images/smooche/elpr-6.webp",
+    "/images/smooche/elpr-7.webp",
+    "/images/smooche/elpr-7b.webp",
   ],
 };
 
@@ -491,9 +491,9 @@ export function ProductSection() {
             </h3>
             <div className="grid grid-cols-3 gap-2">
               {[
-                "/images/smooche/elpc-5.png",
-                "/images/smooche/lick-lifestyle-2.png",
-                "/images/smooche/elpc-7.png",
+                "/images/smooche/elpc-5.webp",
+                "/images/smooche/lick-lifestyle-2.webp",
+                "/images/smooche/elpc-7.webp",
               ].map((src, i) => (
                 <button
                   key={i}

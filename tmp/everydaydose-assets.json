@@ -1,0 +1,974 @@
+{
+  "images": [
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Group_48101455-cropped.svg?v=1762833065",
+      "alt": "Everyday Dose Logo",
+      "width": 282,
+      "height": 150,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Coffee-Modal-Icons.svg?v=1762832869",
+      "alt": "modal close icon",
+      "width": 0,
+      "height": 0,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/169/assets/modal-close-icon.svg?v=62332205954738708351717766860",
+      "alt": "modal close icon",
+      "width": 0,
+      "height": 0,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://cdn.shopify.com/s/files/1/0272/4531/4113/files/Logo_Vertical_Center_White.svg?v=1748980896",
+      "alt": "Everyday Dose Logo",
+      "width": 201,
+      "height": 92,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/169/assets/modal-close-icon.svg?v=62332205954738708351717766860",
+      "alt": "modal close icon",
+      "width": 0,
+      "height": 0,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://cdn.shopify.com/s/files/1/0272/4531/4113/files/Logo_Vertical_Center_White.svg?v=1748980896",
+      "alt": "Everyday Dose Logo",
+      "width": 201,
+      "height": 92,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/169/assets/modal-close-icon.svg?v=62332205954738708351717766860",
+      "alt": "modal close icon",
+      "width": 0,
+      "height": 0,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/169/assets/modal-close-icon.svg?v=62332205954738708351717766860",
+      "alt": "modal close icon",
+      "width": 0,
+      "height": 0,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/169/assets/modal-close-icon.svg?v=62332205954738708351717766860",
+      "alt": "modal close icon",
+      "width": 0,
+      "height": 0,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/169/assets/modal-close-icon.svg?v=62332205954738708351717766860",
+      "alt": "modal close icon",
+      "width": 0,
+      "height": 0,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/169/assets/modal-close-icon.svg?v=62332205954738708351717766860",
+      "alt": "modal close icon",
+      "width": 0,
+      "height": 0,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/EDD_Logo_2025_Primary_BLK_2.png?v=12174584517625088562",
+      "alt": "everyday dose logo",
+      "width": 2149,
+      "height": 1066,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/main_mild.webp?v=1777581020&width=600",
+      "alt": "",
+      "width": 600,
+      "height": 516,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/man_medium_83b244a1-aa55-485c-993d-4eacc37d9519.webp?v=1777581020&width=600",
+      "alt": "",
+      "width": 600,
+      "height": 516,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/man_medium_1_bd77802c-a264-4ebb-9cb3-f95f578f0844.webp?v=1777581020&width=600",
+      "alt": "",
+      "width": 600,
+      "height": 516,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/man_medium_26a9468b-3e3c-46a0-bbea-58d4b65d5761.webp?v=1777581020&width=600",
+      "alt": "",
+      "width": 455,
+      "height": 391,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/main_mild.webp?v=1777581020&width=600",
+      "alt": "",
+      "width": 600,
+      "height": 516,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/man_medium_83b244a1-aa55-485c-993d-4eacc37d9519.webp?v=1777581020&width=600",
+      "alt": "",
+      "width": 600,
+      "height": 516,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/man_medium_1_bd77802c-a264-4ebb-9cb3-f95f578f0844.webp?v=1777581020&width=600",
+      "alt": "",
+      "width": 600,
+      "height": 516,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/man_medium_26a9468b-3e3c-46a0-bbea-58d4b65d5761.webp?v=1777581020&width=600",
+      "alt": "",
+      "width": 455,
+      "height": 391,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/90s_mid_e6283ee5-2153-45d3-b5e4-c047f7775337.webp?v=1778794996&width=300",
+      "alt": "90 Servings of Coffee + FREE Starter Kit",
+      "width": 300,
+      "height": 300,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://cdn.shopify.com/s/files/1/0272/4531/4113/files/lock.svg?v=1731391956",
+      "alt": "lock icon",
+      "width": 512,
+      "height": 512,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://cdn.shopify.com/s/files/1/0272/4531/4113/files/reviews.svg?v=1731392106",
+      "alt": "stars",
+      "width": 54,
+      "height": 9,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://cdn.shopify.com/s/files/1/0272/4531/4113/files/badge.svg?v=1731392106",
+      "alt": "shield icon",
+      "width": 10,
+      "height": 10,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/DESKTOP_25_a08f9964-cded-4471-ad38-e9a4af50d7aa.webp?v=1778634732&width=2500",
+      "alt": "",
+      "width": 2500,
+      "height": 1045,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_d1d3ff5b-3a1f-4643-8a05-9a1cde718b73.png?v=1769455592&width=100",
+      "alt": "Boosts Energy icon",
+      "width": 100,
+      "height": 127,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_3455007d-fce5-4d51-b482-a1c91b5565b7.png?v=1769455618&width=100",
+      "alt": "ELEVATES MOOD icon",
+      "width": 100,
+      "height": 109,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_fbb34050-e8da-4cd8-af95-61983e43fa99.png?v=1769454514&width=100",
+      "alt": "GUT HEALTH icon",
+      "width": 100,
+      "height": 100,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_2f9890d4-7f33-41c8-b3b6-7142da636bf6.png?v=1769454562&width=100",
+      "alt": "IMPROVES SLEEP icon",
+      "width": 100,
+      "height": 100,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_2816ed65-20a0-4c8f-9adf-928d780fc22d.png?v=1769454598&width=100",
+      "alt": "MANAGES STRESS icon",
+      "width": 100,
+      "height": 100,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_d1d3ff5b-3a1f-4643-8a05-9a1cde718b73.png?v=1769455592&width=100",
+      "alt": "Boosts Energy icon",
+      "width": 100,
+      "height": 127,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_3455007d-fce5-4d51-b482-a1c91b5565b7.png?v=1769455618&width=100",
+      "alt": "ELEVATES MOOD icon",
+      "width": 100,
+      "height": 109,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_fbb34050-e8da-4cd8-af95-61983e43fa99.png?v=1769454514&width=100",
+      "alt": "GUT HEALTH icon",
+      "width": 100,
+      "height": 100,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_2f9890d4-7f33-41c8-b3b6-7142da636bf6.png?v=1769454562&width=100",
+      "alt": "IMPROVES SLEEP icon",
+      "width": 100,
+      "height": 100,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_2816ed65-20a0-4c8f-9adf-928d780fc22d.png?v=1769454598&width=100",
+      "alt": "MANAGES STRESS icon",
+      "width": 100,
+      "height": 100,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_d1d3ff5b-3a1f-4643-8a05-9a1cde718b73.png?v=1769455592&width=100",
+      "alt": "Boosts Energy icon",
+      "width": 100,
+      "height": 127,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_3455007d-fce5-4d51-b482-a1c91b5565b7.png?v=1769455618&width=100",
+      "alt": "ELEVATES MOOD icon",
+      "width": 100,
+      "height": 109,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_fbb34050-e8da-4cd8-af95-61983e43fa99.png?v=1769454514&width=100",
+      "alt": "GUT HEALTH icon",
+      "width": 100,
+      "height": 100,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_2f9890d4-7f33-41c8-b3b6-7142da636bf6.png?v=1769454562&width=100",
+      "alt": "IMPROVES SLEEP icon",
+      "width": 100,
+      "height": 100,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_2816ed65-20a0-4c8f-9adf-928d780fc22d.png?v=1769454598&width=100",
+      "alt": "MANAGES STRESS icon",
+      "width": 100,
+      "height": 100,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_d1d3ff5b-3a1f-4643-8a05-9a1cde718b73.png?v=1769455592&width=100",
+      "alt": "Boosts Energy icon",
+      "width": 100,
+      "height": 127,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_3455007d-fce5-4d51-b482-a1c91b5565b7.png?v=1769455618&width=100",
+      "alt": "ELEVATES MOOD icon",
+      "width": 100,
+      "height": 109,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_fbb34050-e8da-4cd8-af95-61983e43fa99.png?v=1769454514&width=100",
+      "alt": "GUT HEALTH icon",
+      "width": 100,
+      "height": 100,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_2f9890d4-7f33-41c8-b3b6-7142da636bf6.png?v=1769454562&width=100",
+      "alt": "IMPROVES SLEEP icon",
+      "width": 100,
+      "height": 100,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Vector_2816ed65-20a0-4c8f-9adf-928d780fc22d.png?v=1769454598&width=100",
+      "alt": "MANAGES STRESS icon",
+      "width": 100,
+      "height": 100,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/coffee-plus-benefits-feature-hero-1600w.webp?v=1777439272&width=1200",
+      "alt": "",
+      "width": 1200,
+      "height": 1202,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/coffee-plus-benefits-feature-hero-1600w.webp?v=1777439272&width=600",
+      "alt": "",
+      "width": 600,
+      "height": 601,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/1e_1.webp?v=1777580911&width=480",
+      "alt": "Obsessed mom of 3!",
+      "width": 480,
+      "height": 291,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/pic_1_2d41e69b-7717-45b4-b304-a63b7c4349b7.webp?v=1777580911&width=480",
+      "alt": "I'm becoming a morning person.",
+      "width": 480,
+      "height": 291,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/sdd.webp?v=1777580911&width=480",
+      "alt": "So in love with this coffee!",
+      "width": 480,
+      "height": 290,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/image_227.png?v=1775604106&width=320",
+      "alt": "",
+      "width": 320,
+      "height": 66,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/image_228_696c95d9-eab0-4ebf-8896-27e6ab015899.png?v=1775603997&width=320",
+      "alt": "",
+      "width": 320,
+      "height": 49,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Your_design.png?v=1755288632&width=320",
+      "alt": "",
+      "width": 320,
+      "height": 51,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/image_229_2a855b4d-5bb7-4d36-95dd-86cb8060e2a9.png?v=1775604038&width=320",
+      "alt": "",
+      "width": 320,
+      "height": 79,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/image_212.png?v=1758817677&width=320",
+      "alt": "",
+      "width": 168,
+      "height": 86,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/image_213.png?v=1758817688&width=320",
+      "alt": "",
+      "width": 320,
+      "height": 23,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/coffee_3.png?v=1717080902&width=200",
+      "alt": "",
+      "width": 200,
+      "height": 164,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/pngwing_7.png?v=1717080822&width=200",
+      "alt": "",
+      "width": 200,
+      "height": 208,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/PngItem_1146565_8.png?v=1717080782&width=200",
+      "alt": "",
+      "width": 200,
+      "height": 219,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/chaga_png_5.png?v=1717080852&width=200",
+      "alt": "",
+      "width": 200,
+      "height": 226,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/pngegg_5.png?v=1717080877&width=200",
+      "alt": "",
+      "width": 200,
+      "height": 172,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Untitled_design_12_2.png?v=1717080923&width=200",
+      "alt": "",
+      "width": 200,
+      "height": 283,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/coffee_3.png?v=1717080902&width=200",
+      "alt": "",
+      "width": 200,
+      "height": 164,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/pngwing_7.png?v=1717080822&width=200",
+      "alt": "",
+      "width": 200,
+      "height": 208,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/PngItem_1146565_8.png?v=1717080782&width=200",
+      "alt": "",
+      "width": 200,
+      "height": 219,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/chaga_png_5.png?v=1717080852&width=200",
+      "alt": "",
+      "width": 200,
+      "height": 226,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/pngegg_5.png?v=1717080877&width=200",
+      "alt": "",
+      "width": 200,
+      "height": 172,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/Untitled_design_12_2.png?v=1717080923&width=200",
+      "alt": "",
+      "width": 200,
+      "height": 283,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/image_16.webp?v=1777070715&width=900",
+      "alt": "",
+      "width": 900,
+      "height": 675,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/fd43ffcb6ba4c9606b07928aea17a442ffa04648_1_1.webp?v=1777580827&width=900",
+      "alt": "",
+      "width": 800,
+      "height": 600,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/299/assets/icon-arrow-down.svg?v=115066451314460877751757785214",
+      "alt": "down arrow",
+      "width": 24,
+      "height": 14,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/299/assets/icon-arrow-down.svg?v=115066451314460877751757785214",
+      "alt": "down arrow",
+      "width": 24,
+      "height": 14,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/299/assets/icon-arrow-down.svg?v=115066451314460877751757785214",
+      "alt": "down arrow",
+      "width": 24,
+      "height": 14,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/299/assets/icon-arrow-down.svg?v=115066451314460877751757785214",
+      "alt": "down arrow",
+      "width": 24,
+      "height": 14,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/299/assets/icon-arrow-down.svg?v=115066451314460877751757785214",
+      "alt": "down arrow",
+      "width": 24,
+      "height": 14,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/299/assets/icon-arrow-down.svg?v=115066451314460877751757785214",
+      "alt": "down arrow",
+      "width": 24,
+      "height": 14,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/299/assets/icon-arrow-down.svg?v=115066451314460877751757785214",
+      "alt": "down arrow",
+      "width": 24,
+      "height": 14,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/t/299/assets/icon-arrow-down.svg?v=115066451314460877751757785214",
+      "alt": "down arrow",
+      "width": 24,
+      "height": 14,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/wrapped-gift_1f381_1.svg?v=1766523496&width=250",
+      "alt": "",
+      "width": 43,
+      "height": 43,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/beaming-face-with-smiling-eyes_1f601_1.svg?v=1766523568&width=250",
+      "alt": "",
+      "width": 52,
+      "height": 50,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/sparkling-heart_1f496_1.svg?v=1766523581&width=250",
+      "alt": "",
+      "width": 51,
+      "height": 51,
+      "loading": "lazy",
+      "srcset": ""
+    },
+    {
+      "src": "https://www.everydaydose.com/cdn/shop/files/EDD_Logo_2025_Secondary_BLK-1.png?v=4432638798227304768",
+      "alt": "everyday dose logo",
+      "width": 3203,
+      "height": 362,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://cdn.shopify.com/s/files/1/0272/4531/4113/files/truemed-navy.svg?v=1740755557",
+      "alt": "TrueMed Logo",
+      "width": 499,
+      "height": 87,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://bat.bing.com/action/0?ti=187145065&Ver=2&mid=58e6bc98-cfcb-4e57-af67-a015f23c83a0&bo=2&sid=a16510205bf611f180f89b68ccbe9382&vid=a1652b805bf611f1978729fcf10bea31&vids=1&msclkid=N&pi=918639831&lg=en-US&sw=1440&sh=900&sc=30&nwd=1&tl=Everyday%20Dose%C2%AE%20Official%20Site%20%7C%20Best%20Mushroom%20Coffee&p=https%3A%2F%2Fwww.everydaydose.com%2F&r=&lt=11150&evt=pageLoad&sv=2&asc=G&cdb=AQAC&rn=437340",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "loading": "auto",
+      "srcset": ""
+    },
+    {
+      "src": "https://bat.bing.com/action/0?ti=187145065&Ver=2&mid=ed094920-76e0-4118-a797-a4e40d983300&bo=1&sid=a16510205bf611f180f89b68ccbe9382&vid=a1652b805bf611f1978729fcf10bea31&vids=0&msclkid=N&page_path=%2F&spa=Y&tl=Everyday%20Dose%C2%AE%20Official%20Site%20%7C%20Best%20Mushroom%20Coffee&p=https%3A%2F%2Fwww.everydaydose.com%2F&pi=918639831&lg=en-US&sw=1440&sh=900&sc=30&nwd=1&r=https%3A%2F%2Fwww.everydaydose.com%2F&evt=pageLoad&sv=2&asc=G&cdb=AQAC&rn=505644",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "loading": "auto",
+      "srcset": ""
+    }
+  ],
+  "videos": [
+    {
+      "src": "",
+      "poster": "https://www.everydaydose.com/cdn/shop/files/preview_images/a91a513c1a1c4459ba61f7b41f19e286.thumbnail.0000000000.jpg?v=1748357760&width=900",
+      "autoplay": false,
+      "loop": true,
+      "muted": true
+    },
+    {
+      "src": "",
+      "poster": "https://www.everydaydose.com/cdn/shop/files/preview_images/a91a513c1a1c4459ba61f7b41f19e286.thumbnail.0000000000.jpg?v=1748357760&width=900",
+      "autoplay": false,
+      "loop": true,
+      "muted": true
+    }
+  ],
+  "backgroundImages": [
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/t/299/assets/Coffee-Modal-Bg.png?v=134958637478108156581761939015\")",
+      "element": "DIV.customModalCoffeeContent"
+    },
+    {
+      "url": "linear-gradient(rgb(0, 0, 0) 35%, rgb(76, 25, 216))",
+      "element": "DIV.customModalBoldContent"
+    },
+    {
+      "url": "linear-gradient(rgb(82, 167, 38) 35%, rgb(201, 252, 165))",
+      "element": "DIV.customModalMatchaContent"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/Frame_48224.webp?v=1777343351&width=2000\")",
+      "element": "DIV.bgImage"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/pastel_gradient.png?v=1775837805\")",
+      "element": "DIV.headerV2MegaGridItemBodyATC"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/pastel_gradient.png?v=1775837805\")",
+      "element": "DIV.headerV2MegaGridItemBodyATC"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/pastel_gradient.png?v=1775837805\")",
+      "element": "DIV.headerV2MegaGridItemBodyATC"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/pastel_gradient.png?v=1775837805\")",
+      "element": "DIV.headerV2MegaGridItemBodyATC"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/pastel_gradient.png?v=1775837805\")",
+      "element": "DIV.sliderV2GridItemBodyATC"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/pastel_gradient.png?v=1775837805\")",
+      "element": "DIV.sliderV2GridItemBodyATC"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/pastel_gradient.png?v=1775837805\")",
+      "element": "DIV.sliderV2GridItemBodyATC"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/pastel_gradient.png?v=1775837805\")",
+      "element": "DIV.sliderV2GridItemBodyATC"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/pastel_gradient.png?v=1775837805\")",
+      "element": "A.customButton"
+    },
+    {
+      "url": "linear-gradient(90deg, rgba(5, 194, 247, 0.8) 0.9%, rgba(231, 73, 255, 0.71) 100%)",
+      "element": "SECTION.iconTextBarV2"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/Custom-Gradient.png?v=1756844585\")",
+      "element": "A.reviewsTry"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/Custom-Gradient.png?v=1756844585\")",
+      "element": "A.ingredientsTry"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/Custom-Gradient.png?v=1756844585\")",
+      "element": "A.textImageV2GridContentTry"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/Custom-Gradient.png?v=1756844585\")",
+      "element": "A.textImageV2GridContentTry"
+    },
+    {
+      "url": "url(\"https://www.everydaydose.com/cdn/shop/files/Custom-Gradient.png?v=1756844585\")",
+      "element": "A.faqAccordionV2Try"
+    },
+    {
+      "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg width=%2710%27 height=%275%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke-width=%272%27 stroke=%27%23eaeaea%27 d=%27M0 .5h10%27/%3E%3C/svg%3E\")",
+      "element": "DIV.yotpo-review-border-smooth"
+    },
+    {
+      "url": "url(\"https://cdn-yotpo-images-production.yotpo.com/Review/844085597/852946287/original.jpg?1779914486&format=webp&height=300&width=300\")",
+      "element": "BUTTON.yotpo-single-thumbnail"
+    },
+    {
+      "url": "url(\"https://cdn-yotpo-images-production.yotpo.com/Review/843745217/852619912/original.jpg?1779821341&format=webp&height=300&width=300\")",
+      "element": "BUTTON.yotpo-single-thumbnail"
+    },
+    {
+      "url": "url(\"https://cdn-yotpo-images-production.yotpo.com/Review/843723462/852589454/original.jpg?1779811915&format=webp&height=300&width=300\")",
+      "element": "BUTTON.yotpo-single-thumbnail"
+    },
+    {
+      "url": "url(\"https://cdn-yotpo-images-production.yotpo.com/Review/843458237/852405347/original.jpg?1779740489&format=webp&height=300&width=300\")",
+      "element": "BUTTON.yotpo-single-thumbnail"
+    },
+    {
+      "url": "url(\"https://cdn-yotpo-images-production.yotpo.com/Review/843384654/852374083/original.jpg?1779726105&format=webp&height=300&width=300\")",
+      "element": "BUTTON.yotpo-single-thumbnail"
+    },
+    {
+      "url": "url(\"https://cdn-yotpo-images-production.yotpo.com/Review/842705262/851933281/original.jpg?1779500021&format=webp&height=300&width=300\")",
+      "element": "BUTTON.yotpo-single-thumbnail"
+    },
+    {
+      "url": "url(\"https://cdn-yotpo-images-production.yotpo.com/Review/842625409/851861162/original.jpg?1779487261&format=webp&height=300&width=300\")",
+      "element": "BUTTON.yotpo-single-thumbnail"
+    },
+    {
+      "url": "url(\"https://cdn-yotpo-images-production.yotpo.com/Review/841523786/851253851/original.jpg?1779329183&format=webp&height=300&width=300\")",
+      "element": "BUTTON.yotpo-single-thumbnail"
+    },
+    {
+      "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg width=%2710%27 height=%275%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke-width=%272%27 stroke=%27%23eaeaea%27 d=%27M0 .5h10%27/%3E%3C/svg%3E\")",
+      "element": "DIV.yotpo-review-border-smooth"
+    },
+    {
+      "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg width=%2710%27 height=%275%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke-width=%272%27 stroke=%27%23eaeaea%27 d=%27M0 .5h10%27/%3E%3C/svg%3E\")",
+      "element": "DIV.yotpo-review-border-smooth"
+    },
+    {
+      "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg width=%2710%27 height=%275%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke-width=%272%27 stroke=%27%23eaeaea%27 d=%27M0 .5h10%27/%3E%3C/svg%3E\")",
+      "element": "DIV.yotpo-review-border-smooth"
+    },
+    {
+      "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg width=%2710%27 height=%275%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke-width=%272%27 stroke=%27%23eaeaea%27 d=%27M0 .5h10%27/%3E%3C/svg%3E\")",
+      "element": "DIV.yotpo-review-border-smooth"
+    },
+    {
+      "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg width=%2710%27 height=%275%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke-width=%272%27 stroke=%27%23eaeaea%27 d=%27M0 .5h10%27/%3E%3C/svg%3E\")",
+      "element": "DIV.yotpo-review-border-smooth"
+    },
+    {
+      "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg width=%2710%27 height=%275%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke-width=%272%27 stroke=%27%23eaeaea%27 d=%27M0 .5h10%27/%3E%3C/svg%3E\")",
+      "element": "DIV.yotpo-review-border-smooth"
+    },
+    {
+      "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg width=%2710%27 height=%275%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke-width=%272%27 stroke=%27%23eaeaea%27 d=%27M0 .5h10%27/%3E%3C/svg%3E\")",
+      "element": "DIV.yotpo-review-border-smooth"
+    },
+    {
+      "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg width=%2710%27 height=%275%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke-width=%272%27 stroke=%27%23eaeaea%27 d=%27M0 .5h10%27/%3E%3C/svg%3E\")",
+      "element": "DIV.yotpo-review-border-smooth"
+    },
+    {
+      "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg width=%2710%27 height=%275%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke-width=%272%27 stroke=%27%23eaeaea%27 d=%27M0 .5h10%27/%3E%3C/svg%3E\")",
+      "element": "DIV.yotpo-review-border-smooth"
+    },
+    {
+      "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg width=%2710%27 height=%275%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke-width=%272%27 stroke=%27%23eaeaea%27 d=%27M0 .5h10%27/%3E%3C/svg%3E\")",
+      "element": "DIV.yotpo-review-border-smooth"
+    },
+    {
+      "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg width=%2710%27 height=%275%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke-width=%272%27 stroke=%27%23eaeaea%27 d=%27M0 .5h10%27/%3E%3C/svg%3E\")",
+      "element": "DIV.yotpo-review-border-smooth"
+    },
+    {
+      "url": "linear-gradient(to right, rgb(156, 234, 235) 0%, rgb(244, 181, 244) 50%, rgb(196, 234, 249) 100%)",
+      "element": "BUTTON.flex"
+    }
+  ],
+  "svgCount": 165,
+  "fonts": [
+    "Times"
+  ],
+  "favicons": [
+    {
+      "href": "https://www.everydaydose.com/cdn/shop/files/favicon_598edbbf-e0c1-4281-b2d6-0f9129c34156.png?v=1778621242",
+      "sizes": ""
+    }
+  ],
+  "stylesheets": [
+    "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap",
+    "https://www.everydaydose.com/cdn/shop/t/299/assets/theme-swiper-bundle.min.css?v=35049300365071119411759470929",
+    "https://www.everydaydose.com/cdn/shop/t/299/assets/theme-tiny-slider-2.9.2.css?v=140182550834162975121759470930",
+    "https://www.everydaydose.com/cdn/shop/t/299/assets/theme-global.css?v=145203963959648833051779558254",
+    "https://www.everydaydose.com/cdn/shop/t/299/assets/theme-header-v2.css?v=71782852987130487301776717901",
+    "https://www.everydaydose.com/cdn/shop/t/299/assets/theme-footer.css?v=134061654438010899021778614129",
+    "https://www.everydaydose.com/cdn/shop/t/299/assets/theme-mini-cart.css?v=42642033705534787471778265664",
+    "https://www.everydaydose.com/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css",
+    "https://cdn.shopify.com/extensions/019e4607-8a49-7c39-bac7-6cc128aa7dd4/keepcart-2-201/assets/app.css",
+    "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap",
+    "https://static.klaviyo.com/onsite/js/build-preview/commit-5d442d0d617755df968ef2e36fb5983b8ce1a1b7/532.0e7e190ea756de832333.css"
+  ],
+  "fontLinks": [
+    "https://fonts.googleapis.com/",
+    "https://fonts.gstatic.com/",
+    "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap",
+    "https://shop.app/",
+    "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+  ],
+  "metaTags": [
+    {
+      "name": "ede-response-id",
+      "content": "65c6f780-2f2f-4f98-9fdf-1a97b553d2fb"
+    },
+    {
+      "name": "description",
+      "content": "Everyday Dose mushroom coffee combines functional mushrooms, collagen protein, and nootropics to promote focus, energy, immunity, and gut health. Try it now!"
+    },
+    {
+      "name": "viewport",
+      "content": "initial-scale=1, width=device-width, height=device-height, viewport-fit=cover"
+    },
+    {
+      "name": "og:site_name",
+      "content": "Everyday Dose"
+    },
+    {
+      "name": "og:url",
+      "content": "https://www.everydaydose.com/"
+    },
+    {
+      "name": "og:title",
+      "content": "Everyday Dose® Official Site | Best Mushroom Coffee"
+    },
+    {
+      "name": "og:type",
+      "content": "website"
+    },
+    {
+      "name": "og:description",
+      "content": "Everyday Dose mushroom coffee combines functional mushrooms, collagen protein, and nootropics to promote focus, energy, immunity, and gut health. Try it now!"
+    },
+    {
+      "name": "og:image",
+      "content": "http://www.everydaydose.com/cdn/shop/files/banner.png?v=1774033353&width=600"
+    },
+    {
+      "name": "og:image:secure_url",
+      "content": "https://www.everydaydose.com/cdn/shop/files/banner.png?v=1774033353&width=600"
+    },
+    {
+      "name": "og:image:width",
+      "content": "5904"
+    },
+    {
+      "name": "og:image:height",
+      "content": "3376"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    },
+    {
+      "name": "twitter:title",
+      "content": "Everyday Dose® Official Site | Best Mushroom Coffee"
+    },
+    {
+      "name": "twitter:description",
+      "content": "Everyday Dose mushroom coffee combines functional mushrooms, collagen protein, and nootropics to promote focus, energy, immunity, and gut health. Try it now!"
+    },
+    {
+      "name": "google-site-verification",
+      "content": "KS6QAUKg1jU3KGoF41CR7_tQkfmVh2HGr0fhb2H-a_Q"
+    },
+    {
+      "name": "google-site-verification",
+      "content": "lLNtDQJx5ksJqHCOo8hvHsQNQZ4tJgIdotBUPGoEjqA"
+    },
+    {
+      "name": "google-site-verification",
+      "content": "ysrCGydDI25PaNrMw9kKhIghowvuj13XOUhPIa0BT58"
+    },
+    {
+      "name": "shopify-digital-wallet",
+      "content": "/27245314113/digital_wallets/dialog"
+    },
+    {
+      "name": "shopify-checkout-api-token",
+      "content": "903b95549c7fa539c7d9fc6c18939633"
+    }
+  ]
+}

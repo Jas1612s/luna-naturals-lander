@@ -33,7 +33,7 @@ export function FaqSection() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="bg-[var(--gr-cream)] py-16 md:py-20">
+    <section className="bg-[var(--gr-cream)] py-16 md:py-20 border-t border-[var(--gr-dark)]/5">
       <div className="max-w-[640px] mx-auto px-4 md:px-6">
         <h2 className="gr-display text-3xl md:text-4xl text-[var(--gr-dark)] text-center leading-tight mb-10">
           Any last questions?

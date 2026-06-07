@@ -1,0 +1,37 @@
+{
+  "bodyStyles": {
+    "fontFamily": "Avenir, sans-serif",
+    "fontSize": "16px",
+    "color": "rgb(35, 31, 32)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "lineHeight": "normal"
+  },
+  "colors": [
+    "rgb(213, 213, 213)",
+    "rgb(243, 244, 246)",
+    "rgb(255, 255, 255)",
+    "rgb(35, 31, 32)",
+    "rgb(76, 25, 216)"
+  ],
+  "fontSizes": [
+    "10px",
+    "11px",
+    "12px",
+    "13px",
+    "14px",
+    "15px",
+    "16px",
+    "22px",
+    "25px",
+    "34px",
+    "40px",
+    "43px"
+  ],
+  "fontWeights": [
+    "400",
+    "500",
+    "600",
+    "700",
+    "900"
+  ]
+}

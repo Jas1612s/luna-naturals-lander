@@ -1,0 +1,153 @@
+{% comment %}
+  HiStrips — Performance features 4-card grid + stats section
+  Clone of: histrips.com/products/nasal-histrips
+{% endcomment %}
+
+<div class="hs-pdp-page">
+
+  {%- comment -%} ── Press bar ── {%- endcomment -%}
+  <div class="hs-press-wrap">
+    <div class="hs-press-label">AS SEEN IN</div>
+    <div class="hs-press-scroller">
+      <div class="hs-press-track">
+        {%- assign outlets = "Forbes|Men's Health|GQ|Runner's World|Outside|Healthline|Vogue|Bloomberg|Wired" | split: "|" -%}
+        {%- for outlet in outlets -%}
+          <span class="hs-press-item">{{ outlet }}</span>
+        {%- endfor -%}
+        {%- comment -%} Duplicate for seamless loop {%- endcomment -%}
+        {%- for outlet in outlets -%}
+          <span class="hs-press-item">{{ outlet }}</span>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ── Performance cards ── {%- endcomment -%}
+  <div class="hs-perf-wrap">
+    <div class="hs-perf-inner">
+      <h2 class="hs-perf-title">{{ section.settings.title | default: 'Clinically Designed. Backed by Experts.' }}</h2>
+
+      <div class="hs-perf-grid">
+        {%- for block in section.blocks -%}
+          <div class="hs-perf-card" {{ block.shopify_attributes }}>
+            <div class="hs-perf-card-icon">
+              {%- case block.settings.icon -%}
+                {%- when 'focus' -%}
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+                {%- when 'motion' -%}
+                  <svg viewBox="0 0 24 24"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+                {%- when 'flexible' -%}
+                  <svg viewBox="0 0 24 24"><path d="M2 12c0-3.866 3.582-7 8-7 2.209 0 4.209.894 5.657 2.343"/><path d="M22 12c0 3.866-3.582 7-8 7-2.209 0-4.209-.894-5.657-2.343"/></svg>
+                {%- when 'medical' -%}
+                  <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12h6M12 9v6"/></svg>
+                {%- else -%}
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              {%- endcase -%}
+            </div>
+            <h3 class="hs-perf-card-title">{{ block.settings.title }}</h3>
+            <p class="hs-perf-card-body">{{ block.settings.body }}</p>
+          </div>
+        {%- endfor -%}
+
+        {%- comment -%} Default cards if no blocks {%- endcomment -%}
+        {%- if section.blocks.size == 0 -%}
+          <div class="hs-perf-card">
+            <div class="hs-perf-card-icon"><svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+            <h3 class="hs-perf-card-title">Performance-focused</h3>
+            <p class="hs-perf-card-body">Strong hold, immediate airflow expansion, no fiddling, no reapplying.</p>
+          </div>
+          <div class="hs-perf-card">
+            <div class="hs-perf-card-icon"><svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg></div>
+            <h3 class="hs-perf-card-title">Engineered for Motion</h3>
+            <p class="hs-perf-card-body">Built for performance — the grip doesn't budge, even during sweat-heavy workouts or deep sleep.</p>
+          </div>
+          <div class="hs-perf-card">
+            <div class="hs-perf-card-icon"><svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c0-3.866 3.582-7 8-7 2.209 0 4.209.894 5.657 2.343"/><path d="M22 12c0 3.866-3.582 7-8 7-2.209 0-4.209-.894-5.657-2.343"/></svg></div>
+            <h3 class="hs-perf-card-title">Stable, Yet Flexible</h3>
+            <p class="hs-perf-card-body">No collapsing. No warping. The reinforced band ensures consistent lift with a soft-touch feel.</p>
+          </div>
+          <div class="hs-perf-card">
+            <div class="hs-perf-card-icon"><svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12h6M12 9v6"/></svg></div>
+            <h3 class="hs-perf-card-title">Medical Grade</h3>
+            <p class="hs-perf-card-body">Hypoallergenic, FDA-registered materials. Strong enough for performance, gentle enough for nightly wear.</p>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ── Stats ── {%- endcomment -%}
+  <div class="hs-stats-wrap">
+    <div class="hs-stats-inner">
+      <h2 class="hs-stats-heading">{{ section.settings.stats_heading | default: 'Real results. Real athletes.' }}</h2>
+      <div class="hs-stats-grid">
+        <div class="hs-stat">
+          <div class="hs-stat-num">93%</div>
+          <p class="hs-stat-label">Of users report waking up less groggy and feeling more rested.</p>
+        </div>
+        <div class="hs-stat">
+          <div class="hs-stat-num">97%</div>
+          <p class="hs-stat-label">Of athletes feel immediate improvement in nasal airflow, with more energy and focus during training.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "HiStrips Features & Stats",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Clinically Designed. Backed by Experts."
+    },
+    {
+      "type": "text",
+      "id": "stats_heading",
+      "label": "Stats heading",
+      "default": "Real results. Real athletes."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_card",
+      "name": "Feature Card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "focus",    "label": "Focus / Target" },
+            { "value": "motion",   "label": "Motion / Arrows" },
+            { "value": "flexible", "label": "Flexible / Loop" },
+            { "value": "medical",  "label": "Medical / Shield" }
+          ],
+          "default": "focus"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card title",
+          "default": "Performance-focused"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Card body",
+          "default": "Strong hold, immediate airflow expansion, no fiddling, no reapplying."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HiStrips Features & Stats"
+    }
+  ]
+}
+{% endschema %}

@@ -1,16 +1,16 @@
 const companies = [
-  "Shopify", "Notion", "Webflow", "Eventbrite", "Poshmark",
-  "Quora", "CBRE", "Anduril", "GoodRx", "Opendoor",
-  "Virgin Voyages", "Sierra Nevada", "Zola", "Discord", "Barry's",
+  "Gymshark", "MVMT", "Allbirds", "Pura Vida", "Ridge",
+  "True Classic", "Hexclad", "Caraway", "Bearaby", "Cuts",
+  "Graza", "Jolie", "Brightland", "Chamberlain Coffee", "Olipop",
 ];
 
 export function CustomerLogos() {
   return (
     <div
       style={{
-        backgroundColor: "#F7F7F4",
-        borderTop: "1px solid #E4E1DB",
-        borderBottom: "1px solid #E4E1DB",
+        backgroundColor: "#0A0A0A",
+        borderTop: "1px solid rgba(255,255,255,0.06)",
+        borderBottom: "1px solid rgba(255,255,255,0.06)",
         overflow: "hidden",
       }}
       className="py-10"
@@ -22,12 +22,12 @@ export function CustomerLogos() {
             marginBottom: "28px",
             fontSize: "11px",
             fontWeight: 700,
-            color: "#8A8A8A",
+            color: "rgba(255,255,255,0.3)",
             textTransform: "uppercase",
             letterSpacing: "0.1em",
           }}
         >
-          Trusted by 50,000+ businesses
+          Funding e-commerce founders at every stage
         </p>
         <div
           style={{
@@ -43,7 +43,7 @@ export function CustomerLogos() {
               style={{
                 fontSize: "15px",
                 fontWeight: 700,
-                color: "#C8C4C4",
+                color: "rgba(255,255,255,0.2)",
                 letterSpacing: "-0.02em",
                 userSelect: "none",
               }}

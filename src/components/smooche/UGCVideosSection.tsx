@@ -1,7 +1,7 @@
 const VIDEOS = [
-  { thumb: "/images/smooche/elpc-5.png", alt: "Customer unboxing Lick lollipops" },
-  { thumb: "/images/smooche/lick-lifestyle-2.png", alt: "Customer trying Lick lollipop" },
-  { thumb: "/images/smooche/elpc-7.png", alt: "Customer review of Lick lollipops" },
+  { thumb: "/images/smooche/elpc-5.webp", alt: "Customer unboxing Lick lollipops" },
+  { thumb: "/images/smooche/lick-lifestyle-2.webp", alt: "Customer trying Lick lollipop" },
+  { thumb: "/images/smooche/elpc-7.webp", alt: "Customer review of Lick lollipops" },
 ];
 
 function PlayButton() {

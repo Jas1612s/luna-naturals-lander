@@ -64,7 +64,7 @@ export function WeightLossSection() {
           loop
           muted
           playsInline
-          poster="/images/Hims_Sunlight_Rough_PillsPen_poster.jpg"
+          poster="/images/Hims_Sunlight_Rough_PillsPen_poster.webp"
         >
           <source src="/videos/Hims_Sunlight_Rough_PillsPen.mp4" type="video/mp4" />
         </video>
@@ -174,7 +174,7 @@ export function WeightLossSection() {
             loop
             muted
             playsInline
-            poster="/images/comprehensive-pill-poster.png"
+            poster="/images/comprehensive-pill-poster.webp"
           >
             <source src="/videos/comprehensive-pill.mp4" type="video/mp4" />
           </video>

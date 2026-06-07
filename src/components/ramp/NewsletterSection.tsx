@@ -16,9 +16,9 @@ export function NewsletterSection() {
   return (
     <section
       style={{
-        backgroundColor: "#F7F7F4",
-        borderTop: "1px solid #E4E1DB",
-        borderBottom: "1px solid #E4E1DB",
+        backgroundColor: "#0A0A0A",
+        borderTop: "1px solid rgba(255,255,255,0.08)",
+        borderBottom: "1px solid rgba(255,255,255,0.08)",
       }}
       className="py-16"
     >
@@ -44,7 +44,7 @@ export function NewsletterSection() {
             fontWeight: 800,
             letterSpacing: "-0.03em",
             lineHeight: 1.1,
-            color: "#0F0F0F",
+            color: "#ffffff",
             marginBottom: "12px",
           }}
         >
@@ -55,7 +55,7 @@ export function NewsletterSection() {
         <p
           style={{
             fontSize: "15px",
-            color: "#595959",
+            color: "rgba(255,255,255,0.55)",
             lineHeight: 1.6,
             marginBottom: "24px",
           }}
@@ -111,12 +111,12 @@ export function NewsletterSection() {
               required
               style={{
                 flex: 1,
-                border: "1px solid #E4E1DB",
-                backgroundColor: "white",
+                border: "1px solid rgba(255,255,255,0.15)",
+                backgroundColor: "rgba(255,255,255,0.06)",
                 borderRadius: "9999px",
                 padding: "12px 20px",
                 fontSize: "14px",
-                color: "#0F0F0F",
+                color: "#ffffff",
                 outline: "none",
               }}
             />

@@ -9,7 +9,7 @@ export function FinalCTA() {
     <section
       style={{
         background:
-          "linear-gradient(135deg, #282D0F 0%, #3A4220 50%, #46502D 100%)",
+          "linear-gradient(135deg, var(--gr-green-dark) 0%, var(--gr-green) 50%, var(--gr-green-mid) 100%)",
       }}
     >
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-16 md:py-20 flex flex-col md:flex-row items-center gap-8 md:gap-12">
@@ -17,10 +17,10 @@ export function FinalCTA() {
         <div className="flex-1">
           {/* Rating */}
           <div className="flex items-center gap-2 text-sm flex-wrap">
-            <span className="text-[#F4693E]">★★★★★</span>
+            <span className="text-[var(--gr-accent)]">★★★★★</span>
             <span className="text-white">
-              <span className="text-[#F4693E] font-bold">4.8</span> stars from{" "}
-              <span className="text-[#F4693E] font-bold">50,000+</span> happy
+              <span className="text-[var(--gr-accent)] font-bold">4.8</span> stars from{" "}
+              <span className="text-[var(--gr-accent)] font-bold">50,000+</span> happy
               families
             </span>
           </div>
@@ -35,8 +35,7 @@ export function FinalCTA() {
             {benefits.map((benefit) => (
               <li key={benefit} className="flex items-center gap-3 text-white font-medium">
                 <span
-                  className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs shrink-0"
-                  style={{ backgroundColor: "#46502D" }}
+                  className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs shrink-0 bg-[var(--gr-green-mid)]"
                 >
                   ✓
                 </span>
@@ -49,13 +48,13 @@ export function FinalCTA() {
           <div className="flex gap-4 mt-8 flex-wrap">
             <a
               href="#shop-adults"
-              className="bg-[#F4693E] text-white font-semibold px-8 py-3 rounded-full hover:brightness-95 transition"
+              className="bg-[var(--gr-accent)] text-white font-semibold px-8 py-3 rounded-full hover:brightness-95 transition"
             >
               Shop Adults
             </a>
             <a
               href="#shop-kids"
-              className="bg-[#F4693E] text-white font-semibold px-8 py-3 rounded-full hover:brightness-95 transition"
+              className="bg-[var(--gr-accent)] text-white font-semibold px-8 py-3 rounded-full hover:brightness-95 transition"
             >
               Shop Kids
             </a>

@@ -1,0 +1,154 @@
+{
+  "tag": "section",
+  "classes": "hero",
+  "id": "template--18069017755713__section_hero_jVwYNk",
+  "styles": {
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "fontFamily": "Avenir, sans-serif",
+    "color": "rgb(35, 31, 32)",
+    "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+    "width": "1440px",
+    "height": "601.914px",
+    "display": "block",
+    "flexDirection": "row",
+    "border": "0px none rgb(35, 31, 32)",
+    "overflow": "visible",
+    "position": "static",
+    "opacity": "1",
+    "transition": "all",
+    "objectFit": "fill",
+    "backgroundPosition": "0% 0%"
+  },
+  "childCount": 1,
+  "children": [
+    {
+      "tag": "a",
+      "classes": "heroLink",
+      "styles": {
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "fontFamily": "Avenir, sans-serif",
+        "color": "rgb(35, 31, 32)",
+        "textDecoration": "underline rgba(0, 0, 0, 0)",
+        "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+        "width": "1440px",
+        "height": "601.914px",
+        "display": "block",
+        "flexDirection": "row",
+        "border": "0px none rgb(35, 31, 32)",
+        "overflow": "visible",
+        "position": "static",
+        "opacity": "1",
+        "transition": "all",
+        "cursor": "pointer",
+        "objectFit": "fill",
+        "backgroundPosition": "0% 0%"
+      },
+      "childCount": 1,
+      "children": [
+        {
+          "tag": "picture",
+          "classes": "heroImage",
+          "styles": {
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "fontFamily": "Avenir, sans-serif",
+            "color": "rgb(35, 31, 32)",
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+            "width": "1440px",
+            "height": "601.914px",
+            "display": "block",
+            "flexDirection": "row",
+            "border": "0px none rgb(35, 31, 32)",
+            "overflow": "visible",
+            "position": "static",
+            "opacity": "1",
+            "transition": "all",
+            "cursor": "pointer",
+            "objectFit": "fill",
+            "backgroundPosition": "0% 0%"
+          },
+          "childCount": 3,
+          "children": [
+            {
+              "tag": "source",
+              "classes": "",
+              "styles": {
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "fontFamily": "Avenir, sans-serif",
+                "color": "rgb(35, 31, 32)",
+                "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+                "display": "inline",
+                "flexDirection": "row",
+                "border": "0px none rgb(35, 31, 32)",
+                "overflow": "visible",
+                "position": "static",
+                "opacity": "1",
+                "transition": "all",
+                "cursor": "pointer",
+                "objectFit": "fill",
+                "backgroundPosition": "0% 0%"
+              },
+              "childCount": 0,
+              "children": []
+            },
+            {
+              "tag": "source",
+              "classes": "",
+              "styles": {
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "fontFamily": "Avenir, sans-serif",
+                "color": "rgb(35, 31, 32)",
+                "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+                "display": "inline",
+                "flexDirection": "row",
+                "border": "0px none rgb(35, 31, 32)",
+                "overflow": "visible",
+                "position": "static",
+                "opacity": "1",
+                "transition": "all",
+                "cursor": "pointer",
+                "objectFit": "fill",
+                "backgroundPosition": "0% 0%"
+              },
+              "childCount": 0,
+              "children": []
+            },
+            {
+              "tag": "img",
+              "classes": "heroImage",
+              "styles": {
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "fontFamily": "Avenir, sans-serif",
+                "color": "rgb(35, 31, 32)",
+                "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+                "width": "1440px",
+                "height": "601.914px",
+                "display": "block",
+                "flexDirection": "row",
+                "border": "0px none rgb(35, 31, 32)",
+                "overflow": "clip",
+                "position": "static",
+                "opacity": "1",
+                "transition": "all",
+                "cursor": "pointer",
+                "objectFit": "fill",
+                "backgroundPosition": "0% 0%"
+              },
+              "images": {
+                "src": "https://www.everydaydose.com/cdn/shop/files/DESKTOP_25_a08f9964-cded-4471-ad38-e9a4af50d7aa.webp?v=1778634732&width=2500",
+                "alt": ""
+              },
+              "childCount": 0,
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

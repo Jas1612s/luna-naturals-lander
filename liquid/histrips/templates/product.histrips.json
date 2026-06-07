@@ -1,0 +1,71 @@
+{
+  "sections": {
+    "announcement-bar": {
+      "type": "hs-announcement-bar",
+      "settings": {}
+    },
+    "header": {
+      "type": "hs-header",
+      "settings": {}
+    },
+    "social-proof": {
+      "type": "hs-social-proof",
+      "settings": {}
+    },
+    "product-main": {
+      "type": "hs-product-main",
+      "settings": {}
+    },
+    "influencer-marquee": {
+      "type": "hs-influencer-marquee",
+      "settings": {}
+    },
+    "next-gen-tech": {
+      "type": "hs-next-gen-tech",
+      "settings": {}
+    },
+    "as-seen-in": {
+      "type": "hs-as-seen-in",
+      "settings": {}
+    },
+    "performance": {
+      "type": "hs-performance",
+      "settings": {}
+    },
+    "clinical": {
+      "type": "hs-clinical",
+      "settings": {}
+    },
+    "use-cases": {
+      "type": "hs-use-cases",
+      "settings": {}
+    },
+    "comparison": {
+      "type": "hs-comparison",
+      "settings": {}
+    },
+    "faq": {
+      "type": "hs-faq",
+      "settings": {}
+    },
+    "newsletter-footer": {
+      "type": "hs-newsletter-footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "social-proof",
+    "product-main",
+    "influencer-marquee",
+    "next-gen-tech",
+    "as-seen-in",
+    "performance",
+    "clinical",
+    "use-cases",
+    "comparison",
+    "faq",
+    "newsletter-footer"
+  ]
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export function DemoCTA() {
   const [email, setEmail] = useState("");
@@ -27,21 +28,22 @@ export function DemoCTA() {
             marginBottom: "16px",
           }}
         >
-          Ready to start?
+          Ready to unlock your cash flow?
         </p>
 
         {/* Heading */}
         <h2
           style={{
             fontSize: "clamp(32px, 4vw, 60px)",
-            fontWeight: 800,
-            letterSpacing: "-0.04em",
+            fontWeight: 900,
+            letterSpacing: "-0.05em",
             lineHeight: 1.05,
             color: "white",
             marginBottom: "20px",
           }}
         >
-          Get started for free today.
+          Find out how much you qualify for —{" "}
+          <span style={{ color: "#4ade80" }}>in 60 seconds.</span>
         </h2>
 
         {/* Paragraph */}
@@ -54,8 +56,8 @@ export function DemoCTA() {
             lineHeight: 1.6,
           }}
         >
-          Join 50,000+ businesses that use Ramp to save time and money. No personal credit check.
-          No hidden fees. Free to start.
+          No credit check. No personal guarantee. No equity.
+          Get an estimate in 60 seconds — decisions within 24 business hours.
         </p>
 
         {/* Email form */}
@@ -101,7 +103,7 @@ export function DemoCTA() {
             onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.88"; }}
             onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
           >
-            Get started for free
+            Check my eligibility
           </button>
         </form>
 
@@ -127,12 +129,12 @@ export function DemoCTA() {
               <circle cx="14" cy="14" r="13.5" stroke="rgba(255,255,255,0.2)" />
               <path d="M11.5 10.5L19 14L11.5 17.5V10.5Z" fill="rgba(255,255,255,0.45)" />
             </svg>
-            Watch demo · See Ramp in action
+            Watch demo · See how invoice financing works
           </button>
         </div>
 
-        {/* Book a demo pill */}
-        <div className="flex justify-center">
+        {/* Secondary links */}
+        <div className="flex flex-wrap items-center justify-center gap-4">
           <a
             href="#"
             style={{
@@ -147,8 +149,30 @@ export function DemoCTA() {
             onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.7"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
           >
-            Book a personalized demo
+            Talk to a financing specialist
           </a>
+          <Link
+            href="/ramp/pre-qualification"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              border: "1px solid rgba(0,178,72,0.3)",
+              color: "#4ade80",
+              borderRadius: "9999px",
+              padding: "10px 20px",
+              fontSize: "14px",
+              textDecoration: "none",
+              transition: "opacity 0.15s",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.75"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
+          >
+            Check my eligibility →
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>

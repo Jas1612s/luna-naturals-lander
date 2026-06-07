@@ -23,7 +23,7 @@ export function FullerLipsSection() {
         <div className="w-full md:w-1/2 flex justify-center md:justify-start">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/smooche/fuller-lips-hero.png"
+            src="/images/smooche/lick-fuller-lips.webp"
             alt="Fuller lips naturally — Smooche product"
             style={{
               width: "100%",

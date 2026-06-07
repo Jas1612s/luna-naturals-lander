@@ -1,0 +1,121 @@
+{
+  "sections": {
+    "pdp-hero": {
+      "type": "histrips-pdp-hero",
+      "settings": {
+        "benefit_tags": "40% More Oxygen|Deeper Sleep|Sharper Focus|Reduced Snoring"
+      }
+    },
+    "pdp-nextgen": {
+      "type": "histrips-pdp-nextgen",
+      "settings": {
+        "label": "NEXT-GEN NASAL TECH",
+        "heading_line1": "Next-Gen",
+        "heading_line2": "Nasal Tech",
+        "body": "HiStrips uses multi-layer tension-release technology to gently lift and open your nasal passages, giving you up to 40% more oxygen with every breath."
+      },
+      "blocks": {
+        "usp-1": {
+          "type": "usp",
+          "settings": { "icon": "lift",   "text": "Dynamic Lift Design" }
+        },
+        "usp-2": {
+          "type": "usp",
+          "settings": { "icon": "shield", "text": "Sweat-Proof Adhesive Matrix" }
+        },
+        "usp-3": {
+          "type": "usp",
+          "settings": { "icon": "oxygen", "text": "40% More Oxygen Per Breath" }
+        }
+      },
+      "block_order": ["usp-1", "usp-2", "usp-3"]
+    },
+    "pdp-features": {
+      "type": "histrips-pdp-features",
+      "settings": {
+        "title": "Clinically Designed. Backed by Experts in Sleep & Respiratory Health.",
+        "stats_heading": "Real results. Real athletes."
+      },
+      "blocks": {
+        "card-1": {
+          "type": "feature_card",
+          "settings": {
+            "icon": "focus",
+            "title": "Performance-focused",
+            "body": "Strong hold, immediate airflow expansion, no fiddling, no reapplying."
+          }
+        },
+        "card-2": {
+          "type": "feature_card",
+          "settings": {
+            "icon": "motion",
+            "title": "Engineered for Motion",
+            "body": "Built for performance — the grip doesn't budge, even during sweat-heavy workouts or deep sleep."
+          }
+        },
+        "card-3": {
+          "type": "feature_card",
+          "settings": {
+            "icon": "flexible",
+            "title": "Stable, Yet Flexible",
+            "body": "No collapsing. No warping. The reinforced band ensures consistent lift with a soft-touch feel."
+          }
+        },
+        "card-4": {
+          "type": "feature_card",
+          "settings": {
+            "icon": "medical",
+            "title": "Medical Grade",
+            "body": "Hypoallergenic, FDA-registered materials. Strong enough for performance, gentle enough for nightly wear."
+          }
+        }
+      },
+      "block_order": ["card-1", "card-2", "card-3", "card-4"]
+    },
+    "pdp-faq": {
+      "type": "histrips-pdp-faq",
+      "settings": {
+        "heading": "Frequently Asked Questions"
+      },
+      "blocks": {
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will they stay on during intense workouts?",
+            "answer": "Yes! HiStrips uses a strong yet gentle adhesive that keeps them in place, even during intense workouts or active movement."
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes HiStrips different from other nasal strips?",
+            "answer": "1. Premium adhesive that stays on even during sweat and sleep (72h). 2. Bold design — finally something that looks good. 3. Sleek resealable pouch with 30 strips per pack. 4. Trusted by 150,000+ athletes worldwide. 5. Developed for performance, recovery, and aesthetics."
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How many strips are in a pack?",
+            "answer": "Each pack contains 30 strips, giving you a full month of nightly or daily use."
+          }
+        },
+        "faq-4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe for sensitive skin?",
+            "answer": "Yes — HiStrips are made with hypoallergenic, FDA-registered materials gentle enough for daily wear."
+          }
+        },
+        "faq-5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do they help with snoring?",
+            "answer": "Many users report a significant reduction in snoring due to improved nasal airflow keeping the nose clear throughout the night."
+          }
+        }
+      },
+      "block_order": ["faq-1", "faq-2", "faq-3", "faq-4", "faq-5"]
+    }
+  },
+  "order": ["pdp-hero", "pdp-nextgen", "pdp-features", "pdp-faq"]
+}

@@ -1,0 +1,261 @@
+{% comment %}
+  HiStrips Nasal Strips — Product Hero Section
+  Clone of: histrips.com/products/nasal-histrips
+  Requires: histrips-pdp.css loaded in layout
+  Interactivity: Alpine.js (cdn.jsdelivr.net/npm/alpinejs)
+{% endcomment %}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign first_variant = product.selected_or_first_available_variant
+  assign gallery_images = product.images
+-%}
+
+<div class="hs-pdp-page">
+
+  {%- comment -%} ── Product Hero ── {%- endcomment -%}
+  <div class="hs-pdp-hero"
+    x-data="{
+      activeImg: 0,
+      activeQty: 1,
+      activeOption: 'subscribe',
+      openAcc: null,
+      quantities: [
+        { label: '1x', strips: '30 strips', save: null, discount: 0 },
+        { label: '2x', strips: '60 strips', save: 'SAVE 15%', discount: 15 },
+        { label: '3x', strips: '90 strips', save: 'SAVE 25%', discount: 25 }
+      ],
+      basePrice: {{ first_variant.price }},
+      comparePrice: {{ first_variant.compare_at_price | default: 0 }},
+      get currentPrice() {
+        const discount = this.quantities[this.activeQty].discount;
+        let price = this.basePrice * (this.activeQty + 1);
+        if (discount > 0) price = price * (100 - discount) / 100;
+        if (this.activeOption === 'subscribe') price = price * 0.8;
+        return price;
+      },
+      get currentCompare() {
+        return this.basePrice * (this.activeQty + 1);
+      },
+      get savePct() {
+        if (this.currentCompare === 0) return 0;
+        return Math.round((1 - this.currentPrice / this.currentCompare) * 100);
+      },
+      formatMoney(cents) {
+        return '€' + (cents / 100).toFixed(2).replace('.', ',').replace(/,00$/, '');
+      },
+      async addToCart() {
+        const res = await fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: {{ first_variant.id }}, quantity: this.activeQty + 1 })
+        });
+        const data = await res.json();
+        document.dispatchEvent(new CustomEvent('cart:refresh'));
+      }
+    }"
+  >
+
+    {%- comment -%} ── Gallery ── {%- endcomment -%}
+    <div class="hs-gallery">
+      <div class="hs-gallery-main">
+        <div class="hs-gallery-badge">40% More Oxygen</div>
+        {%- for image in gallery_images -%}
+          <img
+            src="{{ image | image_url: width: 900 }}"
+            alt="{{ image.alt | default: product.title }}"
+            loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+            x-show="activeImg === {{ forloop.index0 }}"
+            style="{% unless forloop.first %}display:none{% endunless %}"
+          />
+        {%- endfor -%}
+      </div>
+
+      <div class="hs-gallery-thumbs">
+        {%- for image in gallery_images -%}
+          <button
+            class="hs-thumb"
+            :class="{ active: activeImg === {{ forloop.index0 }} }"
+            @click="activeImg = {{ forloop.index0 }}"
+            aria-label="{{ image.alt | default: product.title }}"
+          >
+            <img src="{{ image | image_url: width: 150 }}" alt="{{ image.alt }}" loading="lazy" />
+          </button>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    {%- comment -%} ── Form ── {%- endcomment -%}
+    <div class="hs-form-side">
+
+      {%- comment -%} Stars {%- endcomment -%}
+      <div class="hs-stars-row">
+        <div class="hs-stars">
+          {%- for i in (1..5) -%}
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" /></svg>
+          {%- endfor -%}
+        </div>
+        <span class="hs-review-count"><strong>1,247</strong> reviews &nbsp;·&nbsp; 4.9</span>
+        <a href="#reviews" class="hs-review-link">Read all →</a>
+      </div>
+
+      <h1 class="hs-product-title">{{ product.title }}</h1>
+
+      <div class="hs-benefit-badges">
+        {%- for tag in section.settings.benefit_tags | split: '|' -%}
+          <span class="hs-badge">{{ tag | strip }}</span>
+        {%- endfor -%}
+      </div>
+
+      {%- comment -%} Price {%- endcomment -%}
+      <div class="hs-price-row">
+        <span class="hs-price-sale" x-text="formatMoney(currentPrice)">
+          {{ first_variant.price | money }}
+        </span>
+        {%- if first_variant.compare_at_price > first_variant.price -%}
+          <span class="hs-price-compare" x-text="currentCompare > 0 ? formatMoney(currentCompare) : ''">
+            {{ first_variant.compare_at_price | money }}
+          </span>
+          <span class="hs-save-pill" x-text="savePct > 0 ? 'SAVE ' + savePct + '%' : ''">
+            {%- assign save_pct = first_variant.compare_at_price | minus: first_variant.price | times: 100 | divided_by: first_variant.compare_at_price -%}
+            SAVE {{ save_pct }}%
+          </span>
+        {%- endif -%}
+      </div>
+      <p class="hs-per-strip" x-text="formatMoney(Math.round(currentPrice / ((activeQty + 1) * 30))) + ' per strip'">
+        {{ first_variant.price | divided_by: 30 | money }} per strip
+      </p>
+
+      <hr class="hs-divider" />
+
+      {%- comment -%} Quantity selector {%- endcomment -%}
+      <p class="hs-qty-label">Select Quantity</p>
+      <div class="hs-qty-grid">
+        <template x-for="(qty, idx) in quantities" :key="idx">
+          <button
+            class="hs-qty-btn"
+            :class="{ active: activeQty === idx }"
+            @click="activeQty = idx"
+          >
+            <span class="hs-qty-btn-save" x-show="qty.save" x-text="qty.save"></span>
+            <span class="hs-qty-btn-label" x-text="qty.label"></span>
+            <span class="hs-qty-btn-strips" x-text="qty.strips"></span>
+          </button>
+        </template>
+      </div>
+
+      {%- comment -%} Subscribe / One-time toggle {%- endcomment -%}
+      <div class="hs-option-toggle">
+        <button
+          class="hs-option-btn"
+          :class="{ active: activeOption === 'subscribe' }"
+          @click="activeOption = 'subscribe'"
+        >
+          <span class="hs-option-btn-label">Subscribe &amp; Save</span>
+          <span class="hs-option-btn-price" x-text="formatMoney(Math.round(currentPrice * 0.8 / 0.8 * 0.8))"></span>
+          <span class="hs-option-btn-tag">MOST POPULAR</span>
+        </button>
+        <button
+          class="hs-option-btn"
+          :class="{ active: activeOption === 'one-time' }"
+          @click="activeOption = 'one-time'"
+        >
+          <span class="hs-option-btn-label">One-Time Purchase</span>
+          <span class="hs-option-btn-price" x-text="formatMoney(currentCompare)"></span>
+        </button>
+      </div>
+
+      {%- comment -%} Subscribe benefits {%- endcomment -%}
+      <div class="hs-sub-benefits" x-show="activeOption === 'subscribe'">
+        <p class="hs-sub-benefits-title">Your 3 free gifts &nbsp;<span style="opacity:0.5;font-weight:400">Worth $50+</span></p>
+        {%- assign gifts = "🧴,Face Wipes + 2 E-books,Month 1 (Now)|📦,Mouth Tape + Coupon,Month 2|💧,Water Bottle + Earplugs,Month 3" | split: "|" -%}
+        {%- for gift in gifts -%}
+          {%- assign parts = gift | split: "," -%}
+          <div class="hs-sub-benefit-item">
+            <span class="hs-sub-benefit-icon">{{ parts[0] }}</span>
+            <div>
+              <div>{{ parts[1] }}</div>
+              <div class="hs-sub-benefit-month">{{ parts[2] }}</div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- comment -%} ATC Button {%- endcomment -%}
+      <button class="hs-atc-btn" @click="addToCart">
+        Add to Cart +
+      </button>
+
+      {%- comment -%} Trust badges {%- endcomment -%}
+      <div class="hs-trust-row">
+        <span class="hs-trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          30 Days Risk-Free
+        </span>
+        <span class="hs-trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Free Shipping €50+
+        </span>
+        <span class="hs-trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          3rd Party Lab Tested
+        </span>
+      </div>
+
+      {%- comment -%} Accordions {%- endcomment -%}
+      <div class="hs-accordion">
+        {%- assign accordions = "Shipping & Returns,We ship fast, worldwide. Free shipping over €45/US$50. Processing: 1 business day. Delivery: 3–7 business days. Ships from local US or EU warehouses.|Description,{{ product.description }}|What makes HiStrips different?,1. Premium adhesive that stays on even during sweat and sleep (72h). 2. Bold design — finally something that looks good. 3. Sleek resealable pouch with 30 strips per pack. 4. Trusted by 150000+ athletes worldwide. 5. Developed for performance recovery and aesthetics." | split: "|" -%}
+        {%- for item in accordions -%}
+          {%- assign parts = item | split: "," -%}
+          {%- assign acc_index = forloop.index -%}
+          <div class="hs-acc-item" :class="{ open: openAcc === {{ acc_index }} }">
+            <button class="hs-acc-toggle" @click="openAcc = openAcc === {{ acc_index }} ? null : {{ acc_index }}">
+              <span>{{ parts[0] }}</span>
+              <span class="hs-acc-toggle-icon">+</span>
+            </button>
+            <div class="hs-acc-body">
+              {%- if forloop.index == 2 -%}
+                {{ product.description }}
+              {%- else -%}
+                {{ parts[1] | default: parts[0] }}
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+    </div>{%- comment -%} /form side {%- endcomment -%}
+  </div>{%- comment -%} /hero {%- endcomment -%}
+
+</div>{%- comment -%} /hs-pdp-page {%- endcomment -%}
+
+{%- comment -%} Sticky mobile ATC {%- endcomment -%}
+<div class="hs-sticky-atc">
+  <button class="hs-atc-btn" onclick="document.querySelector('.hs-atc-btn:not(.hs-sticky-atc .hs-atc-btn)').click()">
+    Add to Cart +
+  </button>
+</div>
+
+{% schema %}
+{
+  "name": "HiStrips PDP Hero",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "benefit_tags",
+      "label": "Benefit badges (pipe-separated)",
+      "default": "40% More Oxygen|Deeper Sleep|Sharper Focus|Reduced Snoring"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HiStrips PDP Hero"
+    }
+  ]
+}
+{% endschema %}

@@ -10,6 +10,7 @@ import { UsVsThem } from "@/components/gruns/UsVsThem";
 import { BiteFreeCtaBanner } from "@/components/gruns/BiteFreeCtaBanner";
 import { FaqSection } from "@/components/gruns/FaqSection";
 import { GrunsFooter } from "@/components/gruns/GrunsFooter";
+import { StickyMobileCTA } from "@/components/gruns/StickyMobileCTA";
 
 export default function GrunsPage() {
   return (
@@ -30,6 +31,7 @@ export default function GrunsPage() {
       </main>
 
       <GrunsFooter />
+      <StickyMobileCTA />
     </>
   );
 }

@@ -28,7 +28,7 @@ export default function GrunsLayout({
 }) {
   return (
     <div
-      className={`gruns-root ${workSans.variable} ${dmMono.variable} min-h-full flex flex-col antialiased`}
+      className={`gruns-root ${workSans.variable} ${dmMono.variable} min-h-full flex flex-col antialiased overflow-x-hidden`}
     >
       {children}
     </div>

@@ -1,0 +1,147 @@
+{% comment %}
+  HiStrips — Next-Gen Nasal Tech section
+  Clone of: histrips.com/products/nasal-histrips (below-hero feature section)
+{% endcomment %}
+
+<div class="hs-pdp-page">
+  <div class="hs-nextgen-wrap">
+    <div class="hs-nextgen-inner">
+
+      {%- comment -%} ── Left ── {%- endcomment -%}
+      <div class="hs-nextgen-left">
+        <p class="hs-section-label">{{ section.settings.label | default: 'NEXT-GEN NASAL TECH' }}</p>
+        <h2 class="hs-nextgen-heading">
+          {{ section.settings.heading_line1 | default: 'Next-Gen' }}<br/>
+          <span>{{ section.settings.heading_line2 | default: 'Nasal Tech' }}</span>
+        </h2>
+        <p class="hs-nextgen-body">
+          {{ section.settings.body | default: 'HiStrips uses multi-layer tension-release technology to gently lift and open your nasal passages, giving you up to 40% more oxygen with every breath.' }}
+        </p>
+
+        <div class="hs-nextgen-usps">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'usp' -%}
+              <div class="hs-nextgen-usp" {{ block.shopify_attributes }}>
+                <div class="hs-nextgen-usp-icon">
+                  {%- case block.settings.icon -%}
+                    {%- when 'lift' -%}
+                      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    {%- when 'shield' -%}
+                      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    {%- when 'oxygen' -%}
+                      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+                    {%- else -%}
+                      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  {%- endcase -%}
+                </div>
+                <span class="hs-nextgen-usp-text">{{ block.settings.text }}</span>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- comment -%} Fallback USPs if no blocks configured {%- endcomment -%}
+          {%- if section.blocks.size == 0 -%}
+            {%- assign default_usps = "Dynamic Lift Design|Sweat-Proof Adhesive Matrix|40% More Oxygen Per Breath" | split: "|" -%}
+            {%- for usp in default_usps -%}
+              <div class="hs-nextgen-usp">
+                <div class="hs-nextgen-usp-icon">
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span class="hs-nextgen-usp-text">{{ usp }}</span>
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- comment -%} ── Right — media ── {%- endcomment -%}
+      <div class="hs-nextgen-right">
+        <div class="hs-nextgen-media">
+          {%- if section.settings.image != blank -%}
+            <img
+              src="{{ section.settings.image | image_url: width: 800 }}"
+              alt="{{ section.settings.image.alt | default: 'HiStrips Next-Gen Technology' }}"
+              loading="lazy"
+            />
+          {%- else -%}
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "HiStrips Next-Gen Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section label",
+      "default": "NEXT-GEN NASAL TECH"
+    },
+    {
+      "type": "text",
+      "id": "heading_line1",
+      "label": "Heading line 1",
+      "default": "Next-Gen"
+    },
+    {
+      "type": "text",
+      "id": "heading_line2",
+      "label": "Heading line 2 (gradient)",
+      "default": "Nasal Tech"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body text",
+      "default": "HiStrips uses multi-layer tension-release technology to gently lift and open your nasal passages, giving you up to 40% more oxygen with every breath."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Media image (right side)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "USP Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "lift",    "label": "Lift / Layers" },
+            { "value": "shield",  "label": "Shield" },
+            { "value": "oxygen",  "label": "Oxygen / Plus" },
+            { "value": "check",   "label": "Checkmark" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "USP text",
+          "default": "Dynamic Lift Design"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HiStrips Next-Gen Section",
+      "blocks": [
+        { "type": "usp", "settings": { "icon": "lift",   "text": "Dynamic Lift Design" } },
+        { "type": "usp", "settings": { "icon": "shield", "text": "Sweat-Proof Adhesive Matrix" } },
+        { "type": "usp", "settings": { "icon": "oxygen", "text": "40% More Oxygen Per Breath" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
