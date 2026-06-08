@@ -7,7 +7,7 @@ const products: Record<
 > = {
   adults: {
     name: "Adults Patches",
-    href: "/gruns/adults",
+    href: "/lunanaturals/adults",
     image: "/images/gruns/adults-lifestyle-box.webp",
     patchCount: 90,
     price: "$9.99",
@@ -17,7 +17,7 @@ const products: Record<
   },
   kids: {
     name: "Kids Patches",
-    href: "/gruns/kids",
+    href: "/lunanaturals/kids",
     image: "/images/gruns/product-kids-patches-v2.jpg",
     video: "/videos/gruns/kids-offer-video.mp4",
     patchCount: 120,

@@ -239,9 +239,42 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
                 alt={variant.label}
                 width={700}
                 height={700}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="w-full h-full object-cover"
                 priority
               />
+
+              {/* Feature tags on first image */}
+              {activeImage === 0 && (
+                <>
+                  {/* Top-left pill */}
+                  <div className="absolute top-3.5 left-3.5 z-10 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 flex items-center gap-1.5 shadow-sm">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gr-accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    <span className="text-[11px] font-bold text-[var(--gr-dark)]">12-hour protection</span>
+                  </div>
+                  {/* Top-right badge */}
+                  <div className="absolute top-3.5 right-3.5 z-10 bg-[var(--gr-accent)] rounded-full w-[70px] h-[70px] flex flex-col items-center justify-center text-center shadow-md" style={{ animation: "gr-badge-wobble 3s ease-in-out infinite" }}>
+                    <span className="text-[8px] font-bold text-white/70 uppercase tracking-wider leading-none">Loved by</span>
+                    <span className="text-sm font-extrabold text-white leading-tight">50K+</span>
+                    <span className="text-[8px] font-bold text-white/70 uppercase tracking-wider leading-none">families</span>
+                  </div>
+                  {/* Bottom trust pills */}
+                  <div className="absolute bottom-3.5 left-3.5 z-10 flex items-center gap-2">
+                    {[
+                      { icon: "leaf", label: "Plant-based" },
+                      { icon: "shield", label: "Pediatrician-reviewed" },
+                      { icon: "check", label: "DEET-free" },
+                    ].map((tag) => (
+                      <div key={tag.label} className="bg-white/90 backdrop-blur-sm rounded-full px-2.5 py-1 flex items-center gap-1 shadow-sm">
+                        {tag.icon === "leaf" && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1.5 5.5-5 7-9 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>}
+                        {tag.icon === "shield" && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>}
+                        {tag.icon === "check" && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>}
+                        <span className="text-[10px] font-semibold text-[var(--gr-dark)]">{tag.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
 
               {/* Before/After labels for comparison image */}
               {/* 3-pack value overlay */}
@@ -326,6 +359,8 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
                     alt=""
                     width={72}
                     height={72}
+                    sizes="72px"
+                    loading="lazy"
                     className="w-full h-full object-cover bg-[var(--gr-cream)]"
                   />
                 </button>

@@ -4,14 +4,14 @@ import Link from "next/link";
 const variantInfo = {
   adults: {
     name: "Adults",
-    href: "/gruns/adults",
+    href: "/lunanaturals/adults",
     image: "/images/gruns/product-adults-patches.webp",
     patchCount: 90,
     tagline: "Same plant-powered formula, sized for grown-ups.",
   },
   kids: {
     name: "Kids",
-    href: "/gruns/kids",
+    href: "/lunanaturals/kids",
     image: "/images/gruns/product-kids-patches-v2.jpg",
     patchCount: 120,
     tagline: "Fun designs they'll actually want to wear. Safe for ages 2+.",

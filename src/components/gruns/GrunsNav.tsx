@@ -82,7 +82,7 @@ export function GrunsNav() {
           </div>
 
           {/* Center: logo */}
-          <a href="/gruns" className="flex items-center justify-center h-full">
+          <a href="/lunanaturals" className="flex items-center justify-center h-full">
             <img
               src="/images/gruns/luna-naturals-logo-cropped.webp"
               alt="Luna Naturals"

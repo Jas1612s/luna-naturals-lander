@@ -18,7 +18,7 @@ export function NewsMobileCTA() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-black/10 px-4 py-3 shadow-lg">
       <a
-        href="/gruns/kids"
+        href="/lunanaturals/kids"
         className="block w-full py-3.5 bg-[#1a1a2e] text-white text-center text-sm font-bold rounded-lg hover:bg-[#2a2a4e] transition"
       >
         See the Sale — 60% Off

@@ -10,7 +10,7 @@ const products = [
     badgeBg: "bg-[var(--gr-green-dark)]",
     cardBg: "#6B7258",
     subtitle: "90 patches — Less than $0.17 each",
-    href: "/gruns/adults",
+    href: "/lunanaturals/adults",
     savePercent: 40,
   },
   {
@@ -22,7 +22,7 @@ const products = [
     badgeBg: "bg-[var(--gr-accent)]",
     cardBg: "#6B7258",
     subtitle: "120 patches — Less than $0.13 each",
-    href: "/gruns/kids",
+    href: "/lunanaturals/kids",
     savePercent: 40,
   },
 ];
@@ -37,9 +37,9 @@ export function FindYourFlavor() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[700px] mx-auto">
           {products.map((product) => (
-            <a key={product.name} href={product.href} className="flex flex-col group">
+            <a key={product.name} href={product.href} className="flex flex-col group rounded-xl overflow-hidden border border-[var(--gr-dark)]/8 bg-white group-hover:ring-2 ring-[var(--gr-green)] transition">
               <div
-                className="relative rounded-xl overflow-hidden group-hover:ring-2 ring-[var(--gr-green)] transition"
+                className="relative"
                 style={{ backgroundColor: product.cardBg }}
               >
                 {product.badge && (
@@ -54,6 +54,8 @@ export function FindYourFlavor() {
                   alt={product.name}
                   width={600}
                   height={600}
+                  sizes="(max-width: 640px) 100vw, 350px"
+                  loading="lazy"
                   className="w-full aspect-square object-contain p-2 md:p-3 scale-125"
                 />
                 {/* Save overlay */}
@@ -67,29 +69,30 @@ export function FindYourFlavor() {
                 </div>
               </div>
 
-              <h3 className="mt-3 font-bold text-base text-[var(--gr-dark)]">
-                {product.name}
-              </h3>
-              <p className="text-sm text-[var(--gr-dark)]">
-                {product.originalPrice ? (
-                  <>
-                    Starts at{" "}
-                    <span className="font-semibold">{product.price}</span>{" "}
-                    <span className="line-through text-gray-400">
-                      {product.originalPrice}
-                    </span>
-                  </>
-                ) : (
-                  <span className="font-semibold">{product.price}</span>
-                )}
-              </p>
-              {product.subtitle && (
-                <p className="text-xs text-[var(--gr-sage)] mt-0.5">{product.subtitle}</p>
-              )}
-
-              <span className="mt-3 w-full py-2.5 bg-[var(--gr-green)] text-white text-sm font-semibold rounded-full hover:bg-[var(--gr-green-dark)] transition-colors text-center block">
-                Shop Now
-              </span>
+              {/* Order bar */}
+              <div className="flex items-center gap-3 bg-white border-t border-[var(--gr-dark)]/8 p-2.5">
+                <div className="w-12 h-12 rounded-lg overflow-hidden bg-[var(--gr-cream)] shrink-0">
+                  <Image
+                    src={product.image}
+                    alt=""
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs font-semibold text-[var(--gr-dark)] leading-snug truncate">{product.name}</p>
+                  <p className="text-sm mt-0.5">
+                    <span className="font-bold text-[var(--gr-dark)]">{product.price}</span>{" "}
+                    {product.originalPrice && (
+                      <span className="text-xs text-[var(--gr-sage)] line-through">{product.originalPrice}</span>
+                    )}
+                  </p>
+                </div>
+                <span className="shrink-0 bg-[var(--gr-accent)] text-white text-xs font-bold px-4 py-2.5 rounded-full whitespace-nowrap">
+                  Order now &rarr;
+                </span>
+              </div>
             </a>
           ))}
         </div>

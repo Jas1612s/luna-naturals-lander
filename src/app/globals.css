@@ -648,6 +648,13 @@ html {
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
+@keyframes gr-badge-wobble {
+  0%, 100% { transform: rotate(6deg) scale(1); }
+  25% { transform: rotate(-4deg) scale(1.05); }
+  50% { transform: rotate(8deg) scale(1); }
+  75% { transform: rotate(-2deg) scale(1.03); }
+}
+
 @keyframes gr-marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -866,4 +873,97 @@ html {
     max-width: 100% !important;
     border-radius: 12px !important;
   }
+}
+
+/* ─────────────────────────────────────────────────────────
+   BUGMD — advertorial landing page clone
+   ───────────────────────────────────────────────────────── */
+.bugmd-root {
+  --bm-bg: #eaf1f7;
+  --bm-white: #ffffff;
+  --bm-black: #000000;
+  --bm-text: #525252;
+  --bm-heading: #111111;
+  --bm-heading-black: #000000;
+  --bm-border: #bfbfbf;
+  --bm-link: #1e5c96;
+  --bm-link-blue: #0045ff;
+  --bm-footer-text: #37465a;
+  --bm-orange: #f99035;
+  --bm-orange-border: #c2712c;
+  --bm-blue-box: #4e7096;
+  --bm-blue-box-border: #296b93;
+  --bm-quote-bg: #f9f9f9;
+  --bm-quote-border: #cccccc;
+  --bm-disclose-bg: #D5D4D0;
+  --bm-red: red;
+
+  font-family: var(--font-roboto), "Roboto", Arial, sans-serif;
+  color: var(--bm-text);
+  background-color: var(--bm-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-size: 19px;
+}
+
+.bugmd-root * {
+  box-sizing: border-box;
+}
+
+.bugmd-root .bm-heading {
+  font-family: var(--font-oswald), "Oswald", sans-serif;
+}
+
+.bugmd-root .bm-btn-font {
+  font-family: var(--font-open-sans), "Open Sans", sans-serif;
+}
+
+.bugmd-root a {
+  text-decoration: none;
+}
+
+.bugmd-root img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.bugmd-root blockquote {
+  margin: 20px 36px;
+  padding: 20px 20px 20px 40px;
+  border-left: 10px solid var(--bm-quote-border);
+  background-color: var(--bm-quote-bg);
+  background-image: url('/images/bugmd/quote-bg.jpg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 579px) {
+  .bugmd-root blockquote {
+    background-image: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px 10px 10px 20px;
+  }
+}
+
+/* ========== Smooche CCF Aging Advertorial ========== */
+.ccf-aging-root {
+  --ccf-black: #000000;
+  --ccf-white: #ffffff;
+  --ccf-gray-bg: #f7f7f7;
+  --ccf-text: #151515;
+  --ccf-text-muted: #555555;
+  --ccf-rose: #A94E63;
+  --ccf-sale-red: #bf0505;
+  --ccf-green: #22c55e;
+  --ccf-border: #e5e5e5;
+  --ccf-highlight: #f0f0f0;
+  font-family: "futura-pt", "Jost", sans-serif;
+  color: var(--ccf-text);
+  -webkit-font-smoothing: antialiased;
 }
