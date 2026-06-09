@@ -10,135 +10,122 @@ export function ArticleBody() {
         style={{
           fontSize: "24px",
           fontWeight: 700,
-          color: "#151515",
+          color: "#1a2e1a",
           marginTop: "40px",
           marginBottom: "16px",
           lineHeight: 1.3,
         }}
       >
-        The truth? I thought my foundation days were behind me
+        The truth? I was the mom losing the bug spray battle every single day
       </h2>
 
       <P>
-        At 52, I&apos;d accepted that foundation just didn&apos;t work on my
-        skin anymore.
+        At first it was just annoying. Every evening before the park, the same
+        routine &mdash; chase my 4-year-old around the kitchen, pin her arms,
+        spray her down while she screamed bloody murder.
       </P>
 
       <P>
-        Every formula I tried would start out promising&mdash;smooth
-        application, decent coverage&mdash;but within an hour, it would betray
-        me.
+        She&apos;d cry. I&apos;d feel terrible. And within two hours,
+        she&apos;d still come home covered in mosquito bites.
       </P>
 
       <P>
-        It settled into the lines around my eyes. It clung to dry patches I
-        didn&apos;t even know I had. And worst of all? It oxidized into that
-        telltale orange mask that screamed &ldquo;trying too hard.&rdquo;
-      </P>
-
-      <P>I looked older with foundation than I did without it.</P>
-
-      <P>
-        I tried everything: luxury department store brands, cult favorites my
-        daughter swore by, even the &ldquo;age-defying&rdquo; formulas
-        specifically marketed to women my age. Nothing worked.
+        I tried every brand on the shelf. The &ldquo;gentle&rdquo; kids sprays
+        that smelled like a chemical factory. The &ldquo;natural&rdquo; ones
+        that wore off in 20 minutes. The clip-on devices that did absolutely
+        nothing.
       </P>
 
       <P>
-        The sales associates would color-match me under those bright lights,
-        promising me this was &ldquo;the one.&rdquo; Two hours later, I&apos;d
-        catch my reflection and barely recognize myself&mdash;orange, cakey,
-        aged.
+        The worst part wasn&apos;t the bites &mdash; it was the guilt. Every
+        night I&apos;d dab calamine lotion on swollen welts and wonder if I was
+        failing as a mom. Other kids seemed fine. Why couldn&apos;t I keep
+        mosquitoes off mine?
       </P>
 
-      {/* Image 1: before/after eyes */}
+      <P>
+        Then last March, during her annual checkup, our pediatrician asked a
+        simple question that changed everything.
+      </P>
+
+      <P>
+        &ldquo;Have you tried repellent patches instead of sprays?&rdquo;
+      </P>
+
+      {/* Image 1: article image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/images/smooche-ccf/article-image-1.jpg"
-        alt="Before and after close-up comparison of foundation on eyes"
+        alt="Child wearing mosquito repellent patch on clothing"
         className="w-full rounded-lg"
         style={{ margin: "32px 0", display: "block" }}
       />
 
       <P>
-        I was ready to accept that foundation was a young woman&apos;s game.
-        That at my age, I&apos;d just have to embrace my bare skin, uneven
-        tone, age spots and all.
+        She explained that plant-based patches stick to clothing &mdash; not
+        skin. The active ingredients create a protective vapor barrier around
+        your child without a single chemical touching their body.
       </P>
 
       <P>
-        But then a friend&mdash;also in her 50s&mdash;told me about something
-        different. Not just another shade, but an entirely different technology
-        that actually adapts to aging skin.
-      </P>
-
-      <P>I was skeptical. I&apos;d heard it all before.</P>
-
-      <P>
-        But within minutes of application, I watched something I&apos;d never
-        seen before: the formula literally transformed to match my skin. No
-        orange. No gray. No settling into lines.
+        I was skeptical. I&apos;d wasted money on every &ldquo;miracle
+        solution&rdquo; before. But the patches were $9.99 for 120 &mdash; less
+        than a single can of OFF &mdash; so I figured I had nothing to lose.
       </P>
 
       <P>
-        For the first time in years, my skin looked like my skin&mdash;just
-        smoother, more even, more radiant. Not masked. Not older. Just...
-        better.
+        My daughter picked a dinosaur patch. She thought it was a sticker. She
+        pressed it onto her t-shirt herself &mdash; laughing, not screaming.
       </P>
-
-      <P>I looked 10 years younger, and it lasted all day.</P>
 
       <P>
-        I needed to understand why this was finally working when everything else
-        had failed me. So I started researching. And that&apos;s when I
-        discovered the truth about why traditional foundations fail on mature
-        skin.
+        She played outside for six hours. Not a single bite. Not a single tear.
       </P>
 
-      {/* Image 2: before/after woman in gray sweater */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/images/smooche-ccf/how-it-works.jpg"
-        alt="Before and after side-by-side comparison of woman in gray sweater"
-        className="w-full rounded-lg"
-        style={{ margin: "32px 0", display: "block" }}
-      />
+      <P>
+        I sat on the porch and cried. Not because of mosquitoes &mdash; because
+        going outside finally didn&apos;t feel like a war.
+      </P>
+
+      <P>
+        That was three months ago. Our family&apos;s total mosquito bite count
+        since? Zero.
+      </P>
 
       {/* Sub-section heading */}
       <h3
         style={{
           fontSize: "22px",
           fontWeight: 700,
-          color: "#151515",
+          color: "#1a2e1a",
           marginTop: "40px",
           marginBottom: "16px",
           lineHeight: 1.3,
         }}
       >
-        What is a Color Changing Foundation?
+        What are mosquito repellent patches?
       </h3>
 
       <P>
-        Color-adapting (or skin tone adapting) foundation contains unique
-        pigment technology that literally transforms to match your individual
-        skin tone. Unlike traditional foundations that come in fixed shades,
-        these formulas contain colorless pigments that react with your
-        skin&apos;s natural pH and undertone to create your perfect shade.
+        Mosquito repellent patches are small adhesive stickers infused with
+        plant-based essential oils &mdash; typically citronella and eucalyptus
+        &mdash; that create an invisible vapor barrier to repel mosquitoes.
+        Unlike sprays, they attach to clothing, bags, or strollers, never
+        touching skin.
       </P>
 
       <P>
-        But here&apos;s what makes it revolutionary for mature skin: it
-        doesn&apos;t just match your color&mdash;it&apos;s formulated to work
-        WITH aging skin, not against it. The hydrating, lightweight formula
-        glides over fine lines instead of settling into them, provides buildable
-        coverage that evens skin tone without looking heavy, and actually makes
-        skin look smoother and more youthful.
+        What makes them a game-changer for families: kids actually want to wear
+        them. The patches come in fun designs &mdash; dinosaurs, stars, animals
+        &mdash; so children think they&apos;re decorating their outfit, not
+        getting bug protection. No more spray battles. No more tears.
       </P>
 
       <P>
-        The result? A foundation that looks like your skin&mdash;not a mask
-        sitting on top of it. And unlike regular foundations, it won&apos;t
-        oxidize, settle into wrinkles, or emphasize texture throughout the day.
+        The result? 12 hours of hands-free, chemical-free protection that your
+        kids apply themselves. No reapplication. No DEET. No sticky residue.
+        Just a happy kid playing outside without a single bite.
       </P>
     </article>
   );
@@ -151,7 +138,7 @@ function P({ children }: { children: React.ReactNode }) {
       className="text-[15px] md:text-base"
       style={{
         lineHeight: 1.75,
-        color: "#151515",
+        color: "#1a2e1a",
         marginBottom: "16px",
       }}
     >

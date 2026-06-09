@@ -1,7 +1,7 @@
 const MAIN_MENU_LINKS = [
   "Shop all",
-  "Bestsellers",
-  "Accessories",
+  "Kids Patches",
+  "Adult Patches",
   "About",
   "SALE",
 ] as const;
@@ -10,17 +10,15 @@ const USEFUL_LINKS = [
   "Track my order",
   "FAQs",
   "Terms of service",
-  "Cookie Policy",
   "Shipping policy",
   "Refund policy",
   "Privacy policy",
   "Contact",
-  "Gift cards",
 ] as const;
 
 export function CCFFooter() {
   return (
-    <footer style={{ background: "#000", color: "#fff", padding: "48px 20px" }}>
+    <footer style={{ background: "#2d4a2d", color: "#fff", padding: "48px 20px" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto" }}>
         {/* Top section: logo + description + address + links */}
         <div
@@ -38,7 +36,7 @@ export function CCFFooter() {
                 margin: "0 0 8px",
               }}
             >
-              smooche
+              Luna Naturals
             </p>
 
             {/* Description */}
@@ -51,8 +49,8 @@ export function CCFFooter() {
                 maxWidth: "280px",
               }}
             >
-              Smooche is a solutions-oriented beauty brand, creating a world
-              where everybody feels confident
+              Luna Naturals is a plant-based wellness brand creating safe,
+              effective alternatives to chemical-based products for families.
             </p>
 
             {/* Business info */}
@@ -65,24 +63,24 @@ export function CCFFooter() {
                 margin: "0 0 10px",
               }}
             >
-              <span style={{ display: "block" }}>Smooche LLC</span>
+              <span style={{ display: "block" }}>Luna Naturals LLC</span>
               <span style={{ display: "block" }}>
-                8605 Santa Monica Boulevard, PMB 44698
+                1250 Borregas Avenue, Suite 200
               </span>
-              <span style={{ display: "block" }}>West Hollywood, CA 90069</span>
+              <span style={{ display: "block" }}>Sunnyvale, CA 94089</span>
               <span style={{ display: "block" }}>United States</span>
             </address>
 
             {/* Email */}
             <a
-              href="mailto:hey@smooche.com"
+              href="mailto:hello@lunanaturals.com"
               style={{
                 fontSize: "13px",
                 color: "#999",
                 textDecoration: "none",
               }}
             >
-              hey@smooche.com
+              hello@lunanaturals.com
             </a>
           </div>
 
@@ -190,7 +188,7 @@ export function CCFFooter() {
 
           {/* Copyright */}
           <p style={{ fontSize: "12px", color: "#666", margin: 0 }}>
-            &copy; 2025 Smooche
+            &copy; 2026 Luna Naturals
           </p>
         </div>
       </div>

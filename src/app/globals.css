@@ -655,6 +655,11 @@ html {
   75% { transform: rotate(-2deg) scale(1.03); }
 }
 
+@keyframes gr-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
 @keyframes gr-marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -951,18 +956,19 @@ html {
   }
 }
 
-/* ========== Smooche CCF Aging Advertorial ========== */
+/* ========== Luna Naturals CCF Aging Advertorial ========== */
 .ccf-aging-root {
-  --ccf-black: #000000;
+  --ccf-black: #1a2e1a;
   --ccf-white: #ffffff;
-  --ccf-gray-bg: #f7f7f7;
-  --ccf-text: #151515;
-  --ccf-text-muted: #555555;
-  --ccf-rose: #A94E63;
+  --ccf-gray-bg: #f5f7f4;
+  --ccf-text: #1a2e1a;
+  --ccf-text-muted: #4a5d4a;
+  --ccf-accent: #3d5a3d;
+  --ccf-accent-light: #eef3ee;
   --ccf-sale-red: #bf0505;
-  --ccf-green: #22c55e;
-  --ccf-border: #e5e5e5;
-  --ccf-highlight: #f0f0f0;
+  --ccf-green: #3d5a3d;
+  --ccf-border: #d4ddd4;
+  --ccf-highlight: #eef3ee;
   font-family: "futura-pt", "Jost", sans-serif;
   color: var(--ccf-text);
   -webkit-font-smoothing: antialiased;

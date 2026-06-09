@@ -2,32 +2,32 @@ import Image from "next/image";
 
 const features = [
   {
-    title: "Pigment Adaptation Technology",
+    title: "Plant-Based Active Ingredients",
     image: "/images/smooche-ccf/product-comparison-2.jpg",
-    alt: "Pigment particles diagram",
+    alt: "Plant-based ingredients diagram",
     description:
-      "The best foundations don\u2019t force your skin to match a pre-made shade\u2014they adapt to you. Real color-adapting technology uses encapsulated pigments that react with your skin\u2019s unique pH and undertone, creating a perfect match that traditional foundations simply can\u2019t achieve.",
+      "The best kids\u2019 repellents use proven plant oils \u2014 citronella, eucalyptus, and lemongrass \u2014 instead of synthetic chemicals. These botanicals are naturally effective at repelling mosquitoes and have been used for centuries with zero known harmful side effects on children.",
   },
   {
-    title: "Long-Lasting Wear",
+    title: "12+ Hour Protection",
     image: "/images/smooche-ccf/product-comparison-3.jpg",
-    alt: "16+ hours lasting diagram",
+    alt: "12+ hours protection diagram",
     description:
-      "Quality foundations are formulated to last 16+ hours without fading, separating, or breaking down. Your flawless finish in the morning should still be flawless at night\u2014no touch-ups needed, no mid-day meltdown.",
+      "Quality repellents should last an entire day of outdoor play without reapplication. If you\u2019re having to reapply every 2 hours, the product isn\u2019t good enough. Look for formulas that maintain their effectiveness through sweat, water, and active play.",
   },
   {
-    title: "SPF 15 Protection",
+    title: "No Skin Contact Required",
     image: "/images/smooche-ccf/product-comparison-4.jpg",
-    alt: "SPF 15 protection diagram",
+    alt: "No skin contact protection diagram",
     description:
-      "Your foundation should protect your skin while perfecting it. SPF 15 is the minimum recommended daily protection against harmful UV rays that cause premature aging and dark spots. Quality foundations include built-in sun protection\u2014skincare and makeup in one.",
+      "The safest repellents for kids don\u2019t touch their skin at all. Patch-based solutions attach to clothing and create a vapor barrier \u2014 zero absorption, zero irritation, zero risk. If a product requires skin contact, it\u2019s already a compromise.",
   },
   {
-    title: "Skin-Loving Ingredients",
+    title: "Kid-Friendly Application",
     image: "/images/smooche-ccf/product-comparison-5.jpg",
-    alt: "Glycerin, Mica, Vitamin E diagram",
+    alt: "Kid-friendly application diagram",
     description:
-      "Your foundation should improve your skin, not just cover it. The best formulas contain nourishing ingredients like Hyaluronic Acid, Vitamin E, and natural oils that moisturize without clogging pores. Choose foundations that support your skin\u2019s long-term health.",
+      "The best repellent is one your child will actually wear. Products that come in fun designs, feel like stickers, and let kids apply them independently eliminate the spray battle entirely. If application is a fight, you\u2019ll skip it \u2014 and skipping it means bites.",
   },
 ] as const;
 
@@ -35,33 +35,31 @@ export function FoundationFeatures() {
   return (
     <section className="px-5 py-12">
       <div className="mx-auto max-w-[700px]">
-        <h3 className="mb-3 text-[22px] font-bold leading-tight text-[#151515]">
-          What makes a good foundation?
+        <h3 className="mb-3 text-[22px] font-bold leading-tight text-[#1a2e1a]">
+          What makes a good mosquito repellent for kids?
         </h3>
 
-        <p className="mb-4 text-[16px] leading-[1.75] text-[#151515]">
-          The ingredients and technology in foundations are what set the
-          effective ones apart from the rest. There are several essential
-          features that high-quality foundations use to provide flawless
-          coverage, protect your skin, and last all day. The more of these
-          features a foundation has, the better and more reliable it tends to
-          be.
+        <p className="mb-4 text-[16px] leading-[1.75] text-[#1a2e1a]">
+          Not all mosquito repellents are created equal &mdash; especially when
+          it comes to protecting children. The safest and most effective options
+          share several key features. The more of these features a product has,
+          the more confidently you can use it on your family.
         </p>
 
-        <p className="mb-8 text-[16px] leading-[1.75] text-[#151515]">
-          It&apos;s always a red flag if a brand doesn&apos;t clearly explain
-          what&apos;s in their formula or how it actually works. Always check if
-          you see any of the features below. If so, it&apos;s likely a good
-          one&mdash;and it will give you the results you&apos;re looking for.
+        <p className="mb-8 text-[16px] leading-[1.75] text-[#1a2e1a]">
+          Be wary of any product that doesn&apos;t clearly list its ingredients
+          or explain how it works. Always check for these essential features
+          below &mdash; if a repellent has them, it&apos;s likely safe,
+          effective, and worth your money.
         </p>
 
         <div className="flex flex-col gap-4">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="overflow-hidden rounded-xl border border-[#e5e5e5] bg-white p-6"
+              className="overflow-hidden rounded-xl border border-[#d4ddd4] bg-white p-6"
             >
-              <h4 className="mb-2 text-[18px] font-bold text-[#151515]">
+              <h4 className="mb-2 text-[18px] font-bold text-[#1a2e1a]">
                 {feature.title}
               </h4>
               <p className="mb-4 text-[15px] leading-[1.6] text-[#555]">

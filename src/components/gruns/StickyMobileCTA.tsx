@@ -22,7 +22,7 @@ export function StickyMobileCTA({ variant = "adults" }: { variant?: "adults" | "
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-black/5 px-4 py-3.5 shadow-[0_-4px_24px_rgba(0,0,0,0.1)] transition-transform duration-300 ${
+      className={`fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t border-black/5 px-4 py-3.5 shadow-[0_-4px_24px_rgba(0,0,0,0.1)] transition-transform duration-300 ${
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >

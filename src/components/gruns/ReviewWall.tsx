@@ -10,7 +10,7 @@ const allReviews = [
     verified: true,
     stars: 5,
     body: "We tried every spray and lotion out there. Nothing worked without drenching our kids in chemicals. These patches? Stuck one on each kid before the park \u2014 zero bites. I\u2019m literally never going back to spray. Best purchase I\u2019ve made all summer.",
-    image: "/images/gruns/Gruns-Social-Images-03.webp",
+    image: "/images/gruns/review-mom-toddler.jpg",
   },
   {
     name: "Jeremy H.",
@@ -18,7 +18,7 @@ const allReviews = [
     verified: true,
     stars: 5,
     body: "I used to buy those coil things, candles, sprays \u2014 spending $40+ a month in summer. One pack of these lasts the whole season for less than $15. It\u2019s a no-brainer. My wife ordered 3 more packs for the grandparents.",
-    image: "/images/gruns/Gruns-Social-Images-08.webp",
+    image: "/images/gruns/review-patch-arm.jpg",
   },
   {
     name: "Sarah M.",
@@ -34,7 +34,7 @@ const allReviews = [
     verified: true,
     stars: 5,
     body: "As someone with eczema, I can\u2019t use DEET products. These patches don\u2019t touch my skin directly and the citronella oil actually keeps bugs away. Game changer for sensitive skin families.",
-    image: "/images/gruns/Gruns-Social-Images-09.webp",
+    image: "/images/gruns/review-woman-box.jpg",
   },
   {
     name: "Marcus T.",
@@ -50,7 +50,7 @@ const allReviews = [
     verified: true,
     stars: 5,
     body: "Took these on a 4-day camping trip with the family. We used maybe 20 patches total for 4 people. Not a single bite the entire trip. The kids actually wanted to wear them because of the fun designs.",
-    image: "/images/gruns/Gruns-Social-Images-10.webp",
+    image: "/images/gruns/review-hikers.jpg",
   },
   {
     name: "David P.",
@@ -66,7 +66,7 @@ const allReviews = [
     verified: true,
     stars: 4,
     body: "Really impressed with how well these work. My only note is I wish the adhesive was slightly stronger \u2014 one fell off during a really sweaty hike. But for everyday use, parks, backyard hangouts? Perfect.",
-    image: "/images/gruns/Gruns-Social-Images-12.webp",
+    image: "/images/gruns/review-woman-selfie.jpg",
   },
   {
     name: "Chris B.",
@@ -102,7 +102,7 @@ export function ReviewWall() {
 
   return (
     <section className="bg-[var(--gr-cream-light)] py-16 md:py-20 px-4 md:px-6">
-      <div className="max-w-[700px] mx-auto">
+      <div className="max-w-[700px] lg:max-w-[1000px] mx-auto">
         {/* Header row */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
@@ -126,7 +126,7 @@ export function ReviewWall() {
         </button>
 
         {/* 2-column masonry */}
-        <div className="columns-2 gap-3 space-y-3">
+        <div className="columns-2 lg:columns-3 gap-3 space-y-3">
           {visible.map((review, i) => (
             <div
               key={i}

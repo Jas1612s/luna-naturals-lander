@@ -6,31 +6,31 @@ import { LazyVideo } from "@/components/gruns/LazyVideo";
 const testimonials = [
   {
     quote:
-      "We tried every spray and lotion out there. Nothing worked without drenching our kids in chemicals. These patches? Stuck one on each kid before the park \u2014 zero bites. I\u2019m literally never going back to spray.",
-    name: "Rebecca D.",
-    designation: "Mom of 3 \u2022 Verified Buyer",
-    src: "/images/gruns/review-mom-playground.jpg",
-  },
-  {
-    quote:
-      "I used to buy those coil things, candles, sprays \u2014 spending $40+ a month in summer. One pack of these lasts the whole season for less than $15. It\u2019s a no-brainer.",
+      "I just stick one on my arm before heading outside and forget about it. 12 hours later, zero bites. It\u2019s honestly the simplest thing I\u2019ve ever used.",
     name: "Jeremy H.",
     designation: "Subscriber Since 2025 \u2022 Verified Buyer",
-    src: "/images/gruns/review-campfire-beach.jpg",
+    src: "/images/gruns/review-patch-arm.jpg",
   },
   {
     quote:
-      "Took these on a 4-day camping trip with the family. We used maybe 20 patches total for 4 people. Not a single bite the entire trip. Absolute must-have.",
-    name: "Lisa R.",
+      "I was spending $40+ a month on sprays that barely worked. One box of these lasts the whole season for less than $15. The quality is incredible.",
+    name: "Lisa C.",
     designation: "Outdoor Enthusiast \u2022 Verified Buyer",
-    src: "/images/gruns/review-camping-woman.jpg",
+    src: "/images/gruns/review-woman-box.jpg",
   },
   {
     quote:
       "My toddler thinks they\u2019re dinosaur stickers and wants to put them on herself every morning. Three weeks, zero bites. The fun designs are such a smart touch!",
     name: "Sarah M.",
-    designation: "Parent \u2022 Verified Buyer",
-    src: "/images/gruns/review-mom-kitchen.jpg",
+    designation: "Mom of 2 \u2022 Verified Buyer",
+    src: "/images/gruns/review-mom-toddler.jpg",
+  },
+  {
+    quote:
+      "Took these on a 4-day hiking trip. We used maybe 20 patches total for both of us. Not a single bite the entire trip. Absolute must-have for the outdoors.",
+    name: "Rebecca D.",
+    designation: "Adventure Couple \u2022 Verified Buyer",
+    src: "/images/gruns/review-hikers.jpg",
   },
 ];
 
@@ -99,7 +99,7 @@ export function ReviewsTabs() {
       <div className="mt-16 md:mt-20 overflow-x-auto scrollbar-hide">
         <div className="flex gap-4 px-6 pb-4" style={{ width: "max-content" }}>
           {[...ugcVideos].reverse().map((vid, i) => (
-            <div key={i} className="w-[200px] md:w-[240px] shrink-0 rounded-2xl overflow-hidden bg-white">
+            <div key={i} className="w-[200px] md:w-[220px] lg:w-[200px] shrink-0 rounded-2xl overflow-hidden bg-white">
               <div className="aspect-[9/16] relative">
                 <LazyVideo src={vid.src} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

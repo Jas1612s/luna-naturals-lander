@@ -42,7 +42,7 @@ export function UsVsThem() {
 
   return (
     <section className="bg-[var(--gr-cream-warm)] py-20 md:py-28">
-      <div className="max-w-[800px] mx-auto px-4 md:px-6">
+      <div className="max-w-[800px] lg:max-w-[960px] mx-auto px-4 md:px-6">
         <h2 className="gr-display italic text-4xl md:text-5xl lg:text-6xl text-[var(--gr-green-dark)] text-center leading-tight mb-4">
           Us vs. Them
         </h2>

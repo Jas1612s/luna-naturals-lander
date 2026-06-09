@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "I thought foundation was over for me at 52 – until I discovered this – Smooche",
+    "My kids haven't had a single mosquito bite all summer — and I never spray them | The Parent Report",
   description:
-    "If you've noticed your foundation settling into every fine line, turning orange by noon, and making you look older instead of younger—this might be exactly what you've been looking for.",
+    "If you're tired of wrestling your kids with bug spray every time they go outside — one mom's discovery might change your summer forever.",
   openGraph: {
     title:
-      "I thought foundation was over for me at 52 – until I discovered this",
+      "My kids haven't had a single mosquito bite all summer — and I never spray them",
     description:
-      "If you've noticed your foundation settling into every fine line, turning orange by noon, and making you look older instead of younger—this might be exactly what you've been looking for.",
-    siteName: "Smooche",
+      "If you're tired of wrestling your kids with bug spray every time they go outside — one mom's discovery might change your summer forever.",
+    siteName: "Luna Naturals",
     type: "website",
   },
 };

@@ -34,7 +34,7 @@ export function FaqSectionKids() {
 
   return (
     <section className="bg-[var(--gr-cream)] py-16 md:py-20 border-t border-[var(--gr-dark)]/5">
-      <div className="max-w-[640px] mx-auto px-4 md:px-6">
+      <div className="max-w-[640px] lg:max-w-[780px] mx-auto px-4 md:px-6">
         <h2 className="gr-display text-3xl md:text-4xl text-[var(--gr-dark)] text-center leading-tight mb-3">
           Parents ask, we answer.
         </h2>

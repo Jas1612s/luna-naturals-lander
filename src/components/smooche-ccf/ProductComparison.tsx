@@ -18,81 +18,83 @@ interface Product {
 
 const smooche: Product = {
   rank: 1,
-  name: "smooche",
+  name: "Luna Naturals",
   rating: "4.9 / 5",
-  tagline: "Our top-pick for 2025",
+  tagline: "Our #1 pick for 2026",
   features:
-    "Pigment Adaptation Technology, Long-Lasting Wear, Skin-Loving Ingredients, SPF 15 Protection",
+    "Plant-Based Ingredients, 12+ Hour Protection, No Skin Contact, Kid-Friendly Application",
   image: "/images/smooche-ccf/ccf-product.png",
   pros: [
-    "Contains all 4 essential features that make a foundation truly effective",
-    "SPF 15 built-in sun protection",
-    "Lasts 16+ hours without fading or oxidizing",
-    "Nourishing ingredients that improve skin health",
-    "Offers a 100% shade match guarantee",
-    "Dermatologist approved",
-    "Currently has a Buy 1 Get 1 Free deal",
+    "Contains all 4 essential features for safe, effective kids\u2019 repellent",
+    "Goes on clothes, not skin \u2014 zero chemical absorption",
+    "12-hour protection with no reapplication needed",
+    "Kids apply them independently (they think they\u2019re stickers)",
+    "DEET-free, paraben-free, phthalate-free",
+    "Pediatrician approved",
+    "Currently 60% OFF \u2014 just $0.08 per patch",
   ],
-  cons: ["Takes 30\u201360 seconds to fully adapt"],
+  cons: ["Requires sticking to clothing (not suitable for bare-skin situations)"],
   conclusion:
-    "Smooche is the only foundation in our top 5 that includes all four essential features. With true pigment-adapting technology, 16+ hour wear, SPF 15, and skin-loving ingredients, it\u2019s the clear winner for mature skin.",
+    "Luna Naturals is the only kids\u2019 repellent in our top 5 that checks every box \u2014 plant-based, 12-hour protection, no skin contact, and genuinely kid-friendly. With 50,000+ families already making the switch, it\u2019s the clear winner for mosquito season.",
 };
 
 const runners: Product[] = [
   {
     rank: 2,
-    name: "Seint",
+    name: "NATPAT Buzz Patches",
     rating: "4.2 / 5",
-    tagline: "Custom matching system, buildable pigments",
+    tagline: "Citronella-based sticker patches",
     pros: [
-      "Customizable by mixing shades",
-      "Cream-to-powder finish",
-      "Long-wearing",
+      "Fun character designs",
+      "No DEET",
+      "Easy to apply",
     ],
     cons: [
-      "Requires buying multiple shades and manually mixing",
-      "Not true color-adapting technology",
-      "Can look cakey if over-applied",
-      "No shade match guarantee",
+      "Only 6-8 hours of protection per patch",
+      "More expensive per patch ($0.25+)",
+      "Can lose adhesion in humidity",
+      "No pediatrician endorsement noted",
     ],
   },
   {
     rank: 3,
-    name: "BareMinerals",
+    name: "BuzzPatch by Natural Patch",
     rating: "4.0 / 5",
-    tagline: "Mineral-based, some tone adaptation",
-    pros: ["Hydrating formula", "SPF 30", "Natural finish"],
+    tagline: "Essential oil sticker repellent",
+    pros: ["Colorful designs kids enjoy", "Plant-based formula", "No skin contact"],
     cons: [
-      "Limited adapting range\u2014only works within similar tones",
-      "Sheer coverage only",
-      "Can oxidize on oily skin",
-      "No shade match guarantee",
+      "Effectiveness drops after 4-6 hours",
+      "Requires 2-3 patches per session",
+      "Higher cost per use",
+      "No money-back guarantee",
     ],
   },
   {
     rank: 4,
-    name: "Chantecaille",
-    rating: "4.0 / 5",
-    tagline: "Gel-based with light-reflecting particles",
-    pros: ["Lightweight feel", "Natural, dewy finish", "Luxury packaging"],
+    name: "OFF! Kids Spray",
+    rating: "3.5 / 5",
+    tagline: "DEET-based traditional spray",
+    pros: ["Widely available", "Strong repellent effect", "Affordable"],
     cons: [
-      "Not true color-adapting technology\u2014just light diffusion",
-      "Extremely limited shade range",
-      "Very expensive",
-      "No shade match guarantee",
+      "Contains DEET \u2014 absorbs through skin",
+      "Kids resist application (spray battles)",
+      "Requires reapplication every 2-4 hours",
+      "Stings eyes and tastes unpleasant",
+      "No kid-friendly design",
     ],
   },
   {
     rank: 5,
-    name: "Armani",
-    rating: "3.9 / 5",
-    tagline: "Micro-fil technology, silky texture",
-    pros: ["Luxurious texture", "Buildable coverage", "Iconic product"],
+    name: "Cutter All Family Spray",
+    rating: "3.2 / 5",
+    tagline: "DEET spray for general use",
+    pros: ["Budget-friendly", "Available everywhere", "Effective against ticks too"],
     cons: [
-      "Not color-adapting at all\u2014traditional fixed shade foundation",
-      "40 shades still don\u2019t match everyone",
-      "Can oxidize significantly",
-      "No shade match guarantee",
+      "7% DEET formula \u2014 still a synthetic chemical",
+      "Washes off with water and sweat",
+      "Kids hate the smell and feel",
+      "Requires frequent reapplication",
+      "Not specifically designed for children",
     ],
   },
 ];
@@ -151,12 +153,12 @@ function Stars({ rating }: { rating: string }) {
 
 function RunnerCard({ product }: { product: Product }) {
   return (
-    <div className="mb-4 rounded-xl border border-[#e5e5e5] bg-white p-6">
+    <div className="mb-4 rounded-xl border border-[#d4ddd4] bg-white p-6">
       <div className="mb-2 flex items-baseline gap-2">
         <span className="text-[15px] font-bold text-[#555]">
           #{product.rank}:
         </span>
-        <h4 className="text-[18px] font-bold text-[#151515]">
+        <h4 className="text-[18px] font-bold text-[#1a2e1a]">
           {product.name}
         </h4>
       </div>
@@ -172,14 +174,14 @@ function RunnerCard({ product }: { product: Product }) {
 
       {/* Pros */}
       <div className="mb-3">
-        <p className="mb-1 text-[14px] font-semibold text-[#151515]">Pros:</p>
+        <p className="mb-1 text-[14px] font-semibold text-[#1a2e1a]">Pros:</p>
         <ul className="space-y-1">
           {product.pros.map((pro) => (
             <li
               key={pro}
-              className="flex items-start gap-2 text-[14px] leading-[1.5] text-[#151515]"
+              className="flex items-start gap-2 text-[14px] leading-[1.5] text-[#1a2e1a]"
             >
-              <span className="mt-0.5 shrink-0 text-[#22c55e]">&#10003;</span>
+              <span className="mt-0.5 shrink-0 text-[#3d5a3d]">&#10003;</span>
               {pro}
             </li>
           ))}
@@ -188,12 +190,12 @@ function RunnerCard({ product }: { product: Product }) {
 
       {/* Cons */}
       <div className="mb-4">
-        <p className="mb-1 text-[14px] font-semibold text-[#151515]">Cons:</p>
+        <p className="mb-1 text-[14px] font-semibold text-[#1a2e1a]">Cons:</p>
         <ul className="space-y-1">
           {product.cons.map((con) => (
             <li
               key={con}
-              className="flex items-start gap-2 text-[14px] leading-[1.5] text-[#151515]"
+              className="flex items-start gap-2 text-[14px] leading-[1.5] text-[#1a2e1a]"
             >
               <span className="mt-0.5 shrink-0 text-[#bf0505]">&#10007;</span>
               {con}
@@ -204,7 +206,7 @@ function RunnerCard({ product }: { product: Product }) {
 
       <a
         href="#"
-        className="text-[14px] font-semibold text-[#151515] underline underline-offset-2 hover:text-[#A94E63]"
+        className="text-[14px] font-semibold text-[#1a2e1a] underline underline-offset-2 hover:text-[#3d5a3d]"
       >
         Shop now &rarr;
       </a>
@@ -220,44 +222,44 @@ export function ProductComparison() {
   return (
     <section className="px-5 py-12">
       <div className="mx-auto max-w-[700px]">
-        <h3 className="mb-3 text-[22px] font-bold leading-tight text-[#151515]">
-          What are the best Color Changing Foundations available?
+        <h3 className="mb-3 text-[22px] font-bold leading-tight text-[#1a2e1a]">
+          What are the best mosquito repellents for kids in 2026?
         </h3>
 
-        <p className="mb-8 text-[16px] leading-[1.75] text-[#151515]">
-          With so many options on the market, we tested and ranked the top 5
-          color-changing foundations based on their technology, ingredients,
-          longevity, and real-world performance on mature skin.
+        <p className="mb-8 text-[16px] leading-[1.75] text-[#1a2e1a]">
+          We tested and ranked the top 5 mosquito repellent options for
+          children &mdash; comparing safety, effectiveness, ease of use, and
+          real-world results from thousands of families.
         </p>
 
         {/* ---- #1 SMOOCHE (highlighted) ---- */}
-        <div className="mb-6 overflow-hidden rounded-xl border-2 border-[#A94E63] bg-[#fdf2f5] p-6 shadow-sm">
+        <div className="mb-6 overflow-hidden rounded-xl border-2 border-[#3d5a3d] bg-[#eef3ee] p-6 shadow-sm">
           <div className="mb-1 flex items-baseline gap-2">
-            <span className="text-[15px] font-bold text-[#A94E63]">#1:</span>
-            <h4 className="text-[22px] font-bold text-[#151515]">
+            <span className="text-[15px] font-bold text-[#3d5a3d]">#1:</span>
+            <h4 className="text-[22px] font-bold text-[#1a2e1a]">
               {smooche.name}
             </h4>
           </div>
 
-          <span className="mb-3 inline-block rounded-full bg-[#A94E63] px-3 py-1 text-[12px] font-semibold uppercase tracking-wide text-white">
+          <span className="mb-3 inline-block rounded-full bg-[#3d5a3d] px-3 py-1 text-[12px] font-semibold uppercase tracking-wide text-white">
             {smooche.tagline}
           </span>
 
           <div className="mb-4 flex items-center gap-2">
             <Stars rating={smooche.rating} />
-            <span className="text-[14px] font-medium text-[#151515]">
+            <span className="text-[14px] font-medium text-[#1a2e1a]">
               ({smooche.rating})
             </span>
           </div>
 
           <p className="mb-4 text-[14px] leading-[1.5] text-[#555]">
-            <span className="font-semibold text-[#151515]">Features: </span>
+            <span className="font-semibold text-[#1a2e1a]">Features: </span>
             {smooche.features}
           </p>
 
           <Image
             src={smooche.image!}
-            alt="Smooche Color-Adapting Foundation product"
+            alt="Luna Naturals Kids Mosquito Repellent Patches product"
             width={500}
             height={500}
             className="mx-auto mb-6 w-full max-w-[400px] object-contain"
@@ -265,16 +267,16 @@ export function ProductComparison() {
 
           {/* Pros */}
           <div className="mb-4">
-            <p className="mb-2 text-[15px] font-semibold text-[#151515]">
+            <p className="mb-2 text-[15px] font-semibold text-[#1a2e1a]">
               Pros:
             </p>
             <ul className="space-y-1.5">
               {smooche.pros.map((pro) => (
                 <li
                   key={pro}
-                  className="flex items-start gap-2 text-[15px] leading-[1.5] text-[#151515]"
+                  className="flex items-start gap-2 text-[15px] leading-[1.5] text-[#1a2e1a]"
                 >
-                  <span className="mt-0.5 shrink-0 text-[#22c55e]">
+                  <span className="mt-0.5 shrink-0 text-[#3d5a3d]">
                     &#10003;
                   </span>
                   {pro}
@@ -285,14 +287,14 @@ export function ProductComparison() {
 
           {/* Cons */}
           <div className="mb-4">
-            <p className="mb-2 text-[15px] font-semibold text-[#151515]">
+            <p className="mb-2 text-[15px] font-semibold text-[#1a2e1a]">
               Cons:
             </p>
             <ul className="space-y-1.5">
               {smooche.cons.map((con) => (
                 <li
                   key={con}
-                  className="flex items-start gap-2 text-[15px] leading-[1.5] text-[#151515]"
+                  className="flex items-start gap-2 text-[15px] leading-[1.5] text-[#1a2e1a]"
                 >
                   <span className="mt-0.5 shrink-0 text-[#bf0505]">
                     &#10007;
@@ -303,13 +305,13 @@ export function ProductComparison() {
             </ul>
           </div>
 
-          <p className="mb-6 text-[15px] leading-[1.6] text-[#151515]">
+          <p className="mb-6 text-[15px] leading-[1.6] text-[#1a2e1a]">
             {smooche.conclusion}
           </p>
 
           <a
             href="#"
-            className="inline-block rounded-lg bg-black px-8 py-3 text-center text-[15px] font-semibold text-white transition-opacity hover:opacity-80"
+            className="inline-block rounded-lg bg-[#2d4a2d] px-8 py-3 text-center text-[15px] font-semibold text-white transition-opacity hover:opacity-80"
           >
             Shop now
           </a>
@@ -321,26 +323,27 @@ export function ProductComparison() {
         ))}
 
         {/* ---- Conclusion ---- */}
-        <div className="mt-10 border-t border-[#e5e5e5] pt-10">
-          <h3 className="mb-4 text-[22px] font-bold text-[#151515]">
+        <div className="mt-10 border-t border-[#d4ddd4] pt-10">
+          <h3 className="mb-4 text-[22px] font-bold text-[#1a2e1a]">
             Conclusion
           </h3>
 
-          <p className="mb-4 text-[16px] leading-[1.75] text-[#151515]">
-            Since only one of the top 5 contains all the essential technologies
-            for true color adaptation, and even offers a shade-match guarantee,
-            it&apos;s an easy choice.
+          <p className="mb-4 text-[16px] leading-[1.75] text-[#1a2e1a]">
+            When it comes to protecting kids from mosquitoes, only one product
+            combines all four essential features &mdash; plant-based
+            ingredients, 12+ hour protection, zero skin contact, and
+            kid-friendly application.
           </p>
 
-          <p className="mb-6 text-[16px] leading-[1.75] text-[#151515]">
-            The Smooche Color-Adapting Foundation clearly stands out in every
-            category. Try it yourself and let us know which foundation you went
-            with&mdash;and how it transformed your skin.
+          <p className="mb-6 text-[16px] leading-[1.75] text-[#1a2e1a]">
+            Luna Naturals Kids Patches are what every parent wishes existed. Try
+            them this summer and see why 50,000+ families have ditched the spray
+            bottle for good.
           </p>
 
           <a
             href="#"
-            className="inline-block rounded-lg bg-black px-8 py-3 text-center text-[15px] font-semibold text-white transition-opacity hover:opacity-80"
+            className="inline-block rounded-lg bg-[#2d4a2d] px-8 py-3 text-center text-[15px] font-semibold text-white transition-opacity hover:opacity-80"
           >
             Shop now
           </a>

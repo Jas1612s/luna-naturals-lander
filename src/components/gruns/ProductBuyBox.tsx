@@ -253,7 +253,7 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
                     <span className="text-[11px] font-bold text-[var(--gr-dark)]">12-hour protection</span>
                   </div>
                   {/* Top-right badge */}
-                  <div className="absolute top-3.5 right-3.5 z-10 bg-[var(--gr-accent)] rounded-full w-[70px] h-[70px] flex flex-col items-center justify-center text-center shadow-md" style={{ animation: "gr-badge-wobble 3s ease-in-out infinite" }}>
+                  <div className="absolute top-3.5 right-3.5 z-10 bg-[var(--gr-accent)] rounded-full w-[70px] h-[70px] flex flex-col items-center justify-center text-center shadow-md" style={{ animation: "gr-badge-wobble 5s ease-in-out infinite" }}>
                     <span className="text-[8px] font-bold text-white/70 uppercase tracking-wider leading-none">Loved by</span>
                     <span className="text-sm font-extrabold text-white leading-tight">50K+</span>
                     <span className="text-[8px] font-bold text-white/70 uppercase tracking-wider leading-none">families</span>

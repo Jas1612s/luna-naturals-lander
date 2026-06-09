@@ -127,7 +127,7 @@ export function SafeForKids() {
       </div>
 
       {/* Desktop: grid with stagger */}
-      <div className="max-w-[960px] mx-auto hidden md:grid grid-cols-3 gap-4">
+      <div className="max-w-[960px] lg:max-w-[1100px] mx-auto hidden md:grid grid-cols-3 gap-4 lg:gap-5">
         {safetyCards.map((card, i) => (
           <FadeInCard key={card.id} delay={i * 120}>
             <div className="bg-[var(--gr-green-dark)] rounded-2xl p-6 flex flex-col items-center text-center h-full">

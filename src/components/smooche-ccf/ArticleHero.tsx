@@ -9,18 +9,18 @@ export function ArticleHero() {
         <span
           className="inline-block rounded-full"
           style={{
-            background: "#f7f7f7",
+            background: "#f5f7f4",
             padding: "4px 12px",
             fontSize: "12px",
             fontWeight: 600,
             textTransform: "uppercase",
             letterSpacing: "0.05em",
-            color: "#151515",
+            color: "#1a2e1a",
           }}
         >
-          Most read 2025
+          Most read 2026
         </span>
-        <span style={{ fontSize: "13px", color: "#999" }}>4 min read</span>
+        <span style={{ fontSize: "13px", color: "#999" }}>5 min read</span>
       </div>
 
       {/* Headline */}
@@ -28,27 +28,28 @@ export function ArticleHero() {
         className="text-2xl font-bold md:text-[32px]"
         style={{
           lineHeight: 1.2,
-          color: "#000",
+          color: "#1a2e1a",
           marginTop: "20px",
           fontWeight: 700,
         }}
       >
-        My foundation shade used to make me look 10 years older
+        My kids haven&apos;t had a single mosquito bite all summer &mdash; and I
+        never spray them
       </h1>
 
       {/* Subtitle */}
       <p
         style={{
           fontSize: "16px",
-          color: "#555",
+          color: "#4a5d4a",
           lineHeight: 1.6,
           marginTop: "16px",
         }}
       >
-        If you&apos;ve started noticing your foundation turning orange or gray a
-        few hours after application&mdash;and wish you could find a shade that
-        actually stays true&mdash;this might be exactly what you&apos;ve been
-        looking for.
+        If you&apos;re tired of wrestling your kids with bug spray every time
+        they go outside &mdash; and worried about the chemicals soaking into
+        their skin &mdash; one mom&apos;s discovery might change your summer
+        forever.
       </p>
 
       {/* Author */}
@@ -59,7 +60,7 @@ export function ArticleHero() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/smooche-ccf/article-image-2.png"
-          alt="Michelle Mason"
+          alt="Sarah Mitchell"
           width={48}
           height={48}
           className="rounded-full object-cover"
@@ -70,25 +71,34 @@ export function ArticleHero() {
             style={{
               fontSize: "14px",
               fontWeight: 600,
-              color: "#151515",
+              color: "#1a2e1a",
               margin: 0,
               lineHeight: 1.4,
             }}
           >
-            Michelle Mason
+            Sarah Mitchell
           </p>
           <p
             style={{
               fontSize: "13px",
-              color: "#555",
+              color: "#4a5d4a",
               margin: 0,
               lineHeight: 1.4,
             }}
           >
-            May 29, 2025
+            June 2, 2026
           </p>
         </div>
       </div>
+
+      {/* Hero image */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/smooche-ccf/article-image-1.jpg"
+        alt="Kids playing outside with mosquito repellent patches"
+        className="w-full rounded-lg object-cover"
+        style={{ marginTop: "32px" }}
+      />
     </header>
   );
 }

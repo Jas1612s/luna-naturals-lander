@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 const FEATURES = [
-  "Adapts in 60 seconds",
-  "100% shade match guarantee",
-  "No oxidation. Ever.",
+  "120 patches per pack \u2014 covers the whole summer",
+  "100% plant-based, pediatrician approved",
+  "Kids apply them independently",
 ] as const;
 
 export function FinalCTA() {
   return (
-    <section style={{ background: "#f7f7f7", padding: "48px 20px" }}>
+    <section style={{ background: "#f5f7f4", padding: "48px 20px" }}>
       <div style={{ maxWidth: "600px", margin: "0 auto" }}>
         {/* Heading */}
         <h2
@@ -16,11 +16,11 @@ export function FinalCTA() {
             fontSize: "24px",
             fontWeight: 700,
             textAlign: "center",
-            color: "#151515",
+            color: "#1a2e1a",
             margin: "0 0 12px",
           }}
         >
-          Ready to find your perfect match?
+          Ready for a bite-free summer?
         </h2>
 
         {/* Rating */}
@@ -34,7 +34,7 @@ export function FinalCTA() {
           <span
             style={{
               fontSize: "15px",
-              color: "#555",
+              color: "#4a5d4a",
               marginLeft: "6px",
               fontWeight: 500,
             }}
@@ -48,15 +48,14 @@ export function FinalCTA() {
           style={{
             fontSize: "15px",
             textAlign: "center",
-            color: "#555",
+            color: "#4a5d4a",
             lineHeight: 1.65,
             margin: "0 0 24px",
           }}
         >
-          Join over 10,000 women who&apos;ve finally found their perfect shade
-          with smooche. It&apos;s not a close match. It&apos;s not &ldquo;good
-          enough.&rdquo; It&apos;s your exact tone&mdash;perfectly matched,
-          every single time.
+          Join 50,000+ parents who&apos;ve replaced spray battles with sticker
+          moments. No more tears. No more DEET. No more bites. Just happy kids
+          playing outside all summer long.
         </p>
 
         {/* Feature bullets */}
@@ -77,13 +76,13 @@ export function FinalCTA() {
               style={{
                 fontSize: "15px",
                 fontWeight: 600,
-                color: "#151515",
+                color: "#1a2e1a",
                 display: "flex",
                 alignItems: "center",
                 gap: "8px",
               }}
             >
-              <span style={{ color: "#22c55e", fontSize: "18px", fontWeight: 700 }}>
+              <span style={{ color: "#3d5a3d", fontSize: "18px", fontWeight: 700 }}>
                 &#10003;
               </span>
               {f}
@@ -101,7 +100,7 @@ export function FinalCTA() {
             margin: "0 0 20px",
           }}
         >
-          (Only today) Up to 60% OFF
+          (Mosquito season sale) 60% OFF
         </p>
 
         {/* Shop now button */}
@@ -112,7 +111,7 @@ export function FinalCTA() {
               display: "inline-block",
               width: "100%",
               maxWidth: "400px",
-              background: "#000",
+              background: "#2d4a2d",
               color: "#fff",
               borderRadius: "8px",
               padding: "16px",
@@ -141,7 +140,7 @@ export function FinalCTA() {
         >
           <Image
             src="/images/smooche-ccf/stain.jpg"
-            alt="Smooche Color Changing Foundation beauty close-up"
+            alt="Luna Naturals Kids Mosquito Repellent Patches"
             fill
             sizes="(min-width: 640px) 400px, 90vw"
             style={{ objectFit: "cover" }}

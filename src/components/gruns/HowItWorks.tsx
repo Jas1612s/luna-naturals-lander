@@ -30,13 +30,13 @@ export function HowItWorks() {
         </p>
       </div>
 
-      {/* Horizontal scroll carousel */}
-      <div className="overflow-x-auto scrollbar-hide">
-        <div className="flex gap-5 px-4 md:px-6 pb-4 snap-x snap-mandatory" style={{ width: "max-content" }}>
+      {/* Mobile: horizontal scroll / Desktop: 3-col grid */}
+      <div className="overflow-x-auto scrollbar-hide lg:overflow-visible">
+        <div className="flex gap-5 px-4 md:px-6 pb-4 snap-x snap-mandatory lg:grid lg:grid-cols-3 lg:max-w-[1100px] lg:mx-auto lg:snap-none lg:pb-0">
           {steps.map((step, i) => (
             <div
               key={step.title}
-              className="w-[280px] md:w-[320px] shrink-0 snap-center bg-[var(--gr-cream)] rounded-2xl overflow-hidden"
+              className="w-[280px] md:w-[320px] lg:w-auto shrink-0 lg:shrink snap-center bg-[var(--gr-cream)] rounded-2xl overflow-hidden"
             >
               {/* Video area */}
               <div className="aspect-square relative bg-black/5">

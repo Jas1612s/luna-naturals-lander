@@ -3,21 +3,21 @@ import Image from "next/image";
 const steps = [
   {
     number: 1,
-    title: "Adjusts to your unique tone",
+    title: "Sticks to clothes, not skin",
     description:
-      "The formula contains intelligent pigments that are colorless until they make contact with your skin. They then react with your skin\u2019s chemistry to create your exact shade match\u2014even as your skin tone has changed with age.",
+      "Each patch is infused with citronella and eucalyptus oils. Peel it off and stick it on your child\u2019s shirt, hat, shorts, or backpack. The patch releases a vapor barrier that mosquitoes can\u2019t stand \u2014 without a single chemical touching their skin.",
   },
   {
     number: 2,
-    title: "Won\u2019t settle into fine lines",
+    title: "Creates an invisible protection zone",
     description:
-      "Traditional foundations have thick, heavy pigments that sink into wrinkles and emphasize texture. Color-adapting technology uses lightweight, hydrating pigments that glide over your skin, filling in fine lines with moisture instead of makeup.",
+      "The plant-based oils create an invisible scent barrier around your child that mosquitoes actively avoid. No sticky spray, no chemical absorption, no skin irritation. Just a natural force field that keeps biters away.",
   },
   {
     number: 3,
-    title: "Maintains a youthful finish all day",
+    title: "Lasts 12 hours with zero reapplication",
     description:
-      "As your skin naturally changes throughout the day, the foundation continues to adapt\u2014maintaining a smooth, radiant finish from morning to night without oxidizing, cracking, or looking cakey.",
+      "One patch in the morning protects through dinner. Rain, sweat, swimming \u2014 it stays on and keeps working. No mid-day reapplication, no spray bottles in your bag. Apply once, forget about it, enjoy your day.",
   },
 ] as const;
 
@@ -31,7 +31,7 @@ export function HowItWorks() {
 
         <Image
           src="/images/smooche-ccf/how-it-works.jpg"
-          alt="How the color-changing foundation works"
+          alt="How Luna Naturals mosquito repellent patches work"
           width={700}
           height={400}
           className="mb-10 w-full rounded-lg object-cover"
@@ -42,18 +42,18 @@ export function HowItWorks() {
             <div
               key={step.number}
               className={`flex items-start justify-between gap-6 py-6 ${
-                idx < steps.length - 1 ? "border-b border-[#e5e5e5]" : ""
+                idx < steps.length - 1 ? "border-b border-[#d4ddd4]" : ""
               }`}
             >
               <div className="flex-1">
-                <h3 className="mb-2 text-[18px] font-bold leading-snug text-[#151515]">
+                <h3 className="mb-2 text-[18px] font-bold leading-snug text-[#1a2e1a]">
                   {step.title}
                 </h3>
                 <p className="text-[15px] leading-[1.6] text-[#555]">
                   {step.description}
                 </p>
               </div>
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-[#e5e5e5] text-[14px] font-semibold text-[#151515]">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-[#d4ddd4] text-[14px] font-semibold text-[#1a2e1a]">
                 {step.number}
               </div>
             </div>

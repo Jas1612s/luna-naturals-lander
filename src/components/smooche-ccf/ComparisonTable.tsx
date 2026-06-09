@@ -1,15 +1,15 @@
 const FEATURES = [
-  "Matches your exact tone",
-  "Won't oxidize",
-  "Works in any lighting",
-  "Adjusts throughout the day",
-  "Has SPF 15",
-  "Shade match guarantee",
+  "No chemicals on skin",
+  "12+ hour protection",
+  "Kids apply it themselves",
+  "Waterproof & sweatproof",
+  "No reapplication needed",
+  "Pediatrician approved",
 ] as const;
 
 function Check() {
   return (
-    <span style={{ color: "#22c55e", fontSize: "20px", fontWeight: 700 }} aria-label="Yes">
+    <span style={{ color: "#3d5a3d", fontSize: "20px", fontWeight: 700 }} aria-label="Yes">
       &#10003;
     </span>
   );
@@ -32,17 +32,17 @@ export function ComparisonTable() {
           fontSize: "24px",
           fontWeight: 700,
           textAlign: "center",
-          color: "#151515",
+          color: "#1a2e1a",
           margin: "0 0 24px",
         }}
       >
-        Why traditional shade matching is outdated
+        Why chemical sprays are losing to patches
       </h2>
 
       {/* Table */}
       <div
         style={{
-          border: "1px solid #e5e5e5",
+          border: "1px solid #d4ddd4",
           borderRadius: "12px",
           overflow: "hidden",
         }}
@@ -53,7 +53,7 @@ export function ComparisonTable() {
             display: "grid",
             gridTemplateColumns: "1fr 100px 100px",
             background: "#fff",
-            borderBottom: "1px solid #e5e5e5",
+            borderBottom: "1px solid #d4ddd4",
           }}
         >
           <div style={{ padding: "12px 16px" }} />
@@ -63,10 +63,10 @@ export function ComparisonTable() {
               fontWeight: 700,
               fontSize: "16px",
               textAlign: "center",
-              color: "#151515",
+              color: "#1a2e1a",
             }}
           >
-            smooche
+            Luna Naturals
           </div>
           <div
             style={{
@@ -74,10 +74,10 @@ export function ComparisonTable() {
               fontWeight: 700,
               fontSize: "16px",
               textAlign: "center",
-              color: "#151515",
+              color: "#1a2e1a",
             }}
           >
-            Others
+            Chemical Sprays
           </div>
         </div>
 
@@ -88,8 +88,8 @@ export function ComparisonTable() {
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 100px 100px",
-              background: i % 2 === 0 ? "#f7f7f7" : "#fff",
-              borderBottom: i < FEATURES.length - 1 ? "1px solid #e5e5e5" : "none",
+              background: i % 2 === 0 ? "#f5f7f4" : "#fff",
+              borderBottom: i < FEATURES.length - 1 ? "1px solid #d4ddd4" : "none",
             }}
           >
             <div
@@ -97,7 +97,7 @@ export function ComparisonTable() {
                 padding: "12px 16px",
                 fontSize: "15px",
                 fontWeight: 500,
-                color: "#151515",
+                color: "#1a2e1a",
                 display: "flex",
                 alignItems: "center",
               }}

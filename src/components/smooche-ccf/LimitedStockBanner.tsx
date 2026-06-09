@@ -3,7 +3,7 @@ export function LimitedStockBanner() {
     <section
       style={{
         background: "#fff",
-        borderTop: "1px solid #e5e5e5",
+        borderTop: "1px solid #d4ddd4",
         padding: "32px 20px",
       }}
     >
@@ -13,31 +13,32 @@ export function LimitedStockBanner() {
           style={{
             fontSize: "18px",
             fontWeight: 700,
-            color: "#151515",
+            color: "#1a2e1a",
             margin: "0 0 10px",
           }}
         >
-          Limited stock notice
+          Mosquito season is here — limited stock
         </h3>
 
         {/* Description */}
         <p
           style={{
             fontSize: "14px",
-            color: "#555",
+            color: "#4a5d4a",
             lineHeight: 1.6,
             margin: "0 0 20px",
           }}
         >
-          Due to their secret 60% OFF discount they have limited stock.
-          Don&apos;t miss out on this secret deal, they sell out quickly.
+          Luna Naturals is running their biggest sale of the year &mdash; 60%
+          off, free shipping, and a 30-day money-back guarantee. These sell out
+          every summer. Don&apos;t wait until the bites start.
         </p>
 
         {/* CTA label */}
         <p
           style={{
             fontSize: "13px",
-            color: "#555",
+            color: "#4a5d4a",
             fontWeight: 500,
             margin: "0 0 8px",
           }}
@@ -52,7 +53,7 @@ export function LimitedStockBanner() {
             display: "inline-block",
             width: "100%",
             maxWidth: "400px",
-            background: "#000",
+            background: "#2d4a2d",
             color: "#fff",
             borderRadius: "8px",
             padding: "14px 32px",
@@ -63,7 +64,7 @@ export function LimitedStockBanner() {
             boxSizing: "border-box",
           }}
         >
-          60% OFF + FREE GIFTS &rarr;
+          60% OFF + FREE SHIPPING &rarr;
         </a>
       </div>
     </section>
