@@ -1,0 +1,168 @@
+{% comment %}
+  Luna Benefits Scroll — Scroll-reveal large text statements + product image
+{% endcomment %}
+
+<style>
+  .luna-benefits {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom, var(--gr-green, #4E5C36) 0%, var(--gr-green-mid, #3A4428) 30%, var(--gr-green, #4E5C36) 70%, var(--gr-green-dark, #2F3A1C) 100%);
+  }
+
+  .luna-benefits__inner {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 1rem 3rem;
+    gap: 2.5rem;
+  }
+
+  .luna-benefits__statement {
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: white;
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    opacity: 0;
+    transform: translateY(60px) scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .luna-benefits__statement--accent {
+    color: var(--gr-accent, #C45D3E);
+  }
+
+  .luna-benefits__statement--visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .luna-benefits__image-wrap {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(60px) scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .luna-benefits__image-wrap--visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .luna-benefits__image {
+    width: 280px;
+    object-fit: contain;
+  }
+
+  @media (min-width: 768px) {
+    .luna-benefits__inner {
+      padding: 6rem 1rem 6rem;
+      gap: 4rem;
+    }
+
+    .luna-benefits__statement {
+      font-size: 4.5rem;
+    }
+
+    .luna-benefits__image {
+      width: 400px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .luna-benefits__inner {
+      gap: 5rem;
+    }
+
+    .luna-benefits__statement {
+      font-size: 100px;
+    }
+
+    .luna-benefits__image {
+      width: 500px;
+    }
+  }
+</style>
+
+<section class="luna-benefits" data-luna-benefits>
+  <div class="luna-benefits__inner">
+    {% for block in section.blocks %}
+      {% if block.type == 'statement' %}
+        <h2
+          class="luna-benefits__statement gr-display{% if block.settings.is_accent %} luna-benefits__statement--accent{% endif %}"
+          data-luna-scroll-reveal
+          {{ block.shopify_attributes }}
+        >
+          {{ block.settings.text }}
+        </h2>
+      {% endif %}
+    {% endfor %}
+
+    {% if section.settings.product_image %}
+      <div class="luna-benefits__image-wrap" data-luna-scroll-reveal>
+        <img
+          class="luna-benefits__image"
+          src="{{ section.settings.product_image | image_url: width: 1000 }}"
+          alt="{{ section.settings.product_image_alt | default: 'Luna Naturals Mosquito Repellent Patches' }}"
+          loading="lazy"
+        >
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luna Benefits Scroll",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image (bottom)"
+    },
+    {
+      "type": "text",
+      "id": "product_image_alt",
+      "label": "Product image alt text",
+      "default": "Luna Naturals Mosquito Repellent Patches - Adults and Kids"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "statement",
+      "name": "Statement",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Statement text",
+          "default": "Skip The Spray"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_accent",
+          "label": "Use accent color",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luna Benefits Scroll",
+      "blocks": [
+        { "type": "statement", "settings": { "text": "Skip The Spray", "is_accent": false } },
+        { "type": "statement", "settings": { "text": "One Patch On", "is_accent": false } },
+        { "type": "statement", "settings": { "text": "12 Hours of Protection", "is_accent": false } },
+        { "type": "statement", "settings": { "text": "Plant-Powered. DEET-Free.", "is_accent": true } }
+      ]
+    }
+  ]
+}
+{% endschema %}

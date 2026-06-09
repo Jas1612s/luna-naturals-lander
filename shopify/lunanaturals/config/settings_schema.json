@@ -1,0 +1,104 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Luna Naturals",
+    "theme_version": "1.0.0",
+    "theme_author": "Luna Naturals",
+    "theme_documentation_url": "",
+    "theme_support_url": ""
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent color",
+        "default": "#D95B2F"
+      },
+      {
+        "type": "color",
+        "id": "color_green",
+        "label": "Primary green",
+        "default": "#3A4428"
+      },
+      {
+        "type": "color",
+        "id": "color_cream",
+        "label": "Cream background",
+        "default": "#F3EBDF"
+      },
+      {
+        "type": "color",
+        "id": "color_dark",
+        "label": "Dark text",
+        "default": "#1C1B10"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Body font",
+        "default": "work_sans_n4"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok",
+        "label": "TikTok URL"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook URL"
+      }
+    ]
+  },
+  {
+    "name": "Announcement bar",
+    "settings": [
+      {
+        "type": "text",
+        "id": "announcement_title",
+        "label": "Announcement title",
+        "default": "Mosquito Season Sale"
+      },
+      {
+        "type": "text",
+        "id": "announcement_subtitle",
+        "label": "Announcement subtitle",
+        "default": "Save up to 60% + Free Gifts"
+      },
+      {
+        "type": "checkbox",
+        "id": "announcement_countdown_enabled",
+        "label": "Enable countdown timer",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Live order toast",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "live_order_enabled",
+        "label": "Enable live order notifications",
+        "default": true
+      }
+    ]
+  }
+]

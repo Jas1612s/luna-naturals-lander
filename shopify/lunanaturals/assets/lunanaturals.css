@@ -1,0 +1,1208 @@
+/* =====================================================
+   Luna Naturals / Gruns Theme — Shopify CSS
+   ===================================================== */
+
+/* ----- Reset & Base ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ----- @font-face: Retail Display (local) ----- */
+@font-face {
+  font-family: "Retail Display";
+  src: url("retail-display.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =====================================================
+   CSS Custom Properties (from gruns-root)
+   ===================================================== */
+.gruns-root {
+  /* Core palette */
+  --gr-green: #3A4428;
+  --gr-green-dark: #232B16;
+  --gr-green-deep: rgba(35, 43, 22, 0.97);
+  --gr-green-mid: #4E5C36;
+  --gr-yellow: #E85A2D;
+  --gr-cream: #F3EBDF;
+  --gr-cream-light: #F9F4EC;
+  --gr-cream-warm: #E8DECE;
+  --gr-white: #FDFAF6;
+  --gr-dark: #1C1B10;
+  --gr-sage: #6D7358;
+  --gr-accent: #D95B2F;
+  --gr-accent-light: #FDF0E8;
+  --gr-gold: #D4A637;
+  --gr-text-white: rgba(240, 223, 200, 0.97);
+  --gr-text-dark: rgba(28, 27, 16, 0.95);
+
+  font-family: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--gr-dark);
+  background-color: var(--gr-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  /* Subtle linen texture */
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.018'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gruns-root {
+    scroll-behavior: auto;
+  }
+}
+
+/* ----- Display font ----- */
+.gr-display {
+  font-family: "Retail Display", "Work Sans", sans-serif;
+}
+
+/* =====================================================
+   Utility: scrollbar-hide
+   ===================================================== */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* =====================================================
+   Keyframe Animations
+   ===================================================== */
+@keyframes gr-badge-wobble {
+  0%, 100% { transform: rotate(6deg) scale(1); }
+  25%      { transform: rotate(-4deg) scale(1.05); }
+  50%      { transform: rotate(8deg) scale(1); }
+  75%      { transform: rotate(-2deg) scale(1.03); }
+}
+
+@keyframes gr-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes gr-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+@keyframes gr-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes luna-slide-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes luna-slide-down {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100%); }
+}
+
+@keyframes luna-toast-in {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes luna-toast-out {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-12px); }
+}
+
+/* Marquee track */
+.gr-marquee-track {
+  display: flex;
+  animation: gr-marquee 25s linear infinite;
+}
+.gr-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Fade-up utility */
+.gr-fade-up {
+  animation: gr-fade-up 0.6s ease forwards;
+}
+
+/* =====================================================
+   Navigation — luna-nav
+   ===================================================== */
+
+/* Sticky header container */
+.luna-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Announcement strip */
+.luna-nav__announcement {
+  background-color: var(--gr-accent);
+  padding: 12px 16px;
+}
+
+.luna-nav__announcement-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.luna-nav__announcement-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.luna-nav__announcement-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.luna-nav__announcement-subtitle {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Countdown */
+.luna-nav__countdown {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.luna-nav__countdown-separator {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.luna-nav__countdown-unit {
+  background-color: #ffffff;
+  color: var(--gr-dark);
+  border-radius: 6px;
+  padding: 6px 8px;
+  min-width: 38px;
+  text-align: center;
+}
+
+.luna-nav__countdown-value {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+}
+
+.luna-nav__countdown-label {
+  font-size: 7px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gr-sage);
+  display: block;
+  margin-top: 2px;
+}
+
+/* Main nav bar */
+.luna-nav__bar {
+  background-color: var(--gr-green);
+  border-bottom: 1px solid rgba(109, 115, 88, 0.3);
+}
+
+.luna-nav__bar-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: 60px;
+}
+
+.luna-nav__menu-btn {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.luna-nav__logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.luna-nav__logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.luna-nav__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  color: #ffffff;
+}
+
+.luna-nav__actions a {
+  display: flex;
+  align-items: center;
+}
+
+/* =====================================================
+   Footer — luna-footer
+   ===================================================== */
+.luna-footer {
+  background-color: var(--gr-green-dark);
+}
+
+.luna-footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 16px 32px;
+}
+
+/* 4-column grid */
+.luna-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .luna-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .luna-footer__inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .luna-footer__grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* Email signup column */
+.luna-footer__signup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.luna-footer__signup-title {
+  color: var(--gr-yellow);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.luna-footer__signup-form {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.luna-footer__signup-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 8px 0;
+  outline: none;
+  font-family: inherit;
+}
+
+.luna-footer__signup-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.luna-footer__signup-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: var(--gr-accent);
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+.luna-footer__signup-btn:hover {
+  opacity: 0.9;
+}
+
+/* Link columns */
+.luna-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.luna-footer__col-title {
+  font-family: "Retail Display", "Work Sans", sans-serif;
+  color: var(--gr-yellow);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.luna-footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.luna-footer__link {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.luna-footer__link:hover {
+  color: #ffffff;
+}
+
+/* Logo + social row */
+.luna-footer__brand-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 640px) {
+  .luna-footer__brand-row {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.luna-footer__brand-logo {
+  height: 48px;
+}
+
+.luna-footer__social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.luna-footer__social a {
+  transition: opacity 0.2s;
+}
+
+.luna-footer__social a:hover {
+  opacity: 0.7;
+}
+
+/* Disclaimer */
+.luna-footer__disclaimer {
+  margin-top: 32px;
+}
+
+.luna-footer__disclaimer-box {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+/* Copyright */
+.luna-footer__copyright-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .luna-footer__copyright-bar {
+    flex-direction: row;
+  }
+}
+
+.luna-footer__policy-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 16px;
+}
+
+@media (min-width: 768px) {
+  .luna-footer__policy-links {
+    justify-content: flex-end;
+  }
+}
+
+.luna-footer__policy-links a {
+  transition: color 0.2s;
+}
+
+.luna-footer__policy-links a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* =====================================================
+   Sticky Mobile CTA — luna-sticky-cta
+   ===================================================== */
+.luna-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 14px 16px;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  transform: translateY(100%);
+}
+
+.luna-sticky-cta--visible {
+  transform: translateY(0);
+}
+
+@media (min-width: 1024px) {
+  .luna-sticky-cta {
+    display: none;
+  }
+}
+
+.luna-sticky-cta__inner {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.luna-sticky-cta__image-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--gr-cream);
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.luna-sticky-cta__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.luna-sticky-cta__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.luna-sticky-cta__product-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gr-dark);
+  line-height: 1.3;
+}
+
+.luna-sticky-cta__prices {
+  margin-top: 2px;
+}
+
+.luna-sticky-cta__price-current {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gr-dark);
+}
+
+.luna-sticky-cta__price-original {
+  font-size: 14px;
+  color: var(--gr-sage);
+  text-decoration: line-through;
+  margin-left: 4px;
+}
+
+.luna-sticky-cta__btn {
+  flex-shrink: 0;
+  background-color: var(--gr-accent);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(217, 91, 47, 0.2);
+  transition: filter 0.2s, transform 0.1s;
+}
+
+.luna-sticky-cta__btn:hover {
+  filter: brightness(1.1);
+}
+
+.luna-sticky-cta__btn:active {
+  transform: scale(0.97);
+}
+
+/* =====================================================
+   Live Order Toast — luna-live-order-toast
+   ===================================================== */
+.luna-toast {
+  position: fixed;
+  bottom: 95px;
+  left: 12px;
+  right: 12px;
+  z-index: 40;
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+}
+
+.luna-toast--visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) {
+  .luna-toast {
+    bottom: auto;
+    top: 16px;
+    left: auto;
+    right: 16px;
+    max-width: 340px;
+  }
+}
+
+.luna-toast__card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.luna-toast__image-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--gr-cream);
+  flex-shrink: 0;
+}
+
+.luna-toast__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.luna-toast__body {
+  min-width: 0;
+  flex: 1;
+}
+
+.luna-toast__line1 {
+  font-size: 13px;
+  color: var(--gr-dark);
+  line-height: 1.3;
+}
+
+.luna-toast__name {
+  font-weight: 600;
+}
+
+.luna-toast__line2 {
+  font-size: 12px;
+  color: var(--gr-sage);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+/* =====================================================
+   Hero Section
+   ===================================================== */
+.luna-hero__title {
+  font-family: "Retail Display", "Work Sans", sans-serif;
+}
+
+/* =====================================================
+   Product Info Tabs
+   ===================================================== */
+.luna-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--gr-cream-warm);
+}
+
+.luna-tabs__btn {
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gr-sage);
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  cursor: pointer;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.luna-tabs__btn--active {
+  color: var(--gr-dark);
+  border-bottom-color: var(--gr-accent);
+}
+
+.luna-tabs__panel {
+  display: none;
+  padding: 24px 0;
+}
+
+.luna-tabs__panel--active {
+  display: block;
+}
+
+/* =====================================================
+   Subscribe Toggle
+   ===================================================== */
+.luna-subscribe {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.luna-subscribe__option {
+  flex: 1;
+  border: 2px solid var(--gr-cream-warm);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+  text-align: center;
+}
+
+.luna-subscribe__option--active {
+  border-color: var(--gr-accent);
+  background-color: var(--gr-accent-light);
+}
+
+.luna-subscribe__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gr-dark);
+}
+
+.luna-subscribe__price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gr-dark);
+  margin-top: 4px;
+}
+
+.luna-subscribe__save {
+  font-size: 12px;
+  color: var(--gr-accent);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* =====================================================
+   Bundle Size Selection
+   ===================================================== */
+.luna-bundle {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.luna-bundle__option {
+  flex: 1;
+  border: 2px solid var(--gr-cream-warm);
+  border-radius: 12px;
+  padding: 12px 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+  position: relative;
+}
+
+.luna-bundle__option--active {
+  border-color: var(--gr-accent);
+  background-color: var(--gr-accent-light);
+}
+
+.luna-bundle__badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--gr-accent);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.luna-bundle__count {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gr-dark);
+}
+
+.luna-bundle__price {
+  font-size: 14px;
+  color: var(--gr-sage);
+  margin-top: 2px;
+}
+
+.luna-bundle__per-unit {
+  font-size: 12px;
+  color: var(--gr-accent);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* =====================================================
+   Image Gallery
+   ===================================================== */
+.luna-gallery {
+  position: relative;
+}
+
+.luna-gallery__main {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background-color: var(--gr-cream);
+  aspect-ratio: 1 / 1;
+}
+
+.luna-gallery__main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.luna-gallery__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+  z-index: 2;
+}
+
+.luna-gallery__arrow:hover {
+  background-color: #ffffff;
+}
+
+.luna-gallery__arrow--prev {
+  left: 12px;
+}
+
+.luna-gallery__arrow--next {
+  right: 12px;
+}
+
+.luna-gallery__thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  overflow-x: auto;
+}
+
+.luna-gallery__thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+  background-color: var(--gr-cream);
+}
+
+.luna-gallery__thumb--active {
+  border-color: var(--gr-accent);
+}
+
+.luna-gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =====================================================
+   FAQ Accordion
+   ===================================================== */
+.luna-faq__item {
+  border-bottom: 1px solid var(--gr-cream-warm);
+}
+
+.luna-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gr-dark);
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.luna-faq__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.luna-faq__item--open .luna-faq__icon {
+  transform: rotate(45deg);
+}
+
+.luna-faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.luna-faq__item--open .luna-faq__answer {
+  max-height: 500px;
+  padding-bottom: 20px;
+}
+
+.luna-faq__answer-inner {
+  font-size: 14px;
+  color: var(--gr-sage);
+  line-height: 1.7;
+}
+
+/* =====================================================
+   Review Category Tabs (WhatCustomersSay)
+   ===================================================== */
+.luna-review-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.luna-review-tabs__btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--gr-cream-warm);
+  border-radius: 9999px;
+  background-color: transparent;
+  color: var(--gr-sage);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.luna-review-tabs__btn--active {
+  background-color: var(--gr-green);
+  color: #ffffff;
+  border-color: var(--gr-green);
+}
+
+.luna-review-tabs__btn:hover:not(.luna-review-tabs__btn--active) {
+  border-color: var(--gr-sage);
+}
+
+/* =====================================================
+   Testimonial Carousel
+   ===================================================== */
+.luna-testimonials {
+  position: relative;
+  overflow: hidden;
+}
+
+.luna-testimonials__track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.luna-testimonials__slide {
+  min-width: 100%;
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .luna-testimonials__slide {
+    min-width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .luna-testimonials__slide {
+    min-width: 33.333%;
+  }
+}
+
+.luna-testimonials__card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.luna-testimonials__stars {
+  color: var(--gr-gold);
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.luna-testimonials__quote {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--gr-dark);
+  margin-bottom: 16px;
+}
+
+.luna-testimonials__author {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gr-sage);
+}
+
+.luna-testimonials__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.luna-testimonials__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--gr-cream-warm);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.luna-testimonials__dot--active {
+  background-color: var(--gr-accent);
+}
+
+/* =====================================================
+   General Section Utilities
+   ===================================================== */
+.luna-section {
+  padding: 48px 16px;
+}
+
+@media (min-width: 768px) {
+  .luna-section {
+    padding: 80px 24px;
+  }
+}
+
+.luna-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Dark sections get woodgrain-like texture */
+.luna-section--dark {
+  background-color: var(--gr-green-dark);
+  color: var(--gr-text-white);
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* =====================================================
+   Buttons
+   ===================================================== */
+.luna-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: filter 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+
+.luna-btn:hover {
+  filter: brightness(1.1);
+}
+
+.luna-btn:active {
+  transform: scale(0.97);
+}
+
+.luna-btn--primary {
+  background-color: var(--gr-accent);
+  color: #ffffff;
+  padding: 14px 32px;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(217, 91, 47, 0.2);
+}
+
+.luna-btn--secondary {
+  background-color: var(--gr-green);
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 14px;
+}
+
+.luna-btn--outline {
+  background-color: transparent;
+  color: var(--gr-dark);
+  padding: 12px 24px;
+  font-size: 14px;
+  border: 2px solid var(--gr-cream-warm);
+}
+
+/* =====================================================
+   Responsive Grid Helpers
+   ===================================================== */
+.luna-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .luna-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.luna-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .luna-grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .luna-grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.luna-grid-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .luna-grid-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+/* =====================================================
+   Stars
+   ===================================================== */
+.luna-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--gr-gold);
+}
+
+.luna-stars svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}

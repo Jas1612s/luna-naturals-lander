@@ -1,0 +1,227 @@
+<style>
+  .luna-ymal {
+    background: var(--gr-green-dark, #1e3a24);
+    padding: 56px 16px;
+  }
+
+  .luna-ymal__container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* Heading */
+  .luna-ymal__header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .luna-ymal__badge {
+    display: inline-block;
+    background: var(--gr-accent, #c1440e);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    margin-bottom: 16px;
+  }
+
+  .luna-ymal__title {
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .luna-ymal__subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 8px;
+  }
+
+  /* Card */
+  .luna-ymal__card {
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .luna-ymal__card:hover .luna-ymal__card-img img {
+    transform: scale(1.05);
+  }
+
+  .luna-ymal__card-img {
+    position: relative;
+    background: linear-gradient(135deg, var(--gr-green), var(--gr-green-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 32px;
+  }
+
+  .luna-ymal__card-img img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 16px 32px rgba(0,0,0,0.3));
+    transition: transform 0.3s;
+  }
+
+  .luna-ymal__card-details {
+    background: #fff;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .luna-ymal__card-brand {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gr-accent, #c1440e);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 4px;
+  }
+
+  .luna-ymal__card-name {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--gr-dark, #1a1a1a);
+    margin-bottom: 4px;
+  }
+
+  .luna-ymal__card-tagline {
+    font-size: 14px;
+    color: var(--gr-sage, #7c8c78);
+    margin-bottom: 16px;
+  }
+
+  /* Price */
+  .luna-ymal__card-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+
+  .luna-ymal__card-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gr-dark, #1a1a1a);
+  }
+
+  .luna-ymal__card-compare {
+    font-size: 16px;
+    color: var(--gr-sage, #7c8c78);
+    text-decoration: line-through;
+  }
+
+  .luna-ymal__card-discount {
+    background: rgba(193, 68, 14, 0.1);
+    color: var(--gr-accent, #c1440e);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 9999px;
+  }
+
+  .luna-ymal__card-patches {
+    font-size: 12px;
+    color: var(--gr-sage, #7c8c78);
+    margin-bottom: 20px;
+  }
+
+  /* CTA */
+  .luna-ymal__card-cta {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: var(--gr-accent, #c1440e);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 9999px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.2s;
+  }
+
+  .luna-ymal__card-cta:hover {
+    filter: brightness(1.1);
+  }
+
+  .luna-ymal__card-guarantee {
+    font-size: 11px;
+    color: var(--gr-sage, #7c8c78);
+    margin-top: 12px;
+  }
+
+  @media (min-width: 768px) {
+    .luna-ymal {
+      padding: 80px 24px;
+    }
+
+    .luna-ymal__title {
+      font-size: 30px;
+    }
+  }
+</style>
+
+<section class="luna-ymal" data-section-type="luna-you-may-also-like-kids">
+  <div class="luna-ymal__container">
+    <!-- Heading -->
+    <div class="luna-ymal__header">
+      <div class="luna-ymal__badge">One-Time Offer &mdash; Save $15.00</div>
+      <h2 class="luna-ymal__title">Complete Your Protection</h2>
+      <p class="luna-ymal__subtitle">Add Adults Patches and protect the whole family.</p>
+    </div>
+
+    <!-- Card -->
+    <a href="/products/luna-adults" class="luna-ymal__card">
+      <!-- Product image -->
+      <div class="luna-ymal__card-img">
+        <img
+          src="{{ 'adults-lifestyle-box.webp' | prepend: '/images/gruns/' | asset_url }}"
+          alt="Luna Naturals Adults Patches"
+          width="240"
+          height="240"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Details -->
+      <div class="luna-ymal__card-details">
+        <p class="luna-ymal__card-brand">Luna Naturals</p>
+        <h3 class="luna-ymal__card-name">Adults Patches</h3>
+        <p class="luna-ymal__card-tagline">Plant-powered summer protection</p>
+
+        <div class="luna-ymal__card-price-row">
+          <span class="luna-ymal__card-price">$9.99</span>
+          <span class="luna-ymal__card-compare">$24.99</span>
+          <span class="luna-ymal__card-discount">60% OFF</span>
+        </div>
+        <p class="luna-ymal__card-patches">90 patches &middot; Free shipping</p>
+
+        <span class="luna-ymal__card-cta">Add to Order &mdash; $9.99</span>
+        <p class="luna-ymal__card-guarantee">30-day money-back guarantee &middot; Cancel anytime</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luna You May Also Like (Kids)",
+  "tag": "section",
+  "class": "luna-you-may-also-like-kids-section",
+  "settings": []
+}
+{% endschema %}

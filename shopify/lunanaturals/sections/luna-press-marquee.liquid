@@ -1,0 +1,151 @@
+{% comment %}
+  Luna Press Marquee — Scrolling press logos
+{% endcomment %}
+
+<style>
+  .luna-marquee {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--gr-cream-light, #FAF7F2);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .luna-marquee__label {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--gr-sage, #7A8066);
+    margin-bottom: 0.75rem;
+  }
+
+  .luna-marquee__fade-left,
+  .luna-marquee__fade-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4rem;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .luna-marquee__fade-left {
+    left: 0;
+    background: linear-gradient(to right, var(--gr-cream-light, #FAF7F2), transparent);
+  }
+
+  .luna-marquee__fade-right {
+    right: 0;
+    background: linear-gradient(to left, var(--gr-cream-light, #FAF7F2), transparent);
+  }
+
+  .luna-marquee__track {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    animation: luna-marquee-scroll 30s linear infinite;
+    width: max-content;
+  }
+
+  .luna-marquee__logo {
+    height: 28px;
+    width: auto;
+    flex-shrink: 0;
+    opacity: 0.7;
+    filter: grayscale(100%) brightness(0);
+  }
+
+  @keyframes luna-marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .luna-marquee__track {
+      gap: 3.5rem;
+    }
+  }
+</style>
+
+<section class="luna-marquee">
+  <p class="luna-marquee__label">{{ section.settings.label | default: 'As Seen In' }}</p>
+
+  <div class="luna-marquee__fade-left"></div>
+
+  <div class="luna-marquee__track" data-luna-marquee>
+    {% for block in section.blocks %}
+      <img
+        class="luna-marquee__logo"
+        src="{{ block.settings.logo | image_url: width: 200 }}"
+        alt="{{ block.settings.logo_alt | default: block.settings.logo.alt }}"
+        loading="lazy"
+      >
+    {% endfor %}
+    {%- comment -%} Duplicate for seamless loop {%- endcomment -%}
+    {% for block in section.blocks %}
+      <img
+        class="luna-marquee__logo"
+        src="{{ block.settings.logo | image_url: width: 200 }}"
+        alt="{{ block.settings.logo_alt | default: block.settings.logo.alt }}"
+        aria-hidden="true"
+        loading="lazy"
+      >
+    {% endfor %}
+  </div>
+
+  <div class="luna-marquee__fade-right"></div>
+</section>
+
+{% schema %}
+{
+  "name": "Luna Press Marquee",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label text",
+      "default": "As Seen In"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Press Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo image"
+        },
+        {
+          "type": "text",
+          "id": "logo_alt",
+          "label": "Logo alt text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luna Press Marquee",
+      "blocks": [
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}

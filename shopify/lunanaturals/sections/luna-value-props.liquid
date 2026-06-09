@@ -1,0 +1,278 @@
+{% comment %}
+  Luna Value Props — 3 value prop cards
+  Horizontal scroll on mobile, 3-col grid on desktop
+{% endcomment %}
+
+<style>
+  .luna-vp {
+    background-color: var(--gr-green-dark, #2F3A1C);
+    padding: 5rem 0 4rem;
+  }
+
+  .luna-vp__header {
+    text-align: center;
+    padding: 0 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .luna-vp__heading {
+    font-style: italic;
+    font-size: 2.25rem;
+    color: white;
+    line-height: 1.15;
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  .luna-vp__heading-accent {
+    color: var(--gr-accent, #C45D3E);
+  }
+
+  /* Mobile: horizontal scroll */
+  .luna-vp__scroll {
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .luna-vp__scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .luna-vp__scroll-inner {
+    display: flex;
+    gap: 1.25rem;
+    padding: 0 1rem;
+    width: max-content;
+  }
+
+  .luna-vp__card-wrap--scroll {
+    width: 320px;
+    flex-shrink: 0;
+  }
+
+  /* Desktop: grid */
+  .luna-vp__grid {
+    display: none;
+  }
+
+  .luna-vp__card {
+    background: white;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .luna-vp__card-image-wrap {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(122, 128, 102, 0.2);
+  }
+
+  .luna-vp__card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .luna-vp__card-body {
+    padding: 1.5rem;
+  }
+
+  .luna-vp__card-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-align: center;
+    color: var(--gr-dark, #1E1E1E);
+    margin: 0 0 0.75rem;
+  }
+
+  .luna-vp__card-desc {
+    font-size: 0.875rem;
+    text-align: center;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.625;
+  }
+
+  @media (min-width: 768px) {
+    .luna-vp__heading {
+      font-size: 3.75rem;
+    }
+
+    .luna-vp__header {
+      margin-bottom: 4rem;
+    }
+
+    .luna-vp__card-wrap--scroll {
+      width: 400px;
+    }
+
+    .luna-vp__card-body {
+      padding: 2rem;
+    }
+
+    .luna-vp__card-title {
+      font-size: 1.5rem;
+    }
+
+    .luna-vp__card-desc {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .luna-vp {
+      padding-bottom: 5rem;
+    }
+
+    .luna-vp__heading {
+      font-size: 4.5rem;
+    }
+
+    .luna-vp__scroll {
+      display: none;
+    }
+
+    .luna-vp__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+  }
+</style>
+
+<section class="luna-vp">
+  <div class="luna-vp__header">
+    <h2 class="luna-vp__heading gr-display">
+      {{ section.settings.heading_line1 | default: 'We made mosquito protection, like,' }}
+      <span class="luna-vp__heading-accent">{{ section.settings.heading_accent | default: 'stupidly simple.' }}</span>
+    </h2>
+  </div>
+
+  <!-- Mobile: horizontal scroll -->
+  <div class="luna-vp__scroll">
+    <div class="luna-vp__scroll-inner">
+      {% for block in section.blocks %}
+        <div class="luna-vp__card-wrap--scroll" {{ block.shopify_attributes }}>
+          <div class="luna-vp__card">
+            <div class="luna-vp__card-image-wrap">
+              {% if block.settings.image %}
+                <img
+                  class="luna-vp__card-image"
+                  src="{{ block.settings.image | image_url: width: 800 }}"
+                  alt="{{ block.settings.title | default: block.settings.image.alt }}"
+                  loading="lazy"
+                >
+              {% endif %}
+            </div>
+            <div class="luna-vp__card-body">
+              <h3 class="luna-vp__card-title">{{ block.settings.title }}</h3>
+              <p class="luna-vp__card-desc">{{ block.settings.description }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Desktop: 3-col grid -->
+  <div class="luna-vp__grid">
+    {% for block in section.blocks %}
+      <div class="luna-vp__card" {{ block.shopify_attributes }}>
+        <div class="luna-vp__card-image-wrap">
+          {% if block.settings.image %}
+            <img
+              class="luna-vp__card-image"
+              src="{{ block.settings.image | image_url: width: 800 }}"
+              alt="{{ block.settings.title | default: block.settings.image.alt }}"
+              loading="lazy"
+            >
+          {% endif %}
+        </div>
+        <div class="luna-vp__card-body">
+          <h3 class="luna-vp__card-title">{{ block.settings.title }}</h3>
+          <p class="luna-vp__card-desc">{{ block.settings.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luna Value Props",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_line1",
+      "label": "Heading (main)",
+      "default": "We made mosquito protection, like,"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading (accent text)",
+      "default": "stupidly simple."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Value Prop Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "No Mess"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "No spray. No lotion. No sticky hands. Peel one off, stick it on, walk outside. Done."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luna Value Props",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "title": "No Mess",
+            "description": "No spray. No lotion. No sticky hands. Peel one off, stick it on, walk outside. Done."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "Plant-Powered",
+            "description": "Citronella and eucalyptus oils do the work. No DEET, no parabens, no ingredients you can't pronounce."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "Built for Real Life",
+            "description": "Stays on during hikes, soccer practice, and playground chaos. Compact pack fits in a purse, diaper bag, or backpack."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

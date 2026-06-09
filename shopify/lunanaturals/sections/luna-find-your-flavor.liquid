@@ -1,0 +1,302 @@
+{% comment %}
+  Luna Find Your Flavor — 2-column product grid with Adults and Kids cards
+{% endcomment %}
+
+<style>
+  .luna-flavor {
+    background-color: var(--gr-cream-light, #FAF7F2);
+    padding: 1.5rem 1rem 3rem;
+    border-top: 1px solid rgba(30, 30, 30, 0.05);
+  }
+
+  .luna-flavor__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .luna-flavor__heading {
+    font-style: italic;
+    font-size: 2.25rem;
+    color: var(--gr-green, #4E5C36);
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .luna-flavor__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .luna-flavor__card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid rgba(30, 30, 30, 0.08);
+    background: white;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .luna-flavor__card:hover {
+    box-shadow: 0 0 0 2px var(--gr-green, #4E5C36);
+  }
+
+  .luna-flavor__image-wrap {
+    position: relative;
+    background-color: #7d8566;
+  }
+
+  .luna-flavor__badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.375rem;
+    z-index: 10;
+  }
+
+  .luna-flavor__badge--bestseller {
+    background-color: var(--gr-green-dark, #2F3A1C);
+  }
+
+  .luna-flavor__badge--kid {
+    background-color: var(--gr-accent, #C45D3E);
+  }
+
+  .luna-flavor__image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    transform: scale(1.35);
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+  }
+
+  /* Save overlay */
+  .luna-flavor__save-overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5) 50%, transparent);
+    padding: 4rem 1rem 1.25rem;
+  }
+
+  .luna-flavor__save-text {
+    font-style: italic;
+    color: white;
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .luna-flavor__save-percent {
+    color: var(--gr-gold, #D4A843);
+  }
+
+  .luna-flavor__save-sub {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  /* Shop Now hover overlay */
+  .luna-flavor__shop-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    transition: all 300ms ease;
+  }
+
+  .luna-flavor__shop-btn {
+    background: white;
+    color: var(--gr-dark, #1E1E1E);
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: transform 300ms ease;
+  }
+
+  @media (min-width: 640px) {
+    .luna-flavor__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .luna-flavor {
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .luna-flavor__heading {
+      font-size: 3rem;
+    }
+
+    .luna-flavor__save-text {
+      font-size: 1.875rem;
+    }
+
+    .luna-flavor__shop-overlay {
+      background: transparent;
+      opacity: 0;
+    }
+
+    .luna-flavor__card:hover .luna-flavor__shop-overlay {
+      background: rgba(0, 0, 0, 0.4);
+      opacity: 1;
+    }
+
+    .luna-flavor__shop-btn {
+      font-size: 1rem;
+      padding: 0.875rem 2rem;
+      transform: scale(0.9);
+    }
+
+    .luna-flavor__card:hover .luna-flavor__shop-btn {
+      transform: scale(1);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .luna-flavor__grid {
+      max-width: 900px;
+    }
+  }
+</style>
+
+<section class="luna-flavor">
+  <div class="luna-flavor__inner">
+    <h2 class="luna-flavor__heading gr-display">
+      {{ section.settings.heading | default: 'Pick Your Protection' }}
+    </h2>
+
+    <div class="luna-flavor__grid">
+      {% for block in section.blocks %}
+        <a href="{{ block.settings.link | default: '#shop' }}" class="luna-flavor__card" {{ block.shopify_attributes }}>
+          <div class="luna-flavor__image-wrap">
+            {% if block.settings.badge_text != blank %}
+              <span class="luna-flavor__badge luna-flavor__badge--{{ block.settings.badge_style | default: 'bestseller' }}">
+                {{ block.settings.badge_text }}
+              </span>
+            {% endif %}
+
+            {% if block.settings.image %}
+              <img
+                class="luna-flavor__image"
+                src="{{ block.settings.image | image_url: width: 600 }}"
+                alt="{{ block.settings.image_alt | default: block.settings.image.alt }}"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+            {% endif %}
+
+            <div class="luna-flavor__save-overlay">
+              <p class="luna-flavor__save-text gr-display">
+                Save up to <span class="luna-flavor__save-percent">{{ block.settings.save_percent | default: '40' }}%</span>
+              </p>
+              <p class="luna-flavor__save-sub">Subscribe &amp; save &middot; Free shipping on 2+ packs</p>
+            </div>
+
+            <div class="luna-flavor__shop-overlay">
+              <span class="luna-flavor__shop-btn">Shop Now &rarr;</span>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luna Find Your Flavor",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Pick Your Protection"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Product Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text",
+          "default": "Best Seller"
+        },
+        {
+          "type": "select",
+          "id": "badge_style",
+          "label": "Badge style",
+          "options": [
+            { "value": "bestseller", "label": "Best Seller (dark green)" },
+            { "value": "kid", "label": "Kid Favorite (accent)" }
+          ],
+          "default": "bestseller"
+        },
+        {
+          "type": "text",
+          "id": "save_percent",
+          "label": "Save percentage",
+          "default": "40"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Product link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luna Find Your Flavor",
+      "blocks": [
+        {
+          "type": "product_card",
+          "settings": {
+            "badge_text": "Best Seller",
+            "badge_style": "bestseller",
+            "save_percent": "40"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "badge_text": "Kid Favorite",
+            "badge_style": "kid",
+            "save_percent": "40"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

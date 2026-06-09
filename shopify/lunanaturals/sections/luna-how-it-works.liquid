@@ -1,0 +1,213 @@
+{% comment %}
+  Luna Naturals — How It Works
+  3 step cards with videos (Peel, Stick, Protect)
+  Horizontal scroll mobile, 3-col grid desktop
+{% endcomment %}
+
+<style>
+  .luna-hiw {
+    background: var(--gr-cream-light, #faf8f3);
+    padding: 64px 0;
+    overflow: hidden;
+  }
+  @media (min-width: 768px) {
+    .luna-hiw { padding: 80px 0; }
+  }
+
+  .luna-hiw__header {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .luna-hiw__header { padding: 0 24px; }
+  }
+
+  .luna-hiw__title {
+    font-size: 30px;
+    color: var(--gr-dark, #1a1a1a);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  @media (min-width: 768px) {
+    .luna-hiw__title { font-size: 36px; }
+  }
+
+  .luna-hiw__subtitle {
+    color: var(--gr-sage, #6b7c6b);
+    font-size: 16px;
+    margin-bottom: 48px;
+    max-width: 448px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Scroll container */
+  .luna-hiw__scroll {
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .luna-hiw__scroll::-webkit-scrollbar { display: none; }
+
+  .luna-hiw__grid {
+    display: flex;
+    gap: 20px;
+    padding: 0 16px 16px;
+    scroll-snap-type: x mandatory;
+  }
+  @media (min-width: 768px) {
+    .luna-hiw__grid { padding: 0 24px 16px; }
+  }
+  @media (min-width: 1024px) {
+    .luna-hiw__scroll { overflow: visible; }
+    .luna-hiw__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: 1100px;
+      margin: 0 auto;
+      scroll-snap-type: none;
+      padding-bottom: 0;
+    }
+  }
+
+  /* Step card */
+  .luna-hiw__card {
+    width: 280px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    background: var(--gr-cream, #f5f0e8);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  @media (min-width: 768px) {
+    .luna-hiw__card { width: 320px; }
+  }
+  @media (min-width: 1024px) {
+    .luna-hiw__card {
+      width: auto;
+      flex-shrink: 1;
+    }
+  }
+
+  /* Video area */
+  .luna-hiw__video-wrap {
+    aspect-ratio: 1 / 1;
+    position: relative;
+    background: rgba(0,0,0,0.05);
+  }
+  .luna-hiw__video-wrap video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .luna-hiw__step-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--gr-accent, #c0392b);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 9999px;
+  }
+
+  /* Text area */
+  .luna-hiw__text {
+    padding: 20px;
+    text-align: center;
+  }
+  .luna-hiw__card-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--gr-dark, #1a1a1a);
+    margin-bottom: 6px;
+  }
+  .luna-hiw__card-desc {
+    font-size: 14px;
+    color: var(--gr-sage, #6b7c6b);
+    line-height: 1.5;
+  }
+</style>
+
+<section class="luna-hiw">
+  <div class="luna-hiw__header">
+    <h2 class="luna-hiw__title gr-display">Protection in 3 seconds flat.</h2>
+    <p class="luna-hiw__subtitle">No spraying. No rubbing. No chasing kids around the yard.</p>
+  </div>
+
+  <div class="luna-hiw__scroll">
+    <div class="luna-hiw__grid">
+
+      <!-- Step 1: Peel -->
+      <div class="luna-hiw__card">
+        <div class="luna-hiw__video-wrap">
+          <video
+            src="{{ 'adults-patch-step1.mp4' | asset_url }}"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+          <span class="luna-hiw__step-badge">Step 1</span>
+        </div>
+        <div class="luna-hiw__text">
+          <h3 class="luna-hiw__card-title">Peel</h3>
+          <p class="luna-hiw__card-desc">Remove the patch from its backing. Each one is individually sealed for maximum freshness and potency.</p>
+        </div>
+      </div>
+
+      <!-- Step 2: Stick -->
+      <div class="luna-hiw__card">
+        <div class="luna-hiw__video-wrap">
+          <video
+            src="{{ 'adults-patch-step2.mp4' | asset_url }}"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+          <span class="luna-hiw__step-badge">Step 2</span>
+        </div>
+        <div class="luna-hiw__text">
+          <h3 class="luna-hiw__card-title">Stick</h3>
+          <p class="luna-hiw__card-desc">Apply to clothing &mdash; shirts, shorts, hats, or strollers. Use 1-2 patches per person for full coverage.</p>
+        </div>
+      </div>
+
+      <!-- Step 3: Protect -->
+      <div class="luna-hiw__card">
+        <div class="luna-hiw__video-wrap">
+          <video
+            src="{{ 'adults-patch-step3.mp4' | asset_url }}"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+          <span class="luna-hiw__step-badge">Step 3</span>
+        </div>
+        <div class="luna-hiw__text">
+          <h3 class="luna-hiw__card-title">Protect</h3>
+          <p class="luna-hiw__card-desc">Enjoy up to 12 hours of DEET-free, plant-based mosquito protection. No reapplying, no mess.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luna How It Works",
+  "tag": "section",
+  "class": "luna-how-it-works",
+  "settings": []
+}
+{% endschema %}

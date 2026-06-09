@@ -1,0 +1,1388 @@
+<style>
+  /* ===== CSS Custom Properties ===== */
+  :root {
+    --gr-cream-light: #faf8f5;
+    --gr-cream: #f5f0e8;
+    --gr-cream-warm: #f0ebe0;
+    --gr-dark: #1a1a1a;
+    --gr-sage: #7c8c78;
+    --gr-green: #3a7d44;
+    --gr-green-mid: #2e6b38;
+    --gr-green-dark: #1e3a24;
+    --gr-accent: #c1440e;
+    --gr-gold: #d4a843;
+    --gr-yellow: #f5d060;
+  }
+
+  /* ===== Buy Box Section ===== */
+  .luna-buy-box {
+    background: var(--gr-cream-light);
+    padding: 48px 16px;
+  }
+
+  .luna-buy-box__container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .luna-buy-box__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* ===== Gallery ===== */
+  .luna-buy-box__gallery-main {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: var(--gr-cream);
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .luna-buy-box__gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
+
+  .luna-buy-box__gallery-img--active {
+    display: block;
+  }
+
+  /* Feature tags on first image */
+  .luna-buy-box__tag-top-left {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 9999px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  .luna-buy-box__tag-top-left span {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gr-dark);
+  }
+
+  .luna-buy-box__badge-50k {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 10;
+    background: var(--gr-accent);
+    border-radius: 9999px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: gr-badge-wobble 5s ease-in-out infinite;
+  }
+
+  @keyframes gr-badge-wobble {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    75% { transform: rotate(-3deg); }
+  }
+
+  .luna-buy-box__badge-50k-top,
+  .luna-buy-box__badge-50k-bottom {
+    font-size: 8px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1;
+  }
+
+  .luna-buy-box__badge-50k-num {
+    font-size: 14px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .luna-buy-box__trust-pills {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .luna-buy-box__trust-pill {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 9999px;
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  .luna-buy-box__trust-pill span {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--gr-dark);
+  }
+
+  /* 3-pack overlay */
+  .luna-buy-box__overlay-3pack {
+    position: absolute;
+    inset: auto 0 0 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.6), transparent);
+    padding: 64px 20px 20px;
+    display: none;
+  }
+
+  .luna-buy-box__overlay-3pack--visible {
+    display: block;
+  }
+
+  .luna-buy-box__overlay-3pack-tag {
+    display: inline-block;
+    background: var(--gr-accent);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    margin-bottom: 8px;
+  }
+
+  .luna-buy-box__overlay-3pack-title {
+    font-style: italic;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .luna-buy-box__overlay-3pack-title span {
+    color: var(--gr-gold);
+  }
+
+  .luna-buy-box__overlay-3pack-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  /* Before/After labels */
+  .luna-buy-box__before-label,
+  .luna-buy-box__after-label {
+    position: absolute;
+    top: 16px;
+    background: var(--gr-accent);
+    color: #fff;
+    font-size: 14px;
+    font-style: italic;
+    padding: 6px 16px;
+    border-radius: 4px;
+    display: none;
+    font-weight: 700;
+  }
+
+  .luna-buy-box__before-label { left: 16px; }
+  .luna-buy-box__after-label { right: 16px; }
+
+  .luna-buy-box__before-label--visible,
+  .luna-buy-box__after-label--visible {
+    display: block;
+  }
+
+  /* Gallery arrows */
+  .luna-buy-box__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s;
+    z-index: 10;
+  }
+
+  .luna-buy-box__arrow:hover { background: #fff; }
+  .luna-buy-box__arrow--prev { left: 12px; }
+  .luna-buy-box__arrow--next { right: 12px; }
+
+  /* Dots */
+  .luna-buy-box__dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 10;
+  }
+
+  .luna-buy-box__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: rgba(26, 26, 26, 0.3);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.2s;
+  }
+
+  .luna-buy-box__dot--active {
+    width: 24px;
+    height: 8px;
+    background: var(--gr-dark);
+  }
+
+  /* Thumbnails */
+  .luna-buy-box__thumbs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .luna-buy-box__thumbs::-webkit-scrollbar { display: none; }
+
+  .luna-buy-box__thumb {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: border-color 0.2s;
+    padding: 0;
+    background: none;
+  }
+
+  .luna-buy-box__thumb--active { border-color: var(--gr-green); }
+  .luna-buy-box__thumb:hover { border-color: rgba(124, 140, 120, 0.3); }
+  .luna-buy-box__thumb--active:hover { border-color: var(--gr-green); }
+
+  .luna-buy-box__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: var(--gr-cream);
+  }
+
+  /* ===== Right Column ===== */
+  .luna-buy-box__rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .luna-buy-box__stars { display: flex; gap: 2px; }
+
+  .luna-buy-box__rating-text {
+    font-size: 14px;
+    color: var(--gr-sage);
+  }
+
+  .luna-buy-box__title {
+    font-style: italic;
+    font-size: 30px;
+    color: var(--gr-dark);
+    line-height: 1.15;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .luna-buy-box__tagline {
+    color: var(--gr-sage);
+    font-size: 16px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .luna-buy-box__price-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+
+  .luna-buy-box__price-compare {
+    font-size: 16px;
+    color: var(--gr-accent);
+    text-decoration: line-through;
+    font-weight: 500;
+  }
+
+  .luna-buy-box__price-current {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gr-dark);
+  }
+
+  .luna-buy-box__price-badge {
+    background: var(--gr-accent);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .luna-buy-box__per-patch {
+    font-size: 12px;
+    color: var(--gr-sage);
+    margin-bottom: 20px;
+  }
+
+  /* As Seen In */
+  .luna-buy-box__as-seen {
+    margin-bottom: 24px;
+    padding: 16px 0;
+    border-top: 1px solid rgba(26,26,26,0.08);
+    border-bottom: 1px solid rgba(26,26,26,0.08);
+  }
+
+  .luna-buy-box__as-seen-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--gr-sage);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .luna-buy-box__as-seen-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .luna-buy-box__as-seen-logos img {
+    height: 14px;
+    width: auto;
+    opacity: 0.4;
+    filter: grayscale(1);
+  }
+
+  /* Info Tabs */
+  .luna-buy-box__info-tabs { margin-bottom: 32px; }
+
+  .luna-buy-box__info-tab-bar {
+    background: var(--gr-cream-warm);
+    border-radius: 12px 12px 0 0;
+    padding: 4px;
+    display: flex;
+  }
+
+  .luna-buy-box__info-tab-btn {
+    flex: 1;
+    padding: 10px 4px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--gr-sage);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .luna-buy-box__info-tab-btn:hover { color: var(--gr-dark); }
+
+  .luna-buy-box__info-tab-btn--active {
+    background: #fff;
+    color: var(--gr-dark);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  .luna-buy-box__info-tab-content {
+    background: #fff;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    padding: 16px;
+  }
+
+  .luna-buy-box__info-panel { display: none; }
+  .luna-buy-box__info-panel--active { display: block; }
+
+  /* Why panel */
+  .luna-buy-box__why-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 4px;
+    border-bottom: 1px solid rgba(26,26,26,0.05);
+  }
+
+  .luna-buy-box__why-item:last-child { border-bottom: none; }
+
+  .luna-buy-box__why-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(58, 125, 68, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .luna-buy-box__why-text {
+    font-size: 14px;
+    color: var(--gr-dark);
+    line-height: 1.4;
+  }
+
+  .luna-buy-box__why-text strong { font-weight: 700; }
+
+  /* Inside panel */
+  .luna-buy-box__inside-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .luna-buy-box__inside-card {
+    background: var(--gr-cream-light);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .luna-buy-box__inside-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+    background: rgba(58, 125, 68, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+  }
+
+  .luna-buy-box__inside-name { font-size: 12px; font-weight: 700; color: var(--gr-dark); }
+  .luna-buy-box__inside-role { font-size: 10px; color: var(--gr-sage); margin-top: 2px; }
+
+  .luna-buy-box__inside-free-from {
+    grid-column: span 2;
+    background: rgba(58, 125, 68, 0.05);
+    border-radius: 12px;
+    padding: 12px 16px;
+    text-align: center;
+  }
+
+  .luna-buy-box__inside-free-from p { font-size: 12px; font-weight: 600; color: var(--gr-green); }
+
+  /* Steps panel */
+  .luna-buy-box__step-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 4px;
+    border-bottom: 1px solid rgba(26,26,26,0.05);
+  }
+
+  .luna-buy-box__step-item:last-child { border-bottom: none; }
+
+  .luna-buy-box__step-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .luna-buy-box__step-num--1 { background: var(--gr-green); }
+  .luna-buy-box__step-num--2 { background: var(--gr-green-mid); }
+  .luna-buy-box__step-num--3 { background: var(--gr-accent); }
+
+  .luna-buy-box__step-title { font-size: 14px; font-weight: 700; color: var(--gr-dark); }
+  .luna-buy-box__step-desc { font-size: 12px; color: var(--gr-sage); }
+
+  /* Reviews panel */
+  .luna-buy-box__review-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 4px;
+    border-bottom: 1px solid rgba(26,26,26,0.05);
+  }
+
+  .luna-buy-box__review-item:last-child { border-bottom: none; }
+
+  .luna-buy-box__review-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    background: var(--gr-cream-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gr-green);
+    flex-shrink: 0;
+  }
+
+  .luna-buy-box__review-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+
+  .luna-buy-box__review-name { font-size: 12px; font-weight: 700; color: var(--gr-dark); }
+  .luna-buy-box__review-stars { display: flex; gap: 1px; }
+  .luna-buy-box__review-verified { font-size: 10px; color: var(--gr-green); font-weight: 600; }
+  .luna-buy-box__review-text { font-size: 14px; color: var(--gr-dark); line-height: 1.4; }
+
+  /* Bundle selector */
+  .luna-buy-box__supply-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gr-sage);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+  }
+
+  .luna-buy-box__bundles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .luna-buy-box__bundle {
+    position: relative;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: left;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .luna-buy-box__bundle:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .luna-buy-box__bundle--active { box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-color: var(--gr-green); }
+
+  .luna-buy-box__bundle-tags {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+  }
+
+  .luna-buy-box__bundle-tag {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    white-space: nowrap;
+  }
+
+  .luna-buy-box__bundle-tag--best { background: var(--gr-green); }
+  .luna-buy-box__bundle-tag--save { background: var(--gr-accent); }
+
+  .luna-buy-box__bundle-name { font-size: 16px; font-weight: 700; color: var(--gr-dark); margin-top: 4px; }
+  .luna-buy-box__bundle-detail { font-size: 12px; color: var(--gr-sage); margin-bottom: 12px; }
+  .luna-buy-box__bundle-price { font-size: 24px; font-weight: 800; color: var(--gr-dark); }
+  .luna-buy-box__bundle-compare { font-size: 12px; color: var(--gr-sage); text-decoration: line-through; margin-bottom: 8px; }
+
+  .luna-buy-box__bundle-divider {
+    padding-top: 8px;
+    border-top: 1px solid rgba(26,26,26,0.05);
+  }
+
+  .luna-buy-box__bundle-per { font-size: 12px; font-weight: 700; color: var(--gr-accent); }
+
+  /* Subscribe toggle */
+  .luna-buy-box__subscribe {
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 2px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .luna-buy-box__subscribe--active { box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-color: var(--gr-green); }
+
+  .luna-buy-box__subscribe-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .luna-buy-box__subscribe-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .luna-buy-box__subscribe-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    background: rgba(58, 125, 68, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .luna-buy-box__subscribe-title {
+    font-weight: 700;
+    color: var(--gr-dark);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .luna-buy-box__subscribe-title .accent { color: var(--gr-accent); }
+
+  .luna-buy-box__subscribe-best-value {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--gr-green);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 9999px;
+  }
+
+  .luna-buy-box__subscribe-sub { font-size: 12px; color: var(--gr-sage); margin-top: 2px; }
+
+  .luna-buy-box__toggle {
+    width: 52px;
+    height: 32px;
+    border-radius: 9999px;
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s;
+    background: rgba(26,26,26,0.15);
+  }
+
+  .luna-buy-box__toggle--on { background: var(--gr-green); }
+
+  .luna-buy-box__toggle-knob {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+  }
+
+  .luna-buy-box__toggle--on .luna-buy-box__toggle-knob { transform: translateX(20px); }
+
+  /* Cross-sell */
+  .luna-buy-box__cross-sell {
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    padding: 16px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .luna-buy-box__cross-sell-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    background: var(--gr-cream);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .luna-buy-box__cross-sell-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  .luna-buy-box__cross-sell-info { flex: 1; min-width: 0; }
+  .luna-buy-box__cross-sell-name { font-size: 14px; font-weight: 700; color: var(--gr-dark); line-height: 1.4; }
+
+  .luna-buy-box__cross-sell-price { font-size: 12px; color: var(--gr-dark); margin-top: 4px; }
+  .luna-buy-box__cross-sell-price .bold { font-weight: 700; color: var(--gr-accent); }
+  .luna-buy-box__cross-sell-price .strike { color: var(--gr-sage); text-decoration: line-through; }
+  .luna-buy-box__cross-sell-price .save { color: var(--gr-green); font-weight: 600; }
+
+  .luna-buy-box__cross-sell-sub { font-size: 11px; color: var(--gr-sage); margin-top: 2px; }
+
+  .luna-buy-box__cross-sell-add {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--gr-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s;
+  }
+
+  .luna-buy-box__cross-sell-add:hover { background: rgba(58, 125, 68, 0.1); }
+
+  /* CTA */
+  .luna-buy-box__cta {
+    width: 100%;
+    padding: 20px;
+    background: var(--gr-accent);
+    color: #fff;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(193, 68, 14, 0.2);
+    transition: filter 0.2s, transform 0.1s;
+    margin-bottom: 8px;
+  }
+
+  .luna-buy-box__cta:hover { filter: brightness(1.1); }
+  .luna-buy-box__cta:active { transform: scale(0.98); }
+
+  .luna-buy-box__cta-main { font-style: italic; font-size: 20px; font-weight: 700; }
+  .luna-buy-box__cta-sub { font-size: 12px; opacity: 0.8; margin-top: 2px; }
+  .luna-buy-box__cta-sub .strike { text-decoration: line-through; opacity: 0.6; }
+
+  /* Shipping */
+  .luna-buy-box__shipping { padding: 16px 0; }
+
+  .luna-buy-box__shipping-line {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .luna-buy-box__shipping-line:last-child { margin-bottom: 0; }
+  .luna-buy-box__shipping-line--stock { font-weight: 600; }
+  .luna-buy-box__shipping-line .green { color: var(--gr-green); }
+  .luna-buy-box__shipping-line .dark { color: var(--gr-dark); }
+
+  /* Timer */
+  .luna-buy-box__timer {
+    background: var(--gr-cream);
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .luna-buy-box__timer-text { font-size: 14px; color: var(--gr-dark); }
+  .luna-buy-box__timer-text strong { font-weight: 700; }
+
+  /* Free shipping progress */
+  .luna-buy-box__free-ship {
+    background: var(--gr-cream);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+
+  .luna-buy-box__free-ship-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .luna-buy-box__free-ship-msg { font-size: 14px; color: var(--gr-dark); }
+  .luna-buy-box__free-ship-msg .accent { font-weight: 700; color: var(--gr-accent); }
+  .luna-buy-box__free-ship-msg .green-bold { font-weight: 700; color: var(--gr-green); }
+  .luna-buy-box__free-ship-pct { font-size: 12px; font-weight: 700; color: var(--gr-accent); }
+
+  .luna-buy-box__free-ship-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--gr-cream-warm);
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  .luna-buy-box__free-ship-fill {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 0.5s;
+  }
+
+  .luna-buy-box__free-ship-fill--green { background: var(--gr-green); }
+  .luna-buy-box__free-ship-fill--accent { background: var(--gr-accent); }
+  .luna-buy-box__free-ship-note { font-size: 11px; color: var(--gr-sage); }
+
+  /* Trust badges */
+  .luna-buy-box__trust-badges {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .luna-buy-box__trust-badge {
+    font-size: 12px;
+    color: var(--gr-sage);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .luna-buy-box__trust-badge svg { flex-shrink: 0; }
+
+  /* ===== Responsive ===== */
+  @media (min-width: 768px) {
+    .luna-buy-box { padding: 80px 24px; }
+
+    .luna-buy-box__grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+    }
+
+    .luna-buy-box__title { font-size: 36px; }
+
+    .luna-buy-box__thumb { width: 72px; height: 72px; }
+
+    .luna-buy-box__overlay-3pack-title { font-size: 30px; }
+
+    .luna-buy-box__as-seen-logos { gap: 32px; }
+  }
+</style>
+
+<section id="shop" class="luna-buy-box" data-section-type="luna-product-buy-box-kids">
+  <div class="luna-buy-box__container">
+    <div class="luna-buy-box__grid">
+      <!-- ===== Left: Image Gallery ===== -->
+      <div>
+        <div class="luna-buy-box__gallery-main" data-gallery>
+          {% assign gallery_images = "product-kids-patches-v2.jpg,before-after-no-labels.jpg,kids-3pack-forest.jpg,kids-pack-moss.jpg,kids-lifestyle-stickers.webp" | split: "," %}
+          {% for img in gallery_images %}
+            <img
+              src="{{ img | prepend: '/images/gruns/' | asset_url }}"
+              alt="Luna Naturals Kids Mosquito Repellent Patches - Image {{ forloop.index }}"
+              class="luna-buy-box__gallery-img{% if forloop.first %} luna-buy-box__gallery-img--active{% endif %}"
+              data-gallery-img="{{ forloop.index0 }}"
+              width="700" height="700"
+              {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+            />
+          {% endfor %}
+
+          <!-- Feature tags (first image only) -->
+          <div class="luna-buy-box__tag-top-left" data-first-image-tag>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gr-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>12-hour protection</span>
+          </div>
+          <div class="luna-buy-box__badge-50k" data-first-image-tag>
+            <span class="luna-buy-box__badge-50k-top">Loved by</span>
+            <span class="luna-buy-box__badge-50k-num">50K+</span>
+            <span class="luna-buy-box__badge-50k-bottom">families</span>
+          </div>
+          <div class="luna-buy-box__trust-pills" data-first-image-tag>
+            <div class="luna-buy-box__trust-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1.5 5.5-5 7-9 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              <span>Plant-based</span>
+            </div>
+            <div class="luna-buy-box__trust-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Pediatrician-reviewed</span>
+            </div>
+            <div class="luna-buy-box__trust-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+              <span>DEET-free</span>
+            </div>
+          </div>
+
+          <!-- 3-pack overlay -->
+          <div class="luna-buy-box__overlay-3pack" data-overlay-3pack>
+            <span class="luna-buy-box__overlay-3pack-tag">3-Pack &middot; Best Value</span>
+            <p class="luna-buy-box__overlay-3pack-title">Save up to <span>60%</span></p>
+            <p class="luna-buy-box__overlay-3pack-sub">3-pack subscribed &middot; $0.08/patch &middot; ~All summer covered</p>
+          </div>
+
+          <!-- Before/After labels -->
+          <span class="luna-buy-box__before-label" data-overlay-before>Before</span>
+          <span class="luna-buy-box__after-label" data-overlay-after>After</span>
+
+          <!-- Arrows -->
+          <button class="luna-buy-box__arrow luna-buy-box__arrow--prev" data-gallery-prev aria-label="Previous image">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gr-dark)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="luna-buy-box__arrow luna-buy-box__arrow--next" data-gallery-next aria-label="Next image">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gr-dark)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+
+          <!-- Dots -->
+          <div class="luna-buy-box__dots" data-gallery-dots>
+            {% for img in gallery_images %}
+              <button class="luna-buy-box__dot{% if forloop.first %} luna-buy-box__dot--active{% endif %}" data-gallery-dot="{{ forloop.index0 }}" aria-label="View image {{ forloop.index }}"></button>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="luna-buy-box__thumbs">
+          {% for img in gallery_images %}
+            <button class="luna-buy-box__thumb{% if forloop.first %} luna-buy-box__thumb--active{% endif %}" data-thumb="{{ forloop.index0 }}">
+              <img src="{{ img | prepend: '/images/gruns/' | asset_url }}" alt="" width="72" height="72" loading="lazy" />
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- ===== Right: Purchase Funnel ===== -->
+      <div>
+        <!-- Rating -->
+        <div class="luna-buy-box__rating">
+          <div class="luna-buy-box__stars">
+            {% for i in (1..5) %}
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="var(--gr-accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/></svg>
+            {% endfor %}
+          </div>
+          <span class="luna-buy-box__rating-text">4.8/5.0 (50,000+ reviews)</span>
+        </div>
+
+        <h1 class="luna-buy-box__title">Luna Naturals Mosquito Repellent Patches &mdash; Kids</h1>
+        <p class="luna-buy-box__tagline">Finally, bug protection your kids will actually ask for. Pediatrician-approved. Zero DEET touching their skin.</p>
+
+        <!-- Price -->
+        <div class="luna-buy-box__price-row">
+          <span class="luna-buy-box__price-compare" data-price-compare>$24.99</span>
+          <span class="luna-buy-box__price-current" data-price-current>$9.99</span>
+          <span class="luna-buy-box__price-badge">Flash Sale</span>
+        </div>
+        <p class="luna-buy-box__per-patch" data-per-patch>$0.08/patch &middot; 120 patches per pack</p>
+
+        <!-- As Seen In -->
+        <div class="luna-buy-box__as-seen">
+          <p class="luna-buy-box__as-seen-label">As Seen In</p>
+          <div class="luna-buy-box__as-seen-logos">
+            <img src="{{ 'logo-forbes-black.svg' | prepend: '/images/gruns/' | asset_url }}" alt="Forbes" style="height:14px" />
+            <img src="{{ 'logo-nbc.svg' | prepend: '/images/gruns/' | asset_url }}" alt="NBC" style="height:18px" />
+            <img src="{{ 'logo-GQ-black.svg' | prepend: '/images/gruns/' | asset_url }}" alt="GQ" style="height:16px" />
+            <img src="{{ 'logo-today-black.svg' | prepend: '/images/gruns/' | asset_url }}" alt="Today" style="height:14px" />
+            <img src="{{ 'logo-people-black.svg' | prepend: '/images/gruns/' | asset_url }}" alt="People" style="height:14px" />
+          </div>
+        </div>
+
+        <!-- Info Tabs -->
+        <div class="luna-buy-box__info-tabs" data-info-tabs>
+          <div class="luna-buy-box__info-tab-bar">
+            <button class="luna-buy-box__info-tab-btn luna-buy-box__info-tab-btn--active" data-info-tab="why">Why it works</button>
+            <button class="luna-buy-box__info-tab-btn" data-info-tab="inside">Inside</button>
+            <button class="luna-buy-box__info-tab-btn" data-info-tab="steps">3 steps</button>
+            <button class="luna-buy-box__info-tab-btn" data-info-tab="reviews">Reviews</button>
+          </div>
+          <div class="luna-buy-box__info-tab-content">
+            <!-- Why it works -->
+            <div class="luna-buy-box__info-panel luna-buy-box__info-panel--active" data-info-panel="why">
+              <div class="luna-buy-box__why-item">
+                <div class="luna-buy-box__why-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                <span class="luna-buy-box__why-text">Repels mosquitoes for up to <strong>12 hours</strong></span>
+              </div>
+              <div class="luna-buy-box__why-item">
+                <div class="luna-buy-box__why-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                <span class="luna-buy-box__why-text">Goes on clothing &mdash; zero chemicals on skin</span>
+              </div>
+              <div class="luna-buy-box__why-item">
+                <div class="luna-buy-box__why-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1.5 5.5-5 7-9 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+                <span class="luna-buy-box__why-text">Plant-based, pediatrician-reviewed, DEET-free</span>
+              </div>
+              <div class="luna-buy-box__why-item">
+                <div class="luna-buy-box__why-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg></div>
+                <span class="luna-buy-box__why-text">120 patches per pack &mdash; lasts all summer</span>
+              </div>
+              <div class="luna-buy-box__why-item">
+                <div class="luna-buy-box__why-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+                <span class="luna-buy-box__why-text">Waterproof &amp; sweatproof for real outdoor life</span>
+              </div>
+            </div>
+
+            <!-- Inside -->
+            <div class="luna-buy-box__info-panel" data-info-panel="inside">
+              <div class="luna-buy-box__inside-grid">
+                <div class="luna-buy-box__inside-card">
+                  <div class="luna-buy-box__inside-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1.5 5.5-5 7-9 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+                  <p class="luna-buy-box__inside-name">Citronella Oil</p>
+                  <p class="luna-buy-box__inside-role">Repellent</p>
+                </div>
+                <div class="luna-buy-box__inside-card">
+                  <div class="luna-buy-box__inside-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1.5 5.5-5 7-9 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+                  <p class="luna-buy-box__inside-name">Eucalyptus Oil</p>
+                  <p class="luna-buy-box__inside-role">Deterrent</p>
+                </div>
+                <div class="luna-buy-box__inside-card">
+                  <div class="luna-buy-box__inside-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1.5 5.5-5 7-9 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+                  <p class="luna-buy-box__inside-name">Peppermint Oil</p>
+                  <p class="luna-buy-box__inside-role">Scent barrier</p>
+                </div>
+                <div class="luna-buy-box__inside-card">
+                  <div class="luna-buy-box__inside-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1.5 5.5-5 7-9 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+                  <p class="luna-buy-box__inside-name">Non-woven fabric</p>
+                  <p class="luna-buy-box__inside-role">Adhesive base</p>
+                </div>
+                <div class="luna-buy-box__inside-free-from">
+                  <p>No DEET &middot; No parabens &middot; No phthalates &middot; No synthetic fragrances</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3 steps -->
+            <div class="luna-buy-box__info-panel" data-info-panel="steps">
+              <div class="luna-buy-box__step-item">
+                <span class="luna-buy-box__step-num luna-buy-box__step-num--1">1</span>
+                <div><p class="luna-buy-box__step-title">Peel</p><p class="luna-buy-box__step-desc">Remove patch from backing</p></div>
+              </div>
+              <div class="luna-buy-box__step-item">
+                <span class="luna-buy-box__step-num luna-buy-box__step-num--2">2</span>
+                <div><p class="luna-buy-box__step-title">Stick</p><p class="luna-buy-box__step-desc">Apply to clothing, hats, or bags</p></div>
+              </div>
+              <div class="luna-buy-box__step-item">
+                <span class="luna-buy-box__step-num luna-buy-box__step-num--3">3</span>
+                <div><p class="luna-buy-box__step-title">Protect</p><p class="luna-buy-box__step-desc">12 hours of plant-based protection</p></div>
+              </div>
+            </div>
+
+            <!-- Reviews -->
+            <div class="luna-buy-box__info-panel" data-info-panel="reviews">
+              <div class="luna-buy-box__review-item">
+                <div class="luna-buy-box__review-avatar">RD</div>
+                <div>
+                  <div class="luna-buy-box__review-header">
+                    <span class="luna-buy-box__review-name">Rebecca D.</span>
+                    <div class="luna-buy-box__review-stars">{% for i in (1..5) %}<svg width="12" height="12" viewBox="0 0 20 20" fill="var(--gr-gold)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/></svg>{% endfor %}</div>
+                    <span class="luna-buy-box__review-verified">Verified</span>
+                  </div>
+                  <p class="luna-buy-box__review-text">&ldquo;Zero bites all summer. Never going back to spray.&rdquo;</p>
+                </div>
+              </div>
+              <div class="luna-buy-box__review-item">
+                <div class="luna-buy-box__review-avatar">JH</div>
+                <div>
+                  <div class="luna-buy-box__review-header">
+                    <span class="luna-buy-box__review-name">Jeremy H.</span>
+                    <div class="luna-buy-box__review-stars">{% for i in (1..5) %}<svg width="12" height="12" viewBox="0 0 20 20" fill="var(--gr-gold)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/></svg>{% endfor %}</div>
+                    <span class="luna-buy-box__review-verified">Verified</span>
+                  </div>
+                  <p class="luna-buy-box__review-text">&ldquo;One pack lasts the whole season for under $15.&rdquo;</p>
+                </div>
+              </div>
+              <div class="luna-buy-box__review-item">
+                <div class="luna-buy-box__review-avatar">SM</div>
+                <div>
+                  <div class="luna-buy-box__review-header">
+                    <span class="luna-buy-box__review-name">Sarah M.</span>
+                    <div class="luna-buy-box__review-stars">{% for i in (1..5) %}<svg width="12" height="12" viewBox="0 0 20 20" fill="var(--gr-gold)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/></svg>{% endfor %}</div>
+                    <span class="luna-buy-box__review-verified">Verified</span>
+                  </div>
+                  <p class="luna-buy-box__review-text">&ldquo;My toddler thinks they&rsquo;re stickers. Zero bites in 3 weeks.&rdquo;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pick your supply -->
+        <p class="luna-buy-box__supply-label">Pick your supply</p>
+        <div class="luna-buy-box__bundles" data-bundles>
+          <button class="luna-buy-box__bundle luna-buy-box__bundle--active" data-bundle="2">
+            <div class="luna-buy-box__bundle-tags">
+              <span class="luna-buy-box__bundle-tag luna-buy-box__bundle-tag--save">Save 48%</span>
+            </div>
+            <p class="luna-buy-box__bundle-name">2-Pack</p>
+            <p class="luna-buy-box__bundle-detail">240 patches &middot; 2-mo supply</p>
+            <p class="luna-buy-box__bundle-price">$25.98</p>
+            <p class="luna-buy-box__bundle-compare">$49.98</p>
+            <div class="luna-buy-box__bundle-divider"><p class="luna-buy-box__bundle-per">$12.99/pack</p></div>
+          </button>
+          <button class="luna-buy-box__bundle" data-bundle="4">
+            <div class="luna-buy-box__bundle-tags">
+              <span class="luna-buy-box__bundle-tag luna-buy-box__bundle-tag--best">Best Value</span>
+              <span class="luna-buy-box__bundle-tag luna-buy-box__bundle-tag--save">Save 64%</span>
+            </div>
+            <p class="luna-buy-box__bundle-name">4-Pack</p>
+            <p class="luna-buy-box__bundle-detail">480 patches &middot; 4-mo supply</p>
+            <p class="luna-buy-box__bundle-price">$35.96</p>
+            <p class="luna-buy-box__bundle-compare">$99.96</p>
+            <div class="luna-buy-box__bundle-divider"><p class="luna-buy-box__bundle-per">$8.99/pack</p></div>
+          </button>
+        </div>
+
+        <!-- Subscribe & Save -->
+        <div class="luna-buy-box__subscribe luna-buy-box__subscribe--active" data-subscribe>
+          <div class="luna-buy-box__subscribe-inner">
+            <div class="luna-buy-box__subscribe-left">
+              <div class="luna-buy-box__subscribe-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+              </div>
+              <div>
+                <p class="luna-buy-box__subscribe-title">Subscribe &amp; save <span class="accent">20%</span> <span class="luna-buy-box__subscribe-best-value">Best Value</span></p>
+                <p class="luna-buy-box__subscribe-sub">Every 3 months &middot; skip, edit, or cancel anytime</p>
+              </div>
+            </div>
+            <button class="luna-buy-box__toggle luna-buy-box__toggle--on" data-subscribe-toggle aria-label="Toggle subscription">
+              <div class="luna-buy-box__toggle-knob"></div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cross-sell -->
+        <div class="luna-buy-box__cross-sell">
+          <div class="luna-buy-box__cross-sell-img">
+            <img src="{{ 'adults-pack-moss.jpg' | prepend: '/images/gruns/' | asset_url }}" alt="Adults Patches" width="64" height="64" loading="lazy" />
+          </div>
+          <div class="luna-buy-box__cross-sell-info">
+            <p class="luna-buy-box__cross-sell-name">Add Adults Patches</p>
+            <p class="luna-buy-box__cross-sell-price"><span class="bold">+$9.99</span> <span class="strike">$24.99</span> &middot; <span class="save">save $15</span></p>
+            <p class="luna-buy-box__cross-sell-sub">90 patches &middot; protect the whole family</p>
+          </div>
+          <button class="luna-buy-box__cross-sell-add" aria-label="Add to order">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gr-dark)" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+        </div>
+
+        <!-- CTA -->
+        <button class="luna-buy-box__cta" data-cta>
+          <p class="luna-buy-box__cta-main">Claim deal &middot; Save 60%</p>
+          <p class="luna-buy-box__cta-sub">Skip to checkout &mdash; total <strong data-cta-price>$9.99</strong> <span class="strike" data-cta-compare>$24.99</span></p>
+        </button>
+
+        <!-- Shipping -->
+        <div class="luna-buy-box__shipping">
+          <p class="luna-buy-box__shipping-line luna-buy-box__shipping-line--stock">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gr-green)"><circle cx="12" cy="12" r="6"/></svg>
+            <span class="green">In stock</span>
+            <span class="dark">&middot; Expected delivery in 2&ndash;3 days</span>
+          </p>
+          <p class="luna-buy-box__shipping-line green">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span class="green">Ships Mon, Jun 9 from our California warehouse</span>
+          </p>
+        </div>
+
+        <!-- Timer -->
+        <div class="luna-buy-box__timer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gr-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <p class="luna-buy-box__timer-text">Deal locks in <strong data-countdown>5h 11m 26s</strong></p>
+        </div>
+
+        <!-- Free shipping progress -->
+        <div class="luna-buy-box__free-ship" data-free-ship>
+          <div class="luna-buy-box__free-ship-header">
+            <p class="luna-buy-box__free-ship-msg"><span class="green-bold">You qualify for free shipping!</span></p>
+            <span class="luna-buy-box__free-ship-pct">100%</span>
+          </div>
+          <div class="luna-buy-box__free-ship-bar">
+            <div class="luna-buy-box__free-ship-fill luna-buy-box__free-ship-fill--green" style="width: 100%"></div>
+          </div>
+          <p class="luna-buy-box__free-ship-note">Ships next business day &middot; Free returns within 60 days</p>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="luna-buy-box__trust-badges">
+          <p class="luna-buy-box__trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> 30-day money-back guarantee</p>
+          <p class="luna-buy-box__trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> Free US shipping over $30</p>
+          <p class="luna-buy-box__trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> Delivered in 2&ndash;3 business days</p>
+          <p class="luna-buy-box__trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> Pediatrician reviewed &amp; approved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var section = document.querySelector('[data-section-type="luna-product-buy-box-kids"]');
+  if (!section) return;
+
+  /* Gallery */
+  var images = section.querySelectorAll('[data-gallery-img]');
+  var dots = section.querySelectorAll('[data-gallery-dot]');
+  var thumbs = section.querySelectorAll('[data-thumb]');
+  var firstTags = section.querySelectorAll('[data-first-image-tag]');
+  var overlay3pack = section.querySelector('[data-overlay-3pack]');
+  var overlayBefore = section.querySelector('[data-overlay-before]');
+  var overlayAfter = section.querySelector('[data-overlay-after]');
+  var galleryNames = ['product-kids-patches-v2.jpg','before-after-no-labels.jpg','kids-3pack-forest.jpg','kids-pack-moss.jpg','kids-lifestyle-stickers.webp'];
+  var currentImg = 0;
+  var total = images.length;
+
+  function showImage(idx) {
+    currentImg = ((idx % total) + total) % total;
+    images.forEach(function(img, i) { img.classList.toggle('luna-buy-box__gallery-img--active', i === currentImg); });
+    dots.forEach(function(dot, i) { dot.classList.toggle('luna-buy-box__dot--active', i === currentImg); });
+    thumbs.forEach(function(thumb, i) { thumb.classList.toggle('luna-buy-box__thumb--active', i === currentImg); });
+    firstTags.forEach(function(el) { el.style.display = currentImg === 0 ? '' : 'none'; });
+    var is3pack = galleryNames[currentImg] && galleryNames[currentImg].indexOf('3pack') !== -1;
+    overlay3pack.classList.toggle('luna-buy-box__overlay-3pack--visible', is3pack);
+    var isBA = galleryNames[currentImg] && galleryNames[currentImg].indexOf('before-after') !== -1;
+    overlayBefore.classList.toggle('luna-buy-box__before-label--visible', isBA);
+    overlayAfter.classList.toggle('luna-buy-box__after-label--visible', isBA);
+  }
+
+  section.querySelector('[data-gallery-prev]').addEventListener('click', function() { showImage(currentImg - 1); });
+  section.querySelector('[data-gallery-next]').addEventListener('click', function() { showImage(currentImg + 1); });
+  dots.forEach(function(dot) { dot.addEventListener('click', function() { showImage(parseInt(this.getAttribute('data-gallery-dot'))); }); });
+  thumbs.forEach(function(thumb) { thumb.addEventListener('click', function() { showImage(parseInt(this.getAttribute('data-thumb'))); }); });
+
+  /* Info tabs */
+  var tabBtns = section.querySelectorAll('[data-info-tab]');
+  var panels = section.querySelectorAll('[data-info-panel]');
+  tabBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var key = this.getAttribute('data-info-tab');
+      tabBtns.forEach(function(b) { b.classList.toggle('luna-buy-box__info-tab-btn--active', b.getAttribute('data-info-tab') === key); });
+      panels.forEach(function(p) { p.classList.toggle('luna-buy-box__info-panel--active', p.getAttribute('data-info-panel') === key); });
+    });
+  });
+
+  /* Bundle selector */
+  var bundleBtns = section.querySelectorAll('[data-bundle]');
+  var offerType = 'subscribe';
+  var bundleSize = 2;
+  var subPrice = 9.99, subCompare = 24.99, patchCount = 120;
+  var bundleData = { 2: { priceEach: 12.99, compareEach: 24.99 }, 4: { priceEach: 8.99, compareEach: 24.99 } };
+
+  function updatePrices() {
+    var bd = bundleData[bundleSize];
+    var onetimePrice = bd.priceEach * bundleSize;
+    var onetimeCompare = bd.compareEach * bundleSize;
+    var price = offerType === 'subscribe' ? subPrice : onetimePrice;
+    var compare = offerType === 'subscribe' ? subCompare : onetimeCompare;
+    var discount = Math.round(((compare - price) / compare) * 100);
+    var perPatch = (offerType === 'subscribe' ? subPrice : bd.priceEach) / patchCount;
+
+    var pc = section.querySelector('[data-price-compare]');
+    var pcur = section.querySelector('[data-price-current]');
+    var pp = section.querySelector('[data-per-patch]');
+    var ctaMain = section.querySelector('.luna-buy-box__cta-main');
+    var ctaPrice = section.querySelector('[data-cta-price]');
+    var ctaCompare = section.querySelector('[data-cta-compare]');
+
+    if (pc) pc.textContent = '$' + compare.toFixed(2);
+    if (pcur) pcur.textContent = '$' + price.toFixed(2);
+    if (pp) pp.textContent = '$' + perPatch.toFixed(2) + '/patch \u00b7 ' + patchCount + ' patches per pack';
+    if (ctaMain) ctaMain.textContent = 'Claim deal \u00b7 Save ' + discount + '%';
+    if (ctaPrice) ctaPrice.textContent = '$' + price.toFixed(2);
+    if (ctaCompare) ctaCompare.textContent = '$' + compare.toFixed(2);
+
+    var threshold = 30;
+    var remaining = Math.max(0, threshold - price);
+    var pct = Math.min(100, Math.round((price / threshold) * 100));
+    var qualified = remaining <= 0;
+    var msgEl = section.querySelector('.luna-buy-box__free-ship-msg');
+    var pctEl = section.querySelector('.luna-buy-box__free-ship-pct');
+    var fillEl = section.querySelector('.luna-buy-box__free-ship-fill');
+    if (msgEl) {
+      msgEl.innerHTML = qualified
+        ? '<span class="green-bold">You qualify for free shipping!</span>'
+        : 'You\'re <span class="accent">$' + remaining.toFixed(2) + '</span> from free shipping';
+    }
+    if (pctEl) pctEl.textContent = pct + '%';
+    if (fillEl) {
+      fillEl.style.width = pct + '%';
+      fillEl.className = 'luna-buy-box__free-ship-fill ' + (qualified ? 'luna-buy-box__free-ship-fill--green' : 'luna-buy-box__free-ship-fill--accent');
+    }
+  }
+
+  bundleBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      bundleSize = parseInt(this.getAttribute('data-bundle'));
+      bundleBtns.forEach(function(b) { b.classList.toggle('luna-buy-box__bundle--active', parseInt(b.getAttribute('data-bundle')) === bundleSize); });
+      updatePrices();
+    });
+  });
+
+  /* Subscribe toggle */
+  var subToggle = section.querySelector('[data-subscribe-toggle]');
+  var subContainer = section.querySelector('[data-subscribe]');
+  if (subToggle) {
+    subToggle.addEventListener('click', function() {
+      offerType = offerType === 'subscribe' ? 'onetime' : 'subscribe';
+      this.classList.toggle('luna-buy-box__toggle--on', offerType === 'subscribe');
+      subContainer.classList.toggle('luna-buy-box__subscribe--active', offerType === 'subscribe');
+      updatePrices();
+    });
+  }
+
+  /* Countdown */
+  var countdownEl = section.querySelector('[data-countdown]');
+  if (countdownEl) {
+    var hrs = 5, min = 11, sec = 26;
+    function pad(n) { return String(n).padStart(2, '0'); }
+    setInterval(function() {
+      sec--;
+      if (sec < 0) { sec = 59; min--; }
+      if (min < 0) { min = 59; hrs--; }
+      if (hrs < 0) { hrs = 0; min = 0; sec = 0; }
+      countdownEl.textContent = pad(hrs) + 'h ' + pad(min) + 'm ' + pad(sec) + 's';
+    }, 1000);
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Luna Kids Buy Box",
+  "tag": "section",
+  "class": "luna-product-buy-box-kids",
+  "settings": []
+}
+{% endschema %}

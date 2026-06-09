@@ -1,0 +1,203 @@
+<style>
+  .luna-faq {
+    background: var(--gr-cream, #f5f0e8);
+    padding: 64px 16px;
+    border-top: 1px solid rgba(26, 26, 26, 0.05);
+  }
+
+  .luna-faq__container {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .luna-faq__title {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gr-dark, #1a1a1a);
+    text-align: center;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .luna-faq__subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: var(--gr-sage, #7c8c78);
+    margin-bottom: 40px;
+  }
+
+  .luna-faq__item {
+    border-bottom: 1px solid rgba(26, 26, 26, 0.15);
+  }
+
+  .luna-faq__question {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 0;
+    text-align: left;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+  }
+
+  .luna-faq__question-text {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--gr-dark, #1a1a1a);
+    line-height: 1.4;
+  }
+
+  .luna-faq__question-icon {
+    font-size: 24px;
+    color: var(--gr-dark, #1a1a1a);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    user-select: none;
+  }
+
+  .luna-faq__answer {
+    padding-bottom: 20px;
+    margin-top: -4px;
+    font-size: 14px;
+    color: var(--gr-sage, #7c8c78);
+    line-height: 1.7;
+    display: none;
+  }
+
+  .luna-faq__answer--open {
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .luna-faq {
+      padding: 80px 24px;
+    }
+
+    .luna-faq__title {
+      font-size: 36px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .luna-faq__container {
+      max-width: 780px;
+    }
+  }
+</style>
+
+<section class="luna-faq" data-section-type="luna-faq-kids">
+  <div class="luna-faq__container">
+    <h2 class="luna-faq__title">Parents ask, we answer.</h2>
+    <p class="luna-faq__subtitle">Everything you need to know before protecting your little ones.</p>
+
+    <div data-faq-list>
+      <div class="luna-faq__item" data-faq-item>
+        <button class="luna-faq__question" data-faq-toggle>
+          <span class="luna-faq__question-text">What age is this safe for?</span>
+          <span class="luna-faq__question-icon" data-faq-icon>+</span>
+        </button>
+        <div class="luna-faq__answer" data-faq-answer>
+          Luna Naturals Kids patches are safe for children ages 2 and up. The patches stick to clothing, not skin, so there's zero direct skin contact with active ingredients. Always consult your pediatrician if you have concerns about specific allergies.
+        </div>
+      </div>
+
+      <div class="luna-faq__item" data-faq-item>
+        <button class="luna-faq__question" data-faq-toggle>
+          <span class="luna-faq__question-text">Are these really DEET-free?</span>
+          <span class="luna-faq__question-icon" data-faq-icon>+</span>
+        </button>
+        <div class="luna-faq__answer" data-faq-answer>
+          100% DEET-free. We use only plant-based citronella and eucalyptus essential oils. No parabens, no phthalates, no synthetic chemicals. Just natural protection that actually works.
+        </div>
+      </div>
+
+      <div class="luna-faq__item" data-faq-item>
+        <button class="luna-faq__question" data-faq-toggle>
+          <span class="luna-faq__question-text">Can my child put them on by themselves?</span>
+          <span class="luna-faq__question-icon" data-faq-icon>+</span>
+        </button>
+        <div class="luna-faq__answer" data-faq-answer>
+          Yes! That's the beauty of it. Kids as young as 3 can peel and stick the patches on their own clothes. Most kids think they're fun stickers and actually ask to wear them.
+        </div>
+      </div>
+
+      <div class="luna-faq__item" data-faq-item>
+        <button class="luna-faq__question" data-faq-toggle>
+          <span class="luna-faq__question-text">How many patches does my child need?</span>
+          <span class="luna-faq__question-icon" data-faq-icon>+</span>
+        </button>
+        <div class="luna-faq__answer" data-faq-answer>
+          1-2 patches per child provides full coverage. Stick them on the collar, sleeve, or shorts near exposed skin. For heavy mosquito areas, use 2 patches on opposite sides of the body.
+        </div>
+      </div>
+
+      <div class="luna-faq__item" data-faq-item>
+        <button class="luna-faq__question" data-faq-toggle>
+          <span class="luna-faq__question-text">Will they stay on during sports and swimming?</span>
+          <span class="luna-faq__question-icon" data-faq-icon>+</span>
+        </button>
+        <div class="luna-faq__answer" data-faq-answer>
+          The patches are waterproof and sweatproof. They'll stay on through soccer practice, sprinklers, and playground time. For full submersion swimming, reapply after drying off.
+        </div>
+      </div>
+
+      <div class="luna-faq__item" data-faq-item>
+        <button class="luna-faq__question" data-faq-toggle>
+          <span class="luna-faq__question-text">What if my child has sensitive skin or eczema?</span>
+          <span class="luna-faq__question-icon" data-faq-icon>+</span>
+        </button>
+        <div class="luna-faq__answer" data-faq-answer>
+          Because the patches go on clothing &mdash; not skin &mdash; they're ideal for kids with sensitive skin, eczema, or allergies to topical products. The active oils evaporate into the air around the patch, creating a protective zone without skin contact.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var section = document.querySelector('[data-section-type="luna-faq-kids"]');
+  if (!section) return;
+
+  var items = section.querySelectorAll('[data-faq-item]');
+  var currentOpen = null;
+
+  items.forEach(function(item, idx) {
+    var toggle = item.querySelector('[data-faq-toggle]');
+    var answer = item.querySelector('[data-faq-answer]');
+    var icon = item.querySelector('[data-faq-icon]');
+
+    toggle.addEventListener('click', function() {
+      if (currentOpen === idx) {
+        answer.classList.remove('luna-faq__answer--open');
+        icon.textContent = '+';
+        currentOpen = null;
+      } else {
+        /* Close previous */
+        if (currentOpen !== null) {
+          var prevItem = items[currentOpen];
+          prevItem.querySelector('[data-faq-answer]').classList.remove('luna-faq__answer--open');
+          prevItem.querySelector('[data-faq-icon]').textContent = '+';
+        }
+        answer.classList.add('luna-faq__answer--open');
+        icon.textContent = '\u2212';
+        currentOpen = idx;
+      }
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Luna FAQ Kids",
+  "tag": "section",
+  "class": "luna-faq-kids-section",
+  "settings": []
+}
+{% endschema %}

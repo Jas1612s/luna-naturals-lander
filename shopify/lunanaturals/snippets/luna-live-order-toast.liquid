@@ -1,0 +1,32 @@
+{% comment %}
+  Live Order Toast - shows random order notifications cycling every 10s.
+  All data is populated via JS (lunanaturals.js → initLiveOrderToast).
+{% endcomment %}
+
+{% if settings.live_order_enabled %}
+<div id="luna-live-order-toast" class="luna-toast">
+  <div class="luna-toast__card">
+    <!-- Product image -->
+    <div class="luna-toast__image-wrap">
+      <img
+        data-toast-image
+        src="{{ 'adults-pack-moss.jpg' | asset_url }}"
+        alt=""
+        class="luna-toast__image"
+        width="40"
+        height="40"
+        loading="lazy"
+      >
+    </div>
+
+    <div class="luna-toast__body">
+      <p class="luna-toast__line1">
+        <span class="luna-toast__name" data-toast-name>Sarah M.</span> from <span data-toast-city>Austin, TX</span>
+      </p>
+      <p class="luna-toast__line2">
+        bought <span data-toast-product>1-pack</span> &middot; <span data-toast-time>just now</span>
+      </p>
+    </div>
+  </div>
+</div>
+{% endif %}

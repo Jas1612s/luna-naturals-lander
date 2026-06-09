@@ -1,0 +1,200 @@
+<style>
+  .luna-hiw {
+    background: var(--gr-cream-light, #faf8f5);
+    padding: 64px 16px;
+    overflow: hidden;
+  }
+
+  .luna-hiw__header {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .luna-hiw__title {
+    font-style: italic;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gr-dark, #1a1a1a);
+    text-align: center;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .luna-hiw__subtitle {
+    text-align: center;
+    color: var(--gr-sage, #7c8c78);
+    font-size: 16px;
+    margin-bottom: 48px;
+    max-width: 448px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+
+  /* Scroll container */
+  .luna-hiw__scroll {
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .luna-hiw__scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .luna-hiw__cards {
+    display: flex;
+    gap: 20px;
+    padding: 0 16px 16px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .luna-hiw__card {
+    width: 280px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    background: var(--gr-cream, #f5f0e8);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .luna-hiw__card-video {
+    aspect-ratio: 1 / 1;
+    position: relative;
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .luna-hiw__card-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .luna-hiw__card-step-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--gr-accent, #c1440e);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 9999px;
+  }
+
+  .luna-hiw__card-body {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .luna-hiw__card-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--gr-dark, #1a1a1a);
+    margin-bottom: 6px;
+  }
+
+  .luna-hiw__card-desc {
+    font-size: 14px;
+    color: var(--gr-sage, #7c8c78);
+    line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    .luna-hiw {
+      padding: 80px 24px;
+    }
+
+    .luna-hiw__title {
+      font-size: 36px;
+    }
+
+    .luna-hiw__card {
+      width: 320px;
+    }
+
+    .luna-hiw__cards {
+      padding: 0 24px 16px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .luna-hiw__scroll {
+      overflow: visible;
+    }
+
+    .luna-hiw__cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: 1100px;
+      margin: 0 auto;
+      scroll-snap-type: none;
+      padding-bottom: 0;
+    }
+
+    .luna-hiw__card {
+      width: auto;
+      flex-shrink: 1;
+      scroll-snap-align: unset;
+    }
+  }
+</style>
+
+<section class="luna-hiw" data-section-type="luna-how-it-works-kids">
+  <div class="luna-hiw__header">
+    <h2 class="luna-hiw__title">So easy, your kids can do it.</h2>
+    <p class="luna-hiw__subtitle">No more wrestling with spray bottles. Just peel, stick, and let them play.</p>
+  </div>
+
+  <div class="luna-hiw__scroll">
+    <div class="luna-hiw__cards">
+      <!-- Step 1 -->
+      <div class="luna-hiw__card">
+        <div class="luna-hiw__card-video">
+          <video src="{{ 'kids-patch-demo.mp4' | prepend: '/videos/gruns/' | asset_url }}" autoplay muted loop playsinline preload="metadata"></video>
+          <div class="luna-hiw__card-step-badge">Step 1</div>
+        </div>
+        <div class="luna-hiw__card-body">
+          <h3 class="luna-hiw__card-title">Let Them Pick</h3>
+          <p class="luna-hiw__card-desc">Kids choose their favorite patch design. They think it's a sticker &mdash; you know it's protection.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="luna-hiw__card">
+        <div class="luna-hiw__card-video">
+          <video src="{{ 'kids-patch-step2.mp4' | prepend: '/videos/gruns/' | asset_url }}" autoplay muted loop playsinline preload="metadata"></video>
+          <div class="luna-hiw__card-step-badge">Step 2</div>
+        </div>
+        <div class="luna-hiw__card-body">
+          <h3 class="luna-hiw__card-title">Stick on Clothes</h3>
+          <p class="luna-hiw__card-desc">Press onto shirts, shorts, hats, or backpacks. No chemicals touching their skin &mdash; ever.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="luna-hiw__card">
+        <div class="luna-hiw__card-video">
+          <video src="{{ 'kids-patch-step3.mp4' | prepend: '/videos/gruns/' | asset_url }}" autoplay muted loop playsinline preload="metadata"></video>
+          <div class="luna-hiw__card-step-badge">Step 3</div>
+        </div>
+        <div class="luna-hiw__card-body">
+          <h3 class="luna-hiw__card-title">Play All Day</h3>
+          <p class="luna-hiw__card-desc">12 hours of plant-based protection. Waterproof through sprinklers, sweat, and puddle jumps.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luna How It Works (Kids)",
+  "tag": "section",
+  "class": "luna-how-it-works-kids",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,171 @@
+<style>
+  .luna-wcs {
+    background: var(--gr-green-dark, #1e3a24);
+    padding: 56px 16px;
+  }
+
+  .luna-wcs__container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .luna-wcs__label {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+
+  .luna-wcs__quote {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 4px;
+    font-style: italic;
+  }
+
+  .luna-wcs__author {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 24px;
+  }
+
+  .luna-wcs__tabs {
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .luna-wcs__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .luna-wcs__tabs-inner {
+    display: flex;
+    gap: 8px;
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  .luna-wcs__tab {
+    padding: 8px 20px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .luna-wcs__tab:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .luna-wcs__tab--active {
+    border: 2px solid var(--gr-accent, #c1440e);
+    color: var(--gr-accent, #c1440e);
+  }
+
+  .luna-wcs__tab--active:hover {
+    border-color: var(--gr-accent, #c1440e);
+  }
+
+  @media (min-width: 768px) {
+    .luna-wcs {
+      padding: 64px 24px;
+    }
+
+    .luna-wcs__quote {
+      font-size: 18px;
+    }
+  }
+</style>
+
+<section class="luna-wcs" data-section-type="luna-what-customers-say-kids">
+  <div class="luna-wcs__container">
+    <p class="luna-wcs__label">What Parents Say</p>
+
+    <p class="luna-wcs__quote" data-wcs-quote>&ldquo;My 3-year-old calls them her &lsquo;magic stickers&rsquo; and reminds ME to put them on before we go outside. Zero meltdowns, zero bites. This is the parenting hack I didn&rsquo;t know I needed.&rdquo;</p>
+    <p class="luna-wcs__author" data-wcs-author>&mdash; Sarah M. 29</p>
+
+    <div class="luna-wcs__tabs">
+      <div class="luna-wcs__tabs-inner">
+        <button class="luna-wcs__tab luna-wcs__tab--active" data-wcs-tab="Parents">Parents</button>
+        <button class="luna-wcs__tab" data-wcs-tab="Daycare">Daycare</button>
+        <button class="luna-wcs__tab" data-wcs-tab="Outdoors">Outdoors</button>
+        <button class="luna-wcs__tab" data-wcs-tab="Sensitive Skin">Sensitive Skin</button>
+        <button class="luna-wcs__tab" data-wcs-tab="Value">Value</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var section = document.querySelector('[data-section-type="luna-what-customers-say-kids"]');
+  if (!section) return;
+
+  var reviews = {
+    "Parents": {
+      quote: "My 3-year-old calls them her \u2018magic stickers\u2019 and reminds ME to put them on before we go outside. Zero meltdowns, zero bites. This is the parenting hack I didn\u2019t know I needed.",
+      name: "Sarah M.",
+      age: 29
+    },
+    "Daycare": {
+      quote: "I send a pack with my son to daycare every summer. The teachers love them because there\u2019s no spray to apply \u2014 just peel and stick. He comes home bite-free every single day.",
+      name: "Michelle R.",
+      age: 33
+    },
+    "Outdoors": {
+      quote: "Soccer practice, camping trips, backyard playdates \u2014 my kids wear these for everything. They last the whole day and I don\u2019t have to chase anyone down with a spray bottle.",
+      name: "David K.",
+      age: 38
+    },
+    "Sensitive Skin": {
+      quote: "My daughter has eczema and reacts to everything. These patches don\u2019t touch her skin directly and she\u2019s had zero irritation. Finally something that works for sensitive kids.",
+      name: "Amanda K.",
+      age: 37
+    },
+    "Value": {
+      quote: "120 patches for under $10? That\u2019s the entire summer covered for both my kids. I was spending $30/month on sprays they hated. This is a no-brainer for any parent.",
+      name: "Jeremy H.",
+      age: 42
+    }
+  };
+
+  var quoteEl = section.querySelector('[data-wcs-quote]');
+  var authorEl = section.querySelector('[data-wcs-author]');
+  var tabs = section.querySelectorAll('[data-wcs-tab]');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var key = this.getAttribute('data-wcs-tab');
+      var data = reviews[key];
+      if (!data) return;
+
+      tabs.forEach(function(t) { t.classList.remove('luna-wcs__tab--active'); });
+      this.classList.add('luna-wcs__tab--active');
+
+      quoteEl.innerHTML = '&ldquo;' + data.quote + '&rdquo;';
+      authorEl.innerHTML = '&mdash; ' + data.name + ' ' + data.age;
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Luna What Parents Say (Kids)",
+  "tag": "section",
+  "class": "luna-what-customers-say-kids",
+  "settings": []
+}
+{% endschema %}

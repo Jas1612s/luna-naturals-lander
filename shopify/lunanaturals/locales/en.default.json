@@ -1,0 +1,15 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content"
+    }
+  },
+  "layout": {
+    "cart": {
+      "title": "Cart"
+    },
+    "footer": {
+      "copyright": "Copyright"
+    }
+  }
+}

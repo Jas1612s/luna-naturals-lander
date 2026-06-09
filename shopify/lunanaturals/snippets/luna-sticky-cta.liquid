@@ -1,0 +1,40 @@
+{% comment %}
+  Sticky Mobile CTA bar - shows on scroll, hidden on desktop (lg+).
+  Usage: {% render 'luna-sticky-cta', variant: 'adults' %}
+  Accepts variant: 'adults' (default) or 'kids'
+{% endcomment %}
+
+{% assign cta_variant = variant | default: 'adults' %}
+
+{% if cta_variant == 'kids' %}
+  {% assign cta_product_name = 'Kids &middot; 120ct' %}
+  {% assign cta_image = 'product-kids-patches-v2.jpg' %}
+{% else %}
+  {% assign cta_product_name = 'Adults &middot; 90ct' %}
+  {% assign cta_image = 'adults-pack-moss.jpg' %}
+{% endif %}
+
+<div id="luna-sticky-cta" class="luna-sticky-cta">
+  <div class="luna-sticky-cta__inner">
+    <div class="luna-sticky-cta__image-wrap">
+      <img
+        src="{{ cta_image | asset_url }}"
+        alt="{{ cta_product_name | strip_html }}"
+        class="luna-sticky-cta__image"
+        width="56"
+        height="56"
+        loading="lazy"
+      >
+    </div>
+    <div class="luna-sticky-cta__info">
+      <p class="luna-sticky-cta__product-name">{{ cta_product_name }}</p>
+      <p class="luna-sticky-cta__prices">
+        <span class="luna-sticky-cta__price-current">$14.99</span>
+        <span class="luna-sticky-cta__price-original">$24.99</span>
+      </p>
+    </div>
+    <a href="#shop" class="luna-sticky-cta__btn">
+      Order now &rarr;
+    </a>
+  </div>
+</div>

@@ -1,0 +1,343 @@
+{% comment %}
+  Luna Hero — Image carousel with rotating words and CTA
+{% endcomment %}
+
+<style>
+  /* ── Luna Design Tokens ── */
+  :root {
+    --gr-green: #4E5C36;
+    --gr-green-dark: #2F3A1C;
+    --gr-green-mid: #3A4428;
+    --gr-accent: #C45D3E;
+    --gr-gold: #D4A843;
+    --gr-yellow: #E8C94A;
+    --gr-dark: #1E1E1E;
+    --gr-sage: #7A8066;
+    --gr-cream: #F5F0E8;
+    --gr-cream-light: #FAF7F2;
+    --gr-cream-warm: #EDE7DB;
+  }
+
+  .gr-display {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  }
+
+  /* ── Hero Section ── */
+  .luna-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 668px;
+  }
+
+  .luna-hero__inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 668px;
+  }
+
+  .luna-hero__text-side {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    background: linear-gradient(135deg, #2F3A1C 0%, #3A4428 40%, #4E5C36 70%, #E8DECE 100%);
+  }
+
+  .luna-hero__text-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    padding: 1.5rem 1rem;
+  }
+
+  .luna-hero__title {
+    font-size: 44px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  .luna-hero__rotating-word {
+    display: inline-block;
+    color: var(--gr-accent);
+    transition: opacity 300ms ease, transform 300ms ease;
+  }
+
+  .luna-hero__rotating-word--hidden {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  .luna-hero__rotating-word--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .luna-hero__cta-wrap {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .luna-hero__cta {
+    display: inline-block;
+    border-radius: 9999px;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    background-color: var(--gr-accent);
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .luna-hero__cta:hover {
+    opacity: 0.9;
+  }
+
+  .luna-hero__rating {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gr-accent);
+  }
+
+  .luna-hero__guarantee {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: var(--gr-dark);
+  }
+
+  /* Image carousel */
+  .luna-hero__carousel {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    min-height: 340px;
+  }
+
+  .luna-hero__slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 500ms ease-in-out;
+    opacity: 0;
+  }
+
+  .luna-hero__slide--active {
+    opacity: 1;
+  }
+
+  .luna-hero__dots {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .luna-hero__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: width 300ms ease, background-color 300ms ease;
+  }
+
+  .luna-hero__dot--active {
+    width: 32px;
+    border-radius: 9999px;
+    background-color: white;
+  }
+
+  @media (min-width: 768px) {
+    .luna-hero__inner {
+      flex-direction: row;
+    }
+
+    .luna-hero__text-wrap {
+      padding: 3rem 1.5rem;
+    }
+
+    .luna-hero__title {
+      font-size: 96px;
+    }
+
+    .luna-hero__cta {
+      padding: 0.75rem 2rem;
+    }
+  }
+</style>
+
+<section class="luna-hero" data-section-type="luna-hero">
+  <div class="luna-hero__inner">
+    <!-- Text Side -->
+    <div class="luna-hero__text-side">
+      <div class="luna-hero__text-wrap">
+        <h2 class="luna-hero__title gr-display">
+          {{ section.settings.heading_prefix | default: 'Bug Protection' }}
+          <span
+            class="luna-hero__rotating-word luna-hero__rotating-word--visible"
+            data-luna-rotating-word
+          >{{ section.settings.rotating_word_1 | default: 'Adults' }}</span>
+          {{ section.settings.heading_suffix | default: 'Actually Want to Wear.' }}
+        </h2>
+
+        <div class="luna-hero__cta-wrap">
+          <a href="{{ section.settings.cta_link | default: '#shop' }}" class="luna-hero__cta">
+            {{ section.settings.cta_text | default: 'Shop Now — Save 60%' }}
+          </a>
+        </div>
+
+        <p class="luna-hero__rating">
+          {{ section.settings.rating_text | default: '★★★★★ 4.8 • 50,000+ happy families' }}
+        </p>
+
+        <p class="luna-hero__guarantee">
+          {{ section.settings.guarantee_text | default: 'Free shipping on 2+ packs &middot; 30-day money-back guarantee' }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Image Carousel -->
+    <div class="luna-hero__carousel" data-luna-hero-carousel>
+      {% for block in section.blocks %}
+        {% if block.type == 'slide' %}
+          <img
+            class="luna-hero__slide{% if forloop.first %} luna-hero__slide--active{% endif %}"
+            src="{{ block.settings.image | image_url: width: 1200 }}"
+            alt="{{ block.settings.image_alt | default: block.settings.image.alt }}"
+            loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+            data-slide-index="{{ forloop.index0 }}"
+          >
+        {% endif %}
+      {% endfor %}
+
+      <div class="luna-hero__dots" data-luna-hero-dots>
+        {% for block in section.blocks %}
+          {% if block.type == 'slide' %}
+            <button
+              class="luna-hero__dot{% if forloop.first %} luna-hero__dot--active{% endif %}"
+              aria-label="Go to image {{ forloop.index }}"
+              data-dot-index="{{ forloop.index0 }}"
+            ></button>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luna Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_prefix",
+      "label": "Heading prefix",
+      "default": "Bug Protection"
+    },
+    {
+      "type": "text",
+      "id": "rotating_word_1",
+      "label": "Rotating word 1",
+      "default": "Adults"
+    },
+    {
+      "type": "text",
+      "id": "rotating_word_2",
+      "label": "Rotating word 2",
+      "default": "Kids"
+    },
+    {
+      "type": "text",
+      "id": "heading_suffix",
+      "label": "Heading suffix",
+      "default": "Actually Want to Wear."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Shop Now — Save 60%"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA link",
+      "default": "#shop"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating text",
+      "default": "★★★★★ 4.8 • 50,000+ happy families"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_text",
+      "label": "Guarantee text",
+      "default": "Free shipping on 2+ packs · 30-day money-back guarantee"
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay speed (seconds)",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "word_rotate_speed",
+      "label": "Word rotate speed (seconds)",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luna Hero",
+      "blocks": [
+        { "type": "slide" },
+        { "type": "slide" },
+        { "type": "slide" },
+        { "type": "slide" }
+      ]
+    }
+  ]
+}
+{% endschema %}

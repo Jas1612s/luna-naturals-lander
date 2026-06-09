@@ -1,0 +1,78 @@
+<header class="luna-nav">
+  <!-- Announcement strip with countdown -->
+  <div class="luna-nav__announcement">
+    <div class="luna-nav__announcement-inner">
+      <div class="luna-nav__announcement-text">
+        <p class="luna-nav__announcement-title">
+          {{ settings.announcement_title | default: 'Mosquito Season Sale' }}
+        </p>
+        <p class="luna-nav__announcement-subtitle">
+          {{ settings.announcement_subtitle | default: 'Save up to 60% + Free Gifts' }}
+        </p>
+      </div>
+
+      {% if settings.announcement_countdown_enabled %}
+        <div id="luna-countdown" class="luna-nav__countdown" style="display: none;">
+          <div class="luna-nav__countdown-unit">
+            <span id="luna-countdown-hrs" class="luna-nav__countdown-value">21</span>
+            <span class="luna-nav__countdown-label">HRS</span>
+          </div>
+          <span class="luna-nav__countdown-separator">:</span>
+          <div class="luna-nav__countdown-unit">
+            <span id="luna-countdown-min" class="luna-nav__countdown-value">47</span>
+            <span class="luna-nav__countdown-label">MIN</span>
+          </div>
+          <span class="luna-nav__countdown-separator">:</span>
+          <div class="luna-nav__countdown-unit">
+            <span id="luna-countdown-sec" class="luna-nav__countdown-value">59</span>
+            <span class="luna-nav__countdown-label">SEC</span>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Main nav bar -->
+  <nav class="luna-nav__bar">
+    <div class="luna-nav__bar-inner">
+      <!-- Left: hamburger menu -->
+      <div>
+        <button aria-label="Menu" class="luna-nav__menu-btn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Center: logo -->
+      <a href="/" class="luna-nav__logo-link">
+        <img
+          src="{{ 'luna-naturals-logo-cropped.webp' | asset_url }}"
+          alt="{{ shop.name }}"
+          class="luna-nav__logo"
+          width="160"
+          height="44"
+        >
+      </a>
+
+      <!-- Right: account + cart -->
+      <div class="luna-nav__actions">
+        <a href="/account" aria-label="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </a>
+        <a href="/cart" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 01-8 0" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>

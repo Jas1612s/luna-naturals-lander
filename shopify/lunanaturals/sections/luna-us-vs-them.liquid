@@ -1,0 +1,268 @@
+<style>
+  .luna-uvt {
+    background: var(--gr-cream-warm, #f0ebe0);
+    padding: 80px 16px;
+  }
+
+  .luna-uvt__container { max-width: 800px; margin: 0 auto; }
+
+  .luna-uvt__title {
+    font-style: italic;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--gr-green-dark, #1e3a24);
+    text-align: center;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .luna-uvt__subtitle {
+    text-align: center;
+    color: var(--gr-sage, #7c8c78);
+    font-size: 16px;
+    margin-bottom: 48px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .luna-uvt__table {
+    border-radius: 24px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
+    display: grid;
+    grid-template-columns: 1.4fr 1.2fr 1fr 1fr;
+  }
+
+  .luna-uvt__header-empty { /* empty */ }
+
+  .luna-uvt__header-us {
+    background: var(--gr-green-dark, #1e3a24);
+    padding: 24px 12px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 16px 16px 0 0;
+    gap: 4px;
+  }
+
+  .luna-uvt__header-us-best {
+    color: var(--gr-yellow, #f5d060);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .luna-uvt__header-us-name {
+    font-style: italic;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .luna-uvt__header-other {
+    padding: 24px 12px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    gap: 6px;
+  }
+
+  .luna-uvt__header-other-emoji { font-size: 30px; line-height: 1; }
+
+  .luna-uvt__header-other-label {
+    font-size: 12px;
+    color: var(--gr-sage, #7c8c78);
+    line-height: 1.2;
+    font-weight: 500;
+  }
+
+  .luna-uvt__row-label {
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .luna-uvt__row-label span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gr-dark, #1a1a1a);
+    line-height: 1.4;
+  }
+
+  .luna-uvt__row-us {
+    background: var(--gr-green-dark, #1e3a24);
+    padding: 20px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .luna-uvt__row-other {
+    padding: 20px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .luna-uvt__row--even .luna-uvt__row-label,
+  .luna-uvt__row--even .luna-uvt__row-other { background: #fff; }
+
+  .luna-uvt__row--odd .luna-uvt__row-label,
+  .luna-uvt__row--odd .luna-uvt__row-other { background: #fafaf9; }
+
+  .luna-uvt__check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .luna-uvt__check--green { background: var(--gr-green, #3a7d44); }
+  .luna-uvt__check--accent { background: var(--gr-accent, #c1440e); }
+  .luna-uvt__check--red { background: rgba(248, 113, 113, 0.8); }
+
+  .luna-uvt__cell-text { font-weight: 700; font-size: 16px; color: var(--gr-dark, #1a1a1a); }
+  .luna-uvt__cell-text--white { color: #fff; }
+
+  .luna-uvt__cell-stars {
+    color: var(--gr-accent, #c1440e);
+    font-size: 16px;
+    letter-spacing: 0.05em;
+  }
+
+  .luna-uvt__cta { margin-top: 40px; text-align: center; }
+
+  .luna-uvt__cta-btn {
+    display: inline-block;
+    background: var(--gr-accent, #c1440e);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 48px;
+    border-radius: 9999px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.2s;
+  }
+
+  .luna-uvt__cta-btn:hover { filter: brightness(1.1); }
+
+  .luna-uvt__cta-note {
+    margin-top: 12px;
+    font-size: 14px;
+    color: var(--gr-sage, #7c8c78);
+  }
+
+  @media (min-width: 768px) {
+    .luna-uvt { padding: 112px 24px; }
+    .luna-uvt__title { font-size: 48px; }
+    .luna-uvt__subtitle { font-size: 18px; }
+    .luna-uvt__row-label span { font-size: 16px; }
+    .luna-uvt__cell-text { font-size: 18px; }
+    .luna-uvt__cell-stars { font-size: 18px; }
+    .luna-uvt__header-us-name { font-size: 24px; }
+    .luna-uvt__row-label { padding: 20px 24px; }
+    .luna-uvt__cta-btn { font-size: 18px; }
+  }
+
+  @media (min-width: 1024px) {
+    .luna-uvt__container { max-width: 960px; }
+  }
+</style>
+
+<section class="luna-uvt" data-section-type="luna-us-vs-them">
+  <div class="luna-uvt__container">
+    <h2 class="luna-uvt__title">Us vs. Them</h2>
+    <p class="luna-uvt__subtitle">Not another greasy spray. Just plant-powered patches that actually work &mdash; for the whole family.</p>
+
+    <div class="luna-uvt__table">
+      <!-- Header -->
+      <div class="luna-uvt__header-empty"></div>
+      <div class="luna-uvt__header-us">
+        <span class="luna-uvt__header-us-best">Best Value</span>
+        <span class="luna-uvt__header-us-name">Luna<br>Naturals</span>
+      </div>
+      <div class="luna-uvt__header-other">
+        <span class="luna-uvt__header-other-emoji">&#x1F9F4;</span>
+        <span class="luna-uvt__header-other-label">DEET<br>spray</span>
+      </div>
+      <div class="luna-uvt__header-other">
+        <span class="luna-uvt__header-other-emoji">&#x1F56F;&#xFE0F;</span>
+        <span class="luna-uvt__header-other-label">citronella<br>candle</span>
+      </div>
+
+      <!-- Row 1 -->
+      <div class="luna-uvt__row-label luna-uvt__row--even"><span>Cost Per Use</span></div>
+      <div class="luna-uvt__row-us"><span class="luna-uvt__cell-text luna-uvt__cell-text--white">$0.11</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--even"><span class="luna-uvt__cell-text">$0.25</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--even"><span class="luna-uvt__cell-text">$0.50+</span></div>
+
+      <!-- Row 2 -->
+      <div class="luna-uvt__row-label luna-uvt__row--odd"><span>Protection</span></div>
+      <div class="luna-uvt__row-us"><span class="luna-uvt__cell-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--odd"><span class="luna-uvt__cell-stars">&#9733;&#9733;&#9733;</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--odd"><span class="luna-uvt__cell-stars">&#9733;&#9733;</span></div>
+
+      <!-- Row 3 -->
+      <div class="luna-uvt__row-label luna-uvt__row--even"><span>DEET-Free</span></div>
+      <div class="luna-uvt__row-us"><span class="luna-uvt__check luna-uvt__check--accent">&#10003;</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--even"><span class="luna-uvt__check luna-uvt__check--red">&#10005;</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--even"><span class="luna-uvt__check luna-uvt__check--red">&#10005;</span></div>
+
+      <!-- Row 4 -->
+      <div class="luna-uvt__row-label luna-uvt__row--odd"><span>No Mess or Reapplying</span></div>
+      <div class="luna-uvt__row-us"><span class="luna-uvt__check luna-uvt__check--accent">&#10003;</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--odd"><span class="luna-uvt__check luna-uvt__check--red">&#10005;</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--odd"><span class="luna-uvt__check luna-uvt__check--red">&#10005;</span></div>
+
+      <!-- Row 5 -->
+      <div class="luna-uvt__row-label luna-uvt__row--even"><span>Lasts Up To</span></div>
+      <div class="luna-uvt__row-us"><span class="luna-uvt__cell-text luna-uvt__cell-text--white">12 hrs</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--even"><span class="luna-uvt__cell-text">2 hrs</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--even"><span class="luna-uvt__cell-text">6 hrs</span></div>
+
+      <!-- Row 6 -->
+      <div class="luna-uvt__row-label luna-uvt__row--odd"><span>Safe for Kids 2+</span></div>
+      <div class="luna-uvt__row-us"><span class="luna-uvt__check luna-uvt__check--accent">&#10003;</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--odd"><span class="luna-uvt__check luna-uvt__check--red">&#10005;</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--odd"><span class="luna-uvt__check luna-uvt__check--green">&#10003;</span></div>
+
+      <!-- Row 7 -->
+      <div class="luna-uvt__row-label luna-uvt__row--even"><span>Plant-Based Ingredients</span></div>
+      <div class="luna-uvt__row-us"><span class="luna-uvt__check luna-uvt__check--accent">&#10003;</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--even"><span class="luna-uvt__check luna-uvt__check--red">&#10005;</span></div>
+      <div class="luna-uvt__row-other luna-uvt__row--even"><span class="luna-uvt__check luna-uvt__check--green">&#10003;</span></div>
+    </div>
+
+    <div class="luna-uvt__cta">
+      <a href="#shop" class="luna-uvt__cta-btn">Try Luna Naturals &mdash; 60% Off</a>
+      <p class="luna-uvt__cta-note">30-day money-back guarantee &middot; Free shipping on 2+ packs</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luna Us vs Them",
+  "tag": "section",
+  "class": "luna-us-vs-them-section",
+  "settings": []
+}
+{% endschema %}
