@@ -1143,22 +1143,11 @@
       <div class="luna-bb__gallery" data-luna-bb-gallery>
 
         <div class="luna-bb__main-image-wrap">
-          {%- comment -%} Gallery images rendered from blocks {%- endcomment -%}
-          {% assign gallery_index = 0 %}
-          {% for block in section.blocks %}
-            {% if block.type == 'gallery_image' %}
-              <img
-                class="luna-bb__main-image{% unless gallery_index == 0 %} luna-bb__main-image--hidden{% endunless %}"
-                src="{{ block.settings.image | image_url: width: 1400 }}"
-                alt="{{ block.settings.image_alt | default: block.settings.image.alt }}"
-                width="700"
-                height="700"
-                loading="{% if gallery_index == 0 %}eager{% else %}lazy{% endif %}"
-                data-gallery-index="{{ gallery_index }}"
-              >
-              {% assign gallery_index = gallery_index | plus: 1 %}
-            {% endif %}
-          {% endfor %}
+          {%- comment -%} Gallery images (hardcoded) {%- endcomment -%}
+          <img class="luna-bb__main-image" src="{{ 'adults-pack-moss.jpg' | asset_url }}" alt="Mosquito Repellent Patches Adults Pack" width="700" height="700" loading="eager" data-gallery-index="0">
+          <img class="luna-bb__main-image luna-bb__main-image--hidden" src="{{ 'adults-lifestyle-pouch.webp' | asset_url }}" alt="Before and After comparison" width="700" height="700" loading="lazy" data-gallery-index="1">
+          <img class="luna-bb__main-image luna-bb__main-image--hidden" src="{{ 'adults-3pack-forest.jpg' | asset_url }}" alt="3-Pack Bundle" width="700" height="700" loading="lazy" data-gallery-index="2">
+          <img class="luna-bb__main-image luna-bb__main-image--hidden" src="{{ 'hero-hiker-spray.webp' | asset_url }}" alt="Lifestyle photo" width="700" height="700" loading="lazy" data-gallery-index="3">
 
           {%- comment -%} Feature tags (first image only) {%- endcomment -%}
           <div class="luna-bb__tag-clock" data-bb-first-only>
@@ -1208,41 +1197,27 @@
 
           {%- comment -%} Dots {%- endcomment -%}
           <div class="luna-bb__dots" data-bb-dots>
-            {% assign dot_i = 0 %}
-            {% for block in section.blocks %}
-              {% if block.type == 'gallery_image' %}
-                <button
-                  class="luna-bb__dot{% if dot_i == 0 %} luna-bb__dot--active{% endif %}"
-                  aria-label="View image {{ dot_i | plus: 1 }}"
-                  data-bb-dot="{{ dot_i }}"
-                ></button>
-                {% assign dot_i = dot_i | plus: 1 %}
-              {% endif %}
-            {% endfor %}
+            <button class="luna-bb__dot luna-bb__dot--active" aria-label="View image 1" data-bb-dot="0"></button>
+            <button class="luna-bb__dot" aria-label="View image 2" data-bb-dot="1"></button>
+            <button class="luna-bb__dot" aria-label="View image 3" data-bb-dot="2"></button>
+            <button class="luna-bb__dot" aria-label="View image 4" data-bb-dot="3"></button>
           </div>
         </div>
 
         {%- comment -%} Thumbnails {%- endcomment -%}
         <div class="luna-bb__thumbs" data-bb-thumbs>
-          {% assign thumb_i = 0 %}
-          {% for block in section.blocks %}
-            {% if block.type == 'gallery_image' %}
-              <button
-                class="luna-bb__thumb{% if thumb_i == 0 %} luna-bb__thumb--active{% endif %}"
-                data-bb-thumb="{{ thumb_i }}"
-              >
-                <img
-                  class="luna-bb__thumb-img"
-                  src="{{ block.settings.image | image_url: width: 144 }}"
-                  alt=""
-                  width="72"
-                  height="72"
-                  loading="lazy"
-                >
-              </button>
-              {% assign thumb_i = thumb_i | plus: 1 %}
-            {% endif %}
-          {% endfor %}
+          <button class="luna-bb__thumb luna-bb__thumb--active" data-bb-thumb="0">
+            <img class="luna-bb__thumb-img" src="{{ 'adults-pack-moss.jpg' | asset_url }}" alt="" width="72" height="72" loading="lazy">
+          </button>
+          <button class="luna-bb__thumb" data-bb-thumb="1">
+            <img class="luna-bb__thumb-img" src="{{ 'adults-lifestyle-pouch.webp' | asset_url }}" alt="" width="72" height="72" loading="lazy">
+          </button>
+          <button class="luna-bb__thumb" data-bb-thumb="2">
+            <img class="luna-bb__thumb-img" src="{{ 'adults-3pack-forest.jpg' | asset_url }}" alt="" width="72" height="72" loading="lazy">
+          </button>
+          <button class="luna-bb__thumb" data-bb-thumb="3">
+            <img class="luna-bb__thumb-img" src="{{ 'hero-hiker-spray.webp' | asset_url }}" alt="" width="72" height="72" loading="lazy">
+          </button>
         </div>
       </div>
 
@@ -1256,12 +1231,12 @@
               <svg width="16" height="16" viewBox="0 0 20 20" fill="var(--gr-accent)"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/></svg>
             {% endfor %}
           </div>
-          <span class="luna-bb__rating-text">{{ section.settings.rating | default: '4.8/5.0 (50,000+ reviews)' }}</span>
+          <span class="luna-bb__rating-text">4.8/5.0 (50,000+ reviews)</span>
         </div>
 
         {%- comment -%} Title & tagline {%- endcomment -%}
-        <h1 class="luna-bb__title gr-display">{{ section.settings.product_title | default: 'Luna Naturals Mosquito Repellent Patches — Adults' }}</h1>
-        <p class="luna-bb__tagline">{{ section.settings.tagline | default: 'Plant-powered protection for the whole family. One pack covers your entire summer.' }}</p>
+        <h1 class="luna-bb__title gr-display">Luna Naturals Mosquito Repellent Patches &mdash; Adults</h1>
+        <p class="luna-bb__tagline">Plant-powered protection for the whole family. One pack covers your entire summer.</p>
 
         {%- comment -%} Price row {%- endcomment -%}
         <div class="luna-bb__price-row">
@@ -1275,17 +1250,11 @@
         <div class="luna-bb__seen-in">
           <p class="luna-bb__seen-in-label">As Seen In</p>
           <div class="luna-bb__seen-in-logos">
-            {% for block in section.blocks %}
-              {% if block.type == 'press_logo' %}
-                <img
-                  class="luna-bb__seen-in-logo"
-                  src="{{ block.settings.logo | image_url: width: 120 }}"
-                  alt="{{ block.settings.logo_alt | default: block.settings.logo.alt }}"
-                  style="height: {{ block.settings.logo_height | default: 14 }}px;"
-                  loading="lazy"
-                >
-              {% endif %}
-            {% endfor %}
+            <img class="luna-bb__seen-in-logo" src="{{ 'logo-forbes-black.svg' | asset_url }}" alt="Forbes" style="height: 14px;" loading="lazy">
+            <img class="luna-bb__seen-in-logo" src="{{ 'logo-nbc.svg' | asset_url }}" alt="NBC" style="height: 18px;" loading="lazy">
+            <img class="luna-bb__seen-in-logo" src="{{ 'logo-GQ-black.svg' | asset_url }}" alt="GQ" style="height: 16px;" loading="lazy">
+            <img class="luna-bb__seen-in-logo" src="{{ 'logo-today-black.svg' | asset_url }}" alt="Today" style="height: 14px;" loading="lazy">
+            <img class="luna-bb__seen-in-logo" src="{{ 'logo-people-black.svg' | asset_url }}" alt="People" style="height: 14px;" loading="lazy">
           </div>
         </div>
 
@@ -1495,26 +1464,16 @@
         {%- comment -%} ── Cross-sell ── {%- endcomment -%}
         <div class="luna-bb__cross-sell">
           <div class="luna-bb__cross-sell-img-wrap">
-            {% for block in section.blocks %}
-              {% if block.type == 'cross_sell' %}
-                {% if block.settings.image %}
-                  <img class="luna-bb__cross-sell-img" src="{{ block.settings.image | image_url: width: 128 }}" alt="{{ block.settings.name }}" loading="lazy">
-                {% endif %}
-              {% endif %}
-            {% endfor %}
+            <img class="luna-bb__cross-sell-img" src="{{ 'product-kids-patches-v2.jpg' | asset_url }}" alt="Add Kids Patches" loading="lazy">
           </div>
           <div class="luna-bb__cross-sell-body">
-            {% for block in section.blocks %}
-              {% if block.type == 'cross_sell' %}
-                <p class="luna-bb__cross-sell-name">{{ block.settings.name | default: 'Add Kids Patches' }}</p>
-                <p class="luna-bb__cross-sell-price">
-                  <span class="luna-bb__cross-sell-price-accent">{{ block.settings.price | default: '+$9.99' }}</span>
-                  <span class="luna-bb__cross-sell-price-old">{{ block.settings.compare_price | default: '$24.99' }}</span>
-                  &middot; <span class="luna-bb__cross-sell-price-save">{{ block.settings.save_text | default: 'save $15' }}</span>
-                </p>
-                <p class="luna-bb__cross-sell-meta">{{ block.settings.meta | default: '120 patches · fun designs kids love' }}</p>
-              {% endif %}
-            {% endfor %}
+            <p class="luna-bb__cross-sell-name">Add Kids Patches</p>
+            <p class="luna-bb__cross-sell-price">
+              <span class="luna-bb__cross-sell-price-accent">+$9.99</span>
+              <span class="luna-bb__cross-sell-price-old">$24.99</span>
+              &middot; <span class="luna-bb__cross-sell-price-save">save $15</span>
+            </p>
+            <p class="luna-bb__cross-sell-meta">120 patches &middot; fun designs kids love</p>
           </div>
           <button class="luna-bb__cross-sell-add" aria-label="Add cross-sell item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gr-dark)" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -1539,7 +1498,7 @@
           </div>
           <div class="luna-bb__shipping-row">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-            <span class="luna-bb__shipping-date">{{ section.settings.ship_date | default: 'Ships next business day from our California warehouse' }}</span>
+            <span class="luna-bb__shipping-date">Ships next business day from our California warehouse</span>
           </div>
         </div>
 
@@ -1582,13 +1541,12 @@
 {% schema %}
 {
   "name": "Luna Product Buy Box",
-  "tag": "section",
   "settings": [
     {
       "type": "text",
       "id": "product_title",
       "label": "Product title",
-      "default": "Luna Naturals Mosquito Repellent Patches — Adults"
+      "default": "Luna Naturals Mosquito Repellent Patches \u2014 Adults"
     },
     {
       "type": "textarea",
@@ -1623,118 +1581,6 @@
       "min": 0,
       "max": 59,
       "default": 11
-    }
-  ],
-  "blocks": [
-    {
-      "type": "gallery_image",
-      "name": "Gallery Image",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "image_alt",
-          "label": "Alt text"
-        },
-        {
-          "type": "select",
-          "id": "overlay_type",
-          "label": "Overlay type",
-          "options": [
-            { "value": "none", "label": "None" },
-            { "value": "before_after", "label": "Before/After labels" },
-            { "value": "pack_value", "label": "3-Pack value overlay" }
-          ],
-          "default": "none"
-        }
-      ]
-    },
-    {
-      "type": "press_logo",
-      "name": "Press Logo",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "logo",
-          "label": "Logo image"
-        },
-        {
-          "type": "text",
-          "id": "logo_alt",
-          "label": "Logo alt"
-        },
-        {
-          "type": "range",
-          "id": "logo_height",
-          "label": "Logo height (px)",
-          "min": 10,
-          "max": 30,
-          "default": 14
-        }
-      ]
-    },
-    {
-      "type": "cross_sell",
-      "name": "Cross-sell Add-on",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Product image"
-        },
-        {
-          "type": "text",
-          "id": "name",
-          "label": "Product name",
-          "default": "Add Kids Patches"
-        },
-        {
-          "type": "text",
-          "id": "price",
-          "label": "Add-on price",
-          "default": "+$9.99"
-        },
-        {
-          "type": "text",
-          "id": "compare_price",
-          "label": "Compare-at price",
-          "default": "$24.99"
-        },
-        {
-          "type": "text",
-          "id": "save_text",
-          "label": "Save text",
-          "default": "save $15"
-        },
-        {
-          "type": "text",
-          "id": "meta",
-          "label": "Meta text",
-          "default": "120 patches · fun designs kids love"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Luna Product Buy Box",
-      "blocks": [
-        { "type": "gallery_image", "settings": { "image_alt": "Mosquito Repellent Patches Adults Pack", "overlay_type": "none" } },
-        { "type": "gallery_image", "settings": { "image_alt": "Before and After comparison", "overlay_type": "before_after" } },
-        { "type": "gallery_image", "settings": { "image_alt": "3-Pack Bundle", "overlay_type": "pack_value" } },
-        { "type": "gallery_image", "settings": { "image_alt": "Lifestyle photo", "overlay_type": "none" } },
-        { "type": "press_logo", "settings": { "logo_alt": "Forbes", "logo_height": 14 } },
-        { "type": "press_logo", "settings": { "logo_alt": "NBC", "logo_height": 18 } },
-        { "type": "press_logo", "settings": { "logo_alt": "GQ", "logo_height": 16 } },
-        { "type": "press_logo", "settings": { "logo_alt": "Today", "logo_height": 14 } },
-        { "type": "press_logo", "settings": { "logo_alt": "People", "logo_height": 14 } },
-        { "type": "cross_sell" }
-      ]
     }
   ]
 }

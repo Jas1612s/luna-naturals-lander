@@ -17,9 +17,9 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Grüns Daily Nutrition",
+  title: "Luna Naturals | Mosquito Repellent Patches",
   description:
-    "Daily Nutrition Never Tasted So Good. 60+ whole foods, 20+ vitamins and minerals in one convenient gummy pack.",
+    "Plant-powered mosquito protection for the whole family. DEET-free, pediatrician-reviewed patches that last up to 12 hours. Safe for kids and adults.",
 };
 
 export default function GrunsLayout({

@@ -74,29 +74,22 @@
 </style>
 
 <section class="luna-marquee">
-  <p class="luna-marquee__label">{{ section.settings.label | default: 'As Seen In' }}</p>
+  <p class="luna-marquee__label">As Seen In</p>
 
   <div class="luna-marquee__fade-left"></div>
 
   <div class="luna-marquee__track" data-luna-marquee>
-    {% for block in section.blocks %}
-      <img
-        class="luna-marquee__logo"
-        src="{{ block.settings.logo | image_url: width: 200 }}"
-        alt="{{ block.settings.logo_alt | default: block.settings.logo.alt }}"
-        loading="lazy"
-      >
-    {% endfor %}
+    <img class="luna-marquee__logo" src="{{ 'logo-forbes-black.svg' | asset_url }}" alt="Forbes" loading="lazy">
+    <img class="luna-marquee__logo" src="{{ 'logo-nbc.svg' | asset_url }}" alt="NBC" loading="lazy">
+    <img class="luna-marquee__logo" src="{{ 'logo-GQ-black.svg' | asset_url }}" alt="GQ" loading="lazy">
+    <img class="luna-marquee__logo" src="{{ 'logo-today-black.svg' | asset_url }}" alt="Today" loading="lazy">
+    <img class="luna-marquee__logo" src="{{ 'logo-people-black.svg' | asset_url }}" alt="People" loading="lazy">
     {%- comment -%} Duplicate for seamless loop {%- endcomment -%}
-    {% for block in section.blocks %}
-      <img
-        class="luna-marquee__logo"
-        src="{{ block.settings.logo | image_url: width: 200 }}"
-        alt="{{ block.settings.logo_alt | default: block.settings.logo.alt }}"
-        aria-hidden="true"
-        loading="lazy"
-      >
-    {% endfor %}
+    <img class="luna-marquee__logo" src="{{ 'logo-forbes-black.svg' | asset_url }}" alt="Forbes" aria-hidden="true" loading="lazy">
+    <img class="luna-marquee__logo" src="{{ 'logo-nbc.svg' | asset_url }}" alt="NBC" aria-hidden="true" loading="lazy">
+    <img class="luna-marquee__logo" src="{{ 'logo-GQ-black.svg' | asset_url }}" alt="GQ" aria-hidden="true" loading="lazy">
+    <img class="luna-marquee__logo" src="{{ 'logo-today-black.svg' | asset_url }}" alt="Today" aria-hidden="true" loading="lazy">
+    <img class="luna-marquee__logo" src="{{ 'logo-people-black.svg' | asset_url }}" alt="People" aria-hidden="true" loading="lazy">
   </div>
 
   <div class="luna-marquee__fade-right"></div>
@@ -105,46 +98,12 @@
 {% schema %}
 {
   "name": "Luna Press Marquee",
-  "tag": "section",
   "settings": [
     {
       "type": "text",
       "id": "label",
       "label": "Label text",
       "default": "As Seen In"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "logo",
-      "name": "Press Logo",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "logo",
-          "label": "Logo image"
-        },
-        {
-          "type": "text",
-          "id": "logo_alt",
-          "label": "Logo alt text"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Luna Press Marquee",
-      "blocks": [
-        { "type": "logo" },
-        { "type": "logo" },
-        { "type": "logo" },
-        { "type": "logo" },
-        { "type": "logo" },
-        { "type": "logo" },
-        { "type": "logo" },
-        { "type": "logo" }
-      ]
     }
   ]
 }

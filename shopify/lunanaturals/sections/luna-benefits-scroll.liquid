@@ -91,35 +91,58 @@
 
 <section class="luna-benefits" data-luna-benefits>
   <div class="luna-benefits__inner">
-    {% for block in section.blocks %}
-      {% if block.type == 'statement' %}
-        <h2
-          class="luna-benefits__statement gr-display{% if block.settings.is_accent %} luna-benefits__statement--accent{% endif %}"
-          data-luna-scroll-reveal
-          {{ block.shopify_attributes }}
-        >
-          {{ block.settings.text }}
-        </h2>
-      {% endif %}
-    {% endfor %}
+    <h2 class="luna-benefits__statement gr-display" data-luna-scroll-reveal>
+      Skip The Spray
+    </h2>
+    <h2 class="luna-benefits__statement gr-display" data-luna-scroll-reveal>
+      One Patch On
+    </h2>
+    <h2 class="luna-benefits__statement gr-display" data-luna-scroll-reveal>
+      12 Hours of Protection
+    </h2>
+    <h2 class="luna-benefits__statement gr-display luna-benefits__statement--accent" data-luna-scroll-reveal>
+      Plant-Powered. DEET-Free.
+    </h2>
 
-    {% if section.settings.product_image %}
-      <div class="luna-benefits__image-wrap" data-luna-scroll-reveal>
-        <img
-          class="luna-benefits__image"
-          src="{{ section.settings.product_image | image_url: width: 1000 }}"
-          alt="{{ section.settings.product_image_alt | default: 'Luna Naturals Mosquito Repellent Patches' }}"
-          loading="lazy"
-        >
-      </div>
-    {% endif %}
+    <div class="luna-benefits__image-wrap" data-luna-scroll-reveal>
+      <img
+        class="luna-benefits__image"
+        src="{{ 'adults-pack-moss.jpg' | asset_url }}"
+        alt="Luna Naturals Mosquito Repellent Patches - Adults and Kids"
+        loading="lazy"
+      >
+    </div>
   </div>
 </section>
+
+<script>
+(function() {
+  var items = document.querySelectorAll('[data-luna-scroll-reveal]');
+  if (!items.length) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        if (el.classList.contains('luna-benefits__statement')) {
+          el.classList.add('luna-benefits__statement--visible');
+        } else if (el.classList.contains('luna-benefits__image-wrap')) {
+          el.classList.add('luna-benefits__image-wrap--visible');
+        }
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  items.forEach(function(item) {
+    observer.observe(item);
+  });
+})();
+</script>
 
 {% schema %}
 {
   "name": "Luna Benefits Scroll",
-  "tag": "section",
   "settings": [
     {
       "type": "image_picker",
@@ -131,37 +154,6 @@
       "id": "product_image_alt",
       "label": "Product image alt text",
       "default": "Luna Naturals Mosquito Repellent Patches - Adults and Kids"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "statement",
-      "name": "Statement",
-      "settings": [
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Statement text",
-          "default": "Skip The Spray"
-        },
-        {
-          "type": "checkbox",
-          "id": "is_accent",
-          "label": "Use accent color",
-          "default": false
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Luna Benefits Scroll",
-      "blocks": [
-        { "type": "statement", "settings": { "text": "Skip The Spray", "is_accent": false } },
-        { "type": "statement", "settings": { "text": "One Patch On", "is_accent": false } },
-        { "type": "statement", "settings": { "text": "12 Hours of Protection", "is_accent": false } },
-        { "type": "statement", "settings": { "text": "Plant-Powered. DEET-Free.", "is_accent": true } }
-      ]
     }
   ]
 }

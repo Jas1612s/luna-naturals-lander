@@ -19,7 +19,7 @@
   }
 
   .gr-display {
-    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-family: "Retail Display", "Work Sans", sans-serif;
   }
 
   /* ── Hero Section ── */
@@ -185,54 +185,66 @@
     <div class="luna-hero__text-side">
       <div class="luna-hero__text-wrap">
         <h2 class="luna-hero__title gr-display">
-          {{ section.settings.heading_prefix | default: 'Bug Protection' }}
+          Bug Protection
           <span
             class="luna-hero__rotating-word luna-hero__rotating-word--visible"
             data-luna-rotating-word
-          >{{ section.settings.rotating_word_1 | default: 'Adults' }}</span>
-          {{ section.settings.heading_suffix | default: 'Actually Want to Wear.' }}
+          >Adults</span>
+          Actually Want to Wear.
         </h2>
 
         <div class="luna-hero__cta-wrap">
-          <a href="{{ section.settings.cta_link | default: '#shop' }}" class="luna-hero__cta">
-            {{ section.settings.cta_text | default: 'Shop Now — Save 60%' }}
+          <a href="#shop" class="luna-hero__cta">
+            Shop Now &mdash; Save 60%
           </a>
         </div>
 
         <p class="luna-hero__rating">
-          {{ section.settings.rating_text | default: '★★★★★ 4.8 • 50,000+ happy families' }}
+          &#9733;&#9733;&#9733;&#9733;&#9733; 4.8 &bull; 50,000+ happy families
         </p>
 
         <p class="luna-hero__guarantee">
-          {{ section.settings.guarantee_text | default: 'Free shipping on 2+ packs &middot; 30-day money-back guarantee' }}
+          Free shipping on 2+ packs &middot; 30-day money-back guarantee
         </p>
       </div>
     </div>
 
     <!-- Image Carousel -->
     <div class="luna-hero__carousel" data-luna-hero-carousel>
-      {% for block in section.blocks %}
-        {% if block.type == 'slide' %}
-          <img
-            class="luna-hero__slide{% if forloop.first %} luna-hero__slide--active{% endif %}"
-            src="{{ block.settings.image | image_url: width: 1200 }}"
-            alt="{{ block.settings.image_alt | default: block.settings.image.alt }}"
-            loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
-            data-slide-index="{{ forloop.index0 }}"
-          >
-        {% endif %}
-      {% endfor %}
+      <img
+        class="luna-hero__slide luna-hero__slide--active"
+        src="{{ 'hero-hiker-spray.webp' | asset_url }}"
+        alt="Luna Naturals bug protection for hikers"
+        loading="eager"
+        data-slide-index="0"
+      >
+      <img
+        class="luna-hero__slide"
+        src="{{ 'hero-camping-lifestyle.webp' | asset_url }}"
+        alt="Luna Naturals camping lifestyle"
+        loading="lazy"
+        data-slide-index="1"
+      >
+      <img
+        class="luna-hero__slide"
+        src="{{ 'hero-slide2-playground.webp' | asset_url }}"
+        alt="Luna Naturals playground protection"
+        loading="lazy"
+        data-slide-index="2"
+      >
+      <img
+        class="luna-hero__slide"
+        src="{{ 'hero-product-sky.webp' | asset_url }}"
+        alt="Luna Naturals product against blue sky"
+        loading="lazy"
+        data-slide-index="3"
+      >
 
       <div class="luna-hero__dots" data-luna-hero-dots>
-        {% for block in section.blocks %}
-          {% if block.type == 'slide' %}
-            <button
-              class="luna-hero__dot{% if forloop.first %} luna-hero__dot--active{% endif %}"
-              aria-label="Go to image {{ forloop.index }}"
-              data-dot-index="{{ forloop.index0 }}"
-            ></button>
-          {% endif %}
-        {% endfor %}
+        <button class="luna-hero__dot luna-hero__dot--active" aria-label="Go to image 1" data-dot-index="0"></button>
+        <button class="luna-hero__dot" aria-label="Go to image 2" data-dot-index="1"></button>
+        <button class="luna-hero__dot" aria-label="Go to image 3" data-dot-index="2"></button>
+        <button class="luna-hero__dot" aria-label="Go to image 4" data-dot-index="3"></button>
       </div>
     </div>
   </div>
@@ -241,7 +253,6 @@
 {% schema %}
 {
   "name": "Luna Hero",
-  "tag": "section",
   "settings": [
     {
       "type": "text",
@@ -271,25 +282,24 @@
       "type": "text",
       "id": "cta_text",
       "label": "CTA text",
-      "default": "Shop Now — Save 60%"
+      "default": "Shop Now \u2014 Save 60%"
     },
     {
       "type": "url",
       "id": "cta_link",
-      "label": "CTA link",
-      "default": "#shop"
+      "label": "CTA link"
     },
     {
       "type": "text",
       "id": "rating_text",
       "label": "Rating text",
-      "default": "★★★★★ 4.8 • 50,000+ happy families"
+      "default": "\u2605\u2605\u2605\u2605\u2605 4.8 \u2022 50,000+ happy families"
     },
     {
       "type": "text",
       "id": "guarantee_text",
       "label": "Guarantee text",
-      "default": "Free shipping on 2+ packs · 30-day money-back guarantee"
+      "default": "Free shipping on 2+ packs \u00b7 30-day money-back guarantee"
     },
     {
       "type": "range",
@@ -308,35 +318,6 @@
       "max": 10,
       "step": 1,
       "default": 5
-    }
-  ],
-  "blocks": [
-    {
-      "type": "slide",
-      "name": "Slide",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Slide image"
-        },
-        {
-          "type": "text",
-          "id": "image_alt",
-          "label": "Image alt text"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Luna Hero",
-      "blocks": [
-        { "type": "slide" },
-        { "type": "slide" },
-        { "type": "slide" },
-        { "type": "slide" }
-      ]
     }
   ]
 }

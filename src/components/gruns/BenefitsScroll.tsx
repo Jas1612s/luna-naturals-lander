@@ -17,7 +17,7 @@ function useScrollReveal(
 ) {
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 0.9", "start 0.1"],
+    offset: ["start 1", "start -0.3"],
   });
 
   const segmentSize = 1 / total;

@@ -916,7 +916,7 @@
           {% assign gallery_images = "product-kids-patches-v2.jpg,before-after-no-labels.jpg,kids-3pack-forest.jpg,kids-pack-moss.jpg,kids-lifestyle-stickers.webp" | split: "," %}
           {% for img in gallery_images %}
             <img
-              src="{{ img | prepend: '/images/gruns/' | asset_url }}"
+              src="{{ img | asset_url }}"
               alt="Luna Naturals Kids Mosquito Repellent Patches - Image {{ forloop.index }}"
               class="luna-buy-box__gallery-img{% if forloop.first %} luna-buy-box__gallery-img--active{% endif %}"
               data-gallery-img="{{ forloop.index0 }}"
@@ -981,7 +981,7 @@
         <div class="luna-buy-box__thumbs">
           {% for img in gallery_images %}
             <button class="luna-buy-box__thumb{% if forloop.first %} luna-buy-box__thumb--active{% endif %}" data-thumb="{{ forloop.index0 }}">
-              <img src="{{ img | prepend: '/images/gruns/' | asset_url }}" alt="" width="72" height="72" loading="lazy" />
+              <img src="{{ img | asset_url }}" alt="" width="72" height="72" loading="lazy" />
             </button>
           {% endfor %}
         </div>
@@ -1014,11 +1014,11 @@
         <div class="luna-buy-box__as-seen">
           <p class="luna-buy-box__as-seen-label">As Seen In</p>
           <div class="luna-buy-box__as-seen-logos">
-            <img src="{{ 'logo-forbes-black.svg' | prepend: '/images/gruns/' | asset_url }}" alt="Forbes" style="height:14px" />
-            <img src="{{ 'logo-nbc.svg' | prepend: '/images/gruns/' | asset_url }}" alt="NBC" style="height:18px" />
-            <img src="{{ 'logo-GQ-black.svg' | prepend: '/images/gruns/' | asset_url }}" alt="GQ" style="height:16px" />
-            <img src="{{ 'logo-today-black.svg' | prepend: '/images/gruns/' | asset_url }}" alt="Today" style="height:14px" />
-            <img src="{{ 'logo-people-black.svg' | prepend: '/images/gruns/' | asset_url }}" alt="People" style="height:14px" />
+            <img src="{{ 'logo-forbes-black.svg' | asset_url }}" alt="Forbes" style="height:14px" />
+            <img src="{{ 'logo-nbc.svg' | asset_url }}" alt="NBC" style="height:18px" />
+            <img src="{{ 'logo-GQ-black.svg' | asset_url }}" alt="GQ" style="height:16px" />
+            <img src="{{ 'logo-today-black.svg' | asset_url }}" alt="Today" style="height:14px" />
+            <img src="{{ 'logo-people-black.svg' | asset_url }}" alt="People" style="height:14px" />
           </div>
         </div>
 
@@ -1186,7 +1186,7 @@
         <!-- Cross-sell -->
         <div class="luna-buy-box__cross-sell">
           <div class="luna-buy-box__cross-sell-img">
-            <img src="{{ 'adults-pack-moss.jpg' | prepend: '/images/gruns/' | asset_url }}" alt="Adults Patches" width="64" height="64" loading="lazy" />
+            <img src="{{ 'adults-pack-moss.jpg' | asset_url }}" alt="Adults Patches" width="64" height="64" loading="lazy" />
           </div>
           <div class="luna-buy-box__cross-sell-info">
             <p class="luna-buy-box__cross-sell-name">Add Adults Patches</p>
@@ -1381,7 +1381,6 @@
 {% schema %}
 {
   "name": "Luna Kids Buy Box",
-  "tag": "section",
   "class": "luna-product-buy-box-kids",
   "settings": []
 }

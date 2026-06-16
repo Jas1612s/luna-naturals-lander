@@ -28,11 +28,13 @@
     color: var(--gr-accent, #C45D3E);
   }
 
-  /* Mobile: horizontal scroll */
+  /* Mobile: horizontal scroll with snap */
   .luna-vp__scroll {
     overflow-x: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .luna-vp__scroll::-webkit-scrollbar {
@@ -41,14 +43,41 @@
 
   .luna-vp__scroll-inner {
     display: flex;
-    gap: 1.25rem;
+    gap: 1rem;
     padding: 0 1rem;
     width: max-content;
   }
 
   .luna-vp__card-wrap--scroll {
-    width: 320px;
+    width: 85vw;
+    max-width: 340px;
     flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+
+  /* Dot indicators */
+  .luna-vp__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .luna-vp__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .luna-vp__dot--active {
+    width: 24px;
+    border-radius: 999px;
+    background: #fff;
   }
 
   /* Desktop: grid */
@@ -135,6 +164,10 @@
       display: none;
     }
 
+    .luna-vp__dots {
+      display: none;
+    }
+
     .luna-vp__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -149,64 +182,116 @@
 <section class="luna-vp">
   <div class="luna-vp__header">
     <h2 class="luna-vp__heading gr-display">
-      {{ section.settings.heading_line1 | default: 'We made mosquito protection, like,' }}
-      <span class="luna-vp__heading-accent">{{ section.settings.heading_accent | default: 'stupidly simple.' }}</span>
+      We made mosquito protection, like,
+      <span class="luna-vp__heading-accent">stupidly simple.</span>
     </h2>
   </div>
 
   <!-- Mobile: horizontal scroll -->
   <div class="luna-vp__scroll">
     <div class="luna-vp__scroll-inner">
-      {% for block in section.blocks %}
-        <div class="luna-vp__card-wrap--scroll" {{ block.shopify_attributes }}>
-          <div class="luna-vp__card">
-            <div class="luna-vp__card-image-wrap">
-              {% if block.settings.image %}
-                <img
-                  class="luna-vp__card-image"
-                  src="{{ block.settings.image | image_url: width: 800 }}"
-                  alt="{{ block.settings.title | default: block.settings.image.alt }}"
-                  loading="lazy"
-                >
-              {% endif %}
-            </div>
-            <div class="luna-vp__card-body">
-              <h3 class="luna-vp__card-title">{{ block.settings.title }}</h3>
-              <p class="luna-vp__card-desc">{{ block.settings.description }}</p>
-            </div>
+      <div class="luna-vp__card-wrap--scroll">
+        <div class="luna-vp__card">
+          <div class="luna-vp__card-image-wrap">
+            <img class="luna-vp__card-image" src="{{ 'valueprop-no-mess.webp' | asset_url }}" alt="No Mess" loading="lazy">
+          </div>
+          <div class="luna-vp__card-body">
+            <h3 class="luna-vp__card-title">No Mess</h3>
+            <p class="luna-vp__card-desc">No spray. No lotion. No sticky hands. Peel one off, stick it on, walk outside. Done.</p>
           </div>
         </div>
-      {% endfor %}
+      </div>
+      <div class="luna-vp__card-wrap--scroll">
+        <div class="luna-vp__card">
+          <div class="luna-vp__card-image-wrap">
+            <img class="luna-vp__card-image" src="{{ 'kid-running-patch.jpg' | asset_url }}" alt="Plant-Powered" loading="lazy">
+          </div>
+          <div class="luna-vp__card-body">
+            <h3 class="luna-vp__card-title">Plant-Powered</h3>
+            <p class="luna-vp__card-desc">Citronella and eucalyptus oils do the work. No DEET, no parabens, no ingredients you can't pronounce.</p>
+          </div>
+        </div>
+      </div>
+      <div class="luna-vp__card-wrap--scroll">
+        <div class="luna-vp__card">
+          <div class="luna-vp__card-image-wrap">
+            <img class="luna-vp__card-image" src="{{ 'valueprop-built-for-real-life.webp' | asset_url }}" alt="Built for Real Life" loading="lazy">
+          </div>
+          <div class="luna-vp__card-body">
+            <h3 class="luna-vp__card-title">Built for Real Life</h3>
+            <p class="luna-vp__card-desc">Stays on during hikes, soccer practice, and playground chaos. Compact pack fits in a purse, diaper bag, or backpack.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Dots -->
+    <div class="luna-vp__dots" data-luna-vp-dots>
+      <button class="luna-vp__dot luna-vp__dot--active" data-vp-dot="0" aria-label="Card 1"></button>
+      <button class="luna-vp__dot" data-vp-dot="1" aria-label="Card 2"></button>
+      <button class="luna-vp__dot" data-vp-dot="2" aria-label="Card 3"></button>
     </div>
   </div>
 
   <!-- Desktop: 3-col grid -->
   <div class="luna-vp__grid">
-    {% for block in section.blocks %}
-      <div class="luna-vp__card" {{ block.shopify_attributes }}>
-        <div class="luna-vp__card-image-wrap">
-          {% if block.settings.image %}
-            <img
-              class="luna-vp__card-image"
-              src="{{ block.settings.image | image_url: width: 800 }}"
-              alt="{{ block.settings.title | default: block.settings.image.alt }}"
-              loading="lazy"
-            >
-          {% endif %}
-        </div>
-        <div class="luna-vp__card-body">
-          <h3 class="luna-vp__card-title">{{ block.settings.title }}</h3>
-          <p class="luna-vp__card-desc">{{ block.settings.description }}</p>
-        </div>
+    <div class="luna-vp__card">
+      <div class="luna-vp__card-image-wrap">
+        <img class="luna-vp__card-image" src="{{ 'valueprop-no-mess.webp' | asset_url }}" alt="No Mess" loading="lazy">
       </div>
-    {% endfor %}
+      <div class="luna-vp__card-body">
+        <h3 class="luna-vp__card-title">No Mess</h3>
+        <p class="luna-vp__card-desc">No spray. No lotion. No sticky hands. Peel one off, stick it on, walk outside. Done.</p>
+      </div>
+    </div>
+    <div class="luna-vp__card">
+      <div class="luna-vp__card-image-wrap">
+        <img class="luna-vp__card-image" src="{{ 'kid-running-patch.jpg' | asset_url }}" alt="Plant-Powered" loading="lazy">
+      </div>
+      <div class="luna-vp__card-body">
+        <h3 class="luna-vp__card-title">Plant-Powered</h3>
+        <p class="luna-vp__card-desc">Citronella and eucalyptus oils do the work. No DEET, no parabens, no ingredients you can't pronounce.</p>
+      </div>
+    </div>
+    <div class="luna-vp__card">
+      <div class="luna-vp__card-image-wrap">
+        <img class="luna-vp__card-image" src="{{ 'valueprop-built-for-real-life.webp' | asset_url }}" alt="Built for Real Life" loading="lazy">
+      </div>
+      <div class="luna-vp__card-body">
+        <h3 class="luna-vp__card-title">Built for Real Life</h3>
+        <p class="luna-vp__card-desc">Stays on during hikes, soccer practice, and playground chaos. Compact pack fits in a purse, diaper bag, or backpack.</p>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+(function() {
+  var scroll = document.querySelector('.luna-vp__scroll');
+  var dots = document.querySelectorAll('[data-vp-dot]');
+  var cards = document.querySelectorAll('.luna-vp__card-wrap--scroll');
+  if (!scroll || !cards.length) return;
+
+  scroll.addEventListener('scroll', function() {
+    var scrollLeft = scroll.scrollLeft;
+    var cardWidth = cards[0].offsetWidth + 16;
+    var idx = Math.round(scrollLeft / cardWidth);
+    dots.forEach(function(d, i) {
+      d.classList.toggle('luna-vp__dot--active', i === idx);
+    });
+  });
+
+  dots.forEach(function(dot, i) {
+    dot.addEventListener('click', function() {
+      var cardWidth = cards[0].offsetWidth + 16;
+      scroll.scrollTo({ left: cardWidth * i, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
 
 {% schema %}
 {
   "name": "Luna Value Props",
-  "tag": "section",
   "settings": [
     {
       "type": "text",
@@ -219,59 +304,6 @@
       "id": "heading_accent",
       "label": "Heading (accent text)",
       "default": "stupidly simple."
-    }
-  ],
-  "blocks": [
-    {
-      "type": "card",
-      "name": "Value Prop Card",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Card image"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "No Mess"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Description",
-          "default": "No spray. No lotion. No sticky hands. Peel one off, stick it on, walk outside. Done."
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Luna Value Props",
-      "blocks": [
-        {
-          "type": "card",
-          "settings": {
-            "title": "No Mess",
-            "description": "No spray. No lotion. No sticky hands. Peel one off, stick it on, walk outside. Done."
-          }
-        },
-        {
-          "type": "card",
-          "settings": {
-            "title": "Plant-Powered",
-            "description": "Citronella and eucalyptus oils do the work. No DEET, no parabens, no ingredients you can't pronounce."
-          }
-        },
-        {
-          "type": "card",
-          "settings": {
-            "title": "Built for Real Life",
-            "description": "Stays on during hikes, soccer practice, and playground chaos. Compact pack fits in a purse, diaper bag, or backpack."
-          }
-        }
-      ]
     }
   ]
 }

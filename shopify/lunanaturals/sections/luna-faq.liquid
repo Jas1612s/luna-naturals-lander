@@ -100,21 +100,64 @@
 <section class="luna-faq" data-section-type="luna-faq">
   <div class="luna-faq__inner">
     <h2 class="luna-faq__heading gr-display">
-      {{ section.settings.heading | default: 'Any last questions?' }}
+      Any last questions?
     </h2>
 
     <div data-luna-faq-list>
-      {% for block in section.blocks %}
-        <div class="luna-faq__item" data-luna-faq-item {{ block.shopify_attributes }}>
-          <button class="luna-faq__question" data-luna-faq-trigger aria-expanded="false">
-            <span class="luna-faq__question-text">{{ block.settings.question }}</span>
-            <span class="luna-faq__toggle">+</span>
-          </button>
-          <div class="luna-faq__answer" data-luna-faq-answer>
-            <p class="luna-faq__answer-text">{{ block.settings.answer }}</p>
-          </div>
+      <div class="luna-faq__item" data-luna-faq-item>
+        <button class="luna-faq__question" data-luna-faq-trigger aria-expanded="false">
+          <span class="luna-faq__question-text">What are Luna Naturals Mosquito Repellent Patches?</span>
+          <span class="luna-faq__toggle">+</span>
+        </button>
+        <div class="luna-faq__answer" data-luna-faq-answer>
+          <p class="luna-faq__answer-text">Luna Naturals patches are plant-based mosquito repellent stickers that use citronella and eucalyptus essential oils to keep bugs away. Just peel, stick on clothing, and enjoy up to 12 hours of DEET-free protection.</p>
         </div>
-      {% endfor %}
+      </div>
+      <div class="luna-faq__item" data-luna-faq-item>
+        <button class="luna-faq__question" data-luna-faq-trigger aria-expanded="false">
+          <span class="luna-faq__question-text">I'm subscribed. How do I get patches on my next order?</span>
+          <span class="luna-faq__toggle">+</span>
+        </button>
+        <div class="luna-faq__answer" data-luna-faq-answer>
+          <p class="luna-faq__answer-text">Your subscription automatically ships every 3 months. You can manage your subscription, skip a delivery, or add extra packs from your account dashboard at any time.</p>
+        </div>
+      </div>
+      <div class="luna-faq__item" data-luna-faq-item>
+        <button class="luna-faq__question" data-luna-faq-trigger aria-expanded="false">
+          <span class="luna-faq__question-text">When will my patches arrive?</span>
+          <span class="luna-faq__toggle">+</span>
+        </button>
+        <div class="luna-faq__answer" data-luna-faq-answer>
+          <p class="luna-faq__answer-text">Standard orders ship within 1-2 business days and arrive in 3-5 business days. Orders of 2+ packs ship free. You'll receive tracking info via email as soon as your order ships.</p>
+        </div>
+      </div>
+      <div class="luna-faq__item" data-luna-faq-item>
+        <button class="luna-faq__question" data-luna-faq-trigger aria-expanded="false">
+          <span class="luna-faq__question-text">What's inside each order? What am I getting?</span>
+          <span class="luna-faq__toggle">+</span>
+        </button>
+        <div class="luna-faq__answer" data-luna-faq-answer>
+          <p class="luna-faq__answer-text">Each pack contains 90 individual patches &mdash; enough to cover a family of four for the entire summer. Patches come in fun, kid-friendly designs and are individually sealed for freshness.</p>
+        </div>
+      </div>
+      <div class="luna-faq__item" data-luna-faq-item>
+        <button class="luna-faq__question" data-luna-faq-trigger aria-expanded="false">
+          <span class="luna-faq__question-text">How long does each patch last?</span>
+          <span class="luna-faq__toggle">+</span>
+        </button>
+        <div class="luna-faq__answer" data-luna-faq-answer>
+          <p class="luna-faq__answer-text">Each patch provides up to 12 hours of continuous protection. For best results, apply to clothing rather than directly on skin. Replace after 12 hours or after heavy rain exposure.</p>
+        </div>
+      </div>
+      <div class="luna-faq__item" data-luna-faq-item>
+        <button class="luna-faq__question" data-luna-faq-trigger aria-expanded="false">
+          <span class="luna-faq__question-text">How do you handle returns?</span>
+          <span class="luna-faq__toggle">+</span>
+        </button>
+        <div class="luna-faq__answer" data-luna-faq-answer>
+          <p class="luna-faq__answer-text">We offer a 30-day money-back guarantee &mdash; no questions asked. If you're not completely satisfied, contact us for a full refund. We'll even cover return shipping.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -122,82 +165,12 @@
 {% schema %}
 {
   "name": "Luna FAQ",
-  "tag": "section",
   "settings": [
     {
       "type": "text",
       "id": "heading",
       "label": "Section heading",
       "default": "Any last questions?"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "faq",
-      "name": "FAQ Item",
-      "settings": [
-        {
-          "type": "text",
-          "id": "question",
-          "label": "Question",
-          "default": "What are Luna Naturals Mosquito Repellent Patches?"
-        },
-        {
-          "type": "textarea",
-          "id": "answer",
-          "label": "Answer",
-          "default": "Luna Naturals patches are plant-based mosquito repellent stickers that use citronella and eucalyptus essential oils to keep bugs away."
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Luna FAQ",
-      "blocks": [
-        {
-          "type": "faq",
-          "settings": {
-            "question": "What are Luna Naturals Mosquito Repellent Patches?",
-            "answer": "Luna Naturals patches are plant-based mosquito repellent stickers that use citronella and eucalyptus essential oils to keep bugs away. Just peel, stick on clothing, and enjoy up to 12 hours of DEET-free protection."
-          }
-        },
-        {
-          "type": "faq",
-          "settings": {
-            "question": "I'm subscribed. How do I get patches on my next order?",
-            "answer": "Your subscription automatically ships every 3 months. You can manage your subscription, skip a delivery, or add extra packs from your account dashboard at any time."
-          }
-        },
-        {
-          "type": "faq",
-          "settings": {
-            "question": "When will my patches arrive?",
-            "answer": "Standard orders ship within 1-2 business days and arrive in 3-5 business days. Orders of 2+ packs ship free. You'll receive tracking info via email as soon as your order ships."
-          }
-        },
-        {
-          "type": "faq",
-          "settings": {
-            "question": "What's inside each order? What am I getting?",
-            "answer": "Each pack contains 90 individual patches — enough to cover a family of four for the entire summer. Patches come in fun, kid-friendly designs and are individually sealed for freshness."
-          }
-        },
-        {
-          "type": "faq",
-          "settings": {
-            "question": "How long does each patch last?",
-            "answer": "Each patch provides up to 12 hours of continuous protection. For best results, apply to clothing rather than directly on skin. Replace after 12 hours or after heavy rain exposure."
-          }
-        },
-        {
-          "type": "faq",
-          "settings": {
-            "question": "How do you handle returns?",
-            "answer": "We offer a 30-day money-back guarantee — no questions asked. If you're not completely satisfied, contact us for a full refund. We'll even cover return shipping."
-          }
-        }
-      ]
     }
   ]
 }

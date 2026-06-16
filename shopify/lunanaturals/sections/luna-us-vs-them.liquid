@@ -27,6 +27,16 @@
     line-height: 1.6;
   }
 
+  .luna-uvt__table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    border-radius: 24px;
+  }
+
+  .luna-uvt__table-wrap::-webkit-scrollbar { display: none; }
+
   .luna-uvt__table {
     border-radius: 24px;
     overflow: hidden;
@@ -35,6 +45,7 @@
     border: 1px solid rgba(0,0,0,0.05);
     display: grid;
     grid-template-columns: 1.4fr 1.2fr 1fr 1fr;
+    min-width: 540px;
   }
 
   .luna-uvt__header-empty { /* empty */ }
@@ -192,6 +203,7 @@
     <h2 class="luna-uvt__title">Us vs. Them</h2>
     <p class="luna-uvt__subtitle">Not another greasy spray. Just plant-powered patches that actually work &mdash; for the whole family.</p>
 
+    <div class="luna-uvt__table-wrap">
     <div class="luna-uvt__table">
       <!-- Header -->
       <div class="luna-uvt__header-empty"></div>
@@ -250,6 +262,7 @@
       <div class="luna-uvt__row-other luna-uvt__row--even"><span class="luna-uvt__check luna-uvt__check--red">&#10005;</span></div>
       <div class="luna-uvt__row-other luna-uvt__row--even"><span class="luna-uvt__check luna-uvt__check--green">&#10003;</span></div>
     </div>
+    </div><!-- end table-wrap -->
 
     <div class="luna-uvt__cta">
       <a href="#shop" class="luna-uvt__cta-btn">Try Luna Naturals &mdash; 60% Off</a>
@@ -261,7 +274,6 @@
 {% schema %}
 {
   "name": "Luna Us vs Them",
-  "tag": "section",
   "class": "luna-us-vs-them-section",
   "settings": []
 }
