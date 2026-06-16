@@ -139,7 +139,7 @@ export function FinalCTA() {
           }}
         >
           <Image
-            src="/images/smooche-ccf/stain.jpg"
+            src="/images/smooche-ccf/gen-product-pouch.webp"
             alt="Luna Naturals Kids Mosquito Repellent Patches"
             fill
             sizes="(min-width: 640px) 400px, 90vw"

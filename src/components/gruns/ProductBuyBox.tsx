@@ -397,18 +397,20 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
             </div>
             <p className="text-xs text-[var(--gr-sage)] mb-5">${perPatch.toFixed(2)}/patch &middot; {variant.patchCount} patches per pack</p>
 
-            {/* As Seen In */}
+            {/* Available Nationwide */}
             <div className="mb-6 py-4 border-y border-[var(--gr-dark)]/8">
-              <p className="text-[10px] font-semibold text-[var(--gr-sage)] uppercase tracking-widest mb-3 text-center">
-                As Seen In
+              <p className="text-[10px] font-semibold text-[var(--gr-sage)] uppercase tracking-widest mb-1 text-center">
+                Available Nationwide
+              </p>
+              <p className="text-base font-bold text-[var(--gr-dark)] text-center mb-3 gr-display italic">
+                Find Us In Store
               </p>
               <div className="flex items-center justify-center gap-6 md:gap-8">
                 {[
-                  { src: "/images/gruns/logo-forbes-black.svg", alt: "Forbes", h: 14 },
-                  { src: "/images/gruns/logo-nbc.svg", alt: "NBC", h: 18 },
-                  { src: "/images/gruns/logo-GQ-black.svg", alt: "GQ", h: 16 },
-                  { src: "/images/gruns/logo-today-black.svg", alt: "Today", h: 14 },
-                  { src: "/images/gruns/logo-people-black.svg", alt: "People", h: 14 },
+                  { src: "/images/gruns/target.svg", alt: "Target", h: 22 },
+                  { src: "/images/gruns/walmart.svg", alt: "Walmart", h: 20 },
+                  { src: "/images/gruns/costco.svg", alt: "Costco", h: 18 },
+                  { src: "/images/gruns/kroger.svg", alt: "Kroger", h: 20 },
                 ].map((logo) => (
                   <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: logo.h }} className="w-auto opacity-40 grayscale" />
                 ))}

@@ -2,21 +2,21 @@ import Image from "next/image";
 
 const TESTIMONIALS = [
   {
-    image: "/images/smooche-ccf/reviews-section.jpg",
+    image: "/images/smooche-ccf/gen-review-jessica.webp",
     alt: "Happy child wearing mosquito repellent patch outdoors",
     quote:
       "My daughter used to scream when I tried to spray her. Now she picks her own patch \u2014 she calls it her \u2018bug shield sticker.\u2019 We\u2019ve gone the entire summer without a single bite. I wish I\u2019d found these years ago.",
     name: "Jessica",
   },
   {
-    image: "/images/smooche-ccf/comparison-table.jpg",
+    image: "/images/smooche-ccf/gen-review-amanda.webp",
     alt: "Kid at camp with zero mosquito bites",
     quote:
       "I was a skeptic. $9.99 for 120 patches? Seemed too cheap to work. But my son wore one to camp and came back with zero bites while his friends were scratching all night. We\u2019re on our third pack now.",
     name: "Amanda",
   },
   {
-    image: "/images/smooche-ccf/final-cta.jpg",
+    image: "/images/smooche-ccf/gen-review-rachel.webp",
     alt: "Mother applying patch sticker on child",
     quote:
       "I have three kids under 6. The morning spray routine was a nightmare \u2014 screaming, tears, chemical smell everywhere. These patches turned a 15-minute battle into a 10-second sticker moment. Life-changing.",

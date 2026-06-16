@@ -3,28 +3,28 @@ import Image from "next/image";
 const features = [
   {
     title: "Plant-Based Active Ingredients",
-    image: "/images/smooche-ccf/product-comparison-2.jpg",
+    image: "/images/smooche-ccf/gen-ingredients.webp",
     alt: "Plant-based ingredients diagram",
     description:
       "The best kids\u2019 repellents use proven plant oils \u2014 citronella, eucalyptus, and lemongrass \u2014 instead of synthetic chemicals. These botanicals are naturally effective at repelling mosquitoes and have been used for centuries with zero known harmful side effects on children.",
   },
   {
     title: "12+ Hour Protection",
-    image: "/images/smooche-ccf/product-comparison-3.jpg",
+    image: "/images/smooche-ccf/gen-12hr-clock.webp",
     alt: "12+ hours protection diagram",
     description:
       "Quality repellents should last an entire day of outdoor play without reapplication. If you\u2019re having to reapply every 2 hours, the product isn\u2019t good enough. Look for formulas that maintain their effectiveness through sweat, water, and active play.",
   },
   {
     title: "No Skin Contact Required",
-    image: "/images/smooche-ccf/product-comparison-4.jpg",
+    image: "/images/smooche-ccf/gen-waterproof-shield.webp",
     alt: "No skin contact protection diagram",
     description:
       "The safest repellents for kids don\u2019t touch their skin at all. Patch-based solutions attach to clothing and create a vapor barrier \u2014 zero absorption, zero irritation, zero risk. If a product requires skin contact, it\u2019s already a compromise.",
   },
   {
     title: "Kid-Friendly Application",
-    image: "/images/smooche-ccf/product-comparison-5.jpg",
+    image: "/images/smooche-ccf/gen-kid-sticker.webp",
     alt: "Kid-friendly application diagram",
     description:
       "The best repellent is one your child will actually wear. Products that come in fun designs, feel like stickers, and let kids apply them independently eliminate the spray battle entirely. If application is a fight, you\u2019ll skip it \u2014 and skipping it means bites.",

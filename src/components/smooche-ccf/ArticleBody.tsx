@@ -56,7 +56,7 @@ export function ArticleBody() {
       {/* Image 1: article image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/smooche-ccf/article-image-1.jpg"
+        src="/images/smooche-ccf/gen-patch-closeup.webp"
         alt="Child wearing mosquito repellent patch on clothing"
         className="w-full rounded-lg"
         style={{ margin: "32px 0", display: "block" }}
@@ -92,6 +92,14 @@ export function ArticleBody() {
         That was three months ago. Our family&apos;s total mosquito bite count
         since? Zero.
       </P>
+
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/smooche-ccf/gen-kids-playing.webp"
+        alt="Mother applying a fun sticker patch to her daughter's shirt outdoors"
+        className="w-full rounded-lg"
+        style={{ margin: "32px 0", display: "block" }}
+      />
 
       {/* Sub-section heading */}
       <h3

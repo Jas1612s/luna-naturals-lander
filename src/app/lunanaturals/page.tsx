@@ -4,7 +4,7 @@ import { PressMarquee } from "@/components/gruns/PressMarquee";
 import { FindYourFlavor } from "@/components/gruns/FindYourFlavor";
 import { ValueProps } from "@/components/gruns/ValueProps";
 import { BenefitsScroll } from "@/components/gruns/BenefitsScroll";
-import { ProductBuyBox } from "@/components/gruns/ProductBuyBox";
+import { CollectionTogglePDP } from "@/components/gruns/CollectionTogglePDP";
 import { ReviewsTabs } from "@/components/gruns/ReviewsTabs";
 import { UsVsThem } from "@/components/gruns/UsVsThem";
 import { BiteFreeCtaBanner } from "@/components/gruns/BiteFreeCtaBanner";
@@ -23,7 +23,7 @@ export default function GrunsPage() {
         <FindYourFlavor />
         <ValueProps />
         <BenefitsScroll />
-        <ProductBuyBox />
+        <CollectionTogglePDP />
         <ReviewsTabs />
         <UsVsThem />
         <BiteFreeCtaBanner />

@@ -8,7 +8,7 @@ const products: Record<
   adults: {
     name: "Adults Patches",
     href: "/lunanaturals/adults",
-    image: "/images/gruns/adults-lifestyle-box.webp",
+    image: "/images/gruns/patches-hand-nature.jpg",
     patchCount: 90,
     price: "$9.99",
     comparePrice: "$24.99",
@@ -64,15 +64,13 @@ export function YouMayAlsoLike({ currentVariant }: { currentVariant: "adults" | 
                 className="w-full aspect-square object-cover"
               />
             ) : (
-              <div className="p-8">
-                <Image
-                  src={other.image}
-                  alt={`Luna Naturals ${other.name}`}
-                  width={240}
-                  height={240}
-                  className="w-[200px] h-[200px] object-contain group-hover:scale-105 transition-transform drop-shadow-2xl"
-                />
-              </div>
+              <Image
+                src={other.image}
+                alt={`Luna Naturals ${other.name}`}
+                width={600}
+                height={600}
+                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform"
+              />
             )}
           </div>
 

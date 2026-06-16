@@ -6,7 +6,7 @@ const products = [
     shortName: "Adults · 90 Patches",
     price: "$14.99",
     originalPrice: "$24.99",
-    image: "/images/gruns/adults-pack-moss.jpg",
+    image: "/images/gruns/adults-3pack-forest.jpg",
     badge: "Best Seller",
     badgeBg: "bg-[var(--gr-green-dark)]",
     cardBg: "#7d8566",
@@ -19,7 +19,7 @@ const products = [
     shortName: "Kids · 120 Patches",
     price: "$14.99",
     originalPrice: "$24.99",
-    image: "/images/gruns/product-kids-patches-v2.jpg",
+    image: "/images/gruns/kids-3pack-forest.jpg",
     badge: "Kid Favorite",
     badgeBg: "bg-[var(--gr-accent)]",
     cardBg: "#7d8566",
@@ -70,12 +70,6 @@ export function FindYourFlavor() {
                   </p>
                 </div>
 
-                {/* Shop Now overlay — always visible on mobile, hover on desktop */}
-                <div className="absolute inset-0 bg-black/30 md:bg-black/0 md:hover:bg-black/40 flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 z-20">
-                  <span className="bg-white text-[var(--gr-dark)] text-sm md:text-base font-bold px-6 py-3 md:px-8 md:py-3.5 rounded-full shadow-lg md:scale-90 md:group-hover:scale-100 transition-transform duration-300">
-                    Shop Now &rarr;
-                  </span>
-                </div>
               </div>
 
             </a>

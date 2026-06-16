@@ -30,7 +30,7 @@ export function HowItWorks() {
         </p>
 
         <Image
-          src="/images/smooche-ccf/how-it-works.jpg"
+          src="/images/smooche-ccf/gen-how-patches-work.webp"
           alt="How Luna Naturals mosquito repellent patches work"
           width={700}
           height={400}

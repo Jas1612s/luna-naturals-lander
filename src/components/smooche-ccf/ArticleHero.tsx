@@ -59,7 +59,7 @@ export function ArticleHero() {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/smooche-ccf/article-image-2.png"
+          src="/images/smooche-ccf/gen-author-portrait.webp"
           alt="Sarah Mitchell"
           width={48}
           height={48}
@@ -94,7 +94,7 @@ export function ArticleHero() {
       {/* Hero image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/smooche-ccf/article-image-1.jpg"
+        src="/images/smooche-ccf/gen-mom-patch-park.webp"
         alt="Kids playing outside with mosquito repellent patches"
         className="w-full rounded-lg object-cover"
         style={{ marginTop: "32px" }}

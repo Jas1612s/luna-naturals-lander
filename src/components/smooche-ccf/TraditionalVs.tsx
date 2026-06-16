@@ -30,7 +30,7 @@ export function TraditionalVs() {
         </p>
 
         <Image
-          src="/images/smooche-ccf/traditional-vs.jpg"
+          src="/images/smooche-ccf/gen-spray-vs-patch.webp"
           alt="Cross-section showing DEET spray vs plant-based patch protection"
           width={700}
           height={400}

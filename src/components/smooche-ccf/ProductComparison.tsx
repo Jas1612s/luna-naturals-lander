@@ -23,7 +23,7 @@ const smooche: Product = {
   tagline: "Our #1 pick for 2026",
   features:
     "Plant-Based Ingredients, 12+ Hour Protection, No Skin Contact, Kid-Friendly Application",
-  image: "/images/smooche-ccf/ccf-product.png",
+  image: "/images/smooche-ccf/gen-patch-sheet.webp",
   pros: [
     "Contains all 4 essential features for safe, effective kids\u2019 repellent",
     "Goes on clothes, not skin \u2014 zero chemical absorption",

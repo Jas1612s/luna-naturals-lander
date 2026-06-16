@@ -9,14 +9,14 @@ const testimonials = [
       "I just stick one on my arm before heading outside and forget about it. 12 hours later, zero bites. It\u2019s honestly the simplest thing I\u2019ve ever used.",
     name: "Jeremy H.",
     designation: "Subscriber Since 2025 \u2022 Verified Buyer",
-    src: "/images/gruns/review-patch-arm.jpg",
+    src: "/images/gruns/review-jeremy-h.jpg",
   },
   {
     quote:
       "I was spending $40+ a month on sprays that barely worked. One box of these lasts the whole season for less than $15. The quality is incredible.",
     name: "Lisa C.",
     designation: "Outdoor Enthusiast \u2022 Verified Buyer",
-    src: "/images/gruns/review-woman-box.jpg",
+    src: "/images/gruns/review-lisa-c.jpg",
   },
   {
     quote:
@@ -30,7 +30,7 @@ const testimonials = [
       "Took these on a 4-day hiking trip. We used maybe 20 patches total for both of us. Not a single bite the entire trip. Absolute must-have for the outdoors.",
     name: "Rebecca D.",
     designation: "Adventure Couple \u2022 Verified Buyer",
-    src: "/images/gruns/review-hikers.jpg",
+    src: "/images/gruns/review-rebecca-d.jpg",
   },
 ];
 
