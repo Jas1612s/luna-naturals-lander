@@ -20,8 +20,8 @@ function useScrollReveal(
     offset: ["start end", "end start"],
   });
 
-  const segmentSize = 1 / (total + 0.5);
-  const start = (index + 0.3) * segmentSize;
+  const segmentSize = 1 / total;
+  const start = index * segmentSize * 0.6 + 0.05;
   const mid = start + segmentSize * 0.6;
 
   const opacity = useTransform(scrollYProgress, [start, mid], [0, 1]);
