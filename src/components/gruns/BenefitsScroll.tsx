@@ -4,10 +4,10 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 
 const stats = [
-  { text: "Skip The Spray", accent: false },
-  { text: "One Patch On", accent: false },
-  { text: "12 Hours of Protection", accent: false },
-  { text: "Plant-Powered. DEET-Free.", accent: true },
+  { text: "No Bites.", accent: false },
+  { text: "No Itch.", accent: false },
+  { text: "No Chemicals.", accent: false },
+  { text: "All Natural Protection.", accent: true },
 ];
 
 function useScrollReveal(
