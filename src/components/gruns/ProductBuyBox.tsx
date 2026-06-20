@@ -427,10 +427,10 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
                   {[
                     { src: "/images/gruns/logo-erewhon-color.png", alt: "Erewhon", h: 20 },
                     { src: "/images/gruns/logo-target-color.webp", alt: "Target", h: 26 },
-                    { src: "/images/gruns/logo-walmart-color.svg", alt: "Walmart", h: 22 },
+                    { src: "/images/gruns/logo-wholefoods-bw.png", alt: "Whole Foods", h: 22 },
                     { src: "/images/gruns/logo-erewhon-color.png", alt: "Erewhon 2", h: 20 },
                     { src: "/images/gruns/logo-target-color.webp", alt: "Target 2", h: 26 },
-                    { src: "/images/gruns/logo-walmart-color.svg", alt: "Walmart 2", h: 22 },
+                    { src: "/images/gruns/logo-wholefoods-bw.png", alt: "Whole Foods 2", h: 22 },
                   ].map((logo) => (
                     <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: logo.h }} className="w-auto shrink-0" />
                   ))}
