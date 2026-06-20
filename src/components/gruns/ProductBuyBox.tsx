@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function useCountdown(startHrs = 3, startMin = 0, startSec = 0) {
   const [mounted, setMounted] = useState(false);
@@ -243,17 +243,17 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
           <div className="md:sticky md:top-20 md:self-start">
             <div
               className="relative aspect-square bg-[#0A1F12] rounded-3xl overflow-hidden mb-4"
+              style={{ touchAction: "pan-y" }}
               onTouchStart={(e) => {
-                const touch = e.touches[0];
-                (e.currentTarget as HTMLElement).dataset.touchX = String(touch.clientX);
+                (e.currentTarget as HTMLElement).dataset.touchX = String(e.touches[0].clientX);
               }}
               onTouchEnd={(e) => {
                 const startX = Number((e.currentTarget as HTMLElement).dataset.touchX ?? 0);
-                const endX = e.changedTouches[0].clientX;
-                const diff = startX - endX;
-                if (Math.abs(diff) > 40) {
-                  if (diff > 0) setActiveImage((activeImage + 1) % gallery.length);
-                  else setActiveImage((activeImage - 1 + gallery.length) % gallery.length);
+                const diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) {
+                  setActiveImage((prev) =>
+                    diff > 0 ? (prev + 1) % gallery.length : (prev - 1 + gallery.length) % gallery.length
+                  );
                 }
               }}
             >

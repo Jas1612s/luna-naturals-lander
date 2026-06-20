@@ -170,13 +170,14 @@ export const CircularTestimonials = ({
         <div
           className="image-container"
           ref={imageContainerRef}
+          style={{ touchAction: "pan-y" }}
           onTouchStart={(e) => {
             (e.currentTarget as HTMLElement).dataset.touchX = String(e.touches[0].clientX);
           }}
           onTouchEnd={(e) => {
             const startX = Number((e.currentTarget as HTMLElement).dataset.touchX ?? 0);
             const diff = startX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 40) {
+            if (Math.abs(diff) > 50) {
               if (diff > 0) handleNext();
               else handlePrev();
             }
