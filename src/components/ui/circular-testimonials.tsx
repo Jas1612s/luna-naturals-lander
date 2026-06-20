@@ -167,16 +167,30 @@ export const CircularTestimonials = ({
   return (
     <div className="testimonial-container">
       <div className="testimonial-grid">
-        <div className="image-container" ref={imageContainerRef}>
+        <div
+          className="image-container"
+          ref={imageContainerRef}
+          onTouchStart={(e) => {
+            (e.currentTarget as HTMLElement).dataset.touchX = String(e.touches[0].clientX);
+          }}
+          onTouchEnd={(e) => {
+            const startX = Number((e.currentTarget as HTMLElement).dataset.touchX ?? 0);
+            const diff = startX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) {
+              if (diff > 0) handleNext();
+              else handlePrev();
+            }
+          }}
+        >
           {testimonials.map((testimonial, index) => (
-            <img
+            <div
               key={testimonial.src}
-              src={testimonial.src}
-              alt={testimonial.name}
               className="testimonial-image"
               data-index={index}
-              style={getImageStyle(index)}
-            />
+              style={{ ...getImageStyle(index), overflow: "hidden" }}
+            >
+              <img src={testimonial.src} alt={testimonial.name} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "inherit" }} />
+            </div>
           ))}
         </div>
         <div className="testimonial-content">

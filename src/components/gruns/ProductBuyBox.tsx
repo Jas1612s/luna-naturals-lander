@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useState, useEffect, useRef, useCallback } from "react";
 
-function useCountdown(startHrs = 5, startMin = 11, startSec = 26) {
+function useCountdown(startHrs = 3, startMin = 0, startSec = 0) {
   const [mounted, setMounted] = useState(false);
   const [time, setTime] = useState({ hrs: startHrs, min: startMin, sec: startSec });
 
@@ -34,21 +33,21 @@ const detailTabs = ["What you get", "Specifications", "How to use"] as const;
 
 const whatYouGet: Record<string, string[]> = {
   adults: [
-    "Luna Naturals Mosquito Repellent Patches (90 pcs)",
+    "Luna Natural Mosquito Repellent Patches (90 pcs)",
     "Resealable freshness pouch",
     "Quick-start usage guide",
   ],
   kids: [
-    "Luna Naturals Kids Mosquito Repellent Patches (120 pcs)",
+    "Luna Natural Kids Mosquito Repellent Patches (90 pcs)",
     "Resealable freshness pouch",
-    "Fun sticker designs guide for kids",
+    "Activity & usage guide",
   ],
 };
 
 const specifications = [
   { label: "Active ingredients", value: "Citronella oil, Eucalyptus oil" },
   { label: "Patch material", value: "Non-woven fabric, medical-grade adhesive" },
-  { label: "Protection duration", value: "Up to 12 hours per patch" },
+  { label: "Protection duration", value: "Up to 8 hours per patch" },
   { label: "Water resistance", value: "Waterproof & sweatproof" },
   { label: "Free from", value: "DEET, parabens, phthalates, artificial fragrances" },
   { label: "Certifications", value: "Leaping Bunny certified cruelty-free" },
@@ -57,9 +56,9 @@ const specifications = [
 
 const howToUse = [
   "Peel the patch from its backing. Each patch is individually sealed for freshness.",
-  "Stick onto clothing — shirts, shorts, hats, strollers, or bags. Avoid direct skin contact for best results.",
+  "Stick onto clothing – shirts, shorts, hats, strollers, or bags. Avoid direct skin contact for best results.",
   "Use 1-2 patches per person for optimal coverage. Position near exposed skin areas.",
-  "Replace every 12 hours or after heavy rain exposure for continuous protection.",
+  "Replace every 8 hours or after heavy rain exposure for continuous protection.",
 ];
 
 /* ------------------------------------------------------------------ */
@@ -72,27 +71,29 @@ const variantData: Record<
 > = {
   adults: {
     name: "Adults",
-    label: "Mosquito Repellent Patches — Adults",
+    label: "Mosquito Repellent Patches – Adults",
     patchCount: 90,
     tagline: "Plant-powered protection for the whole family. One pack covers your entire summer.",
     gallery: [
-      "/images/gruns/adults-pack-moss.jpg",
-      "/images/gruns/before-after-no-labels.jpg",
-      "/images/gruns/adults-3pack-forest.jpg",
+      "/images/gruns/adults-pack-moss.webp",
+      "/images/gruns/before-after-no-labels.webp",
+      "/images/gruns/adults-3pack-forest.webp",
       "/images/gruns/adults-lifestyle-pouch.webp",
     ],
   },
   kids: {
     name: "Kids",
-    label: "Mosquito Repellent Patches — Kids",
-    patchCount: 120,
-    tagline: "Finally, bug protection your kids will actually ask for. Pediatrician-approved. Zero DEET touching their skin.",
+    label: "Mosquito Repellent Patches",
+    patchCount: 90,
+    tagline: "Plant-powered protection you can trust for your family. Pediatrician-approved. Zero DEET, zero worry.",
     gallery: [
-      "/images/gruns/product-kids-patches-v2.jpg",
-      "/images/gruns/before-after-no-labels.jpg",
-      "/images/gruns/kids-3pack-forest.jpg",
-      "/images/gruns/kids-pack-moss.jpg",
-      "/images/gruns/kids-lifestyle-stickers.webp",
+      "/images/gruns/product-slide-1.webp",
+      "/images/gruns/product-slide-2.webp",
+      "/images/gruns/product-slide-3.webp",
+      "/images/gruns/product-slide-4.webp",
+      "/images/gruns/product-slide-5.webp",
+      "/images/gruns/product-slide-6.webp",
+      "/images/gruns/product-slide-7.webp",
     ],
   },
 };
@@ -152,9 +153,9 @@ function BanIcon({ className }: { className?: string }) {
 /* ------------------------------------------------------------------ */
 
 const benefitsList = [
-  { icon: <ClockIcon className="text-[var(--gr-green)]" />, title: "Up to 12 hours protection" },
+  { icon: <ClockIcon className="text-[var(--gr-green)]" />, title: "Up to 8 hours protection" },
   { icon: <LeafIcon className="text-[var(--gr-green)]" />, title: "Plant-based essential oils" },
-  { icon: <ShieldCheckIcon className="text-[var(--gr-green)]" />, title: "Safe for ages 2+" },
+  { icon: <ShieldCheckIcon className="text-[var(--gr-green)]" />, title: "Safe for kids & adults" },
   { icon: <DropletIcon className="text-[var(--gr-green)]" />, title: "Waterproof & sweatproof" },
   { icon: <BanIcon className="text-[var(--gr-green)]" />, title: "DEET-free formula" },
 ];
@@ -198,11 +199,12 @@ const trustBadges = [
 /* ------------------------------------------------------------------ */
 
 export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = {}) {
-  const initialKey = defaultVariant && variantData[defaultVariant] ? defaultVariant : "adults";
+  const initialKey = defaultVariant && variantData[defaultVariant] ? defaultVariant : "kids";
   const [selectedVariant, setSelectedVariant] = useState(initialKey);
   const [activeImage, setActiveImage] = useState(0);
   const [offerType, setOfferType] = useState<"subscribe" | "onetime">("subscribe");
-  const [bundleSize, setBundleSize] = useState<2 | 4>(2);
+  const [bundleSize, setBundleSize] = useState<1 | 2 | 3 | 4>(3);
+  const [starterQty, setStarterQty] = useState(0);
   const [activeDetailTab, setActiveDetailTab] = useState<(typeof detailTabs)[number]>("What you get");
   const [activeInfoTab, setActiveInfoTab] = useState<"why" | "inside" | "steps" | "reviews">("why");
   const { formatted: countdownText, mounted: countdownMounted } = useCountdown();
@@ -210,39 +212,62 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
   const variant = variantData[selectedVariant];
   const gallery = variant.gallery;
 
-  const subPrice = 9.99;
-  const subCompare = 24.99;
-
   const bundles = [
-    { packs: 2 as const, priceEach: 12.99, compareEach: 24.99, tag: "Popular", image: "/images/gruns/pack-1.webp" },
-    { packs: 4 as const, priceEach: 8.99, compareEach: 24.99, tag: "Best Value", image: "/images/gruns/pack-4.webp" },
+    { packs: 1 as const, patches: 48, priceEach: 16.15, compareEach: 24.99, tag: null, image: "/images/gruns/bundle-1pack.webp" },
+    { packs: 2 as const, patches: 96, priceEach: 11.48, compareEach: 24.99, tag: null, image: "/images/gruns/bundle-2pack.webp" },
+    { packs: 3 as const, patches: 144, priceEach: 10.20, compareEach: 24.99, tag: "Bestseller", image: "/images/gruns/bundle-3pack.webp" },
+    { packs: 4 as const, patches: 192, priceEach: 8.93, compareEach: 24.99, tag: null, image: "/images/gruns/bundle-4pack.webp" },
   ];
-  const activeBundleData = bundles.find((b) => b.packs === bundleSize) ?? bundles[0];
+  const activeBundleData = bundles.find((b) => b.packs === bundleSize) ?? bundles[2];
 
-  const onetimePrice = activeBundleData.priceEach * activeBundleData.packs;
-  const onetimeCompare = activeBundleData.compareEach * activeBundleData.packs;
+  const onetimePrice = +(activeBundleData.priceEach * activeBundleData.packs).toFixed(2);
+  const onetimeCompare = +(activeBundleData.compareEach * activeBundleData.packs).toFixed(2);
+  const subDiscount = 0.15;
+  const subPrice = +(onetimePrice * (1 - subDiscount)).toFixed(2);
+  const subCompare = onetimePrice;
 
-  const currentPrice = offerType === "subscribe" ? subPrice : onetimePrice;
-  const currentCompare = offerType === "subscribe" ? subCompare : onetimeCompare;
-  const discount = Math.round(((currentCompare - currentPrice) / currentCompare) * 100);
-  const perPatch = (offerType === "subscribe" ? subPrice : activeBundleData.priceEach) / variant.patchCount;
+  const addonTotal = starterQty * 19.0;
+  const basePrice = offerType === "subscribe" ? subPrice : onetimePrice;
+  const baseCompare = offerType === "subscribe" ? subCompare : onetimeCompare;
+  const currentPrice = +(basePrice + addonTotal).toFixed(2);
+  const currentCompare = +(baseCompare + addonTotal).toFixed(2);
+  const discount = Math.round(((onetimeCompare - basePrice) / onetimeCompare) * 100);
+  const totalPatches = activeBundleData.patches;
+  const perPatch = +(basePrice / totalPatches).toFixed(2);
 
   return (
     <section id="shop" className="bg-[var(--gr-cream-light)] py-12 md:py-20 px-4 md:px-6">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-12">
           {/* ---- Left: Image gallery ---- */}
-          <div>
-            <div className="relative aspect-square bg-[var(--gr-cream)] rounded-3xl overflow-hidden mb-4">
-              <Image
-                src={gallery[activeImage] ?? gallery[0]}
-                alt={variant.label}
-                width={700}
-                height={700}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="w-full h-full object-cover"
-                priority
-              />
+          <div className="md:sticky md:top-20 md:self-start">
+            <div
+              className="relative aspect-square bg-[#0A1F12] rounded-3xl overflow-hidden mb-4"
+              onTouchStart={(e) => {
+                const touch = e.touches[0];
+                (e.currentTarget as HTMLElement).dataset.touchX = String(touch.clientX);
+              }}
+              onTouchEnd={(e) => {
+                const startX = Number((e.currentTarget as HTMLElement).dataset.touchX ?? 0);
+                const endX = e.changedTouches[0].clientX;
+                const diff = startX - endX;
+                if (Math.abs(diff) > 40) {
+                  if (diff > 0) setActiveImage((activeImage + 1) % gallery.length);
+                  else setActiveImage((activeImage - 1 + gallery.length) % gallery.length);
+                }
+              }}
+            >
+              {/* Swipeable image strip */}
+              <div
+                className="flex h-full transition-transform duration-300 ease-out"
+                style={{ width: `${gallery.length * 100}%`, transform: `translateX(-${activeImage * (100 / gallery.length)}%)` }}
+              >
+                {gallery.map((img, i) => (
+                  <div key={img} className="relative h-full flex items-center justify-center" style={{ width: `${100 / gallery.length}%` }}>
+                    <img loading={i === 0 ? "eager" : "lazy"} src={img} alt={`${variant.label} – image ${i + 1}`} className="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
 
               {/* Feature tags on first image */}
               {activeImage === 0 && (
@@ -250,7 +275,7 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
                   {/* Top-left pill */}
                   <div className="absolute top-3.5 left-3.5 z-10 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 flex items-center gap-1.5 shadow-sm">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gr-accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    <span className="text-[11px] font-bold text-[var(--gr-dark)]">12-hour protection</span>
+                    <span className="text-[11px] font-bold text-[var(--gr-dark)]">8-hour protection</span>
                   </div>
                   {/* Top-right badge */}
                   <div className="absolute top-3.5 right-3.5 z-10 bg-[var(--gr-accent)] rounded-full w-[70px] h-[70px] flex flex-col items-center justify-center text-center shadow-md" style={{ animation: "gr-badge-wobble 5s ease-in-out infinite" }}>
@@ -354,15 +379,7 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
                     activeImage === i ? "border-[var(--gr-green)]" : "border-transparent hover:border-[var(--gr-sage)]/30"
                   }`}
                 >
-                  <Image
-                    src={img}
-                    alt=""
-                    width={72}
-                    height={72}
-                    sizes="72px"
-                    loading="lazy"
-                    className="w-full h-full object-cover bg-[var(--gr-cream)]"
-                  />
+                  <img src={img} alt={`Thumbnail ${i + 1}`} loading="lazy" className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>
@@ -383,7 +400,7 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
               <span className="text-sm text-[var(--gr-sage)]">4.8/5.0 (50,000+ reviews)</span>
             </div>
             <h1 className="gr-display italic text-3xl md:text-4xl text-[var(--gr-dark)] leading-tight mb-2">
-              Luna Naturals {variant.label}
+              Luna Natural {variant.label}
             </h1>
             <p className="text-[var(--gr-sage)] text-base mb-3">{variant.tagline}</p>
 
@@ -405,15 +422,19 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
               <p className="text-base font-bold text-[var(--gr-dark)] text-center mb-3 gr-display italic">
                 Find Us In Store
               </p>
-              <div className="flex items-center justify-center gap-6 md:gap-8">
-                {[
-                  { src: "/images/gruns/target.svg", alt: "Target", h: 22 },
-                  { src: "/images/gruns/walmart.svg", alt: "Walmart", h: 20 },
-                  { src: "/images/gruns/costco.svg", alt: "Costco", h: 18 },
-                  { src: "/images/gruns/kroger.svg", alt: "Kroger", h: 20 },
-                ].map((logo) => (
-                  <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: logo.h }} className="w-auto opacity-40 grayscale" />
-                ))}
+              <div className="relative overflow-hidden">
+                <div className="gr-marquee-track items-center gap-10">
+                  {[
+                    { src: "/images/gruns/logo-erewhon-color.png", alt: "Erewhon", h: 20 },
+                    { src: "/images/gruns/logo-target-color.webp", alt: "Target", h: 26 },
+                    { src: "/images/gruns/logo-walmart-color.svg", alt: "Walmart", h: 22 },
+                    { src: "/images/gruns/logo-erewhon-color.png", alt: "Erewhon 2", h: 20 },
+                    { src: "/images/gruns/logo-target-color.webp", alt: "Target 2", h: 26 },
+                    { src: "/images/gruns/logo-walmart-color.svg", alt: "Walmart 2", h: 22 },
+                  ].map((logo) => (
+                    <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: logo.h }} className="w-auto shrink-0" />
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -441,15 +462,15 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
                 ))}
               </div>
 
-              {/* Tab content — connected to tab bar */}
+              {/* Tab content – connected to tab bar */}
               <div className="bg-white rounded-b-xl shadow-sm p-4">
               {activeInfoTab === "why" && (
                 <div className="divide-y divide-[var(--gr-dark)]/5">
                   {[
-                    { icon: "clock", text: <>Repels mosquitoes for up to <strong>12 hours</strong></> },
-                    { icon: "shield", text: "Goes on clothing — zero chemicals on skin" },
-                    { icon: "leaf", text: "Plant-based, pediatrician-reviewed, DEET-free" },
-                    { icon: "box", text: <>{variant.patchCount} patches per pack — lasts all summer</> },
+                    { icon: "clock", text: <>One patch <strong>repels mosquitoes</strong>, <strong>deters ticks</strong> &amp; <strong>soothes itch</strong> – up to 8 hours</> },
+                    { icon: "shield", text: "Sticks to clothing, not skin – zero chemicals on your family" },
+                    { icon: "leaf", text: "Plant-based citronella + eucalyptus + lavender blend, DEET-free" },
+                    { icon: "box", text: <>{variant.patchCount} patches per pack – lasts all summer</> },
                     { icon: "drop", text: "Waterproof & sweatproof for real outdoor life" },
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3 px-1 py-3">
@@ -498,7 +519,7 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
                   {[
                     { step: "1", title: "Peel", desc: "Remove patch from backing", color: "bg-[var(--gr-green)]" },
                     { step: "2", title: "Stick", desc: "Apply to clothing, hats, or bags", color: "bg-[var(--gr-green-mid)]" },
-                    { step: "3", title: "Protect", desc: "12 hours of plant-based protection", color: "bg-[var(--gr-accent)]" },
+                    { step: "3", title: "Protect", desc: "8 hours of plant-based protection", color: "bg-[var(--gr-accent)]" },
                   ].map((item) => (
                     <div key={item.step} className="flex items-center gap-4 px-1 py-3.5">
                       <span className={`w-9 h-9 rounded-xl ${item.color} text-white text-sm font-bold flex items-center justify-center shrink-0`}>
@@ -545,120 +566,142 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
               </div>
             </div>
 
-            {/* ── Pick your supply ── */}
-            <p className="text-xs font-semibold text-[var(--gr-sage)] uppercase tracking-widest mb-3">Pick your supply</p>
-            <div className="grid grid-cols-2 gap-3 mb-8">
+            {/* ── Choose Packs Quantity ── */}
+            <p className="text-xs font-semibold text-[var(--gr-dark)] uppercase tracking-widest mb-4 text-center">Choose Packs Quantity</p>
+            <div className="grid grid-cols-2 gap-3 mb-6">
               {bundles.map((bundle) => {
                 const isActive = bundleSize === bundle.packs;
-                const savePercent = Math.round(((bundle.compareEach - bundle.priceEach) / bundle.compareEach) * 100);
-                const totalPrice = bundle.priceEach * bundle.packs;
-                const totalCompare = bundle.compareEach * bundle.packs;
+                const totalPrice = +(bundle.priceEach * bundle.packs).toFixed(2);
+                const totalCompare = +(bundle.compareEach * bundle.packs).toFixed(2);
                 return (
                   <button
                     key={bundle.packs}
-                    onClick={() => setBundleSize(bundle.packs)}
-                    className={`relative rounded-2xl p-4 text-left transition-all cursor-pointer ${
+                    onClick={() => setBundleSize(bundle.packs as 1 | 2 | 3 | 4)}
+                    className={`relative rounded-xl p-3.5 text-left transition-all cursor-pointer border-2 ${
                       isActive
-                        ? "bg-white shadow-md ring-2 ring-[var(--gr-green)]"
-                        : "bg-white shadow-sm hover:shadow-md"
+                        ? "bg-[var(--gr-accent)]/10 border-[var(--gr-accent)] shadow-md"
+                        : "bg-white border-gray-200 hover:border-[var(--gr-green)]"
                     }`}
                   >
                     {bundle.tag && (
-                      <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 flex gap-1.5">
-                        {bundle.tag === "Best Value" && (
-                          <span className="text-[9px] font-bold uppercase tracking-wider bg-[var(--gr-green)] text-white px-2.5 py-0.5 rounded-full whitespace-nowrap">Best Value</span>
-                        )}
-                        <span className="text-[9px] font-bold uppercase tracking-wider bg-[var(--gr-accent)] text-white px-2.5 py-0.5 rounded-full whitespace-nowrap">Save {savePercent}%</span>
-                      </div>
+                      <span className="absolute -top-2.5 left-3 text-[9px] font-bold uppercase tracking-wider bg-[var(--gr-dark)] text-white px-2.5 py-0.5 rounded-full">{bundle.tag}</span>
                     )}
-                    <p className="text-base font-bold text-[var(--gr-dark)] mt-1">{bundle.packs}-Pack</p>
-                    <p className="text-xs text-[var(--gr-sage)] mb-3">{variant.patchCount * bundle.packs} patches &middot; {bundle.packs === 2 ? "2" : "4"}-mo supply</p>
-                    <p className="text-2xl font-extrabold text-[var(--gr-dark)]">${totalPrice.toFixed(2)}</p>
-                    <p className="text-xs text-[var(--gr-sage)] line-through mb-2">${totalCompare.toFixed(2)}</p>
-                    <div className="pt-2 border-t border-[var(--gr-dark)]/5">
-                      <p className="text-xs font-bold text-[var(--gr-accent)]">${bundle.priceEach.toFixed(2)}/pack</p>
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 flex items-center justify-center">
+                        <img loading="lazy" src={bundle.image} alt={`${bundle.packs} pack`} className="w-full h-full object-contain" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-bold text-[var(--gr-dark)] leading-snug">
+                          {bundle.packs} pack{bundle.packs > 1 ? "s" : ""}
+                        </p>
+                        <p className="text-[11px] text-[var(--gr-sage)] leading-tight">{bundle.patches} patches</p>
+                        <p className="text-lg font-black text-[var(--gr-dark)] leading-tight mt-0.5">${totalPrice.toFixed(2)}{" "}
+                          <span className="text-xs font-normal text-[var(--gr-sage)] line-through">${totalCompare.toFixed(2)}</span>
+                        </p>
+                      </div>
                     </div>
                   </button>
                 );
               })}
             </div>
 
-            {/* ── Subscribe & Save toggle ── */}
-            <div className={`rounded-2xl p-5 mb-4 transition-all ${
-              offerType === "subscribe"
-                ? "bg-white shadow-md ring-2 ring-[var(--gr-green)]"
-                : "bg-white shadow-sm"
-            }`}>
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-10 h-10 rounded-full bg-[var(--gr-green)]/10 flex items-center justify-center shrink-0">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gr-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="23 4 23 10 17 10" />
-                      <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
-                    </svg>
+            {/* ── Your Free Gifts ── */}
+            <div className="rounded-xl bg-[var(--gr-green-dark)] p-5 mb-8">
+              <p className="text-sm font-black text-[var(--gr-accent)] uppercase tracking-widest mb-4 text-center">
+                Your Free Gifts
+              </p>
+              <div className="grid grid-cols-4 gap-2">
+                {[
+                  { label: "Sticker Sheet", value: "FREE $8", icon: "🦖", minPacks: 2 },
+                  { label: "Bug Bite Guide", value: "FREE $12", icon: "📖", minPacks: 3 },
+                  { label: "Travel Pouch", value: "FREE $15", icon: "👜", minPacks: 3 },
+                  { label: "Mystery Patch Pack", value: "FREE $20", icon: "🎁", minPacks: 4 },
+                ].map((gift) => {
+                  const locked = bundleSize < gift.minPacks;
+                  return (
+                  <div key={gift.label} className={`flex flex-col items-center text-center gap-1.5 transition-all duration-300 ${locked ? "opacity-40 grayscale" : ""}`}>
+                    <span className={`text-[9px] font-bold uppercase tracking-wider rounded-full px-2 py-0.5 ${locked ? "bg-white/20 text-white/50" : "bg-[var(--gr-accent)]"}`} style={locked ? {} : { color: "var(--gr-accent-text)" }}>
+                      {locked ? `🔒 ${gift.minPacks}+ packs` : gift.value}
+                    </span>
+                    <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-2xl">
+                      {gift.icon}
+                    </div>
+                    <p className="text-[10px] font-semibold text-white/80 leading-tight">{gift.label}</p>
                   </div>
-                  <div className="min-w-0">
-                    <p className="font-bold text-[var(--gr-dark)] text-sm flex items-center gap-2 flex-wrap">
-                      Subscribe &amp; save <span className="text-[var(--gr-accent)]">20%</span>
-                      <span className="text-[9px] font-bold uppercase tracking-wider bg-[var(--gr-green)] text-white px-2 py-0.5 rounded-full">Best Value</span>
-                    </p>
-                    <p className="text-xs text-[var(--gr-sage)] mt-0.5">Every 3 months &middot; skip, edit, or cancel anytime</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => setOfferType(offerType === "subscribe" ? "onetime" : "subscribe")}
-                  className={`w-[52px] h-8 rounded-full transition-colors cursor-pointer relative shrink-0 ${
-                    offerType === "subscribe" ? "bg-[var(--gr-green)]" : "bg-[var(--gr-dark)]/15"
-                  }`}
-                >
-                  <div className={`absolute top-1 w-6 h-6 rounded-full bg-white shadow transition-transform ${
-                    offerType === "subscribe" ? "translate-x-[22px]" : "translate-x-1"
-                  }`} />
-                </button>
+                  );
+                })}
               </div>
             </div>
 
-            {/* ── Cross-sell add-on ── */}
-            <div className="rounded-2xl bg-white shadow-sm p-4 mb-6 flex items-center gap-4">
-              <div className="w-16 h-16 rounded-xl bg-[var(--gr-cream)] overflow-hidden shrink-0">
-                <Image
-                  src={selectedVariant === "kids" ? variantData.adults.gallery[0] : variantData.kids.gallery[0]}
-                  alt={selectedVariant === "kids" ? "Adults Patches" : "Kids Patches"}
-                  width={64}
-                  height={64}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-bold text-[var(--gr-dark)] leading-snug">
-                  Add {selectedVariant === "kids" ? "Adults" : "Kids"} Patches
+            {/* ── Choose Your Plan ── */}
+            <p className="text-xs font-semibold text-[var(--gr-dark)] uppercase tracking-widest mb-3 text-center">Choose Your Plan</p>
+            <div className="grid grid-cols-2 gap-3 mb-4">
+              <button
+                onClick={() => setOfferType("subscribe")}
+                className={`rounded-xl p-4 text-center transition-all cursor-pointer border-2 ${
+                  offerType === "subscribe"
+                    ? "bg-[var(--gr-accent)] border-[var(--gr-accent)] shadow-md"
+                    : "bg-white border-gray-200 hover:border-[var(--gr-green)]"
+                }`}
+              >
+                {offerType === "subscribe" && (
+                  <span className="block text-[9px] font-bold uppercase tracking-wider mb-1" style={{ color: "var(--gr-accent-text)" }}>Get Extra 15% Off</span>
+                )}
+                <p className={`text-base font-black ${offerType === "subscribe" ? "" : "text-[var(--gr-dark)]"}`} style={offerType === "subscribe" ? { color: "var(--gr-accent-text)" } : {}}>Subscribe &amp; Save</p>
+                <p className={`text-sm font-bold mt-1 ${offerType === "subscribe" ? "" : "text-[var(--gr-dark)]"}`} style={offerType === "subscribe" ? { color: "var(--gr-accent-text)" } : {}}>
+                  ${subPrice.toFixed(2)}{" "}
+                  <span className={`text-xs line-through font-normal ${offerType === "subscribe" ? "opacity-60" : "text-[var(--gr-sage)]"}`}>${subCompare.toFixed(2)}</span>
                 </p>
-                <p className="text-xs text-[var(--gr-dark)] mt-1">
-                  <span className="font-bold text-[var(--gr-accent)]">+$9.99</span>{" "}
-                  <span className="text-[var(--gr-sage)] line-through">$24.99</span>{" "}
-                  &middot; <span className="text-[var(--gr-green)] font-semibold">save $15</span>
-                </p>
-                <p className="text-[11px] text-[var(--gr-sage)] mt-0.5">
-                  {selectedVariant === "kids"
-                    ? "90 patches · protect the whole family"
-                    : "120 patches · fun designs kids love"}
-                </p>
-              </div>
-              <button className="w-10 h-10 rounded-xl bg-[var(--gr-cream)] flex items-center justify-center shrink-0 cursor-pointer hover:bg-[var(--gr-green)]/10 transition-colors">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gr-dark)" strokeWidth="2" strokeLinecap="round">
-                  <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
-                </svg>
+              </button>
+              <button
+                onClick={() => setOfferType("onetime")}
+                className={`rounded-xl p-4 text-center transition-all cursor-pointer border-2 ${
+                  offerType === "onetime"
+                    ? "bg-white border-[var(--gr-green)] shadow-md ring-2 ring-[var(--gr-green)]"
+                    : "bg-white border-gray-200 hover:border-[var(--gr-green)]"
+                }`}
+              >
+                <p className="text-base font-black text-[var(--gr-dark)] mt-3">One-Time Purchase</p>
+                <p className="text-sm font-bold text-[var(--gr-dark)] mt-1">${onetimePrice.toFixed(2)}</p>
               </button>
             </div>
 
+            {/* ── Subscription benefits ── */}
+            {offerType === "subscribe" && (
+              <div className="rounded-xl border border-gray-200 bg-white p-4 mb-4 space-y-3">
+                {[
+                  "Save Extra 15% Off on This and Future Orders",
+                  "Pause, Skip, or Cancel Anytime",
+                  "5-Day Renewal Reminder",
+                ].map((text) => (
+                  <p key={text} className="text-sm text-[var(--gr-dark)] flex items-center gap-2">
+                    <svg viewBox="0 0 20 20" fill="var(--gr-green)" className="w-5 h-5 shrink-0">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                    </svg>
+                    {text}
+                  </p>
+                ))}
+                <div className="relative mt-2">
+                  <select defaultValue="2" className="w-full appearance-none border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-[var(--gr-dark)] bg-white cursor-pointer pr-8 font-medium focus:outline-none focus:border-[var(--gr-green)]">
+                    <option value="1">Delivers Every: 1 Month</option>
+                    <option value="2">Delivers Every: 2 Months</option>
+                    <option value="3">Delivers Every: 3 Months</option>
+                    <option value="4">Delivers Every: 4 Months</option>
+                  </select>
+                  <svg viewBox="0 0 20 20" fill="var(--gr-sage)" className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                </div>
+              </div>
+            )}
+
             {/* ── CTA Button ── */}
-            <button className="w-full py-5 bg-[var(--gr-accent)] text-white rounded-2xl hover:brightness-110 active:scale-[0.98] transition cursor-pointer shadow-lg shadow-[var(--gr-accent)]/20 mb-2">
+            <a href="https://lunanaturals.co/checkouts/cn/hWNDTPlP631vPuqj4NP8UEIz/en-us?_r=AQABbFT1asIW0OxE5kHTyEX05-ARbW8AjBLk8nPTYAxG&preview_theme_id=153081282739" target="_blank" rel="noopener noreferrer" className="block w-full py-5 bg-[var(--gr-accent)] rounded-2xl hover:brightness-110 active:scale-[0.98] transition cursor-pointer shadow-lg shadow-[var(--gr-accent)]/20 mb-2 text-center no-underline" style={{ color: "var(--gr-accent-text)" }}>
               <p className="gr-display italic text-xl">Claim deal &middot; Save {discount}%</p>
-              <p className="text-xs opacity-80 mt-0.5">
-                Skip to checkout — total <span className="font-bold">${currentPrice.toFixed(2)}</span>{" "}
+              <p className="text-xs opacity-70 mt-0.5">
+                Total <span className="font-bold">${currentPrice.toFixed(2)}</span>{" "}
                 <span className="line-through opacity-60">${currentCompare.toFixed(2)}</span>
+                {" "}&middot; ${perPatch.toFixed(2)}/patch
               </p>
-            </button>
+            </a>
 
             {/* ── Shipping info ── */}
             <div className="space-y-1.5 py-4">
@@ -681,7 +724,7 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
                 <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
               </svg>
               <p className="text-sm text-[var(--gr-dark)]">
-                Deal locks in <span className="font-bold">{countdownMounted ? countdownText.replace(/:/g, "h ").replace(/h\s(\d+)$/, "m $1s") : "5h 11m 26s"}</span>
+                Deal locks in <span className="font-bold">{countdownMounted ? countdownText.replace(/:/g, "h ").replace(/h\s(\d+)$/, "m $1s") : "3h 00m 00s"}</span>
               </p>
             </div>
 
