@@ -17,19 +17,19 @@ function useScrollReveal(
 ) {
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 1", "start -0.3"],
+    offset: ["start end", "end start"],
   });
 
-  const segmentSize = 1 / total;
-  const start = index * segmentSize;
-  const mid = start + segmentSize * 0.4;
-  const end = start + segmentSize * 0.7;
+  const segmentSize = 1 / (total + 1);
+  const start = (index + 0.5) * segmentSize;
+  const mid = start + segmentSize * 0.6;
 
-  const opacity = useTransform(scrollYProgress, [start, mid, end], [0, 1, 1]);
-  const y = useTransform(scrollYProgress, [start, mid], ["60px", "0px"]);
-  const scale = useTransform(scrollYProgress, [start, mid], [0.9, 1]);
+  const opacity = useTransform(scrollYProgress, [start, mid], [0, 1]);
+  const y = useTransform(scrollYProgress, [start, mid], [30, 0]);
+  const blur = useTransform(scrollYProgress, [start, mid], [6, 0]);
+  const filterBlur = useTransform(blur, (v) => `blur(${v}px)`);
 
-  return { opacity, y, scale };
+  return { opacity, y, filterBlur };
 }
 
 function AnimatedStat({
@@ -45,11 +45,11 @@ function AnimatedStat({
   total: number;
   containerRef: React.RefObject<HTMLDivElement | null>;
 }) {
-  const { opacity, y, scale } = useScrollReveal(index, total, containerRef);
+  const { opacity, y, filterBlur } = useScrollReveal(index, total, containerRef);
 
   return (
     <motion.h2
-      style={{ opacity, y, scale }}
+      style={{ opacity, y, filter: filterBlur }}
       className={`gr-display italic text-[clamp(2.5rem,13vw,4.5rem)] md:text-8xl lg:text-[120px] uppercase leading-none tracking-tight ${
         accent ? "text-[var(--gr-accent)]" : "text-white"
       }`}

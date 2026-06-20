@@ -424,7 +424,7 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
                   {[
                     { src: "/images/gruns/logo-erewhon-color.png", alt: "Erewhon", h: 20 },
                     { src: "/images/gruns/logo-target-color.webp", alt: "Target", h: 26 },
-                    { src: "/images/gruns/logo-wholefoods-bw.png", alt: "Whole Foods", h: 42 },
+                    { src: "/images/gruns/logo-wholefoods-green.webp", alt: "Whole Foods", h: 42 },
                     { src: "/images/gruns/logo-erewhon-color.png", alt: "Erewhon 2", h: 20 },
                     { src: "/images/gruns/logo-target-color.webp", alt: "Target 2", h: 26 },
                     { src: "/images/gruns/logo-wholefoods-bw.png", alt: "Whole Foods 2", h: 26 },
