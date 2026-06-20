@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LazyVideo } from "@/components/gruns/LazyVideo";
 
 const products: Record<
   string,
@@ -8,7 +9,7 @@ const products: Record<
   adults: {
     name: "Adults Patches",
     href: "/lunanaturals/adults",
-    image: "/images/gruns/patches-hand-nature.jpg",
+    image: "/images/gruns/patches-hand-nature.webp",
     patchCount: 90,
     price: "$9.99",
     comparePrice: "$24.99",
@@ -18,9 +19,9 @@ const products: Record<
   kids: {
     name: "Kids Patches",
     href: "/lunanaturals/kids",
-    image: "/images/gruns/product-kids-patches-v2.jpg",
+    image: "/images/gruns/product-kids-patches-v2.webp",
     video: "/videos/gruns/kids-offer-video.mp4",
-    patchCount: 120,
+    patchCount: 90,
     price: "$9.99",
     comparePrice: "$24.99",
     savings: "$15.00",
@@ -55,18 +56,11 @@ export function YouMayAlsoLike({ currentVariant }: { currentVariant: "adults" | 
           {/* Top: video or product image */}
           <div className="relative bg-gradient-to-br from-[var(--gr-green)] to-[var(--gr-green-dark)] flex items-center justify-center overflow-hidden">
             {other.video ? (
-              <video
-                src={other.video}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full aspect-square object-cover"
-              />
+              <LazyVideo src={other.video} className="w-full aspect-square object-cover" />
             ) : (
               <Image
                 src={other.image}
-                alt={`Luna Naturals ${other.name}`}
+                alt={`Luna Natural ${other.name}`}
                 width={600}
                 height={600}
                 className="w-full aspect-square object-cover group-hover:scale-105 transition-transform"
@@ -77,7 +71,7 @@ export function YouMayAlsoLike({ currentVariant }: { currentVariant: "adults" | 
           {/* Bottom: details */}
           <div className="bg-white p-6 text-center">
             <p className="text-[10px] font-bold text-[var(--gr-accent)] uppercase tracking-widest mb-1">
-              Luna Naturals
+              Luna Natural
             </p>
             <h3 className="font-bold text-xl text-[var(--gr-dark)] mb-1">
               {other.name}

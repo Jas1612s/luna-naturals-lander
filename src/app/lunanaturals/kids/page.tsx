@@ -27,7 +27,7 @@ export default function KidsPDP() {
         <YouMayAlsoLike currentVariant="kids" />
       </main>
       <GrunsFooter />
-      <StickyMobileCTA variant="kids" />
+      <StickyMobileCTA />
     </>
   );
 }

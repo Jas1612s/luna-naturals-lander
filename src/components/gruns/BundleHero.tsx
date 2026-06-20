@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const heroImages = [
-  { src: "/images/gruns/hero-hiker-spray.webp", alt: "Family hiking outdoors with Luna Naturals patches" },
+  { src: "/images/gruns/hero-hiker-spray.webp", alt: "Family hiking outdoors with Luna Natural patches" },
   { src: "/images/gruns/hero-camping-lifestyle.webp", alt: "Camping with mosquito protection patches" },
   { src: "/images/gruns/hero-slide2-playground.webp", alt: "Mom and toddler at playground with Luna patches" },
 ];
@@ -25,7 +25,7 @@ export function BundleHero() {
         {/* Text Side */}
         <div
           className="relative z-10 flex flex-1 items-center"
-          style={{ background: "linear-gradient(135deg, #2F3A1C 0%, #3A4428 40%, #4E5C36 70%, #E8DECE 100%)" }}
+          style={{ background: "linear-gradient(135deg, #2E3A1A 0%, #4A5A2E 40%, #647A3E 70%, #F5F0E6 100%)" }}
         >
           <div className="mx-auto max-w-[700px] px-4 py-6 md:px-6 md:py-12">
             {/* Eyebrow */}
@@ -67,7 +67,7 @@ export function BundleHero() {
               <a
                 href="#bundle-builder"
                 className="rounded-full px-8 py-3.5 text-base font-bold transition-all hover:brightness-110 active:scale-[0.97] cursor-pointer inline-flex items-center gap-2 shadow-lg shadow-[var(--gr-accent)]/20"
-                style={{ backgroundColor: "var(--gr-accent)", color: "white" }}
+                style={{ backgroundColor: "var(--gr-accent)", color: "var(--gr-accent-text)" }}
               >
                 Build Your Bundle
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>

@@ -8,12 +8,12 @@ const steps = [
   },
   {
     title: "Stick",
-    desc: "Apply to clothing — shirts, shorts, hats, or strollers. Use 1-2 patches per person for full coverage.",
+    desc: "Apply to clothing – shirts, shorts, hats, or strollers. Use 1-2 patches per person for full coverage.",
     video: "/videos/gruns/adults-patch-step2.mp4",
   },
   {
     title: "Protect",
-    desc: "Enjoy up to 12 hours of DEET-free, plant-based mosquito protection. No reapplying, no mess.",
+    desc: "Enjoy up to 8 hours of DEET-free, plant-based mosquito protection. No reapplying, no mess.",
     video: "/videos/gruns/adults-patch-step3.mp4",
   },
 ];

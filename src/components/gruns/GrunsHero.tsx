@@ -3,9 +3,9 @@
 import { useState, useEffect, useCallback } from "react";
 
 const heroImages = [
-  { src: "/images/gruns/hero-kid-running.webp", alt: "Child protected outdoors with Luna Natural patches" },
   { src: "/images/gruns/hero-slide2-playground.webp", alt: "Parent applying Luna Natural patch at the playground" },
   { src: "/images/gruns/hero-dad-hiking.jpg", alt: "Dad hiking with baby wearing Luna Natural patches" },
+  { src: "/images/gruns/hero-kid-running.webp", alt: "Child protected outdoors with Luna Natural patches" },
 ];
 
 const rotatingWords = ["Tick", "Itch"];

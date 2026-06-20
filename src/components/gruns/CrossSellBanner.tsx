@@ -12,8 +12,8 @@ const variantInfo = {
   kids: {
     name: "Kids",
     href: "/lunanaturals/kids",
-    image: "/images/gruns/product-kids-patches-v2.jpg",
-    patchCount: 120,
+    image: "/images/gruns/product-kids-patches-v2.webp",
+    patchCount: 90,
     tagline: "Fun designs they'll actually want to wear. Safe for ages 2+.",
   },
 };
@@ -32,7 +32,7 @@ export function CrossSellBanner({
           <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl bg-[var(--gr-cream)] flex items-center justify-center shrink-0 overflow-hidden">
             <Image
               src={other.image}
-              alt={`Luna Naturals ${other.name} patches`}
+              alt={`Luna Natural ${other.name} patches`}
               width={160}
               height={160}
               className="w-full h-full object-contain p-2"
@@ -44,7 +44,7 @@ export function CrossSellBanner({
               Also Available
             </p>
             <h3 className="gr-display italic text-2xl md:text-3xl text-[var(--gr-dark)] leading-tight mb-2">
-              Luna Naturals — {other.name}
+              Luna Natural – {other.name}
             </h3>
             <p className="text-sm text-[var(--gr-sage)] mb-1">
               {other.tagline}

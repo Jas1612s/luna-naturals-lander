@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 /* ── Countdown hook (same as ProductBuyBox) ── */
-function useCountdown(startHrs = 5, startMin = 11, startSec = 26) {
+function useCountdown(startHrs = 3, startMin = 0, startSec = 0) {
   const [mounted, setMounted] = useState(false);
   const [time, setTime] = useState({ hrs: startHrs, min: startMin, sec: startSec });
 
@@ -38,18 +38,18 @@ const products = [
     price: 14.99,
     compare: 24.99,
     patchCount: 90,
-    image: "/images/gruns/adults-pack-moss.jpg",
+    image: "/images/gruns/adults-pack-moss.webp",
   },
   {
     id: "kids",
     name: "Kids Pack",
-    desc: "120 patches · Fun dinosaur designs · Ages 2+",
+    desc: "90 patches · Fun dinosaur designs · Ages 2+",
     tag: "Kid Favorite",
     tagColor: "bg-[var(--gr-accent)]",
     price: 14.99,
     compare: 24.99,
-    patchCount: 120,
-    image: "/images/gruns/product-kids-patches-v2.jpg",
+    patchCount: 90,
+    image: "/images/gruns/product-kids-patches-v2.webp",
   },
 ];
 
@@ -252,7 +252,7 @@ export function BundleBuyBox() {
               </p>
               {totalPacks > 0 && (
                 <p className="text-xs opacity-80 mt-0.5">
-                  Skip to checkout — total <span className="font-bold">${subtotal.toFixed(2)}</span>{" "}
+                  Skip to checkout – total <span className="font-bold">${subtotal.toFixed(2)}</span>{" "}
                   <span className="line-through opacity-60">${compareTotal.toFixed(2)}</span>
                 </p>
               )}
@@ -280,7 +280,7 @@ export function BundleBuyBox() {
               <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
             </svg>
             <p className="text-sm text-[var(--gr-dark)]">
-              Deal locks in <span className="font-bold">{countdownMounted ? countdownText : "05h 11m 26s"}</span>
+              Deal locks in <span className="font-bold">{countdownMounted ? countdownText : "03h 00m 00s"}</span>
             </p>
           </div>
 

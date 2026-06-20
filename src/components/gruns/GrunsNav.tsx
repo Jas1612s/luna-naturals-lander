@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 function useCountdown() {
   const [mounted, setMounted] = useState(false);
-  const [time, setTime] = useState({ hrs: 21, min: 47, sec: 59 });
+  const [time, setTime] = useState({ hrs: 3, min: 0, sec: 0 });
 
   useEffect(() => {
     setMounted(true);
@@ -37,10 +37,10 @@ export function GrunsNav() {
       <div className="bg-[var(--gr-accent)] py-3 px-4">
         <div className="max-w-[1440px] mx-auto flex items-center justify-center gap-5">
           <div className="flex flex-col justify-center">
-            <p className="text-sm font-extrabold text-white uppercase tracking-wide leading-tight">
-              Mosquito Season Sale
+            <p className="text-sm font-extrabold uppercase tracking-wide leading-tight" style={{ color: "var(--gr-accent-text)" }}>
+              Summer Sale
             </p>
-            <p className="text-xs text-white/80 font-medium leading-tight">
+            <p className="text-xs font-medium leading-tight" style={{ color: "var(--gr-accent-text)", opacity: 0.7 }}>
               Save up to 60% + Free Gifts
             </p>
           </div>
@@ -52,7 +52,7 @@ export function GrunsNav() {
                 { val: pad(sec), label: "SEC" },
               ].map((unit, i) => (
                 <div key={unit.label} className="flex items-center gap-1.5">
-                  {i > 0 && <span className="text-white/60 font-bold text-sm leading-none">:</span>}
+                  {i > 0 && <span className="font-bold text-sm leading-none" style={{ color: "var(--gr-accent-text)", opacity: 0.4 }}>:</span>}
                   <div className="bg-white text-[var(--gr-dark)] rounded-md px-2 py-1.5 min-w-[38px] text-center">
                     <span className="text-base font-bold leading-none block">{unit.val}</span>
                     <span className="text-[7px] uppercase tracking-wider text-[var(--gr-sage)] block mt-0.5">{unit.label}</span>
@@ -71,41 +71,16 @@ export function GrunsNav() {
       >
         <div className="max-w-[1440px] mx-auto px-6 grid grid-cols-3 items-center h-[60px]">
           {/* Left: hamburger menu */}
-          <div className="flex items-center">
-            <button aria-label="Menu" className="cursor-pointer text-white">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            </button>
-          </div>
+          {/* Left: spacer for grid balance */}
+          <div className="flex items-center" />
 
           {/* Center: logo */}
           <a href="/lunanaturals" className="flex items-center justify-center h-full">
-            <img
-              src="/images/gruns/luna-naturals-logo-cropped.webp"
-              alt="Luna Naturals"
-              className="h-[44px] w-auto object-contain"
-            />
+            <img loading="eager" src="/images/gruns/luna-naturals-logo-cropped.webp" alt="Luna Natural" className="h-[40px] md:h-[48px] w-auto" />
           </a>
 
-          {/* Right: account + cart */}
-          <div className="flex items-center justify-end gap-4 text-white">
-            <a href="#" aria-label="Account">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-            </a>
-            <a href="#" aria-label="Cart">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <path d="M16 10a4 4 0 01-8 0" />
-              </svg>
-            </a>
-          </div>
+          {/* Right: spacer for grid balance */}
+          <div className="flex items-center justify-end gap-4" />
         </div>
       </nav>
     </header>

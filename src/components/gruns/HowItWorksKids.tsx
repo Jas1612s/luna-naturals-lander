@@ -3,17 +3,17 @@ import { LazyVideo } from "@/components/gruns/LazyVideo";
 const steps = [
   {
     title: "Let Them Pick",
-    desc: "Kids choose their favorite patch design. They think it's a sticker — you know it's protection.",
+    desc: "Kids choose their favorite patch design. They think it's a sticker – you know it's protection.",
     video: "/videos/gruns/kids-patch-demo.mp4",
   },
   {
     title: "Stick on Clothes",
-    desc: "Press onto shirts, shorts, hats, or backpacks. No chemicals touching their skin — ever.",
+    desc: "Press onto shirts, shorts, hats, or backpacks. No chemicals touching their skin – ever.",
     video: "/videos/gruns/kids-patch-step2.mp4",
   },
   {
     title: "Play All Day",
-    desc: "12 hours of plant-based protection. Waterproof through sprinklers, sweat, and puddle jumps.",
+    desc: "8 hours of plant-based protection. Waterproof through sprinklers, sweat, and puddle jumps.",
     video: "/videos/gruns/kids-patch-step3.mp4",
   },
 ];

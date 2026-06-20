@@ -16,9 +16,7 @@ const connectLinks = [
 ];
 
 const shopLinks = [
-  "Adults Patches (90 ct)",
-  "Kids Patches (90 ct)",
-  "Bundle & Save",
+  "Family Patches (90 ct)",
 ];
 
 const policyLinks = [
@@ -121,11 +119,7 @@ export function GrunsFooter() {
 
         {/* Logo + Social Row */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-12 pt-8 border-t border-white/10">
-          <img
-            src="/images/gruns/luna-naturals-logo-cropped.webp"
-            alt="Luna Naturals"
-            className="h-12"
-          />
+          <img loading="lazy" src="/images/gruns/luna-naturals-logo-cropped.webp" alt="Luna Natural" className="h-12 w-auto" />
           <div className="flex items-center gap-3">
             <a href="#" aria-label="Instagram" className="hover:opacity-70 transition-opacity"><InstagramIcon /></a>
             <a href="#" aria-label="TikTok" className="hover:opacity-70 transition-opacity"><TikTokIcon /></a>
@@ -142,7 +136,7 @@ export function GrunsFooter() {
 
         {/* Copyright Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center mt-8 pt-4 border-t border-white/10 text-xs text-white/50 gap-4">
-          <span>© Copyright 2026, Luna Naturals</span>
+          <span>© Copyright 2026, Luna Natural</span>
           <div className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2">
             {policyLinks.map((link) => (
               <a key={link} href="#" className="hover:text-white/80 transition-colors">{link}</a>

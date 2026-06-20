@@ -26,7 +26,7 @@ const reviews: Record<string, { quote: string; name: string; age: number }> = {
     age: 37,
   },
   Value: {
-    quote: "120 patches for under $10? That\u2019s the entire summer covered for both my kids. I was spending $30/month on sprays they hated. This is a no-brainer for any parent.",
+    quote: "90 patches for under $10? That\u2019s the entire summer covered for both my kids. I was spending $30/month on sprays they hated. This is a no-brainer for any parent.",
     name: "Jeremy H.",
     age: 42,
   },

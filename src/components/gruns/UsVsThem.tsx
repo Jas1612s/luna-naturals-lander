@@ -4,7 +4,7 @@ const rows: { label: string; us: string; generic: string; overpriced: string }[]
   { label: "DEET-Free", us: "check", generic: "cross", overpriced: "cross" },
   { label: "No Mess or Reapplying", us: "check", generic: "cross", overpriced: "cross" },
   { label: "Lasts Up To", us: "12 hrs", generic: "2 hrs", overpriced: "6 hrs" },
-  { label: "Safe for Kids 2+", us: "check", generic: "cross", overpriced: "check" },
+  { label: "Family-Safe (Ages 2+)", us: "check", generic: "cross", overpriced: "check" },
   { label: "Plant-Based Ingredients", us: "check", generic: "cross", overpriced: "check" },
 ];
 
@@ -47,15 +47,17 @@ export function UsVsThem() {
           Us vs. Them
         </h2>
         <p className="text-center text-[var(--gr-sage)] text-base md:text-lg mb-12 max-w-[520px] mx-auto leading-relaxed">
-          Not another greasy spray. Just plant-powered patches that actually work — for the whole family.
+          Not another greasy spray. Just plant-powered patches that actually work – for the whole family.
         </p>
 
+        <div className="overflow-x-auto scrollbar-hide -mx-4 px-4">
         <div
           className="rounded-3xl overflow-hidden bg-white shadow-md border border-black/5"
           style={{
             display: "grid",
             gridTemplateColumns: "1.4fr 1.2fr 1fr 1fr",
             gridTemplateRows: `auto repeat(${totalRows - 1}, auto)`,
+            minWidth: "600px",
           }}
         >
           {/* Header row */}
@@ -100,14 +102,15 @@ export function UsVsThem() {
             ];
           })}
         </div>
+        </div>
 
         {/* CTA below table */}
         <div className="mt-10 text-center">
           <a
-            href="#shop"
+            href="https://lunanaturals.co/checkouts/cn/hWNDTPlP631vPuqj4NP8UEIz/en-us?_r=AQABbFT1asIW0OxE5kHTyEX05-ARbW8AjBLk8nPTYAxG&preview_theme_id=153081282739" target="_blank" rel="noopener noreferrer"
             className="inline-block bg-[var(--gr-accent)] text-white font-bold text-base md:text-lg px-12 py-4 rounded-full hover:brightness-110 transition"
           >
-            Try Luna Naturals — 60% Off
+            Try Luna Natural – 60% Off
           </a>
           <p className="mt-3 text-sm text-[var(--gr-sage)]">
             30-day money-back guarantee &middot; Free shipping on 2+ packs

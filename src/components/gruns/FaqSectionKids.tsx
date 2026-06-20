@@ -5,7 +5,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "What age is this safe for?",
-    a: "Luna Naturals Kids patches are safe for children ages 2 and up. The patches stick to clothing, not skin, so there's zero direct skin contact with active ingredients. Always consult your pediatrician if you have concerns about specific allergies.",
+    a: "Luna Natural Kids patches are safe for children ages 2 and up. The patches stick to clothing, not skin, so there's zero direct skin contact with active ingredients. Always consult your pediatrician if you have concerns about specific allergies.",
   },
   {
     q: "Are these really DEET-free?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "What if my child has sensitive skin or eczema?",
-    a: "Because the patches go on clothing — not skin — they're ideal for kids with sensitive skin, eczema, or allergies to topical products. The active oils evaporate into the air around the patch, creating a protective zone without skin contact.",
+    a: "Because the patches go on clothing – not skin – they're ideal for kids with sensitive skin, eczema, or allergies to topical products. The active oils evaporate into the air around the patch, creating a protective zone without skin contact.",
   },
 ];
 

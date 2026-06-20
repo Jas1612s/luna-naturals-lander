@@ -1,12 +1,8 @@
 const logos = [
   { src: "/images/gruns/logo-forbes-black.svg", alt: "Forbes" },
   { src: "/images/gruns/logo-nbc.svg", alt: "NBC" },
-  { src: "/images/gruns/logo-GQ-black.svg", alt: "GQ" },
   { src: "/images/gruns/logo-today-black.svg", alt: "Today" },
   { src: "/images/gruns/logo-people-black.svg", alt: "People" },
-  { src: "/images/gruns/logo-cbs.svg", alt: "CBS" },
-  { src: "/images/gruns/logo-vice.svg", alt: "Vice" },
-  { src: "/images/gruns/logo-womenshealth-black.svg", alt: "Women's Health" },
 ];
 
 export function PressMarquee() {
@@ -25,18 +21,16 @@ export function PressMarquee() {
             key={logo.alt}
             src={logo.src}
             alt={logo.alt}
-            className="opacity-70 grayscale brightness-0"
-            style={{ height: 28, width: "auto", flexShrink: 0 }}
+            className="h-6 md:h-7 w-auto opacity-60 grayscale shrink-0"
           />
         ))}
         {logos.map((logo) => (
           <img
             key={`${logo.alt}-dup`}
+            aria-hidden
             src={logo.src}
             alt={logo.alt}
-            aria-hidden="true"
-            className="opacity-70 grayscale brightness-0"
-            style={{ height: 28, width: "auto", flexShrink: 0 }}
+            className="h-6 md:h-7 w-auto opacity-60 grayscale shrink-0"
           />
         ))}
       </div>

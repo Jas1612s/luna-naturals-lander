@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 
-export function StickyMobileCTA({ variant = "adults" }: { variant?: "adults" | "kids" }) {
+export function StickyMobileCTA() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -14,11 +13,7 @@ export function StickyMobileCTA({ variant = "adults" }: { variant?: "adults" | "
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const isKids = variant === "kids";
-  const productName = isKids ? "Kids · 120ct" : "Adults · 90ct";
-  const image = isKids
-    ? "/images/gruns/product-kids-patches-v2.jpg"
-    : "/images/gruns/adults-pack-moss.jpg";
+  const productName = "Family · 90ct";
 
   return (
     <div
@@ -27,25 +22,21 @@ export function StickyMobileCTA({ variant = "adults" }: { variant?: "adults" | "
       }`}
     >
       <div className="max-w-[600px] mx-auto flex items-center gap-4">
-        <div className="w-14 h-14 rounded-xl overflow-hidden bg-[var(--gr-cream)] shrink-0 shadow-sm">
-          <Image
-            src={image}
-            alt={productName}
-            width={56}
-            height={56}
-            className="w-full h-full object-cover"
-          />
+        <div className="w-14 h-14 rounded-xl overflow-hidden bg-[#586B3A] shrink-0 shadow-sm">
+          <img loading="lazy" src="/images/gruns/luna-natural-kids-product.webp" alt="Luna Natural Mosquito Repellent Patches" className="w-full h-full object-cover" />
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-semibold text-[var(--gr-dark)] leading-snug">{productName}</p>
           <p className="mt-0.5">
-            <span className="text-lg font-bold text-[var(--gr-dark)]">$14.99</span>{" "}
+            <span className="text-lg font-bold text-[var(--gr-dark)]">$16.15</span>{" "}
             <span className="text-sm text-[var(--gr-sage)] line-through">$24.99</span>
           </p>
         </div>
         <a
-          href="#shop"
-          className="shrink-0 bg-[var(--gr-accent)] text-white text-base font-bold px-7 py-3.5 rounded-full hover:brightness-110 active:scale-[0.97] transition whitespace-nowrap shadow-md shadow-[var(--gr-accent)]/20"
+          href="https://lunanaturals.co/checkouts/cn/hWNDTPlP631vPuqj4NP8UEIz/en-us?_r=AQABbFT1asIW0OxE5kHTyEX05-ARbW8AjBLk8nPTYAxG&preview_theme_id=153081282739"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shrink-0 bg-[var(--gr-accent)] text-white text-base font-bold px-7 py-3.5 rounded-full hover:brightness-110 active:scale-[0.97] transition whitespace-nowrap shadow-md shadow-[var(--gr-accent)]/20 no-underline"
         >
           Order now &rarr;
         </a>

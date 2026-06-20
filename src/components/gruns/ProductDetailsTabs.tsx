@@ -6,12 +6,12 @@ const tabs = ["What you get", "Specifications", "How to use"] as const;
 
 const whatYouGet = {
   adults: [
-    "Luna Naturals Mosquito Repellent Patches (90 pcs)",
+    "Luna Natural Mosquito Repellent Patches (90 pcs)",
     "Resealable freshness pouch",
     "Quick-start usage guide",
   ],
   kids: [
-    "Luna Naturals Kids Mosquito Repellent Patches (120 pcs)",
+    "Luna Natural Kids Mosquito Repellent Patches (90 pcs)",
     "Resealable freshness pouch",
     "Fun sticker designs guide for kids",
   ],
@@ -20,7 +20,7 @@ const whatYouGet = {
 const specifications = [
   { label: "Active ingredients", value: "Citronella oil, Eucalyptus oil" },
   { label: "Patch material", value: "Non-woven fabric, medical-grade adhesive" },
-  { label: "Protection duration", value: "Up to 12 hours per patch" },
+  { label: "Protection duration", value: "Up to 8 hours per patch" },
   { label: "Water resistance", value: "Waterproof & sweatproof" },
   { label: "Free from", value: "DEET, parabens, phthalates, artificial fragrances" },
   { label: "Certifications", value: "Leaping Bunny certified cruelty-free" },
@@ -29,9 +29,9 @@ const specifications = [
 
 const howToUse = [
   { step: "Peel the patch from its backing. Each patch is individually sealed for freshness." },
-  { step: "Stick onto clothing — shirts, shorts, hats, strollers, or bags. Avoid direct skin contact for best results." },
+  { step: "Stick onto clothing – shirts, shorts, hats, strollers, or bags. Avoid direct skin contact for best results." },
   { step: "Use 1-2 patches per person for optimal coverage. Position near exposed skin areas." },
-  { step: "Replace every 12 hours or after heavy rain exposure for continuous protection." },
+  { step: "Replace every 8 hours or after heavy rain exposure for continuous protection." },
 ];
 
 export function ProductDetailsTabs({ variant = "adults" }: { variant?: "adults" | "kids" }) {

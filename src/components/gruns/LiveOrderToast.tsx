@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const names = [
@@ -18,12 +18,12 @@ const cities = [
 ];
 
 const products = [
-  { name: "1-pack", image: "/images/gruns/product-kids-patches-v2.jpg" },
-  { name: "1-pack", image: "/images/gruns/adults-pack-moss.jpg" },
-  { name: "2-pack", image: "/images/gruns/product-kids-patches-v2.jpg" },
-  { name: "2-pack", image: "/images/gruns/adults-pack-moss.jpg" },
-  { name: "3-pack", image: "/images/gruns/kids-3pack-forest.jpg" },
-  { name: "4-pack", image: "/images/gruns/product-kids-patches-v2.jpg" },
+  { name: "1-pack", image: "/images/gruns/product-kids-patches-v2.webp" },
+  { name: "1-pack", image: "/images/gruns/adults-pack-moss.webp" },
+  { name: "2-pack", image: "/images/gruns/product-kids-patches-v2.webp" },
+  { name: "2-pack", image: "/images/gruns/adults-pack-moss.webp" },
+  { name: "3-pack", image: "/images/gruns/kids-3pack-forest.webp" },
+  { name: "4-pack", image: "/images/gruns/product-kids-patches-v2.webp" },
 ];
 
 const timeAgo = [
@@ -43,30 +43,56 @@ function generateOrder() {
 export function LiveOrderToast() {
   const [visible, setVisible] = useState(false);
   const [order, setOrder] = useState(generateOrder);
-  const showNext = useCallback(() => {
-    setOrder(generateOrder());
-    setVisible(true);
-    setTimeout(() => setVisible(false), 4000);
-  }, []);
-
   useEffect(() => {
-    // First toast after 8 seconds
-    const initialTimeout = setTimeout(showNext, 5000);
-    // Every 10 seconds
-    const interval = setInterval(showNext, 10000);
+    let hideTimeout: ReturnType<typeof setTimeout>;
+    let nextTimeout: ReturnType<typeof setTimeout>;
+    let cancelled = false;
+
+    function showToast() {
+      if (cancelled) return;
+      setOrder(generateOrder());
+      setVisible(true);
+
+      // Randomize how long the toast stays visible (3.5–6s)
+      const displayDuration = 3500 + Math.random() * 2500;
+      hideTimeout = setTimeout(() => {
+        setVisible(false);
+        scheduleNext();
+      }, displayDuration);
+    }
+
+    function scheduleNext() {
+      if (cancelled) return;
+      // Highly varied gaps: pick from short (8-15s), medium (18-35s), or long (40-70s)
+      const roll = Math.random();
+      let delay: number;
+      if (roll < 0.4) {
+        delay = 8000 + Math.random() * 7000;   // 8-15s  (40% chance)
+      } else if (roll < 0.8) {
+        delay = 18000 + Math.random() * 17000;  // 18-35s (40% chance)
+      } else {
+        delay = 40000 + Math.random() * 30000;  // 40-70s (20% chance)
+      }
+      nextTimeout = setTimeout(showToast, delay);
+    }
+
+    // First toast after 5-15s
+    const initialDelay = 5000 + Math.random() * 10000;
+    nextTimeout = setTimeout(showToast, initialDelay);
 
     return () => {
-      clearTimeout(initialTimeout);
-      clearInterval(interval);
+      cancelled = true;
+      clearTimeout(hideTimeout);
+      clearTimeout(nextTimeout);
     };
-  }, [showNext]);
+  }, []);
 
   return (
     <div
-      className={`fixed bottom-[95px] left-3 right-3 md:bottom-auto md:top-4 md:left-auto md:right-4 md:max-w-[340px] z-40 transition-all duration-[400ms] ${
+      className={`fixed bottom-[95px] left-3 md:bottom-6 md:left-4 md:right-auto max-w-[340px] z-40 transition-all duration-[400ms] ${
         visible
           ? "translate-y-0 opacity-100"
-          : "-translate-y-3 opacity-0 pointer-events-none"
+          : "translate-y-3 opacity-0 pointer-events-none"
       }`}
       style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
     >
