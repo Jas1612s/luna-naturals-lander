@@ -109,8 +109,8 @@ export function ValueProps() {
       {/* Mobile: stacked layout */}
       <div className="lg:hidden max-w-md mx-auto space-y-8">
         {/* Product image placeholder */}
-        <a href="https://lunanaturals.co/checkouts/cn/hWNDTPlP631vPuqj4NP8UEIz/en-us?_r=AQABbFT1asIW0OxE5kHTyEX05-ARbW8AjBLk8nPTYAxG&preview_theme_id=153081282739" target="_blank" rel="noopener noreferrer">
-          <AnimatedPouch className="aspect-[3/4] max-w-[360px] mx-auto rounded-2xl overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+        <a href="#shop">
+          <AnimatedPouch className="aspect-[3/4] max-w-[360px] mx-auto rounded-2xl overflow-hidden cursor-pointer">
             <img loading="lazy" src="/images/gruns/luna-natural-pouch.webp" alt="Luna Natural Mosquito Repellent Patches" className="w-full h-full object-cover" />
           </AnimatedPouch>
         </a>
@@ -132,8 +132,8 @@ export function ValueProps() {
         </div>
 
         {/* Center product image placeholder */}
-        <a href="https://lunanaturals.co/checkouts/cn/hWNDTPlP631vPuqj4NP8UEIz/en-us?_r=AQABbFT1asIW0OxE5kHTyEX05-ARbW8AjBLk8nPTYAxG&preview_theme_id=153081282739" target="_blank" rel="noopener noreferrer">
-          <AnimatedPouch className="w-[400px] xl:w-[460px] aspect-[3/4] rounded-2xl overflow-hidden shrink-0 cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+        <a href="#shop">
+          <AnimatedPouch className="w-[400px] xl:w-[460px] aspect-[3/4] rounded-2xl overflow-hidden shrink-0 cursor-pointer">
             <img loading="lazy" src="/images/gruns/luna-natural-pouch.webp" alt="Luna Natural Mosquito Repellent Patches" className="w-full h-full object-cover" />
           </AnimatedPouch>
         </a>

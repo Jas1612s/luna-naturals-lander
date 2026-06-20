@@ -414,11 +414,8 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
             </div>
             <p className="text-xs text-[var(--gr-sage)] mb-5">${perPatch.toFixed(2)}/patch &middot; {variant.patchCount} patches per pack</p>
 
-            {/* Available Nationwide */}
+            {/* Find Us In Store */}
             <div className="mb-6 py-4 border-y border-[var(--gr-dark)]/8">
-              <p className="text-[10px] font-semibold text-[var(--gr-sage)] uppercase tracking-widest mb-1 text-center">
-                Available Nationwide
-              </p>
               <p className="text-base font-bold text-[var(--gr-dark)] text-center mb-3 gr-display italic">
                 Find Us In Store
               </p>
@@ -427,10 +424,10 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
                   {[
                     { src: "/images/gruns/logo-erewhon-color.png", alt: "Erewhon", h: 20 },
                     { src: "/images/gruns/logo-target-color.webp", alt: "Target", h: 26 },
-                    { src: "/images/gruns/logo-wholefoods-bw.png", alt: "Whole Foods", h: 22 },
+                    { src: "/images/gruns/logo-wholefoods-bw.png", alt: "Whole Foods", h: 26 },
                     { src: "/images/gruns/logo-erewhon-color.png", alt: "Erewhon 2", h: 20 },
                     { src: "/images/gruns/logo-target-color.webp", alt: "Target 2", h: 26 },
-                    { src: "/images/gruns/logo-wholefoods-bw.png", alt: "Whole Foods 2", h: 22 },
+                    { src: "/images/gruns/logo-wholefoods-bw.png", alt: "Whole Foods 2", h: 26 },
                   ].map((logo) => (
                     <img key={logo.alt} src={logo.src} alt={logo.alt} style={{ height: logo.h }} className="w-auto shrink-0" />
                   ))}

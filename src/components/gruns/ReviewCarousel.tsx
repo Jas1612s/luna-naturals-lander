@@ -120,7 +120,7 @@ export function ReviewCarousel() {
         {/* Header */}
         <div className="flex items-end justify-between mb-8 md:mb-10">
           <div>
-            <p className="text-sm font-bold text-[var(--gr-accent)] mb-1"><CountUp target={100000} /> orders</p>
+            <p className="text-sm font-bold text-[var(--gr-accent)] mb-1"><CountUp target={50000} /> orders</p>
             <div className="flex items-center gap-2 mb-2">
               <Stars count={5} />
               <span className="text-sm font-bold text-white/80">4.8 / 5</span>
