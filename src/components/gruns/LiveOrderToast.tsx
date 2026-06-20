@@ -17,13 +17,14 @@ const cities = [
   "Boston, MA", "Brooklyn, NY", "Sacramento, CA", "Orlando, FL", "Columbus, OH",
 ];
 
+const productImage = "/images/gruns/luna-natural-pouch.webp";
 const products = [
-  { name: "1-pack", image: "/images/gruns/product-kids-patches-v2.webp" },
-  { name: "1-pack", image: "/images/gruns/adults-pack-moss.webp" },
-  { name: "2-pack", image: "/images/gruns/product-kids-patches-v2.webp" },
-  { name: "2-pack", image: "/images/gruns/adults-pack-moss.webp" },
-  { name: "3-pack", image: "/images/gruns/kids-3pack-forest.webp" },
-  { name: "4-pack", image: "/images/gruns/product-kids-patches-v2.webp" },
+  { name: "1-pack", image: productImage },
+  { name: "1-pack", image: productImage },
+  { name: "2-pack", image: productImage },
+  { name: "2-pack", image: productImage },
+  { name: "3-pack", image: productImage },
+  { name: "4-pack", image: productImage },
 ];
 
 const timeAgo = [
