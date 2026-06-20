@@ -87,7 +87,7 @@ const variantData: Record<
     patchCount: 90,
     tagline: "Plant-powered protection you can trust for your family. Pediatrician-approved. Zero DEET, zero worry.",
     gallery: [
-      "/images/gruns/product-slide-1.webp",
+      "/images/gruns/product-slide-1-new.jpg",
       "/images/gruns/product-slide-2.webp",
       "/images/gruns/product-slide-3.webp",
       "/images/gruns/product-slide-4.webp",
