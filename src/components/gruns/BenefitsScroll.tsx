@@ -50,7 +50,7 @@ function AnimatedStat({
   return (
     <motion.h2
       style={{ opacity, y, scale }}
-      className={`gr-display italic text-[clamp(2rem,10vw,3.5rem)] md:text-7xl lg:text-[100px] uppercase leading-none tracking-tight ${
+      className={`gr-display italic text-[clamp(2.5rem,13vw,4.5rem)] md:text-8xl lg:text-[120px] uppercase leading-none tracking-tight ${
         accent ? "text-[var(--gr-accent)]" : "text-white"
       }`}
     >
@@ -96,7 +96,7 @@ export function BenefitsScroll() {
           "linear-gradient(to bottom, var(--gr-green) 0%, var(--gr-green-mid) 30%, var(--gr-green) 70%, var(--gr-green-dark) 100%)",
       }}
     >
-      <div className="relative z-10 flex flex-col items-center text-center py-16 md:py-24 gap-10 md:gap-16 lg:gap-20 px-4 pb-12">
+      <div className="relative z-10 flex flex-col items-center text-center py-24 md:py-36 gap-14 md:gap-20 lg:gap-28 px-4 pb-20">
         {stats.map((stat, i) => (
           <AnimatedStat
             key={stat.text}
