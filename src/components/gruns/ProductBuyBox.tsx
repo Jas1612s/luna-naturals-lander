@@ -606,50 +606,31 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
               const unlocked = bundleSize >= 3;
               return (
                 <div className={`relative rounded-xl overflow-hidden mb-8 transition-all duration-500 ${unlocked ? "ring-2 ring-[var(--gr-accent)] shadow-[0_0_20px_rgba(212,160,32,0.3)]" : ""}`}>
-                  <div className="bg-[var(--gr-green-dark)] p-5">
-                    <div className="flex items-center justify-center gap-2 mb-3">
-                      <span className="text-lg">{unlocked ? "🎉" : "🔒"}</span>
-                      <p className="text-sm font-black text-[var(--gr-accent)] uppercase tracking-widest text-center">
-                        {unlocked ? "You Unlocked a Mystery Prize!" : "Unlock a Mystery Prize"}
-                      </p>
-                      <span className="text-lg">{unlocked ? "🎉" : "🔒"}</span>
-                    </div>
-
-                    <div className={`relative rounded-xl p-6 text-center transition-all duration-500 ${
+                  <div className="bg-[var(--gr-green-dark)] px-4 py-3.5">
+                    <div className={`relative rounded-lg px-4 py-3.5 text-center transition-all duration-500 flex items-center gap-3 ${
                       unlocked
-                        ? "bg-gradient-to-br from-[var(--gr-accent)]/20 via-white/5 to-[var(--gr-accent)]/10 border border-[var(--gr-accent)]/30"
+                        ? "bg-gradient-to-r from-[var(--gr-accent)]/20 to-[var(--gr-accent)]/10 border border-[var(--gr-accent)]/30"
                         : "bg-white/5 border border-white/10"
                     }`}>
                       {!unlocked && (
-                        <div className="absolute inset-0 backdrop-blur-sm bg-black/20 rounded-xl flex flex-col items-center justify-center z-10">
-                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <div className="absolute inset-0 backdrop-blur-sm bg-black/20 rounded-lg flex items-center justify-center z-10 gap-2">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                           </svg>
-                          <p className="text-white/70 text-sm font-bold mt-2">Select 3+ packs to unlock</p>
+                          <p className="text-white/70 text-sm font-bold">Select 3+ packs to unlock</p>
                         </div>
                       )}
 
-                      <div className={`transition-all duration-500 ${unlocked ? "" : "blur-[3px] opacity-60"}`}>
-                        <div className="text-4xl mb-3">🎟️✨</div>
-                        <p className="gr-display italic text-white text-xl md:text-2xl leading-tight mb-1">
-                          Win a Trip to <span className="text-[var(--gr-accent)]">Disneyland</span>
+                      <div className={`text-3xl shrink-0 transition-all duration-500 ${unlocked ? "" : "blur-[3px] opacity-60"}`}>🎟️</div>
+                      <div className={`text-left transition-all duration-500 ${unlocked ? "" : "blur-[3px] opacity-60"}`}>
+                        <p className="gr-display italic text-white text-base leading-tight">
+                          Chance to Win a Ticket to <span className="text-[var(--gr-accent)]">Disneyland</span>
                         </p>
-                        <p className="text-white/50 text-xs mb-3">
-                          Family 4-pack of tickets · Value $600+
+                        <p className="text-[10px] font-bold text-[var(--gr-accent)] uppercase tracking-wider mt-1">
+                          {unlocked ? "🎊 You're entered to win!" : "Every 3+ pack order enters to win"}
                         </p>
-                        <div className="inline-flex items-center gap-1.5 bg-[var(--gr-accent)]/15 rounded-full px-3 py-1.5">
-                          <span className="text-[10px] font-bold text-[var(--gr-accent)] uppercase tracking-wider">
-                            {unlocked ? "🎊 You're entered to win!" : "Every 3+ pack order enters to win"}
-                          </span>
-                        </div>
                       </div>
                     </div>
-
-                    {!unlocked && (
-                      <p className="text-center text-[11px] text-white/40 mt-3">
-                        Add {3 - bundleSize} more pack{3 - bundleSize > 1 ? "s" : ""} to unlock your chance to win
-                      </p>
-                    )}
                   </div>
                 </div>
               );
