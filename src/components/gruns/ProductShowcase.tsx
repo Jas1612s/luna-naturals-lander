@@ -39,7 +39,7 @@ export function ProductShowcase() {
         <div className="relative mt-8 lg:mt-12 rounded-2xl overflow-hidden aspect-[4/5] lg:aspect-[3/2] max-w-[500px] lg:max-w-full mx-auto flex items-center justify-center">
           <img loading="lazy" src="/images/gruns/luna-natural-outdoor-scene.webp" alt="Luna Natural Mosquito Repellent Patches outdoor scene" className="w-full h-full object-cover" />
 
-          <div className="absolute bottom-4 right-4 w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-[var(--gr-accent)] flex flex-col items-center justify-center text-center shadow-lg" style={{ boxShadow: "0 0 20px rgba(212,160,32,0.6), 0 0 40px rgba(212,160,32,0.3), 0 0 60px rgba(212,160,32,0.15)", animation: "gr-glow-pulse 2s ease-in-out infinite" }}>
+          <div className="absolute bottom-4 right-4 w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-[var(--gr-accent)] flex flex-col items-center justify-center text-center shadow-lg" style={{ boxShadow: "0 0 20px rgba(232,108,44,0.6), 0 0 40px rgba(232,108,44,0.3), 0 0 60px rgba(232,108,44,0.15)", animation: "gr-glow-pulse 2s ease-in-out infinite" }}>
             <span className="text-[10px] lg:text-xs font-bold leading-tight" style={{ color: "var(--gr-accent-text)" }}>
               save
             </span>
