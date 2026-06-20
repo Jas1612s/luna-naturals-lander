@@ -591,7 +591,6 @@ export function ProductBuyBox({ defaultVariant }: { defaultVariant?: string } = 
                         <p className="text-sm font-bold text-[var(--gr-dark)] leading-snug">
                           {bundle.packs} pack{bundle.packs > 1 ? "s" : ""}
                         </p>
-                        <p className="text-[11px] text-[var(--gr-sage)] leading-tight">{bundle.patches} patches</p>
                         <p className="text-lg font-black text-[var(--gr-dark)] leading-tight mt-0.5">${totalPrice.toFixed(2)}{" "}
                           <span className="text-xs font-normal text-[var(--gr-sage)] line-through">${totalCompare.toFixed(2)}</span>
                         </p>

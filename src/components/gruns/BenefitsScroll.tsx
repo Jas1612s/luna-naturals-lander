@@ -59,30 +59,6 @@ function AnimatedStat({
   );
 }
 
-function AnimatedImage({
-  index,
-  total,
-  containerRef,
-}: {
-  index: number;
-  total: number;
-  containerRef: React.RefObject<HTMLDivElement | null>;
-}) {
-  const { opacity, y, scale } = useScrollReveal(index, total, containerRef);
-
-  return (
-    <motion.div
-      style={{ opacity, y, scale }}
-      className="flex justify-center"
-    >
-      <img
-        src="/images/gruns/product-bundle-both.webp"
-        alt="Luna Naturals Mosquito Repellent Patches - Adults and Kids"
-        className="w-[280px] md:w-[400px] lg:w-[500px] object-contain"
-      />
-    </motion.div>
-  );
-}
 
 export function BenefitsScroll() {
   const sectionRef = useRef<HTMLDivElement>(null);
