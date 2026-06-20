@@ -103,17 +103,10 @@ export function BenefitsScroll() {
             text={stat.text}
             accent={stat.accent}
             index={i}
-            total={stats.length + 1}
+            total={stats.length}
             containerRef={sectionRef}
           />
         ))}
-
-        {/* Product sachet — same scroll reveal sequence */}
-        <AnimatedImage
-          index={stats.length}
-          total={stats.length + 1}
-          containerRef={sectionRef}
-        />
       </div>
     </section>
   );

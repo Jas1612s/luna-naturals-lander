@@ -1,16 +1,14 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 
 const heroImages = [
-  { src: "/images/gruns/hero-hiker-spray.webp", alt: "Hiker spraying bug repellent on trail at sunset" },
-  { src: "/images/gruns/hero-camping-lifestyle.webp", alt: "Woman camping outdoors wearing bug repellent bracelets" },
-  { src: "/images/gruns/hero-slide2-playground.webp", alt: "Mom applying Luna Naturals patch to toddler at playground" },
-  { src: "/images/gruns/hero-product-sky.webp", alt: "Hand holding Luna Naturals Bug Bite Relief Patches against blue sky" },
+  { src: "/images/gruns/hero-kid-running.webp", alt: "Child protected outdoors with Luna Natural patches" },
+  { src: "/images/gruns/hero-slide2-playground.webp", alt: "Parent applying Luna Natural patch at the playground" },
+  { src: "/images/gruns/hero-dad-hiking.jpg", alt: "Dad hiking with baby wearing Luna Natural patches" },
 ];
 
-const rotatingWords = ["Adults", "Kids"];
+const rotatingWords = ["Tick", "Itch"];
 
 export function GrunsHero() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -42,17 +40,16 @@ export function GrunsHero() {
   return (
     <section className="relative overflow-hidden" style={{ minHeight: "668px" }}>
       <div className="flex flex-col md:flex-row" style={{ minHeight: "668px" }}>
-        {/* Text Side — static */}
+        {/* Text Side – static */}
         <div
           className="relative z-10 flex flex-1 items-center"
-          style={{ background: "linear-gradient(135deg, #2F3A1C 0%, #3A4428 40%, #4E5C36 70%, #E8DECE 100%)" }}
+          style={{ background: "linear-gradient(135deg, #2E3A1A 0%, #4A5A2E 40%, #647A3E 70%, #F5F0E6 100%)" }}
         >
           <div className="mx-auto max-w-[700px] px-4 py-6 md:px-6 md:py-12">
             <h2
               className="gr-display mb-6 text-[44px] leading-[1] md:text-[96px]"
               style={{ color: "rgba(255,255,255,0.95)", fontWeight: 400 }}
             >
-              Bug Protection{" "}
               <span
                 className="inline-block text-[var(--gr-accent)]"
                 style={{
@@ -63,16 +60,16 @@ export function GrunsHero() {
               >
                 {rotatingWords[wordIndex]}
               </span>{" "}
-              Actually Want to Wear.
+              Protection You Can Actually Trust.
             </h2>
 
             <div className="mb-4 flex flex-wrap gap-3">
               <a
-                href="#shop"
+                href="https://lunanaturals.co/checkouts/cn/hWNDTPlP631vPuqj4NP8UEIz/en-us?_r=AQABbFT1asIW0OxE5kHTyEX05-ARbW8AjBLk8nPTYAxG&preview_theme_id=153081282739" target="_blank" rel="noopener noreferrer"
                 className="rounded-full px-6 py-3 text-sm font-semibold transition-opacity hover:opacity-90 md:px-8 cursor-pointer inline-block"
-                style={{ backgroundColor: "var(--gr-accent)", color: "white" }}
+                style={{ backgroundColor: "var(--gr-accent)", color: "var(--gr-accent-text)" }}
               >
-                Shop Now — Save 60%
+                Shop Now – Save 60%
               </a>
             </div>
 
@@ -92,14 +89,15 @@ export function GrunsHero() {
           style={{ minHeight: "340px" }}
         >
           {heroImages.map((img, i) => (
-            <Image
+            <img
               key={img.src}
               src={img.src}
               alt={img.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              priority={i === 0}
-              className="object-cover transition-opacity duration-500 ease-in-out"
+              loading={i === 0 ? "eager" : "lazy"}
+              fetchPriority={i === 0 ? "high" : undefined}
+              width={1400}
+              height={1400}
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out"
               style={{ opacity: activeIndex === i ? 1 : 0 }}
             />
           ))}
