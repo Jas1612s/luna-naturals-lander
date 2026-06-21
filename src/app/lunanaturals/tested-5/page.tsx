@@ -130,7 +130,7 @@ function RankedEntry({
 }
 
 /* ───── Testimonial Card ───── */
-function TestimonialCard({ quote, author }: { quote: string; author: string }) {
+function TestimonialCard({ quote, author, avatar }: { quote: string; author: string; avatar: string }) {
   return (
     <div className="rounded-xl border p-6" style={{ borderColor: "var(--gr-cream-warm)", backgroundColor: "var(--gr-white)" }}>
       <div className="flex gap-0.5 mb-3">
@@ -141,20 +141,30 @@ function TestimonialCard({ quote, author }: { quote: string; author: string }) {
       <p className="text-[15px] leading-relaxed italic mb-3" style={{ color: "var(--gr-sage)" }}>
         &ldquo;{quote}&rdquo;
       </p>
-      <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>{author}</p>
-      <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>Verified Purchase</p>
+      <div className="flex items-center gap-3">
+        <img src={avatar} alt={author} loading="lazy" className="w-11 h-11 rounded-full object-cover flex-shrink-0" />
+        <div>
+          <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>{author}</p>
+          <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>Verified Purchase</p>
+        </div>
+      </div>
     </div>
   );
 }
 
-/* ───── Image Placeholder ───── */
-function ImagePlaceholder({ label, ratio = "aspect-[3/2]" }: { label: string; ratio?: string }) {
+/* ───── Image Block ───── */
+function ImagePlaceholder({
+  src,
+  alt,
+  ratio = "aspect-[3/2]",
+}: {
+  src: string;
+  alt: string;
+  ratio?: string;
+}) {
   return (
-    <div
-      className={`${ratio} flex items-center justify-center text-sm font-medium border border-dashed rounded-xl my-8`}
-      style={{ backgroundColor: "var(--gr-cream-light)", color: "var(--gr-sage)", borderColor: "var(--gr-cream-warm)" }}
-    >
-      [ IMAGE COMING SOON &mdash; {label} ]
+    <div className={`${ratio} overflow-hidden rounded-xl my-8`}>
+      <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover" />
     </div>
   );
 }
@@ -222,11 +232,13 @@ export default function Tested5Page() {
 
       {/* ── Hero Image ── */}
       <div className="max-w-[720px] mx-auto px-5 my-8">
-        <div
-          className="rounded-xl aspect-video flex items-center justify-center text-sm font-medium border border-dashed"
-          style={{ backgroundColor: "var(--gr-cream-light)", color: "var(--gr-sage)", borderColor: "var(--gr-cream-warm)" }}
-        >
-          [ IMAGE COMING SOON &mdash; Five bug repellents lined up on a picnic table ]
+        <div className="rounded-xl aspect-video overflow-hidden">
+          <img
+            src="/images/luna/footer-banner-product.webp"
+            alt="Luna Naturals bug repellent lineup"
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
 
@@ -361,7 +373,10 @@ export default function Tested5Page() {
           />
         </div>
 
-        <ImagePlaceholder label="Tester applying a Luna Naturals patch to a child's shirt sleeve" />
+        <ImagePlaceholder
+          src="/images/luna/hf-patch-closeup.webp"
+          alt="Luna Naturals patch on a child's clothing"
+        />
 
         {/* Head-to-Head Comparison Table */}
         <h2 className="gr-display text-2xl md:text-[28px] font-bold mt-12 mb-4 leading-tight" style={{ color: "var(--gr-green-dark)" }}>
@@ -484,7 +499,11 @@ export default function Tested5Page() {
           </div>
         </div>
 
-        <ImagePlaceholder label="Kids playing at dusk by the lake house, no spray in sight" ratio="aspect-[16/10]" />
+        <ImagePlaceholder
+          src="/images/luna/hf-family-2.webp"
+          alt="Family outdoors at dusk by the lake"
+          ratio="aspect-[16/10]"
+        />
 
         {/* Conclusion */}
         <h2 className="gr-display text-2xl md:text-[28px] font-bold mt-12 mb-4 leading-tight" style={{ color: "var(--gr-green-dark)" }}>
@@ -502,10 +521,12 @@ export default function Tested5Page() {
           <TestimonialCard
             quote="I'd tried the natural sprays and always ended up back on DEET out of frustration. The Luna patches are the first plant-based thing that actually lasted a whole evening for us. My eczema kid can finally wear repellent."
             author="Megan R."
+            avatar="/images/luna/reviewer-megan.webp"
           />
           <TestimonialCard
             quote="We did a week at the lake and everyone in the group chat was comparing bites. The kids with the patches on their shirts won. We're stocking up before they sell out again."
             author="Daniel P."
+            avatar="/images/luna/reviewer-jenny.webp"
           />
         </div>
 

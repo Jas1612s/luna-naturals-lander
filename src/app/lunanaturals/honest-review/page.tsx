@@ -23,7 +23,7 @@ export const metadata = {
 };
 
 /* ───── Testimonial ───── */
-function Testimonial({ quote, author }: { quote: string; author: string }) {
+function Testimonial({ quote, author, avatar }: { quote: string; author: string; avatar: string }) {
   return (
     <div
       className="rounded-xl border p-6 my-5"
@@ -37,12 +37,22 @@ function Testimonial({ quote, author }: { quote: string; author: string }) {
       <p className="text-[15px] leading-relaxed italic mb-3" style={{ color: "var(--gr-sage)" }}>
         &ldquo;{quote}&rdquo;
       </p>
-      <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>
-        {author}
-      </p>
-      <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>
-        Verified Purchase
-      </p>
+      <div className="flex items-center gap-3">
+        <img
+          src={avatar}
+          alt={author}
+          loading="lazy"
+          className="w-11 h-11 rounded-full object-cover flex-shrink-0"
+        />
+        <div>
+          <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>
+            {author}
+          </p>
+          <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>
+            Verified Purchase
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -64,18 +74,11 @@ function HighlightBox({ children }: { children: React.ReactNode }) {
   );
 }
 
-/* ───── Image Placeholder ───── */
-function ImagePlaceholder({ label }: { label: string }) {
+/* ───── Image ───── */
+function ImagePlaceholder({ src, alt }: { src: string; alt: string }) {
   return (
-    <div
-      className="aspect-[3/2] flex items-center justify-center text-sm font-medium border border-dashed rounded-xl my-5"
-      style={{
-        backgroundColor: "var(--gr-cream-light)",
-        color: "var(--gr-sage)",
-        borderColor: "var(--gr-cream-warm)",
-      }}
-    >
-      [ IMAGE COMING SOON &mdash; {label} ]
+    <div className="aspect-[3/2] rounded-xl overflow-hidden my-5">
+      <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover" />
     </div>
   );
 }
@@ -223,15 +226,13 @@ export default function HonestReviewPage() {
 
       {/* ── Hero Image ── */}
       <div className="max-w-[720px] mx-auto px-5 my-8">
-        <div
-          className="rounded-xl aspect-video flex items-center justify-center text-sm font-medium border border-dashed"
-          style={{
-            backgroundColor: "var(--gr-cream-light)",
-            color: "var(--gr-sage)",
-            borderColor: "var(--gr-cream-warm)",
-          }}
-        >
-          [ IMAGE COMING SOON &mdash; Every bug product I tested, laid out on the kitchen table ]
+        <div className="rounded-xl aspect-video overflow-hidden">
+          <img
+            src="/images/luna/ugc-mom.jpg"
+            alt="The mom who tested every natural bug product"
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
 
@@ -347,7 +348,7 @@ export default function HonestReviewPage() {
             won&rsquo;t pretend to run a lab, but for my family it did nothing I could detect.
           </ReviewEntry>
 
-          <ImagePlaceholder label="The wristbands, candle, and ultrasonic clip that didn't make the cut" />
+          <ImagePlaceholder src="/images/luna/col-sprays.webp" alt="The lineup of natural bug sprays I tested" />
 
           <ReviewEntry number={4} Icon={SprayCan} title="Drugstore &ldquo;Natural&rdquo; Sprays" verdict="Wore off fast" verdictTone="fail">
             These felt like the responsible middle ground, and I had high hopes. The reality was
@@ -373,7 +374,7 @@ export default function HonestReviewPage() {
             every box on my list, which is more than I can say for anything else on this page.
           </ReviewEntry>
 
-          <ImagePlaceholder label="Luna Naturals DEET-free spray and kids' patches on the counter" />
+          <ImagePlaceholder src="/images/luna/hero-spray-action.webp" alt="Luna Naturals DEET-free spray and kids' patches on the counter" />
 
           <ReviewEntry number={7} Icon={Sticker} title="Luna Patches for the Kids" verdict="Toddler-proof" verdictTone="win">
             The patches solved my squirming-toddler problem entirely. They stick to clothing, not
@@ -532,15 +533,13 @@ export default function HonestReviewPage() {
 
         {/* Inline image */}
         <div className="my-10 rounded-xl overflow-hidden">
-          <div
-            className="aspect-[16/10] flex items-center justify-center text-sm font-medium border border-dashed rounded-xl"
-            style={{
-              backgroundColor: "var(--gr-cream-light)",
-              color: "var(--gr-sage)",
-              borderColor: "var(--gr-cream-warm)",
-            }}
-          >
-            [ IMAGE COMING SOON &mdash; Kids playing outside at dusk, bite-free ]
+          <div className="aspect-[16/10] rounded-xl overflow-hidden">
+            <img
+              src="/images/luna/hf-kids-1.webp"
+              alt="Kids playing outside at dusk, bite-free"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
           </div>
           <p className="text-xs text-center mt-2.5" style={{ color: "var(--gr-sage)" }}>
             DEET-free, plant-based protection the whole family will actually use &mdash; Leaping
@@ -563,14 +562,17 @@ export default function HonestReviewPage() {
           <Testimonial
             quote="I had a literal drawer of citronella stuff and clip-on gadgets before a friend told me to just try the spray. Wish I'd skipped the drawer. It's the only thing that lasts through a whole evening for us."
             author="Megan R."
+            avatar="/images/luna/reviewer-megan.webp"
           />
           <Testimonial
             quote="My son has sensitive skin so DEET was always a fight in my head. The patches go on his shirt, last all day, and he actually keeps his 'bug sticker' on. Game changer."
             author="Tara L."
+            avatar="/images/luna/reviewer-jenny.webp"
           />
           <Testimonial
             quote="We tested it on a week-long camping trip with three kids. No DEET, no constant reapplying, no bites worth mentioning. I'm a convert."
             author="Danielle P."
+            avatar="/images/luna/reviewer-elle.webp"
           />
         </div>
 

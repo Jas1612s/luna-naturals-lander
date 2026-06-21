@@ -21,8 +21,24 @@ export const metadata = {
 const CTA_HREF =
   "https://lunanaturals.co/cart/clear?return_to=%2Fcart%2F44464261660851%3A3%3Fdiscount%3D3-pack";
 
+const REVIEWER_AVATARS = [
+  "/images/luna/reviewer-megan.webp",
+  "/images/luna/reviewer-jenny.webp",
+  "/images/luna/reviewer-elle.webp",
+  "/images/luna/reviewer-4.webp",
+  "/images/luna/reviewer-5.webp",
+];
+
 /* ───── Testimonial Card ───── */
-function TestimonialCard({ quote, author }: { quote: string; author: string }) {
+function TestimonialCard({
+  quote,
+  author,
+  index = 0,
+}: {
+  quote: string;
+  author: string;
+  index?: number;
+}) {
   return (
     <div
       className="rounded-xl border p-6"
@@ -36,8 +52,18 @@ function TestimonialCard({ quote, author }: { quote: string; author: string }) {
       <p className="text-[15px] leading-relaxed italic mb-3" style={{ color: "var(--gr-sage)" }}>
         &ldquo;{quote}&rdquo;
       </p>
-      <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>{author}</p>
-      <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>Verified Purchase</p>
+      <div className="flex items-center gap-3">
+        <img
+          src={REVIEWER_AVATARS[index % REVIEWER_AVATARS.length]}
+          alt={author}
+          loading="lazy"
+          className="w-11 h-11 rounded-full object-cover"
+        />
+        <div>
+          <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>{author}</p>
+          <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>Verified Purchase</p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -85,14 +111,19 @@ function FailureCard({
   );
 }
 
-/* ───── Image Placeholder ───── */
-function ImagePlaceholder({ label, ratio = "aspect-[3/2]" }: { label: string; ratio?: string }) {
+/* ───── Image ───── */
+function ImagePlaceholder({
+  src,
+  alt,
+  ratio = "aspect-[3/2]",
+}: {
+  src: string;
+  alt: string;
+  ratio?: string;
+}) {
   return (
-    <div
-      className={`${ratio} flex items-center justify-center text-sm font-medium border border-dashed rounded-xl`}
-      style={{ backgroundColor: "var(--gr-cream-light)", color: "var(--gr-sage)", borderColor: "var(--gr-cream-warm)" }}
-    >
-      [ IMAGE COMING SOON &mdash; {label} ]
+    <div className={`${ratio} overflow-hidden rounded-xl`}>
+      <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover" />
     </div>
   );
 }
@@ -160,11 +191,13 @@ export default function LemonEucalyptusPage() {
 
       {/* ── Hero Image ── */}
       <div className="max-w-[720px] mx-auto px-5 my-8">
-        <div
-          className="rounded-xl aspect-video flex items-center justify-center text-sm font-medium border border-dashed"
-          style={{ backgroundColor: "var(--gr-cream-light)", color: "var(--gr-sage)", borderColor: "var(--gr-cream-warm)" }}
-        >
-          [ IMAGE COMING SOON &mdash; Lemon eucalyptus leaves beside the Luna Naturals spray bottle ]
+        <div className="rounded-xl aspect-video overflow-hidden">
+          <img
+            src="/images/luna/spray-120-hero.webp"
+            alt="Luna Naturals Oil of Lemon Eucalyptus spray bottle"
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
 
@@ -276,7 +309,8 @@ export default function LemonEucalyptusPage() {
         {/* Inline Image */}
         <div className="my-10 rounded-xl overflow-hidden">
           <ImagePlaceholder
-            label="Side-by-side: DEET clouding a plastic lens vs. Luna's plant-based spray"
+            src="/images/luna/prod-spray-120.webp"
+            alt="Luna Naturals plant-based DEET-free spray bottle"
             ratio="aspect-[4/3]"
           />
           <p className="text-xs text-center mt-2.5" style={{ color: "var(--gr-sage)" }}>
@@ -483,7 +517,11 @@ export default function LemonEucalyptusPage() {
 
         {/* Inline Image */}
         <div className="my-10 rounded-xl overflow-hidden">
-          <ImagePlaceholder label="Parent misting Luna spray on a child's sleeve in a backyard at dusk" ratio="aspect-[16/10]" />
+          <ImagePlaceholder
+            src="/images/luna/hero-spray-action.webp"
+            alt="Misting Luna Naturals spray on clothing outdoors"
+            ratio="aspect-[16/10]"
+          />
         </div>
 
         {/* Testimonials */}
@@ -495,14 +533,17 @@ export default function LemonEucalyptusPage() {
         </h2>
         <div className="grid gap-4 mb-12">
           <TestimonialCard
+            index={0}
             quote="I always assumed natural meant useless until I read the label and saw the active was the same plant oil the CDC actually lists. Whole different experience on the patio this year."
             author="Megan H."
           />
           <TestimonialCard
+            index={1}
             quote="I stopped putting DEET on my kids the day I watched it fog up a pair of sunglasses. If it does that to plastic, I didn't want it on their skin. This is the swap I'd been waiting for."
             author="Daniel R."
           />
           <TestimonialCard
+            index={2}
             quote="It smells like lemon and eucalyptus, not a chemistry lab, and it actually lasts through an evening walk. The patches on the kids' shirts are the part I love most."
             author="Aisha N."
           />

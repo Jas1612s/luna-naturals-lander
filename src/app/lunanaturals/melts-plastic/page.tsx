@@ -10,7 +10,7 @@ const CART_URL =
   "https://lunanaturals.co/cart/clear?return_to=%2Fcart%2F44464261660851%3A3%3Fdiscount%3D3-pack";
 
 /* ───── Testimonial Card ───── */
-function TestimonialCard({ quote, author }: { quote: string; author: string }) {
+function TestimonialCard({ quote, author, avatar }: { quote: string; author: string; avatar: string }) {
   return (
     <div className="rounded-xl border border-[var(--gr-cream-warm)] bg-[var(--gr-white)] p-6">
       <div className="flex gap-0.5 mb-3">
@@ -21,21 +21,23 @@ function TestimonialCard({ quote, author }: { quote: string; author: string }) {
       <p className="text-[15px] leading-relaxed text-[var(--gr-sage)] italic mb-3">
         &ldquo;{quote}&rdquo;
       </p>
-      <p className="text-sm font-semibold text-[var(--gr-dark)]">{author}</p>
-      <p className="text-xs font-medium text-[var(--gr-green-mid)]">Verified Purchase</p>
+      <div className="flex items-center gap-3">
+        <img src={avatar} alt={author} loading="lazy" className="w-11 h-11 rounded-full object-cover" />
+        <div>
+          <p className="text-sm font-semibold text-[var(--gr-dark)]">{author}</p>
+          <p className="text-xs font-medium text-[var(--gr-green-mid)]">Verified Purchase</p>
+        </div>
+      </div>
     </div>
   );
 }
 
-/* ───── Image Placeholder ───── */
-function ImagePlaceholder({ label, ratio = "aspect-[4/3]", caption }: { label: string; ratio?: string; caption?: string }) {
+/* ───── Image ───── */
+function ImagePlaceholder({ src, alt, ratio = "aspect-[4/3]", caption }: { src: string; alt: string; ratio?: string; caption?: string }) {
   return (
     <div className="my-10 rounded-xl overflow-hidden">
-      <div
-        className={`${ratio} flex items-center justify-center text-sm font-medium border border-dashed rounded-xl text-center px-4`}
-        style={{ backgroundColor: "var(--gr-cream-light)", color: "var(--gr-sage)", borderColor: "var(--gr-cream-warm)" }}
-      >
-        [ IMAGE COMING SOON &mdash; {label} ]
+      <div className={`${ratio} rounded-xl overflow-hidden`}>
+        <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover" />
       </div>
       {caption ? (
         <p className="text-xs text-center mt-2.5" style={{ color: "var(--gr-sage)" }}>
@@ -106,11 +108,13 @@ export default function MeltsPlasticPage() {
 
       {/* ── Hero Image ── */}
       <div className="max-w-[720px] mx-auto px-5 my-8">
-        <div
-          className="rounded-xl aspect-video flex items-center justify-center text-sm font-medium border border-dashed text-center px-4"
-          style={{ backgroundColor: "var(--gr-cream-light)", color: "var(--gr-sage)", borderColor: "var(--gr-cream-warm)" }}
-        >
-          [ IMAGE COMING SOON &mdash; Bug spray bottle on a kitchen counter at night, label turned to the front ]
+        <div className="rounded-xl aspect-video overflow-hidden">
+          <img
+            src="/images/luna/hero-spray-action.webp"
+            alt="Luna Naturals DEET-free bug spray"
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
 
@@ -185,7 +189,8 @@ export default function MeltsPlasticPage() {
         </p>
 
         <ImagePlaceholder
-          label="Close-up of a Luna Naturals patch pressed onto a child's t-shirt collar"
+          src="/images/luna/hf-patch-closeup.webp"
+          alt="Luna Naturals patch pressed onto a child's t-shirt collar"
           caption="The patch sticks to clothing, not skin — so it never goes on my daughter directly."
         />
 
@@ -306,7 +311,7 @@ export default function MeltsPlasticPage() {
           </ul>
         </div>
 
-        <ImagePlaceholder label="Kids playing in the backyard at dusk, patches on their sleeves" ratio="aspect-[16/10]" />
+        <ImagePlaceholder src="/images/luna/hf-kids-1.webp" alt="Kids playing in the backyard at dusk" ratio="aspect-[16/10]" />
 
         {/* Mid CTA */}
         <div
@@ -339,14 +344,17 @@ export default function MeltsPlasticPage() {
           <TestimonialCard
             quote="I caught the bug spray clouding up my kid's goggles and that was it for me. The Luna patches go on their shirts and we just don't think about it anymore."
             author="Caitlin R."
+            avatar="/images/luna/reviewer-megan.webp"
           />
           <TestimonialCard
             quote="I'm not anti-DEET for adults — I just wanted something gentler for my toddler's skin. Plant-based, on the clothes, zero bites all weekend. Exactly what I wanted."
             author="Dana P."
+            avatar="/images/luna/reviewer-jenny.webp"
           />
           <TestimonialCard
             quote="We'd given up on natural options after a dozen sprays that wore off in half an hour. The Oil of Lemon Eucalyptus spray actually lasts, and the patches last even longer."
             author="Marisol G."
+            avatar="/images/luna/reviewer-elle.webp"
           />
         </div>
 

@@ -50,7 +50,7 @@ function Reason({
 }
 
 /* ───── Testimonial ───── */
-function Testimonial({ quote, author }: { quote: string; author: string }) {
+function Testimonial({ quote, author, avatar }: { quote: string; author: string; avatar: string }) {
   return (
     <div
       className="rounded-xl border p-6 my-5"
@@ -64,8 +64,18 @@ function Testimonial({ quote, author }: { quote: string; author: string }) {
       <p className="text-[15px] leading-relaxed italic mb-3" style={{ color: "var(--gr-sage)" }}>
         &ldquo;{quote}&rdquo;
       </p>
-      <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>{author}</p>
-      <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>Verified Purchase</p>
+      <div className="flex items-center gap-3">
+        <img
+          src={avatar}
+          alt={author}
+          loading="lazy"
+          className="w-11 h-11 rounded-full object-cover flex-shrink-0"
+        />
+        <div>
+          <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>{author}</p>
+          <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>Verified Purchase</p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -84,15 +94,12 @@ function GuidanceBox({ children }: { children: React.ReactNode }) {
   );
 }
 
-/* ───── Image Placeholder ───── */
-function ImagePlaceholder({ label, caption }: { label: string; caption?: string }) {
+/* ───── Article Image ───── */
+function ImagePlaceholder({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
   return (
     <div className="my-5">
-      <div
-        className="aspect-[3/2] flex items-center justify-center text-sm font-medium border border-dashed rounded-xl text-center px-4"
-        style={{ backgroundColor: "var(--gr-cream-light)", color: "var(--gr-sage)", borderColor: "var(--gr-cream-warm)" }}
-      >
-        [ IMAGE COMING SOON &mdash; {label} ]
+      <div className="aspect-[3/2] overflow-hidden rounded-xl">
+        <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover" />
       </div>
       {caption ? (
         <p className="text-xs text-center mt-2.5" style={{ color: "var(--gr-sage)" }}>
@@ -174,11 +181,13 @@ export default function PediatricianPage() {
 
       {/* ── Hero Image ── */}
       <div className="max-w-[720px] mx-auto px-5 my-8">
-        <div
-          className="rounded-xl aspect-video flex items-center justify-center text-sm font-medium border border-dashed text-center px-4"
-          style={{ backgroundColor: "var(--gr-cream-light)", color: "var(--gr-sage)", borderColor: "var(--gr-cream-warm)" }}
-        >
-          [ IMAGE COMING SOON &mdash; Parent applying a clothing patch to a toddler before going outside ]
+        <div className="rounded-xl aspect-video overflow-hidden">
+          <img
+            src="/images/luna/ugc-mom.jpg"
+            alt="Parent and child outdoors before applying repellent"
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
 
@@ -223,7 +232,10 @@ export default function PediatricianPage() {
             <strong style={{ color: "var(--gr-dark)" }}>Oil of Lemon Eucalyptus (OLE)</strong> as an effective, registered repellent active ingredient. That means parents who prefer a plant-based choice are not settling for something unproven &mdash; they are choosing a different recognized active. Luna Naturals builds its{" "}
             <strong style={{ color: "var(--gr-dark)" }}>Bug &amp; Tick Repellent Spray</strong> around exactly that.
           </p>
-          <ImagePlaceholder label="Luna Naturals Bug & Tick Repellent Spray bottle, label facing forward" />
+          <ImagePlaceholder
+            src="/images/luna/spray-120-hero.webp"
+            alt="Luna Naturals Bug & Tick Repellent Spray bottle"
+          />
         </Reason>
 
         <hr style={{ borderColor: "var(--gr-cream-warm)" }} />
@@ -239,7 +251,8 @@ export default function PediatricianPage() {
             <strong style={{ color: "var(--gr-dark)" }}>Mosquito Repellent Patches for Kids</strong>: they stick to clothing, not skin. A patch on the shirt, hat, or stroller does the work, and nothing has to be rubbed onto sensitive little arms.
           </p>
           <ImagePlaceholder
-            label="Close-up of a repellent patch stuck to a child's shirt sleeve"
+            src="/images/luna/hf-patch-closeup.webp"
+            alt="Repellent patch stuck to a child's shirt sleeve"
             caption="Luna Naturals patches stick to clothing, not skin — and last up to 12 hours."
           />
         </Reason>
@@ -367,7 +380,10 @@ export default function PediatricianPage() {
             <strong style={{ color: "var(--gr-dark)" }}>6 hours</strong>, and the clothing patches last up to{" "}
             <strong style={{ color: "var(--gr-dark)" }}>12 hours</strong>. That is the difference between covered all afternoon and chasing a spray bottle every half hour.
           </p>
-          <ImagePlaceholder label="Family on a long outdoor day — picnic to dusk — no reapplication needed" />
+          <ImagePlaceholder
+            src="/images/luna/hf-family-1.webp"
+            alt="Family enjoying a long outdoor day together"
+          />
         </Reason>
 
         <hr style={{ borderColor: "var(--gr-cream-warm)" }} />
@@ -446,14 +462,17 @@ export default function PediatricianPage() {
         <Testimonial
           quote="I'd been nervous about spraying my 1-year-old, so I loved that the patches stick to her clothes instead of her skin. We did a whole day at the lake bite-free."
           author="Renee H."
+          avatar="/images/luna/reviewer-megan.webp"
         />
         <Testimonial
           quote="I finally read past the word 'natural' and started checking the active ingredient. Switched the whole family to the OLE spray and the difference at dusk is night and day."
           author="Daniel P."
+          avatar="/images/luna/reviewer-jenny.webp"
         />
         <Testimonial
           quote="My son has reactive skin, so keeping repellent off his body was the whole reason we tried this. DEET-free, plant-based, and it actually lasts. We're committed now."
           author="Aisha M."
+          avatar="/images/luna/reviewer-elle.webp"
         />
 
         {/* ── Final CTA ── */}

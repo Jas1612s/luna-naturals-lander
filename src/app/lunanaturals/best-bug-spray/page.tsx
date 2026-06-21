@@ -143,7 +143,24 @@ function BundleTile({
 }
 
 /* ───── Testimonial Card ───── */
-function TestimonialCard({ quote, author }: { quote: string; author: string }) {
+const REVIEWER_AVATARS = [
+  "reviewer-megan.webp",
+  "reviewer-jenny.webp",
+  "reviewer-elle.webp",
+  "reviewer-4.webp",
+  "reviewer-5.webp",
+];
+
+function TestimonialCard({
+  quote,
+  author,
+  index = 0,
+}: {
+  quote: string;
+  author: string;
+  index?: number;
+}) {
+  const avatar = REVIEWER_AVATARS[index % REVIEWER_AVATARS.length];
   return (
     <div
       className="rounded-xl border p-6"
@@ -157,12 +174,22 @@ function TestimonialCard({ quote, author }: { quote: string; author: string }) {
       <p className="text-[15px] leading-relaxed italic mb-3" style={{ color: "var(--gr-sage)" }}>
         &ldquo;{quote}&rdquo;
       </p>
-      <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>
-        {author}
-      </p>
-      <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>
-        Verified Purchase
-      </p>
+      <div className="flex items-center gap-3">
+        <img
+          src={`/images/luna/${avatar}`}
+          alt={author}
+          loading="lazy"
+          className="w-11 h-11 rounded-full object-cover flex-shrink-0"
+        />
+        <div>
+          <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>
+            {author}
+          </p>
+          <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>
+            Verified Purchase
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -187,21 +214,21 @@ function FaqItem({ q, children }: { q: string; children: React.ReactNode }) {
 /* ───── Image Placeholder ───── */
 function ImagePlaceholder({
   label,
+  src,
   ratio = "aspect-[3/2]",
 }: {
   label: string;
+  src: string;
   ratio?: string;
 }) {
   return (
-    <div
-      className={`${ratio} flex items-center justify-center text-sm font-medium border border-dashed rounded-xl`}
-      style={{
-        backgroundColor: "var(--gr-cream-light)",
-        color: "var(--gr-sage)",
-        borderColor: "var(--gr-cream-warm)",
-      }}
-    >
-      [ IMAGE COMING SOON &mdash; {label} ]
+    <div className={`${ratio} overflow-hidden rounded-xl`}>
+      <img
+        src={src}
+        alt={label}
+        loading="lazy"
+        className="w-full h-full object-cover"
+      />
     </div>
   );
 }
@@ -274,6 +301,7 @@ export default function BestBugSprayPage() {
         <div className="mb-7">
           <ImagePlaceholder
             label="Luna Naturals Bug & Tick Spray bottle with family at golden hour"
+            src="/images/luna/spray-120-hero.webp"
             ratio="aspect-video"
           />
         </div>
@@ -366,7 +394,10 @@ export default function BestBugSprayPage() {
 
       {/* ── Product Image ── */}
       <section className="max-w-[720px] mx-auto px-5 pt-12">
-        <ImagePlaceholder label="Close-up of the spray bottle in a parent's hand at the trailhead" />
+        <ImagePlaceholder
+          label="Close-up of the spray bottle in a parent's hand at the trailhead"
+          src="/images/luna/hero-spray-action.webp"
+        />
       </section>
 
       {/* ── Comparison Table ── */}
@@ -464,7 +495,11 @@ export default function BestBugSprayPage() {
 
       {/* ── Lifestyle Image ── */}
       <section className="max-w-[720px] mx-auto px-5 pt-14">
-        <ImagePlaceholder label="Kids and a dog playing in the backyard at dusk, bite-free" ratio="aspect-[16/10]" />
+        <ImagePlaceholder
+          label="Kids and a dog playing in the backyard at dusk, bite-free"
+          src="/images/luna/hf-kids-1.webp"
+          ratio="aspect-[16/10]"
+        />
       </section>
 
       {/* ── Testimonials ── */}
@@ -487,18 +522,22 @@ export default function BestBugSprayPage() {
           <TestimonialCard
             quote="Finally a repellent I feel good about spraying on my toddler. It smells fresh, not like chemicals, and the bites have basically stopped."
             author="Megan R."
+            index={0}
           />
           <TestimonialCard
             quote="We took it camping for a long weekend and reapplied once a day. The whole family stayed comfortable, even the dog tagged along bite-free."
             author="Daniel K."
+            index={1}
           />
           <TestimonialCard
             quote="My kids have sensitive skin so I was nervous, but this has been gentle and easy. The patches on their shirts are a lifesaver at the park."
             author="Priya S."
+            index={2}
           />
           <TestimonialCard
             quote="Love that it's DEET-free and cruelty-free. It actually works in our buggy backyard, which is more than I can say for the citronella stuff."
             author="Jordan M."
+            index={3}
           />
         </div>
       </section>

@@ -60,7 +60,15 @@ function StatItem({
 }
 
 /* ───── Testimonial ───── */
-function Testimonial({ quote, author }: { quote: string; author: string }) {
+function Testimonial({
+  quote,
+  author,
+  avatar,
+}: {
+  quote: string;
+  author: string;
+  avatar: string;
+}) {
   return (
     <div
       className="rounded-xl border p-6"
@@ -83,37 +91,50 @@ function Testimonial({ quote, author }: { quote: string; author: string }) {
       >
         &ldquo;{quote}&rdquo;
       </p>
-      <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>
-        {author}
-      </p>
-      <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>
-        Verified Purchase
-      </p>
+      <div className="flex items-center gap-3">
+        <img
+          src={avatar}
+          alt={author}
+          loading="lazy"
+          className="w-11 h-11 rounded-full object-cover flex-shrink-0"
+        />
+        <div>
+          <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>
+            {author}
+          </p>
+          <p
+            className="text-xs font-medium"
+            style={{ color: "var(--gr-green-mid)" }}
+          >
+            Verified Purchase
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
 
-/* ───── Image Placeholder ───── */
+/* ───── Article Image ───── */
 function ImagePlaceholder({
-  label,
+  src,
+  alt,
   ratio = "aspect-[3/2]",
   caption,
 }: {
-  label: string;
+  src: string;
+  alt: string;
   ratio?: string;
   caption?: string;
 }) {
   return (
     <div className="my-10">
-      <div
-        className={`${ratio} flex items-center justify-center text-sm font-medium border border-dashed rounded-xl text-center px-4`}
-        style={{
-          backgroundColor: "var(--gr-cream-light)",
-          color: "var(--gr-sage)",
-          borderColor: "var(--gr-cream-warm)",
-        }}
-      >
-        [ IMAGE COMING SOON &mdash; {label} ]
+      <div className={`${ratio} overflow-hidden rounded-xl`}>
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          className="w-full h-full object-cover"
+        />
       </div>
       {caption ? (
         <p
@@ -241,16 +262,13 @@ export default function TickWarningPage() {
 
       {/* ── Hero Image ── */}
       <div className="max-w-[720px] mx-auto px-5 my-8">
-        <div
-          className="rounded-xl aspect-video flex items-center justify-center text-sm font-medium border border-dashed text-center px-4"
-          style={{
-            backgroundColor: "var(--gr-cream-light)",
-            color: "var(--gr-sage)",
-            borderColor: "var(--gr-cream-warm)",
-          }}
-        >
-          [ IMAGE COMING SOON &mdash; Parent checking a child for ticks after a
-          summer hike ]
+        <div className="rounded-xl aspect-video overflow-hidden">
+          <img
+            src="/images/luna/hf-family-1.webp"
+            alt="A family hiking outdoors together on a wooded trail in summer"
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
 
@@ -401,7 +419,8 @@ export default function TickWarningPage() {
         </p>
 
         <ImagePlaceholder
-          label="Tweezers, a tick-check, the after-hike routine on a bathroom counter"
+          src="/images/luna/hf-kids-1.webp"
+          alt="Kids playing outdoors in nature during the long bug season"
           ratio="aspect-[16/10]"
         />
 
@@ -498,7 +517,8 @@ export default function TickWarningPage() {
         </div>
 
         <ImagePlaceholder
-          label="Luna Naturals spray and kids' patches side by side on a picnic blanket"
+          src="/images/luna/hf-patch-closeup.webp"
+          alt="A Luna Naturals bug-repellent patch on a child's clothing outdoors"
           ratio="aspect-[4/3]"
           caption="Luna Naturals patches stick to clothing, not skin — built for the littlest adventurers."
         />
@@ -663,14 +683,17 @@ export default function TickWarningPage() {
           <Testimonial
             quote="After we pulled a tick off our daughter last summer, I wanted something I felt okay using every single day. The patches go on their backpacks and we just don't think about it anymore."
             author="Megan R."
+            avatar="/images/luna/reviewer-megan.webp"
           />
           <Testimonial
             quote="We hike most weekends now that the season runs so long. I use the spray, the boys wear the patches. Way fewer bites to deal with at bath time."
             author="Daniel K."
+            avatar="/images/luna/reviewer-jenny.webp"
           />
           <Testimonial
             quote="I didn't want to put DEET on a toddler. Plant-based and on the clothing instead of her skin is exactly what I was looking for."
             author="Priya S."
+            avatar="/images/luna/reviewer-elle.webp"
           />
         </div>
         <p className="mb-10 text-xs italic" style={{ color: "var(--gr-sage)" }}>

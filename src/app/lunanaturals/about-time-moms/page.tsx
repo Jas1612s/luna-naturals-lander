@@ -24,7 +24,7 @@ const CTA_HREF =
   "https://lunanaturals.co/cart/clear?return_to=%2Fcart%2F44464261660851%3A3%3Fdiscount%3D3-pack";
 
 /* ───── Testimonial Card ───── */
-function TestimonialCard({ quote, author }: { quote: string; author: string }) {
+function TestimonialCard({ quote, author, avatar }: { quote: string; author: string; avatar: string }) {
   return (
     <div className="rounded-xl border p-6" style={{ borderColor: "var(--gr-cream-warm)", backgroundColor: "var(--gr-white)" }}>
       <div className="flex gap-0.5 mb-3">
@@ -35,14 +35,24 @@ function TestimonialCard({ quote, author }: { quote: string; author: string }) {
       <p className="text-[15px] leading-relaxed italic mb-3" style={{ color: "var(--gr-sage)" }}>
         &ldquo;{quote}&rdquo;
       </p>
-      <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>{author}</p>
-      <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>Verified Purchase</p>
+      <div className="flex items-center gap-3">
+        <img
+          src={avatar}
+          alt={author}
+          loading="lazy"
+          className="w-9 h-9 rounded-full object-cover flex-shrink-0"
+        />
+        <div>
+          <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>{author}</p>
+          <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>Verified Purchase</p>
+        </div>
+      </div>
     </div>
   );
 }
 
 /* ───── Long-form Review ───── */
-function LongReview({ quote, author, context }: { quote: string; author: string; context: string }) {
+function LongReview({ quote, author, context, avatar }: { quote: string; author: string; context: string; avatar: string }) {
   return (
     <div className="rounded-2xl border p-7 md:p-8" style={{ borderColor: "var(--gr-cream-warm)", backgroundColor: "var(--gr-white)" }}>
       <div className="flex gap-0.5 mb-4">
@@ -54,12 +64,12 @@ function LongReview({ quote, author, context }: { quote: string; author: string;
         &ldquo;{quote}&rdquo;
       </p>
       <div className="flex items-center gap-3 pt-4 border-t" style={{ borderColor: "var(--gr-cream-warm)" }}>
-        <div
-          className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
-          style={{ backgroundColor: "var(--gr-cream-warm)", color: "var(--gr-green-dark)" }}
-        >
-          {author.charAt(0)}
-        </div>
+        <img
+          src={avatar}
+          alt={author}
+          loading="lazy"
+          className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+        />
         <div>
           <p className="text-sm font-semibold" style={{ color: "var(--gr-dark)" }}>{author}</p>
           <p className="text-xs font-medium" style={{ color: "var(--gr-green-mid)" }}>Verified Purchase &bull; {context}</p>
@@ -105,15 +115,12 @@ function RitualStep({ number, title, desc }: { number: number; title: string; de
   );
 }
 
-/* ───── Image Placeholder ───── */
-function ImagePlaceholder({ label, ratio = "aspect-[3/2]", caption }: { label: string; ratio?: string; caption?: string }) {
+/* ───── Image ───── */
+function ImagePlaceholder({ src, alt, ratio = "aspect-[3/2]", caption }: { src: string; alt: string; ratio?: string; caption?: string }) {
   return (
     <div className="my-9">
-      <div
-        className={`${ratio} flex items-center justify-center text-sm font-medium border border-dashed rounded-xl text-center px-4`}
-        style={{ backgroundColor: "var(--gr-cream-light)", color: "var(--gr-sage)", borderColor: "var(--gr-cream-warm)" }}
-      >
-        [ IMAGE COMING SOON &mdash; {label} ]
+      <div className={`${ratio} overflow-hidden rounded-xl`}>
+        <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover" />
       </div>
       {caption ? (
         <p className="text-xs text-center mt-2.5" style={{ color: "var(--gr-sage)" }}>{caption}</p>
@@ -172,7 +179,8 @@ export default function AboutTimeMomsPage() {
         {/* ── Hero Value Prop ── */}
         <section className="mt-8 mb-4">
           <ImagePlaceholder
-            label="Mom and kids laughing in the backyard at golden hour, no spray bottle in sight"
+            src="/images/luna/ugc-mom.jpg"
+            alt="Mom and kids enjoying the backyard together at golden hour"
             ratio="aspect-video"
           />
           <p className="text-base leading-relaxed mb-6" style={{ color: "var(--gr-sage)" }}>
@@ -346,7 +354,8 @@ export default function AboutTimeMomsPage() {
         </div>
 
         <ImagePlaceholder
-          label="Flat-lay of a diaper bag with Luna patches, spray, and a bracelet spilling out"
+          src="/images/luna/hf-patch-closeup.webp"
+          alt="Luna patches close-up, ready to tuck into the diaper bag"
           caption="One system, scattered exactly where a mom's day happens — bag, car, stroller, porch."
         />
 
@@ -476,18 +485,20 @@ export default function AboutTimeMomsPage() {
             quote="I have a three-year-old who screams the second she sees a spray bottle, and a baby I refuse to put DEET on. Luna basically ended the nightly standoff. I keep patches in the diaper bag and a bracelet on the stroller, and I genuinely don't think about bugs anymore. That's a sentence I never thought I'd say as a mom of two under four."
             author="Megan"
             context="Mom of 2"
+            avatar="/images/luna/reviewer-megan.webp"
           />
           <LongReview
             quote="The thing that got me was the smell in the car. We'd do an evening at the lake and the whole ride home reeked of repellent with both kids strapped in. The Luna spray doesn't do that, and the patches don't do anything at all to the air. Same protection, none of the stuff that made me uneasy. Our porch evenings are back too, thanks to the candle."
             author="Danielle"
             context="Mom of 2, sensitive-skin kiddo"
+            avatar="/images/luna/reviewer-jenny.webp"
           />
         </div>
         <div className="grid sm:grid-cols-2 gap-4 mb-12">
-          <TestimonialCard quote="The daycare keeps a strip of patches in his backpack now. No teacher spraying anyone, no skin contact, done." author="Brittany R." />
-          <TestimonialCard quote="My toddler calls it her 'bug sticker' and asks for it. We went from tears to her doing it herself." author="Sofia L." />
-          <TestimonialCard quote="One bundle covers all of us — me, the kids, even the dog on hikes. I love not buying five different things." author="Hannah P." />
-          <TestimonialCard quote="The itch-relief stick lives in my bag for the rare one that sneaks through. Bedtime meltdowns avoided." author="Olivia T." />
+          <TestimonialCard quote="The daycare keeps a strip of patches in his backpack now. No teacher spraying anyone, no skin contact, done." author="Brittany R." avatar="/images/luna/reviewer-megan.webp" />
+          <TestimonialCard quote="My toddler calls it her 'bug sticker' and asks for it. We went from tears to her doing it herself." author="Sofia L." avatar="/images/luna/reviewer-jenny.webp" />
+          <TestimonialCard quote="One bundle covers all of us — me, the kids, even the dog on hikes. I love not buying five different things." author="Hannah P." avatar="/images/luna/reviewer-elle.webp" />
+          <TestimonialCard quote="The itch-relief stick lives in my bag for the rare one that sneaks through. Bedtime meltdowns avoided." author="Olivia T." avatar="/images/luna/reviewer-4.webp" />
         </div>
 
         {/* ── Final CTA ── */}
